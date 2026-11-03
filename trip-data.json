@@ -1,0 +1,366 @@
+{
+  "rows": [
+    {
+      "date": "2026-11-10",
+      "time": "19:25~21:10",
+      "city": "Hong Kong",
+      "activity": "Kaohsiung to Hong Kong",
+      "transport": "CX459",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-11",
+      "time": "00:20~07:05",
+      "city": "",
+      "activity": "Hong Kong to Frankfurt",
+      "transport": "CX289",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-11",
+      "time": "11:41~12:53",
+      "city": "Frankfurt",
+      "activity": "Frankfurt to Düsseldorf train station\n(Pick-up by Duferco at Düsseldorf Main Station)",
+      "transport": "LH3588",
+      "hotel": "Das Carls Hotel"
+    },
+    {
+      "date": "2026-11-11",
+      "time": "Afternoon",
+      "city": "Düsseldorf",
+      "activity": "Hotel Check-in",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-11",
+      "time": "Dinner",
+      "city": "",
+      "activity": "Dinner with Duferco\n(Main contact: Bjorn and Sven)",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-12",
+      "time": "Morning",
+      "city": "Duisburg",
+      "activity": "Carl Spaeter HQ",
+      "transport": "",
+      "hotel": "Das Carls Hotel"
+    },
+    {
+      "date": "2026-11-12",
+      "time": "",
+      "city": "",
+      "activity": "Lunch with?",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-12",
+      "time": "Afternoon",
+      "city": "Duisburg",
+      "activity": "Knauf",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-12",
+      "time": "",
+      "city": "",
+      "activity": "Dinner with?",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-13",
+      "time": "Morning",
+      "city": "Hagen",
+      "activity": "HFS",
+      "transport": "",
+      "hotel": "Das Carls Hotel"
+    },
+    {
+      "date": "2026-11-13",
+      "time": "Pending",
+      "city": "",
+      "activity": "Lunch with HFS+ quick tour in HFS",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-13",
+      "time": "Afternoon",
+      "city": "",
+      "activity": "下午開始客戶陸續休假,無法安排參訪",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-14",
+      "time": "",
+      "city": "",
+      "activity": "",
+      "transport": "",
+      "hotel": "Das Carls Hotel"
+    },
+    {
+      "date": "2026-11-15",
+      "time": "10:05~10:40",
+      "city": "",
+      "activity": "Düsseldorf airport to London",
+      "transport": "BA931\nBRITISH AIRWAYS",
+      "hotel": "Hilton Garden Inn Birmingham"
+    },
+    {
+      "date": "2026-11-15",
+      "time": "12:15~14:05",
+      "city": "",
+      "activity": "FCO to LHR",
+      "transport": "BA549",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-15",
+      "time": "",
+      "city": "",
+      "activity": "CSC/ CSGT/ USGT meet up in London",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-15",
+      "time": "19:39~21:02",
+      "city": "",
+      "activity": "Euston station to Birmingham New Street",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-16",
+      "time": "09:30",
+      "city": "",
+      "activity": "Hotel pick-up by Belmont",
+      "transport": "",
+      "hotel": "Stay in Manchester"
+    },
+    {
+      "date": "2026-11-16",
+      "time": "10:00~11:30",
+      "city": "Markfield",
+      "activity": "Upton Steel",
+      "transport": "",
+      "hotel": "(Belmont booked already)"
+    },
+    {
+      "date": "2026-11-16",
+      "time": "11:30~",
+      "city": "",
+      "activity": "Lunch with Upton",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-16",
+      "time": "15:00~16:30",
+      "city": "Manchester",
+      "activity": "Arcelor Mittal Distribution (Manchester)",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-16",
+      "time": "18:00~",
+      "city": "",
+      "activity": "Dinner with Belmont in Manchester",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-17",
+      "time": "07:00",
+      "city": "",
+      "activity": "Depart from hotel",
+      "transport": "",
+      "hotel": "Hilton Garden Inn Birmingham"
+    },
+    {
+      "date": "2026-11-17",
+      "time": "09:00~10:30",
+      "city": "Wednesbury",
+      "activity": "Top Tubes",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-17",
+      "time": "11:00~12:00",
+      "city": "West Bromwich",
+      "activity": "Steel & Alloy",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-17",
+      "time": "14:00~15:30",
+      "city": "West Bromwich",
+      "activity": "William King",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-18",
+      "time": "09:30~10:30",
+      "city": "Wolverhampton",
+      "activity": "Steel Park",
+      "transport": "",
+      "hotel": "x"
+    },
+    {
+      "date": "2026-11-18",
+      "time": "11:00~12:00",
+      "city": "Brierley Hill",
+      "activity": "Cooper & Jackson",
+      "transport": "",
+      "hotel": ""
+    },
+    {
+      "date": "2026-11-18",
+      "time": "17:50~18:15+1",
+      "city": "",
+      "activity": "CSC' return flight LHR - HKG - KAO",
+      "transport": "CX250+CX458",
+      "hotel": ""
+    }
+  ],
+  "flights": [
+    {
+      "date": "2026-11-10",
+      "number": "CX459",
+      "route": "高雄 KHH → 香港 HKG",
+      "time": "19:25–21:10",
+      "type": "航班"
+    },
+    {
+      "date": "2026-11-11",
+      "number": "CX289",
+      "route": "香港 HKG → 法蘭克福 FRA",
+      "time": "00:20–07:05",
+      "type": "航班"
+    },
+    {
+      "date": "2026-11-11",
+      "number": "LH3588 / DB",
+      "route": "法蘭克福機場火車站 → 杜賽道夫車站",
+      "time": "11:41–12:53",
+      "type": "ICE／鐵路"
+    },
+    {
+      "date": "2026-11-15",
+      "number": "BA931",
+      "route": "杜賽道夫 DUS → 倫敦 LHR",
+      "time": "10:05–10:40",
+      "type": "航班"
+    },
+    {
+      "date": "2026-11-18",
+      "number": "CX250",
+      "route": "倫敦 LHR → 香港 HKG",
+      "time": "17:50–翌日14:35",
+      "type": "航班"
+    },
+    {
+      "date": "2026-11-19",
+      "number": "CX458",
+      "route": "香港 HKG → 高雄 KHH",
+      "time": "16:45–18:15",
+      "type": "航班"
+    }
+  ],
+  "clients": [
+    {
+      "name": "Duferco",
+      "country": "德國",
+      "schedule": "11/11 晚餐交流",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "Carl Spaeter HQ",
+      "country": "德國",
+      "schedule": "11/12 上午",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "Knauf",
+      "country": "德國",
+      "schedule": "11/12 下午",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "HFS",
+      "country": "德國",
+      "schedule": "11/13 上午及午餐",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "Upton Steel",
+      "country": "英國",
+      "schedule": "11/16 10:00",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "ArcelorMittal Distribution",
+      "country": "英國",
+      "schedule": "11/16 15:00",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "Belmont",
+      "country": "英國",
+      "schedule": "11/16 晚餐交流",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "Top Tubes",
+      "country": "英國",
+      "schedule": "11/17 09:00",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "Steel & Alloy",
+      "country": "英國",
+      "schedule": "11/17 11:00",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "William King",
+      "country": "英國",
+      "schedule": "11/17 14:00",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "Steel Park",
+      "country": "英國",
+      "schedule": "11/18 09:30",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    },
+    {
+      "name": "Cooper & Jackson",
+      "country": "英國",
+      "schedule": "11/18 11:00",
+      "profile": "待補充客戶背景、產品與拜訪重點",
+      "status": "待補資料"
+    }
+  ]
+}
