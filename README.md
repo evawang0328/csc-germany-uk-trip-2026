@@ -1,0 +1,1 @@
+# csc-germany-uk-trip-2026
