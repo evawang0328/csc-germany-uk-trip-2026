@@ -9,7 +9,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: "market-intelligence-pages"
+  group: "csc-pages-deployment"
   cancel-in-progress: false
 jobs:
   build-and-deploy:
