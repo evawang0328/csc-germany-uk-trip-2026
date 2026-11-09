@@ -1,0 +1,66 @@
+{
+  "version": "2026-11-09-initial",
+  "updatedAt": "尚未由管理者更新",
+  "updatedBy": "管理者（待填）",
+  "source": "使用者提供之中鋼銷歐SG額度試算表截圖；基準日期未載明",
+  "notes": "G欄沿用截圖顯示額度，F欄為公告顯示比率，並非完整精度。4A類待政府公告。J=G-H-I。",
+  "rows": [
+    {
+      "category": "1A",
+      "product": "熱軋",
+      "countryQuota": 278922.56,
+      "allocatedRatio": 95,
+      "freeRatio": 5,
+      "allocatedQuota": 264976.43,
+      "freeQuota": 13946.13,
+      "cscRatio": 58.64,
+      "cscQuota": 155394.43,
+      "transit": 0,
+      "undelivered": 0,
+      "status": "截圖基準／待核對"
+    },
+    {
+      "category": "2",
+      "product": "冷軋",
+      "countryQuota": 134346.16,
+      "allocatedRatio": 95,
+      "freeRatio": 5,
+      "allocatedQuota": 127628.85,
+      "freeQuota": 6717.31,
+      "cscRatio": 85.43,
+      "cscQuota": 109035.69,
+      "transit": 0,
+      "undelivered": 0,
+      "status": "截圖基準／待核對"
+    },
+    {
+      "category": "3B",
+      "product": "非方向性電磁鋼片",
+      "countryQuota": 20666.63,
+      "allocatedRatio": 100,
+      "freeRatio": 0,
+      "allocatedQuota": 20666.63,
+      "freeQuota": 0,
+      "cscRatio": 97.54,
+      "cscQuota": 20158.22,
+      "transit": 0,
+      "undelivered": 0,
+      "status": "截圖基準／待核對"
+    },
+    {
+      "category": "4A",
+      "product": "鍍鋅",
+      "countryQuota": 135133.55,
+      "allocatedRatio": 90,
+      "freeRatio": 10,
+      "allocatedQuota": 121620.2,
+      "freeQuota": 13513.36,
+      "cscRatio": 8.7,
+      "cscQuota": 10580.34,
+      "transit": 0,
+      "undelivered": 0,
+      "status": "已申請，待政府公告"
+    }
+  ],
+  "history": []
+}
