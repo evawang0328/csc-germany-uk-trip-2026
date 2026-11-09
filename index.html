@@ -62,7 +62,10 @@ body.locked > header,body.locked > main {display:none!important}
 <style>
 .quota-meta{font-size:13px;color:#59738d;margin:14px 0}.quota-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:15px 0}.quota-kpis>div{background:#f0f6fc;border:1px solid #dbe7f2;border-radius:12px;padding:15px}.quota-kpis small{display:block;color:#61778d}.quota-kpis b{display:block;font-size:23px;color:#123e65;margin-top:7px}.tariff-filter{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}.tariff-filter label{display:block;font-size:13px;font-weight:700}.tariff-filter input,.tariff-filter select{margin-top:7px;width:100%;border:1px solid #bfcfe0;border-radius:8px;padding:10px;background:white;color:#1c344c}.tariff-detail{margin-top:15px;padding:16px;background:#f1f6fc;border:1px solid #dbe5ee;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.6}.tariff-small{max-width:240px;white-space:normal;font-size:12px;color:#526579}.tariff-action{border:1px solid #b9d2e4;border-radius:6px;background:white;color:#17547f;cursor:pointer;padding:5px 7px}#quota .ord-table td,#quota .ord-table th{white-space:nowrap;font-size:12px}#tariffs .ord-table td{font-size:12px;vertical-align:top}@media(max-width:760px){.tariff-filter{grid-template-columns:1fr 1fr}.quota-kpis{grid-template-columns:1fr}}@media(max-width:460px){.tariff-filter{grid-template-columns:1fr}}
 </style>
-</head><body class="locked"><div id="loginGate"><form class="loginCard" id="loginForm"><div style="font-size:30px">🔒</div><h1>德國・英國出差行程</h1><p>請輸入測試版共用密碼</p><input id="tripPassword" type="password" autocomplete="off" placeholder="共用密碼" required><button type="submit">查看行程</button><p class="err" id="loginError" aria-live="polite"></p><p class="warn">注意：這只是 HTML 畫面鎖，不能保護原始碼或行程資料。請勿用於機密資訊；內部版內容可被任何人讀取。</p></form></div><script>
+<style>
+/* V2.24 daily home: three essentials plus today's customers */
+.dash-home-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.dash-home-controls label{font-size:13px;font-weight:700;color:#4d6883}.dash-home-controls select{font:inherit;padding:10px 12px;border:1px solid #bbd0e5;background:white;border-radius:9px;color:#123b5d}.dash-neutral{background:#ecf3fa;color:#1a507a;border:1px solid #cddfea}.daily-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:24px 0 28px}.daily-info-card{border:1px solid #d3e3f1;border-radius:14px;background:#f5f9fd;padding:17px;display:flex;flex-direction:column;min-height:190px}.daily-head{display:flex;align-items:center;gap:8px}.daily-head span{font-size:22px}.daily-head h3{font-size:17px;margin:0}.daily-card-body{display:flex;flex-direction:column;gap:8px;line-height:1.55;flex:1;margin-top:13px}.daily-card-body b{font-size:16px;color:#123e61}.daily-card-body strong{font-size:22px;color:#123e61}.daily-card-body small{font-size:13px;color:#54718a}.daily-line{padding-bottom:8px;border-bottom:1px solid #e0e9f2;display:flex;flex-direction:column;gap:3px}.daily-muted{font-size:14px;color:#6c7f90}.daily-link{font:inherit;text-align:left;padding:8px 0 0;border:0;background:transparent;color:#165985;font-size:13px;font-weight:700;cursor:pointer}.daily-client-header{border-top:1px solid #dbe6f0;padding-top:22px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.daily-client-header h3{font-size:21px;margin:0 0 5px;color:#153e62}.daily-count{color:#537089;font-size:15px}.daily-client-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:18px}.daily-client{display:flex;flex-direction:column;gap:10px;border:1px solid #d4e3f2;background:#f8fbff;border-radius:13px;padding:16px}.daily-time{color:#4c7194;font-size:13px;font-weight:700}.daily-client h4{font-size:19px;color:#122f4d;margin:7px 0 0}.daily-client-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}.daily-client-actions button{cursor:pointer;border-radius:8px;border:1px solid #c3d7e9;background:#fff;color:#174f77;font:inherit;font-weight:700;font-size:13px;padding:8px 10px}.daily-client-actions button:first-child{background:#174f77;color:white;border-color:#174f77}.daily-empty{grid-column:1/-1;background:#f1f6fa;border:1px dashed #cbdce9;padding:20px;border-radius:12px;color:#567189}.daily-source-note{font-size:12px;line-height:1.65;color:#637a90;margin-top:23px}@media(max-width:850px){.daily-overview{grid-template-columns:1fr 1fr}.daily-client-list{grid-template-columns:1fr}}@media(max-width:570px){.daily-overview{grid-template-columns:1fr}.daily-info-card{min-height:unset}.daily-client-header h3{font-size:19px}.dash-home-controls{width:100%}.daily-client-actions button{flex:1}.trip-home{padding:18px}}
+</style></head><body class="locked"><div id="loginGate"><form class="loginCard" id="loginForm"><div style="font-size:30px">🔒</div><h1>德國・英國出差行程</h1><p>請輸入測試版共用密碼</p><input id="tripPassword" type="password" autocomplete="off" placeholder="共用密碼" required><button type="submit">查看行程</button><p class="err" id="loginError" aria-live="polite"></p><p class="warn">注意：這只是 HTML 畫面鎖，不能保護原始碼或行程資料。請勿用於機密資訊；內部版內容可被任何人讀取。</p></form></div><script>
 // DEMO ONLY: the password and all itinerary data are readable in this HTML source.
 // Do not use this for access control or confidential information.
 const DEMO_PASSWORD = 'Trip2026!';
@@ -120,11 +123,16 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
 <div class="ord-modal-backdrop" id="ordBackdrop" hidden><div role="dialog" aria-modal="true" aria-labelledby="ordTitle" class="ord-modal"><button class="ord-close" id="ordClose" aria-label="關閉">×</button><h2 id="ordTitle"></h2><div id="ordDetail"></div></div></div>
 <section id="dashboard">
  <div class="panel trip-home">
-  <div class="dash-title"><div><span class="dash-eyebrow">CSC · Germany &amp; UK · November 2026</span><h2>出差首頁｜Today's Trip</h2><p class="sub" id="dashDateInfo">依德國當地日期自動對照出差行程；交通與會議請以最新確認資料為準。</p></div><button type="button" id="dashShowSchedule" class="dash-cta">查看完整行程</button></div>
-  <div class="dash-stats"><div class="dash-stat"><small>行程狀態</small><b id="dashStatus">—</b></div><div class="dash-stat"><small>今日／最近行程</small><b id="dashEventCount">—</b></div><div class="dash-stat"><small>目前城市</small><b id="dashCity">—</b></div></div>
-  <div class="dash-columns"><div><h3 id="dashTimelineTitle">今日行程</h3><div id="dashTimeline" class="dash-timeline"></div></div><div><h3>快速操作</h3><div class="dash-quick"><button type="button" data-dash-tab="weather">查看當地天氣／帶傘提醒</button><button type="button" data-dash-tab="flights">航班與火車</button><button type="button" data-dash-tab="hotels">住宿安排</button><button type="button" data-dash-tab="interview">開啟客戶訪談問題</button><button type="button" data-dash-tab="presentation">查看公司簡報</button></div><h3>住宿／交通備註</h3><div class="dash-hotel" id="dashHotel">請以每日行程及訂房資訊為準。</div></div></div>
+  <div class="dash-title"><div><span class="dash-eyebrow">CSC · Germany &amp; UK · November 2026 · V2.24</span><h2>出差首頁｜每日行程看板</h2><p class="sub" id="dashDateInfo">自動顯示出差當日；可切換其他日期。</p></div><div class="dash-home-controls"><label for="dashPickDate">查看日期</label><select id="dashPickDate" aria-label="選擇出差日期"></select><button type="button" id="dashToday" class="dash-cta dash-neutral">返回當日</button></div></div>
+  <div class="daily-overview">
+    <article class="daily-info-card"><div class="daily-head"><span>🚆</span><h3>今日交通</h3></div><div id="dashTransport" class="daily-card-body">讀取行程中…</div><button type="button" class="daily-link" data-dash-tab="flights">查看航班／交通 →</button></article>
+    <article class="daily-info-card"><div class="daily-head"><span>🌦️</span><h3>今日天氣</h3></div><div id="dashWeather" class="daily-card-body">查詢當地天氣中…</div><button type="button" class="daily-link" data-dash-tab="weather">查看完整天氣預報 →</button></article>
+    <article class="daily-info-card"><div class="daily-head"><span>🏨</span><h3>今日住宿</h3></div><div id="dashHotel" class="daily-card-body">讀取住宿中…</div><button type="button" class="daily-link" data-dash-tab="hotels">查看住宿安排 →</button></article>
+  </div>
+  <div class="daily-client-header"><div><h3>今日拜訪／交流客戶 <span id="dashClientCount" class="daily-count"></span></h3><p class="sub" id="dashClientSubtitle">依行程時間排列，點選客戶即可查看資料或訂單規格。</p></div><button type="button" class="dash-cta" id="dashShowSchedule">完整每日行程 →</button></div>
+  <div id="dashDailyClients" class="daily-client-list"></div>
+  <p class="daily-source-note">資料來源：原出差行程表、客戶清單及天氣預報服務；交通與住宿如有變更，請以最新確認資訊為準。天氣為動態查詢，未取得時不顯示猜測數值。首頁資料包含公司業務資訊，公開 GitHub Pages 不具真正存取限制。</p>
  </div>
- <div class="panel"><h2>全站客戶快速搜尋｜Customer Search</h2><p class="sub">輸入客戶名稱，一次查詢拜訪檔案與訂單規格；歷史別名採原始資料對照。</p><div class="dash-searchline"><input id="dashSearch" class="search" placeholder="例如：Upton、Sebden、Cooper、SPAETER" autocomplete="off"><button type="button" id="dashClearSearch">清除</button></div><div id="dashSearchResults" class="dash-results"></div></div>
 </section><section id="schedule" class="hidden"><div class="kpis"><div class="panel"><div class="stat">10</div><div class="statlabel">出差日數</div></div><div class="panel"><div class="stat">2</div><div class="statlabel">國家</div></div><div class="panel"><div class="stat">12</div><div class="statlabel">拜訪／交流對象</div></div></div><div class="panel"><h2>選擇日期</h2><div class="days" id="days"></div><div id="daycontent"></div></div></section><section id="flights" class="hidden"><div class="panel"><h2>航班與鐵路交通</h2><p class="sub">以下按機票 PDF 整理；實際登機門、月台及時間請以航空公司／鐵路公告為準。時刻均為當地時間。</p><div id="flightlist"></div></div><div class="panel"><h2>其他交通</h2><p>11/15　19:39–21:02｜London Euston → Birmingham New Street（依 Excel 行程表）</p><p>11/16　09:30｜Belmont 安排飯店接送（依 Excel 行程表）</p><p>11/17　07:00｜飯店出發（依 Excel 行程表）</p></div></section><section id="clients" class="hidden"><div class="panel"><h2>客戶與交流對象</h2><p class="sub">內部版僅顯示非機密簡介。歷史拜訪標籤不包含報價、採購量或內部討論紀錄。</p><input class="search" id="search" placeholder="搜尋客戶名稱／國家"><div class="grid" id="clientlist"></div></div></section><section id="hotels" class="hidden"><div class="panel"><h2>住宿安排</h2><div class="grid"><div class="client"><h3>11/11–11/14 德國</h3><strong>Das Carls Hotel</strong><p>Düsseldorf｜4 晚；依 Excel 記載</p></div><div class="client"><h3>11/15 英國</h3><strong>Hilton Garden Inn Birmingham</strong><p>Birmingham｜依 Excel 記載</p></div><div class="client"><h3>11/16 英國</h3><strong>Manchester 住宿</strong><p>由 Belmont 預訂；飯店名稱待確認</p></div><div class="client"><h3>11/17 英國</h3><strong>Hilton Garden Inn Birmingham</strong><p>Birmingham｜依 Excel 記載</p></div><div class="client"><h3>11/18 英國</h3><strong>返程日</strong><p>Excel 住宿欄為 x，請確認是否不需住宿</p></div></div></div></section><section id="cbam" class="hidden"><div class="panel cbam-panel">
 <h2>UK CBAM｜英國碳邊境調整機制</h2><p class="sub">依 2026/11/03 UK CBAM 專題摘要整理｜政策資訊與示例計算，非正式稅額或法律意見</p>
 <div class="cbam-grid"><div class="cbam-kpi"><small>開始適用</small><b>2027/01/01</b><span>以英國進口日期判斷</span></div><div class="cbam-kpi"><small>進口人註冊門檻</small><b>£50,000</b><span>回溯12個月／預期30天納管貨值</span></div><div class="cbam-kpi"><small>2027年度首次申報繳稅</small><b>2028/05/31</b><span>2027義務者註冊期限：2028/01/31</span></div></div>
@@ -375,49 +383,84 @@ renderAllClients();
 })();
 </script>
 <script>
-/* V2.12: today's trip and unified customer search, no external storage */
+/* V2.24 daily home dashboard. All data from current itinerary and named meeting roster. */
 (function(){
  const el=id=>document.getElementById(id);
- const htmlEsc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const openTab=id=>{let btn=document.querySelector('[data-tab="'+id+'"]');if(btn)btn.click();};
- const tripStart='2026-11-10',tripEnd='2026-11-19';
- function renderDashboard(){
-   let date;
-   try{date=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}catch(e){date=new Date().toISOString().slice(0,10)}
-   if(!/^\d{4}-\d{2}-\d{2}$/.test(date)){const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());let m=Object.fromEntries(p.map(x=>[x.type,x.value]));date=`${m.year}-${m.month}-${m.day}`;}
-   const dates=Array.from({length:10},(_,i)=>`2026-11-${String(10+i).padStart(2,'0')}`);
-   const target=date<tripStart?tripStart:(date>tripEnd?tripEnd:date);
-   const rows=(typeof DATA!=='undefined'?DATA.rows:[]).filter(x=>x.date===target);
-   const flights=(typeof DATA!=='undefined'?DATA.flights:[]).filter(x=>x.date===target);
-   el('dashStatus').textContent=date<tripStart?'即將出發':date>tripEnd?'行程已結束':'出差中';
-   el('dashEventCount').textContent=String(rows.length+flights.length)+' 項';
-   el('dashCity').textContent=rows.find(x=>x.city)?.city||(target<='2026-11-14'?'德國':target<='2026-11-18'?'英國':'返程');
-   el('dashDateInfo').textContent=(date<tripStart?'下一個出差日':date>tripEnd?'最後一個出差日':'德國當地日期')+'｜'+target+'；按「查看完整行程」可切換所有日期。';
-   el('dashTimelineTitle').textContent=(date===target?'今日':'行程')+'｜'+target;
-   el('dashTimeline').innerHTML=rows.map(r=>`<div class="dash-event"><small>${htmlEsc(r.time||'待確認')} · ${htmlEsc(r.city||'')}</small><b>${htmlEsc(r.activity||r.hotel||'行程')}</b>${r.transport?`<p>交通：${htmlEsc(r.transport)}</p>`:''}${r.hotel?`<p>飯店：${htmlEsc(r.hotel)}</p>`:''}</div>`).join('')+flights.map(f=>`<div class="dash-event"><small>${htmlEsc(f.time)}</small><b>${htmlEsc(f.number)} · ${htmlEsc(f.route)}</b></div>`).join('')||'<p>尚無已登錄行程。</p>';
-   const hotel=rows.map(r=>r.hotel).filter(x=>x&&x!=='x');el('dashHotel').textContent=hotel.length?[...new Set(hotel)].join('／'):'請點選「住宿安排」查看訂房資訊。';
-   el('dashShowSchedule').onclick=()=>{openTab('schedule');if(typeof selected!=='undefined'&&typeof renderDay==='function'){selected=target;renderDay();}};
+ const h=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const openTab=id=>{const b=document.querySelector('[data-tab="'+id+'"]');if(b)b.click()};
+ const dates=Array.from({length:10},(_,i)=>'2026-11-'+String(10+i).padStart(2,'0'));
+ const todayDate=()=>{try{const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));return p.year+'-'+p.month+'-'+p.day;}catch(e){return new Date().toISOString().slice(0,10)}};
+ const dateClamp=()=>{let d=todayDate();return d<dates[0]?dates[0]:d>dates[dates.length-1]?dates[dates.length-1]:d};
+ let viewed=dateClamp();
+ // Roster is based on the supplied 2026-11 trip schedule, not on fuzzy matching every itinerary row.
+ const roster={
+  '2026-11-11':[{n:'Duferco',time:'晚餐交流',city:'Düsseldorf'}],
+  '2026-11-12':[{n:'Carl Spaeter HQ',time:'上午',city:'Duisburg'},{n:'Knauf',time:'下午',city:'Duisburg'}],
+  '2026-11-13':[{n:'HFS',time:'上午及午餐',city:'Hagen'}],
+  '2026-11-16':[{n:'Upton Steel',time:'10:00–11:30',city:'Markfield'},{n:'ArcelorMittal Distribution',time:'15:00–16:30',city:'Manchester'},{n:'Belmont',time:'18:00 晚餐交流',city:'Manchester'}],
+  '2026-11-17':[{n:'Top Tubes',time:'09:00–10:30',city:'Wednesbury'},{n:'Steel & Alloy',time:'11:00–12:00',city:'West Bromwich'},{n:'William King',time:'14:00–15:30',city:'West Bromwich'}],
+  '2026-11-18':[{n:'Steel Park',time:'09:30–10:30',city:'Wolverhampton'},{n:'Cooper & Jackson',time:'11:00–12:00',city:'Brierley Hill'}]
+ };
+ const dayStay={
+  '2026-11-10':{name:'航程中／轉機',detail:'高雄 → 香港；當晚交通為主，住宿未另列'},
+  '2026-11-11':{name:'Das Carls Hotel',detail:'Düsseldorf｜11/11 晚'},
+  '2026-11-12':{name:'Das Carls Hotel',detail:'Düsseldorf｜11/12 晚'},
+  '2026-11-13':{name:'Das Carls Hotel',detail:'Düsseldorf｜11/13 晚'},
+  '2026-11-14':{name:'Das Carls Hotel',detail:'Düsseldorf｜11/14 晚'},
+  '2026-11-15':{name:'Hilton Garden Inn Birmingham',detail:'Birmingham｜11/15 晚'},
+  '2026-11-16':{name:'Manchester 住宿',detail:'Belmont 協助預訂；飯店名稱待確認'},
+  '2026-11-17':{name:'Hilton Garden Inn Birmingham',detail:'Birmingham｜11/17 晚'},
+  '2026-11-18':{name:'返程航班',detail:'依行程 17:50 倫敦起飛，當晚不列住宿'},
+  '2026-11-19':{name:'返台日',detail:'香港轉機／高雄；請查看航班資料'}
+ };
+ const weatherPlace={
+  '2026-11-10':['高雄',22.63,120.30,'Asia/Taipei'],
+  '2026-11-11':['杜賽道夫',51.2277,6.7735,'Europe/Berlin'],
+  '2026-11-12':['杜伊斯堡',51.4344,6.7623,'Europe/Berlin'],
+  '2026-11-13':['哈根',51.3671,7.4633,'Europe/Berlin'],
+  '2026-11-14':['杜賽道夫',51.2277,6.7735,'Europe/Berlin'],
+  '2026-11-15':['倫敦',51.5074,-0.1278,'Europe/London'],
+  '2026-11-16':['曼徹斯特',53.4808,-2.2426,'Europe/London'],
+  '2026-11-17':['伯明罕',52.4862,-1.8904,'Europe/London'],
+  '2026-11-18':['倫敦',51.5074,-0.1278,'Europe/London'],
+  '2026-11-19':['香港',22.3193,114.1694,'Asia/Hong_Kong']
+ };
+ const hourOrder=t=>{const m=String(t||'').match(/^(\d{1,2}):(\d{2})/);return m?+m[1]*60+(+m[2]):/morning|上午/i.test(t)?540:/afternoon|下午/i.test(t)?840:/dinner|晚餐/i.test(t)?1080:720};
+ const transportNotes={
+  '2026-11-15':[{time:'19:39–21:02',txt:'London Euston → Birmingham New Street（鐵路）'}],
+  '2026-11-16':[{time:'09:30',txt:'Belmont 安排飯店接送'}],
+  '2026-11-17':[{time:'07:00',txt:'由飯店出發'}]
+ };
+ const toProfile=n=>{openTab('clients');const search=el('search');if(search){search.value=n;search.dispatchEvent(new Event('input'));el('clientlist')?.scrollIntoView({behavior:'smooth',block:'start'})}};
+ const toInterview=n=>{openTab('interview');const sel=el('ivCustomer');if(sel){const found=[...sel.options].find(o=>o.value.toLowerCase().replace(/[^a-z0-9]/g,'')===n.toLowerCase().replace(/[^a-z0-9]/g,''));if(found){sel.value=found.value;sel.dispatchEvent(new Event('change'))}else if(el('ivOther')){el('ivOther').value=n;el('ivOther').dispatchEvent(new Event('input'))}}};
+ const weatherCache=new Map();
+ async function updateWeather(date){const target=el('dashWeather');const p=weatherPlace[date];if(!p){target.textContent='當日無預報地點';return}let [city,lat,lon,tz]=p;target.innerHTML='<b>'+h(city)+'</b><small>天氣資料查詢中…</small>';
+  if(weatherCache.has(date)){target.innerHTML=weatherCache.get(date);return}
+  try{const u='https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone='+encodeURIComponent(tz)+'&forecast_days=16';const res=await fetch(u);if(!res.ok)throw Error('API '+res.status);const j=await res.json();let ix=j.daily?.time?.indexOf(date)??-1;if(ix<0)throw Error('日期不在預報範圍內');let hi=j.daily.temperature_2m_max[ix],lo=j.daily.temperature_2m_min[ix],rain=j.daily.precipitation_probability_max[ix];if(!Number.isFinite(hi)||!Number.isFinite(lo))throw Error('無氣溫資料');let note=Number.isFinite(rain)?'<small>降雨機率 '+Math.round(rain)+'%'+(rain>=60?' · 建議帶傘':rain>=30?' · 建議備傘':'')+'</small>':'';let html='<b>'+h(city)+'</b><strong>'+Math.round(lo)+'–'+Math.round(hi)+'°C</strong>'+note;weatherCache.set(date,html);if(viewed===date)target.innerHTML=html;
+  }catch(e){if(viewed===date)target.innerHTML='<b>'+h(city)+'</b><small>目前無法取得該日預報；請至天氣頁查看。</small>'}
  }
- function norm(x){return String(x||'').toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'')}
- function getCandidates(){let map=new Map();
-  if(typeof PUBLIC_CLIENTS!=='undefined')for(const c of PUBLIC_CLIENTS){let k=norm(c.name);if(!map.has(k))map.set(k,{name:c.name,country:c.country||'',profile:true,spec:false,aliases:new Set([c.name])});}
-  if(typeof SPEC_DATA!=='undefined')for(const r of SPEC_DATA){let name=r[2],k=norm(name);if(!k)continue;let found=map.get(k);if(!found){found={name,country:r[0],profile:false,spec:true,aliases:new Set([name])};map.set(k,found)}else{found.spec=true;found.country=found.country||r[0]}}
-  return [...map.values()].sort((a,b)=>a.name.localeCompare(b.name));
+ function render(){const date=viewed;const rows=(typeof DATA!=='undefined'?DATA.rows:[]).filter(r=>r.date===date);const fl=(typeof DATA!=='undefined'?DATA.flights:[]).filter(f=>f.date===date);
+  el('dashPickDate').value=date;
+  const status=todayDate()<dates[0]?'出差前，預覽首日':todayDate()>dates[dates.length-1]?'行程已結束，預覽末日':date===todayDate()?'今天':'手動查看';
+  el('dashDateInfo').textContent=date+'｜'+status+'｜上方為交通、天氣、飯店；下方為當日拜訪客戶。';
+  const trans=[];for(let f of fl){trans.push({time:f.time||'',text:(f.number||'')+' · '+(f.route||'')})}
+  for(let r of rows){let t=String(r.transport||''),a=String(r.activity||'');if(t&&!fl.some(f=>t.includes(f.number)||t.includes(String(f.number).split(' ')[0]))){trans.push({time:r.time||'',text:(t+' · '+a).trim()})}else if(/station|train|火車|Euston|pickup|pick-up|depart from hotel|接送|to Düsseldorf/i.test(a)&&!t){trans.push({time:r.time||'',text:a})}}
+  for(let x of transportNotes[date]||[]){if(!trans.some(t=>t.text.includes(x.txt.slice(0,12))))trans.push({time:x.time,text:x.txt})}
+  trans.sort((a,b)=>hourOrder(a.time)-hourOrder(b.time));
+  el('dashTransport').innerHTML=trans.length?trans.map(t=>'<div class="daily-line"><small>'+h(t.time)+'</small><b>'+h(t.text)+'</b></div>').join(''):'<span class="daily-muted">當日無已確認的航班／鐵路／接送資訊。詳見每日行程。</span>';
+  const stay=dayStay[date];el('dashHotel').innerHTML=stay?'<b>'+h(stay.name)+'</b><small>'+h(stay.detail)+'</small>':'<span class="daily-muted">尚無住宿資料</span>';
+  const clients=roster[date]||[];el('dashClientCount').textContent=clients.length?'（'+clients.length+' 位／家）':'';
+  el('dashDailyClients').innerHTML=clients.length?clients.map(c=>'<article class="daily-client"><div class="daily-client-info"><span class="daily-time">'+h(c.time)+' · '+h(c.city)+'</span><h4>'+h(c.n)+'</h4></div><div class="daily-client-actions"><button type="button" data-daily-profile="'+h(c.n)+'">客戶資料</button><button type="button" data-daily-spec="'+h(c.n)+'">訂單 SPEC</button><button type="button" data-daily-interview="'+h(c.n)+'">訪談問題</button></div></article>').join(''):'<div class="daily-empty">當日無安排客戶拜訪／交流。可在上方查看交通與住宿，或切換其他日期。</div>';
+  updateWeather(date);
  }
- function renderSearch(){const q=norm(el('dashSearch').value.trim());let all=getCandidates();let arr=(q?all.filter(c=>norm(c.name).includes(q)):all.filter(c=>c.profile)).slice(0,q?35:12);el('dashSearchResults').innerHTML=arr.map((c,i)=>`<div class="dash-result"><h3>${htmlEsc(c.name)}</h3><small>${htmlEsc(c.country)}　${c.profile?'拜訪客戶資料':''}${c.spec?' · 訂單規格':''}</small><div class="dash-result-actions">${c.profile?`<button data-dash-profile="${htmlEsc(c.name)}">查看客戶資料</button>`:''}${c.spec?`<button class="secondary" data-dash-spec="${htmlEsc(c.name)}" data-dash-country="${htmlEsc(c.country)}">查看訂單規格</button>`:''}<button class="secondary" data-dash-interview="${htmlEsc(c.name)}">訪談問題</button></div></div>`).join('')||'<p class="sub">沒有符合的客戶；可到「客戶訪談問題」新增客戶。</p>';
- }
- el('dashSearchResults').addEventListener('click',ev=>{
-  const btn=ev.target.closest('button');if(!btn)return;
-  if(btn.hasAttribute('data-dash-profile')){const name=btn.getAttribute('data-dash-profile');openTab('clients');el('search').value=name;el('search').dispatchEvent(new Event('input'));el('clientlist').scrollIntoView({behavior:'smooth',block:'start'});}
-  if(btn.hasAttribute('data-dash-spec')){let name=btn.getAttribute('data-dash-spec'),ctry=btn.getAttribute('data-dash-country');if(typeof window.showCustomerSpecs==='function'){window.showCustomerSpecs(name,ctry)}else openTab('orders');}
-  if(btn.hasAttribute('data-dash-interview')){let name=btn.getAttribute('data-dash-interview');openTab('interview');const opts=el('ivCustomer');if(opts){let opt=[...opts.options].find(x=>norm(x.value)===norm(name));if(opt){opts.value=opt.value;opts.dispatchEvent(new Event('change'))}else if(el('ivOther')){el('ivOther').value=name;el('ivOther').dispatchEvent(new Event('input'))}}}
- });
- el('dashSearch').addEventListener('input',renderSearch);
- el('dashClearSearch').addEventListener('click',()=>{el('dashSearch').value='';renderSearch();el('dashSearch').focus()});
+ el('dashPickDate').innerHTML=dates.map(d=>'<option value="'+d+'">'+d.slice(5).replace('-','/')+'（'+['日','一','二','三','四','五','六'][new Date(d+'T12:00:00').getDay()]+'）</option>').join('');
+ el('dashPickDate').addEventListener('change',ev=>{viewed=ev.target.value;render()});
+ el('dashToday').addEventListener('click',()=>{viewed=dateClamp();render()});
+ el('dashShowSchedule').addEventListener('click',()=>{openTab('schedule');if(typeof selected!=='undefined'&&typeof renderDay==='function'){selected=viewed;renderDay()}});
+ el('dashDailyClients').addEventListener('click',ev=>{let b=ev.target.closest('button');if(!b)return;if(b.hasAttribute('data-daily-profile'))toProfile(b.dataset.dailyProfile);if(b.hasAttribute('data-daily-spec')){const n=b.dataset.dailySpec,who=(typeof PUBLIC_CLIENTS!=='undefined'?PUBLIC_CLIENTS.find(c=>c.name===n):null);if(typeof window.showCustomerSpecs==='function')window.showCustomerSpecs(n,who?.country);else openTab('orders')}if(b.hasAttribute('data-daily-interview'))toInterview(b.dataset.dailyInterview)});
  document.querySelectorAll('[data-dash-tab]').forEach(b=>b.addEventListener('click',()=>openTab(b.getAttribute('data-dash-tab'))));
- renderDashboard();renderSearch();
- // Refresh on opening dashboard so locally added profiles appear in search.
- document.querySelector('[data-tab="dashboard"]').addEventListener('click',()=>{renderDashboard();renderSearch()});
+ document.querySelector('[data-tab="dashboard"]').addEventListener('click',()=>{if(viewed===dateClamp())render()});
+ render();
 })();
 </script><script>
 (()=>{
