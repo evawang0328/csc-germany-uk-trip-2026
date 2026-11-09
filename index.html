@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.31</title><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.32</title><style>
 :root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#192b40;background:#f2f5fa}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#102b4b,#185783);color:white;padding:34px max(22px,calc((100vw - 1120px)/2)) 28px}header h1{margin:8px 0;font-size:clamp(24px,4vw,38px)}header p{opacity:.84;margin:8px 0}.eyebrow{letter-spacing:2px;font-size:12px;color:#b6d9f8}main{max-width:1120px;margin:auto;padding:24px 18px 70px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.tabs button,.daybtn,.filter{cursor:pointer;border:1px solid #d8e2ee;border-radius:11px;padding:11px 15px;background:white;color:#24425f;font-weight:700}.tabs button.active,.daybtn.active,.filter.active{background:#164c7a;color:white;border-color:#164c7a}.panel{background:white;border:1px solid #e1e8f1;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 6px 20px #183c6010}.panel h2{margin:0 0 14px;font-size:21px}.sub{color:#65778d;font-size:13px}.days{display:grid;grid-template-columns:repeat(10,minmax(70px,1fr));gap:7px;margin-bottom:16px}.daybtn{padding:12px 3px}.daybtn small{display:block;font-weight:400;margin-top:4px}.timeline{border-left:2px solid #bcd1e3;margin-left:9px;padding-left:20px}.event{position:relative;padding:4px 0 18px}.event:before{content:"";position:absolute;left:-27px;top:10px;width:11px;height:11px;border-radius:50%;background:#2578b2;border:3px solid white;box-shadow:0 0 0 1px #9cbcd7}.time{font-size:13px;font-weight:700;color:#17669b}.event h3{font-size:16px;margin:5px 0}.event p{margin:3px 0;color:#64748b;font-size:14px;white-space:pre-line}.pill{display:inline-block;padding:4px 8px;background:#eaf2fa;border-radius:20px;color:#285c83;font-size:12px;margin:5px 5px 0 0}.warning{background:#fff7e7;color:#815c19;border-left:4px solid #dfad42;padding:12px 15px;border-radius:8px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.client{border:1px solid #e0e8f1;border-radius:13px;padding:16px}.client h3{margin:0 0 9px;font-size:17px}.client p{font-size:13px;color:#617388}.flight{border-bottom:1px solid #e8edf4;padding:13px 0}.flight:last-child{border:0}.flight strong{font-size:17px}.search{padding:12px 14px;border:1px solid #ccd9e7;border-radius:10px;width:100%;max-width:380px;margin:0 0 15px}.btn{border:0;border-radius:9px;padding:9px 13px;background:#e5f0f9;color:#18517b;cursor:pointer}.note{width:100%;min-height:115px;padding:12px;border:1px solid #d1dce9;border-radius:10px;font:inherit;resize:vertical}.muted{color:#667a8f}.hidden{display:none}.stat{font-size:27px;font-weight:800;color:#194c77}.statlabel{font-size:13px;color:#708096}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.footer{font-size:12px;color:#718197;margin-top:25px}.banner{background:#fff4db;color:#6d4e0c;padding:12px 16px;font-size:13px}a{color:#17699d}@media(max-width:800px){.days{grid-template-columns:repeat(5,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.panel{padding:16px}header{padding:26px 18px}}
 
 /* V2.1 clickable customer details */
@@ -71,31 +71,35 @@ body.locked > header,body.locked > main {display:none!important}
 </style>
 
 <style>
-/* V2.31: phone-only grouped menu, responsive even on narrow iPhones. */
-.mobile-grouped-nav{display:none}
-@media (max-width: 900px){
+/* V2.32: identical grouped navigation on desktop and mobile. */
+main .tabs{display:none!important}
+main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:16px;border-radius:15px;border:1px solid #cfdfed;background:#fff;box-shadow:0 3px 12px #1c46600b}
+.mobile-nav-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:11px;color:#173c61;font-size:14px}
+#mobileNavCurrent{font-size:12px;font-weight:700;color:#1f6490;background:#eaf4fb;border-radius:7px;padding:6px 8px;text-align:right}
+.mobile-category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.mobile-category{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;min-height:54px;padding:12px;border:1px solid #cbddeb;border-radius:10px;background:#f5f9fc;color:#1c456a;font-weight:750;font-size:14px;line-height:1.4;text-align:left;cursor:pointer}
+.mobile-category span{font-size:11px;font-weight:600;color:#688095;flex-shrink:0}
+.mobile-category.active{background:#185681;color:#fff;border-color:#185681}
+.mobile-category.active span{color:#e0effb}
+.mobile-category-panel{border:1px solid #d8e5f0;border-radius:10px;background:#f7fbff;margin-top:10px;padding:10px}
+.mobile-page-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mobile-page-list[hidden]{display:none!important}
+.mobile-page-list button{min-width:0;width:100%;padding:12px;border:1px solid #dfebf5;background:#fff;border-radius:8px;color:#194b71;font-weight:700;font-size:13px;line-height:1.5;text-align:left;cursor:pointer;overflow-wrap:anywhere}
+.mobile-page-list button.active{background:#e3f1fa;border-color:#76b0d5;color:#11446b}
+.mobile-page-list button:focus-visible,.mobile-category:focus-visible{outline:3px solid #ffb347;outline-offset:2px}
+.mobile-nav-version{text-align:right;color:#7890a5;font-size:11px;margin-top:9px}
+@media (max-width:900px){
  header{padding:16px 18px 19px}
  header h1{font-size:clamp(23px,6vw,30px);line-height:1.3;margin:7px 0}
  header p{font-size:13px;line-height:1.5;margin:5px 0;opacity:.9}
  header .eyebrow{font-size:10px;letter-spacing:1.35px}
- main .tabs{display:none!important}
- main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:14px;border-radius:15px;border:1px solid #cfdfed;background:#fff;box-shadow:0 3px 12px #1c46600b}
- .mobile-nav-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:11px;color:#173c61;font-size:14px}
- #mobileNavCurrent{font-size:12px;font-weight:700;color:#1f6490;background:#eaf4fb;border-radius:7px;padding:6px 8px;text-align:right}
- .mobile-category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
- .mobile-category{display:flex;align-items:center;justify-content:space-between;gap:5px;min-width:0;min-height:50px;padding:10px 9px;border:1px solid #cbddeb;border-radius:10px;background:#f5f9fc;color:#1c456a;font-weight:750;font-size:13px;line-height:1.4;text-align:left;cursor:pointer}
- .mobile-category span{font-size:10px;font-weight:600;color:#688095;flex-shrink:0}
- .mobile-category.active{background:#185681;color:#fff;border-color:#185681}
- .mobile-category.active span{color:#e0effb}
- .mobile-category-panel{border:1px solid #d8e5f0;border-radius:10px;background:#f7fbff;margin-top:10px;padding:7px}
- .mobile-page-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
- .mobile-page-list[hidden]{display:none!important}
- .mobile-page-list button{min-width:0;width:100%;padding:10px 9px;border:1px solid #dfebf5;background:#fff;border-radius:8px;color:#194b71;font-weight:700;font-size:12px;line-height:1.5;text-align:left;cursor:pointer;overflow-wrap:anywhere}
- .mobile-page-list button.active{background:#e3f1fa;border-color:#76b0d5;color:#11446b}
- .mobile-page-list button:focus-visible,.mobile-category:focus-visible{outline:3px solid #ffb347;outline-offset:2px}
- .mobile-nav-version{text-align:right;color:#7890a5;font-size:10px;margin-top:8px}
+ .mobile-category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .mobile-page-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .mobile-category{font-size:13px;min-height:50px;padding:10px}
+ .mobile-category span{font-size:10px}
+ main .mobile-grouped-nav{padding:14px}
 }
-@media (max-width: 360px){.mobile-page-list{grid-template-columns:1fr}.mobile-category{font-size:12px}.mobile-category span{font-size:9px}}
+@media (max-width:360px){.mobile-page-list{grid-template-columns:1fr}.mobile-category{font-size:12px}.mobile-category span{font-size:9px}}
 </style>
 </head><body class="locked"><div id="loginGate"><form class="loginCard" id="loginForm"><div style="font-size:30px">🔒</div><h1>德國・英國出差行程</h1><p>請輸入測試版共用密碼</p><input id="tripPassword" type="password" autocomplete="off" placeholder="共用密碼" required><button type="submit">查看行程</button><p class="err" id="loginError" aria-live="polite"></p><p class="warn">注意：這只是 HTML 畫面鎖，不能保護原始碼或行程資料。請勿用於機密資訊；內部版內容可被任何人讀取。</p></form></div><script>
 // DEMO ONLY: the password and all itinerary data are readable in this HTML source.
@@ -106,9 +110,9 @@ function unlock(){document.body.classList.remove('locked');gate.hidden=true;sess
 if(sessionStorage.getItem('trip-demo-unlocked')==='yes')unlock();
 document.getElementById('loginForm').addEventListener('submit',function(e){e.preventDefault();if(document.getElementById('tripPassword').value===DEMO_PASSWORD){unlock()}else{document.getElementById('loginError').textContent='密碼不正確，請重新輸入';document.getElementById('tripPassword').value=''}});
 </script><div class="banner">測試版 HTML 共用密碼僅為畫面鎖，不是真正的存取驗證。請勿輸入或上傳機密資料。</div><header><div class="eyebrow">CSC · OVERSEAS MARKET VISIT · 2026</div><h1>德國・英國市場考察</h1><p>2026 年 11 月 10 日 — 11 月 19 日　｜　德國 Düsseldorf / Duisburg / Hagen · 英國 London / Birmingham / Manchester</p></header><main><div class="tabs" id="tabs"><button data-tab="dashboard" class="active"><span class="tab-number">01</span> 出差首頁</button><button data-tab="schedule"><span class="tab-number">02</span> 每日行程</button><button data-tab="weather"><span class="tab-number">03</span> 天氣預報</button><button data-tab="flights"><span class="tab-number">04</span> 航班交通</button><button data-tab="hotels"><span class="tab-number">05</span> 住宿安排</button><button data-tab="clients"><span class="tab-number">06</span> 客戶資料</button><button data-tab="quota"><span class="tab-number">07</span> 中鋼銷歐額度及歐英通關</button><button data-tab="orders"><span class="tab-number">08</span> 中鋼銷歐訂單</button><button data-tab="interview"><span class="tab-number">09</span> 客戶訪談問題</button><button data-tab="tariffs"><span class="tab-number">10</span> 歐盟、英國關稅查詢</button><button data-tab="eu-country-quotas"><span class="tab-number">11</span> 歐盟各國配額</button><button data-tab="presentation"><span class="tab-number">12</span> 公司簡報</button><button data-tab="cbam"><span class="tab-number">13</span> UK CBAM 專區</button><button data-tab="market-intel"><span class="tab-number">14</span> 歐德英市場近況</button></div>
-<!-- V2.31 mobile grouped navigation: four category buttons + one full-width panel. -->
-<nav class="mobile-grouped-nav" aria-label="手機版功能分類選單">
- <div class="mobile-nav-bar"><strong>快速功能選單</strong><span id="mobileNavCurrent" aria-live="polite">01 出差首頁</span></div>
+<!-- V2.32 mobile grouped navigation: four category buttons + one full-width panel. -->
+<nav class="mobile-grouped-nav" aria-label="全裝置功能分類選單">
+ <div class="mobile-nav-bar"><strong>快速功能選單｜電腦、手機一致</strong><span id="mobileNavCurrent" aria-live="polite">01 出差首頁</span></div>
  <div class="mobile-category-grid" role="group" aria-label="功能分類">
   <button class="mobile-category active" type="button" data-mobile-category="trip" aria-expanded="true">🧳 出差行程 <span>01–05</span></button>
   <button class="mobile-category" type="button" data-mobile-category="client" aria-expanded="false">🤝 客戶與業務 <span>06–09</span></button>
@@ -129,7 +133,7 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
    <button type="button" data-mobile-go="presentation">12 公司簡報</button>
   </div>
  </div>
- <div class="mobile-nav-version">手機選單 V2.31</div>
+ <div class="mobile-nav-version">統一選單 V2.32</div>
 </nav>
 
 <section id="weather" class="hidden"><div class="panel"><h2>德英出差天氣預報｜Weather by Itinerary</h2><p class="sub">依 2026/11/10–11/19 每日所在城市查詢最高／最低溫、降雨機率及是否建議帶傘。資訊由 Open-Meteo 提供，超出可預測期間不顯示臆測值。</p><div class="iv-alert">天氣預報會持續變動；下方為即時查詢結果，出門前請再次確認當日天氣與交通狀況。若連線失敗，可點「重新取得天氣」。</div><div class="iv-toolbar"><button type="button" id="weatherRefresh">重新取得天氣預報</button><span id="weatherStatus" role="status" aria-live="polite"></span></div><div id="weatherGrid" class="weather-grid"><p>正在準備天氣資訊…</p></div><p class="sub">來源：Open-Meteo Weather Forecast API（無須帳號）；依各城市當地日期顯示，降雨建議屬便利提示、非氣象警報。</p></div></section>
@@ -644,7 +648,7 @@ renderAllClients();
 </script>
 
 <script>
-/* V2.31 grouped mobile navigation: use existing data-tab controls. */
+/* V2.32 grouped mobile navigation: use existing data-tab controls. */
 (function(){
   const nav=document.querySelector('.mobile-grouped-nav');
   if(!nav)return;
