@@ -1,9 +1,9 @@
 {
-  "version": "2026-11-09-HR-GI-updated-v2.23",
+  "version": "2026-11-09-ES-updated-v2.25",
   "updatedAt": "2026-11-09（依使用者提供，非系統即時同步）",
   "updatedBy": "額度管理者",
   "source": "使用者提供之中鋼銷歐SG額度試算表截圖；基準日期未載明",
-  "notes": "G欄沿用使用者提供的截圖基準，4A類待政府公告。J=G-H-I。本次更新熱軋1A：在途81,603MT、未出貨46,725MT；鍍鋅GI/4A：在途2,910.625MT、未出貨0MT；冷軋沿用在途10,333MT、未出貨56,025MT；3B維持0MT。",
+  "notes": "G欄沿用原截圖基準；4A類待政府公告；J=G-H-I。最新更新3B/ES：在途10,382MT、已接單未出貨5,500MT。其餘沿用前次：1A/熱軋在途81,603MT、未出貨46,725MT；2/冷軋在途10,333MT、未出貨56,025MT；4A/GI在途2,910.625MT、未出貨0MT。",
   "rows": [
     {
       "category": "1A",
@@ -43,8 +43,8 @@
       "freeQuota": 0,
       "cscRatio": 97.54,
       "cscQuota": 20158.22,
-      "transit": 0,
-      "undelivered": 0,
+      "transit": 10382,
+      "undelivered": 5500,
       "status": "截圖基準／待核對"
     },
     {
@@ -92,6 +92,16 @@
       "undelivered": 0,
       "remaining": 7669.715,
       "note": "依使用者本次提供；4A待政府公告"
+    },
+    {
+      "date": "2026-11-09",
+      "by": "額度管理者",
+      "category": "3B",
+      "product": "非方向性電磁鋼片（ES）",
+      "transit": 10382,
+      "undelivered": 5500,
+      "remaining": 4276.22,
+      "note": "依使用者最新提供；其餘三類沿用先前設定"
     }
   ]
 }
