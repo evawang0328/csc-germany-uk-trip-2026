@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-09 13:00",
+  "mode": "2026/11/09 初始查證版（每日自動更新待 GitHub Actions 啟用）",
+  "warning": "本頁為最新已公開資料整理，非即時報價。",
+  "highlights": [
+    {
+      "region": "EU",
+      "title": "產量／價格／貿易政策",
+      "bullets": [
+        {
+          "text": "2026年9月歐盟27國粗鋼產量10.1 Mt，年減5.0%；1–9月94.5 Mt，年減0.8%。",
+          "url": "https://worldsteel.org/media/press-releases/2026/september-2026-crude-steel-production/"
+        },
+        {
+          "text": "EUROMETAL 11/06報導：歐洲HRC鋼廠爭取2027年第一季較高價格，但現貨交易偏淡，應區分報價與成交價。",
+          "url": "https://eurometal.net/2026/11/"
+        },
+        {
+          "text": "ArcelorMittal第三季報告認為歐洲鋼價正反映進口減少及成本壓力；此屬公司管理層觀察。",
+          "url": "https://corporate.arcelormittal.com/media/news/regulatory-news/arcelormittal-reports-third-quarter-2026-results"
+        }
+      ]
+    },
+    {
+      "region": "DE",
+      "title": "工業／汽車／鋼市",
+      "bullets": [
+        {
+          "text": "德國9月工業生產月增0.7%、年增0.4%；同期汽車業產量月增17.1%，含前期低基期影響。",
+          "url": "https://www.destatis.de/EN/Press/2026/11/PE26_389_421.html"
+        },
+        {
+          "text": "德國9月製造業新訂單月增4.4%，汽車業新訂單月增10.5%；仍需觀察連續數月趨勢。",
+          "url": "https://www.destatis.de/EN/Press/2026/11/PE26_385_421.html"
+        },
+        {
+          "text": "EUROMETAL近期報導北歐HRC鋼廠推動提價，買方接受程度有限。",
+          "url": "https://eurometal.net/european-local-hrc-market-diverges-as-italy-gains-north-struggles-with-higher-targets/"
+        }
+      ]
+    },
+    {
+      "region": "UK",
+      "title": "建築／政策／產業",
+      "bullets": [
+        {
+          "text": "英國截至2026年8月的三個月建築產出下降1.0%；私人新建住宅下降3.2%。",
+          "url": "https://www.ons.gov.uk/businessindustryandtrade/constructionindustry/bulletins/constructionoutputingreatbritain/LATEST"
+        },
+        {
+          "text": "英國新版鋼鐵進口措施於2026/7/1生效，總免稅配額較先前措施下降51%，配額外稅率50%。",
+          "url": "https://www.gov.uk/government/publications/uks-steel-trade-measure-from-1-july-2026/uks-steel-trade-measure-from-1-july-2026"
+        },
+        {
+          "text": "英國Steel Strategy聚焦國內供應鏈、投資及下游使用；應追蹤對進口平軋鋼材的影響。",
+          "url": "https://www.gov.uk/government/publications/steel-strategy/the-uk-steel-strategy-web-version"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "title": "European HRC mills seek higher Q1 prices; spot activity remains slow",
+      "date": "2026-11-06",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/2026/11/",
+      "regions": [
+        "EU",
+        "DE"
+      ],
+      "category": "價格／供需",
+      "summary": "歐洲HRC供應商尋求拉高2027年第一季報價；需求及現貨成交仍相對平淡。",
+      "implication": "拜訪服務中心時核對實際成交、2027Q1採購量與補庫時點，不直接將報價漲幅視為成交漲幅。"
+    },
+    {
+      "title": "ArcelorMittal reports third quarter 2026 results",
+      "date": "2026-11-05",
+      "source": "ArcelorMittal",
+      "url": "https://corporate.arcelormittal.com/media/news/regulatory-news/arcelormittal-reports-third-quarter-2026-results",
+      "regions": [
+        "EU",
+        "DE"
+      ],
+      "category": "產能鋼廠",
+      "summary": "ArcelorMittal稱新TRQ下歐洲高爐已恢復運轉，鋼價正反映成本及供需變化。",
+      "implication": "追蹤鋼廠復產是否改善交期，並與客戶驗證成交價變化。"
+    },
+    {
+      "title": "Production in September 2026: +0.7% on previous month",
+      "date": "2026-11-06",
+      "source": "Destatis",
+      "url": "https://www.destatis.de/EN/Press/2026/11/PE26_389_421.html",
+      "regions": [
+        "DE"
+      ],
+      "category": "下游需求",
+      "summary": "德國9月工業生產月增0.7%，汽車業產量月增17.1%，建築產出下降2.6%。",
+      "implication": "分別詢問汽車、工程與建築客戶是否有實際補庫。"
+    },
+    {
+      "title": "New orders in manufacturing in September 2026: +4.4%",
+      "date": "2026-11-05",
+      "source": "Destatis",
+      "url": "https://www.destatis.de/EN/Press/2026/11/PE26_385_421.html",
+      "regions": [
+        "DE"
+      ],
+      "category": "下游需求",
+      "summary": "德國9月製造業新訂單月增4.4%，汽車業新訂單月增10.5%。",
+      "implication": "訂單改善不一定立即反映鋼材採購，追蹤拉貨延遲。"
+    },
+    {
+      "title": "September 2026 crude steel production",
+      "date": "2026-10-23",
+      "source": "worldsteel",
+      "url": "https://worldsteel.org/media/press-releases/2026/september-2026-crude-steel-production/",
+      "regions": [
+        "EU",
+        "DE",
+        "UK"
+      ],
+      "category": "產能鋼廠",
+      "summary": "歐盟27國9月粗鋼產量10.1 Mt，年減5.0%。",
+      "implication": "留意低產能利用率和價格上漲是否並存。"
+    },
+    {
+      "title": "UK steel trade measure from 1 July 2026",
+      "date": "2026-07-01",
+      "source": "GOV.UK",
+      "url": "https://www.gov.uk/government/publications/uks-steel-trade-measure-from-1-july-2026/uks-steel-trade-measure-from-1-july-2026",
+      "regions": [
+        "UK"
+      ],
+      "category": "政經政策",
+      "summary": "英國新鋼材進口措施較前制縮減總免稅配額51%，配額外稅率50%。",
+      "implication": "訪談客戶詢問配額限制及進口採購策略。"
+    },
+    {
+      "title": "Construction output in Great Britain: August 2026",
+      "date": "2026-10-15",
+      "source": "ONS",
+      "url": "https://www.ons.gov.uk/businessindustryandtrade/constructionindustry/bulletins/constructionoutputingreatbritain/LATEST",
+      "regions": [
+        "UK"
+      ],
+      "category": "下游需求",
+      "summary": "截至8月三個月建築產出下降1.0%，私人新建住宅下降3.2%。",
+      "implication": "詢問建築與加工客戶訂單需求是否延後。"
+    },
+    {
+      "title": "Industrial production in EU: August 2026",
+      "date": "2026-10-15",
+      "source": "Eurostat",
+      "url": "https://ec.europa.eu/eurostat/en/web/products/euro-indicators/w/4-15102026-ap",
+      "regions": [
+        "EU"
+      ],
+      "category": "政經政策",
+      "summary": "8月歐盟工業生產月減0.3%，年減0.2%。",
+      "implication": "觀察宏觀需求疲弱是否影響中鋼出口產品組合。"
+    }
+  ]
+}
