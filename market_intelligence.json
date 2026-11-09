@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-09 13:00",
-  "mode": "2026/11/09 初始查證版（每日自動更新待 GitHub Actions 啟用）",
-  "warning": "本頁為最新已公開資料整理，非即時報價。",
+  "generated_at": "2026-11-09 14:52",
+  "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
+  "warning": "",
   "highlights": [
     {
       "region": "EU",
@@ -61,17 +61,100 @@
   ],
   "items": [
     {
+      "title": "Italian rebar prices rise on production cost pressure; demand remains weak",
+      "date": "2026-11-07",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/italian-rebar-prices-rise-on-production-cost-pressure-demand-remains-weak/?utm_source=rss&utm_medium=rss&utm_campaign=italian-rebar-prices-rise-on-production-cost-pressure-demand-remains-weak",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Italian rebar prices rise on production cost pressure; demand remains weak",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Nordic steel demand continues slow improvement: BE Group",
+      "date": "2026-11-07",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/nordic-steel-demand-continues-slow-improvement-be-group/?utm_source=rss&utm_medium=rss&utm_campaign=nordic-steel-demand-continues-slow-improvement-be-group",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Nordic steel demand continues slow improvement: BE Group",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Acciaierie d’Italia begins shutdown of blast furnaces at Italy’s largest steel plant",
+      "date": "2026-11-07",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/acciaierie-ditalia-begins-shutdown-of-blast-furnaces-at-italys-largest-steel-plant/?utm_source=rss&utm_medium=rss&utm_campaign=acciaierie-ditalia-begins-shutdown-of-blast-furnaces-at-italys-largest-steel-plant",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Acciaierie d’Italia begins shutdown of blast furnaces at Italy’s largest steel plant",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "Aperam Jan-Sept steel shipments rise 1.7% on year",
+      "date": "2026-11-07",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/aperam-jan-sept-steel-shipments-rise-1-7-on-year/?utm_source=rss&utm_medium=rss&utm_campaign=aperam-jan-sept-steel-shipments-rise-1-7-on-year",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Aperam Jan-Sept steel shipments rise 1.7% on year",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
       "title": "European HRC mills seek higher Q1 prices; spot activity remains slow",
       "date": "2026-11-06",
       "source": "EUROMETAL",
-      "url": "https://eurometal.net/2026/11/",
+      "url": "https://eurometal.net/european-hrc-mills-seek-higher-q1-prices-spot-activity-remains-slow/?utm_source=rss&utm_medium=rss&utm_campaign=european-hrc-mills-seek-higher-q1-prices-spot-activity-remains-slow",
       "regions": [
-        "EU",
-        "DE"
+        "EU"
       ],
       "category": "價格／供需",
-      "summary": "歐洲HRC供應商尋求拉高2027年第一季報價；需求及現貨成交仍相對平淡。",
-      "implication": "拜訪服務中心時核對實際成交、2027Q1採購量與補庫時點，不直接將報價漲幅視為成交漲幅。"
+      "summary": "來源新聞標題：European HRC mills seek higher Q1 prices; spot activity remains slow",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Production in September 2026: +0.7% on the previous month - Statistisches Bundesamt",
+      "date": "2026-11-06",
+      "source": "Destatis",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9OMEVsNVk1SE1BanhGdjRCOWc0ajdDdGxaYW10bnRWdUJ5dE1hZlBkZ1M0dlJFOURhSGpWZkxQSWV2UVJBZkhBWGRoemw2bmFaWkVmeG80YVFJa2ExLTVDeTNkSGQxMFlpVnc?oc=5",
+      "regions": [
+        "DE"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Production in September 2026: +0.7% on the previous month - Statistisches Bundesamt",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "Production in September 2026: +0.7% on previous month",
+      "date": "2026-11-06",
+      "source": "Destatis",
+      "url": "https://www.destatis.de/EN/Press/2026/11/PE26_389_421.html",
+      "regions": [
+        "DE"
+      ],
+      "category": "下游需求",
+      "summary": "德國9月工業生產月增0.7%，汽車業產量月增17.1%，建築產出下降2.6%。",
+      "implication": "分別詢問汽車、工程與建築客戶是否有實際補庫。"
+    },
+    {
+      "title": "New orders in manufacturing in September 2026: +4.4% on the previous month - Statistisches Bundesamt",
+      "date": "2026-11-05",
+      "source": "Destatis",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ZOGM5cFEtaUNHT0pROHNnNWJHVWJEUFhiTTNpNmtjV3FiUnJTUjU5ZkpHdXc0LVd0bEROank0bTl1WXpEV2o5cXZEYVJ1QmJ4ZUR1Y2tNb2RZZ1NjcGRiRFBxQWdudE1ZOXc?oc=5",
+      "regions": [
+        "DE"
+      ],
+      "category": "下游需求",
+      "summary": "來源新聞標題：New orders in manufacturing in September 2026: +4.4% on the previous month - Statistisches Bundesamt",
+      "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
     },
     {
       "title": "ArcelorMittal reports third quarter 2026 results",
@@ -85,18 +168,6 @@
       "category": "產能鋼廠",
       "summary": "ArcelorMittal稱新TRQ下歐洲高爐已恢復運轉，鋼價正反映成本及供需變化。",
       "implication": "追蹤鋼廠復產是否改善交期，並與客戶驗證成交價變化。"
-    },
-    {
-      "title": "Production in September 2026: +0.7% on previous month",
-      "date": "2026-11-06",
-      "source": "Destatis",
-      "url": "https://www.destatis.de/EN/Press/2026/11/PE26_389_421.html",
-      "regions": [
-        "DE"
-      ],
-      "category": "下游需求",
-      "summary": "德國9月工業生產月增0.7%，汽車業產量月增17.1%，建築產出下降2.6%。",
-      "implication": "分別詢問汽車、工程與建築客戶是否有實際補庫。"
     },
     {
       "title": "New orders in manufacturing in September 2026: +4.4%",
@@ -125,18 +196,6 @@
       "implication": "留意低產能利用率和價格上漲是否並存。"
     },
     {
-      "title": "UK steel trade measure from 1 July 2026",
-      "date": "2026-07-01",
-      "source": "GOV.UK",
-      "url": "https://www.gov.uk/government/publications/uks-steel-trade-measure-from-1-july-2026/uks-steel-trade-measure-from-1-july-2026",
-      "regions": [
-        "UK"
-      ],
-      "category": "政經政策",
-      "summary": "英國新鋼材進口措施較前制縮減總免稅配額51%，配額外稅率50%。",
-      "implication": "訪談客戶詢問配額限制及進口採購策略。"
-    },
-    {
       "title": "Construction output in Great Britain: August 2026",
       "date": "2026-10-15",
       "source": "ONS",
@@ -159,6 +218,18 @@
       "category": "政經政策",
       "summary": "8月歐盟工業生產月減0.3%，年減0.2%。",
       "implication": "觀察宏觀需求疲弱是否影響中鋼出口產品組合。"
+    },
+    {
+      "title": "UK steel trade measure from 1 July 2026",
+      "date": "2026-07-01",
+      "source": "GOV.UK",
+      "url": "https://www.gov.uk/government/publications/uks-steel-trade-measure-from-1-july-2026/uks-steel-trade-measure-from-1-july-2026",
+      "regions": [
+        "UK"
+      ],
+      "category": "政經政策",
+      "summary": "英國新鋼材進口措施較前制縮減總免稅配額51%，配額外稅率50%。",
+      "implication": "訪談客戶詢問配額限制及進口採購策略。"
     }
   ]
 }
