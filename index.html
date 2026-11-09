@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.32</title><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.33</title><style>
 :root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#192b40;background:#f2f5fa}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#102b4b,#185783);color:white;padding:34px max(22px,calc((100vw - 1120px)/2)) 28px}header h1{margin:8px 0;font-size:clamp(24px,4vw,38px)}header p{opacity:.84;margin:8px 0}.eyebrow{letter-spacing:2px;font-size:12px;color:#b6d9f8}main{max-width:1120px;margin:auto;padding:24px 18px 70px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.tabs button,.daybtn,.filter{cursor:pointer;border:1px solid #d8e2ee;border-radius:11px;padding:11px 15px;background:white;color:#24425f;font-weight:700}.tabs button.active,.daybtn.active,.filter.active{background:#164c7a;color:white;border-color:#164c7a}.panel{background:white;border:1px solid #e1e8f1;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 6px 20px #183c6010}.panel h2{margin:0 0 14px;font-size:21px}.sub{color:#65778d;font-size:13px}.days{display:grid;grid-template-columns:repeat(10,minmax(70px,1fr));gap:7px;margin-bottom:16px}.daybtn{padding:12px 3px}.daybtn small{display:block;font-weight:400;margin-top:4px}.timeline{border-left:2px solid #bcd1e3;margin-left:9px;padding-left:20px}.event{position:relative;padding:4px 0 18px}.event:before{content:"";position:absolute;left:-27px;top:10px;width:11px;height:11px;border-radius:50%;background:#2578b2;border:3px solid white;box-shadow:0 0 0 1px #9cbcd7}.time{font-size:13px;font-weight:700;color:#17669b}.event h3{font-size:16px;margin:5px 0}.event p{margin:3px 0;color:#64748b;font-size:14px;white-space:pre-line}.pill{display:inline-block;padding:4px 8px;background:#eaf2fa;border-radius:20px;color:#285c83;font-size:12px;margin:5px 5px 0 0}.warning{background:#fff7e7;color:#815c19;border-left:4px solid #dfad42;padding:12px 15px;border-radius:8px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.client{border:1px solid #e0e8f1;border-radius:13px;padding:16px}.client h3{margin:0 0 9px;font-size:17px}.client p{font-size:13px;color:#617388}.flight{border-bottom:1px solid #e8edf4;padding:13px 0}.flight:last-child{border:0}.flight strong{font-size:17px}.search{padding:12px 14px;border:1px solid #ccd9e7;border-radius:10px;width:100%;max-width:380px;margin:0 0 15px}.btn{border:0;border-radius:9px;padding:9px 13px;background:#e5f0f9;color:#18517b;cursor:pointer}.note{width:100%;min-height:115px;padding:12px;border:1px solid #d1dce9;border-radius:10px;font:inherit;resize:vertical}.muted{color:#667a8f}.hidden{display:none}.stat{font-size:27px;font-weight:800;color:#194c77}.statlabel{font-size:13px;color:#708096}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.footer{font-size:12px;color:#718197;margin-top:25px}.banner{background:#fff4db;color:#6d4e0c;padding:12px 16px;font-size:13px}a{color:#17699d}@media(max-width:800px){.days{grid-template-columns:repeat(5,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.panel{padding:16px}header{padding:26px 18px}}
 
 /* V2.1 clickable customer details */
@@ -39,6 +39,16 @@
 .spec-top5-track span{display:block;height:100%;background:#2478a8;border-radius:999px}
 .spec-top5-box>.spec-hint{margin:11px 0 0}
 @media(max-width:840px){.spec-top5-grid{grid-template-columns:1fr}}
+
+/* V2.33: clear per-product specification groups */
+.spec-detail-heading{margin:23px 0 12px;color:#123d62;font-size:19px}
+.spec-product-group{margin:18px 0 24px;border:1px solid #d9e5f0;border-radius:13px;background:#fff;overflow:hidden}
+.spec-product-group-head{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;background:#eaf3fb;border-bottom:1px solid #cfdfed;padding:13px 16px}
+.spec-product-group-head h4{margin:0;color:#164b78;font-size:17px}
+.spec-product-group-head span{font-size:13px;color:#375c7a;font-weight:650}
+.spec-product-group .spec-scroll{margin:0;border:0;border-radius:0}
+.spec-product-group .spec-table th{top:0}
+@media(max-width:640px){.spec-product-group-head h4{font-size:15px}.spec-detail-heading{font-size:17px}}
 </style><style>
 body.locked > header,body.locked > main {display:none!important}
 #loginGate{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(130deg,#102b4b,#185783)}
@@ -378,7 +388,15 @@ let rr=SPEC_DATA.filter(r=>r[0]===country()&&key(r[2])===selected&&value(r)>0);l
 if(activeDetailProduct&&!Object.prototype.hasOwnProperty.call(products,activeDetailProduct))activeDetailProduct='';
 let filtered=activeDetailProduct?rr.filter(r=>r[3]===activeDetailProduct):rr;
 let shownTotal=filtered.reduce((sum,r)=>sum+value(r),0);
-let body=filtered.slice().sort((a,b)=>a[3].localeCompare(b[3])||a[5]-b[5]||a[6]-b[6]||a[4].localeCompare(b[4])).map(r=>`<tr><td>${clean(r[1])}</td><td>${clean(r[3])}</td><td>${clean(r[4])}</td><td>${r[5].toFixed(3)}</td><td>${r[6].toFixed(0)}</td><td>${num(value(r))}</td></tr>`).join('');
+// V2.33: split SPEC detail by product so CR, HR, GI and plate cannot be buried in a long mixed table.
+const prodKeys=Object.keys(products).sort((a,b)=>products[b]-products[a]);
+function specGroupTable(product,rows){
+  const sorted=rows.slice().sort((a,b)=>a[5]-b[5]||a[6]-b[6]||a[4].localeCompare(b[4]));
+  const subtotal=sorted.reduce((sum,r)=>sum+value(r),0);
+  const body=sorted.map(r=>`<tr><td>${clean(r[1])}</td><td>${clean(r[3])}</td><td>${clean(r[4])}</td><td>${r[5].toFixed(3)}</td><td>${r[6].toFixed(0)}</td><td>${num(value(r))}</td></tr>`).join('');
+  return `<section class="spec-product-group"><div class="spec-product-group-head"><h4>${clean(product)}｜訂單規格</h4><span>${num(subtotal)} MT ・ ${sorted.length} 筆</span></div><div class="spec-scroll"><table class="spec-table"><thead><tr><th>貿易通路</th><th>產品</th><th>鋼種／規範</th><th>厚度 mm</th><th>寬度 mm</th><th>訂單量 MT</th></tr></thead><tbody>${body}</tbody></table></div></section>`;
+}
+const groupedDetails=(activeDetailProduct?[activeDetailProduct]:prodKeys).map(prod=>specGroupTable(prod,filtered.filter(r=>r[3]===prod))).join('');
 
 // V2.21: customer-level top-five order mix, weighted by ordered MT, always respecting the selected year and product.
 function topFiveBy(rows,makeKey){
@@ -397,11 +415,11 @@ function renderTopFive(rows,shownTotal){
   return `<section class="spec-top5-box" aria-label="客戶主要採購規格及尺寸 Top 5"><div class="spec-top5-title"><h3>客戶主要採購摘要｜Top 5</h3><span>按訂單量 MT 排序・依目前年度與產品篩選</span></div><div class="spec-top5-grid">${renderSection('鋼種／規範 Top 5',steel)}${renderSection('厚度 × 寬度 Top 5',sizes)}</div><p class="spec-hint">同一規格跨不同厚寬的訂單量會合併；尺寸榜依產品、厚度及寬度加總。占比以目前顯示的客戶訂單量為分母，未列規範會如實標示，不推定鋼級。</p></section>`;
 }
 let pills=`<button type="button" class="spec-pill ${!activeDetailProduct?'active':''}" aria-pressed="${!activeDetailProduct}" data-spec-product="">全部產品 ${num(rr.reduce((a,r)=>a+value(r),0))} MT</button>`+Object.entries(products).sort((a,b)=>b[1]-a[1]).map(([p,v])=>`<button type="button" class="spec-pill ${activeDetailProduct===p?'active':''}" aria-pressed="${activeDetailProduct===p}" data-spec-product="${clean(p)}">${clean(p)} ${num(v)} MT</button>`).join('');
-$s('specDetails').innerHTML=`<div class="spec-head"><h3>${clean(titleCase(c.name))}｜${year()==="ALL"?"2024–2026年":year()+"年"} 訂單規格明細</h3><b>${num(shownTotal)} MT</b></div><div class="spec-summary">貿易通路：${clean([...c.channels].join('、'))}<div class="spec-byproduct">${pills}</div><p class="spec-hint">目前顯示：<strong>${clean(activeDetailProduct||'全部產品')}</strong>｜${filtered.length} 筆規格；點選上方其他產品即可切換。</p></div><p class="spec-hint">尺寸單位：厚度 mm、寬度 mm。規範直接沿用原表，不自行解釋牌號。</p>${renderTopFive(filtered,shownTotal)}<div class="spec-scroll"><table class="spec-table"><thead><tr><th>貿易通路</th><th>產品</th><th>鋼種／規範</th><th>厚度 mm</th><th>寬度 mm</th><th>訂單量 MT</th></tr></thead><tbody>${body}</tbody></table></div>`;
+$s('specDetails').innerHTML=`<div class="spec-head"><h3>${clean(titleCase(c.name))}｜${year()==="ALL"?"2024–2026年":year()+"年"} 訂單規格明細</h3><b>${num(shownTotal)} MT</b></div><div class="spec-summary">貿易通路：${clean([...c.channels].join('、'))}<div class="spec-byproduct">${pills}</div><p class="spec-hint">目前顯示：<strong>${clean(activeDetailProduct||'全部產品')}</strong>｜${filtered.length} 筆規格；點選上方其他產品即可切換。</p></div><p class="spec-hint">請點選上方「熱軋、冷軋、鋼板、鍍鋅」等產品按鈕，查看該產品的全部鋼種／厚度／寬度；選「全部產品」則按產品分開顯示，不再混成一張長表。</p><p class="spec-hint">尺寸單位：厚度 mm、寬度 mm。規範直接沿用原表，不自行解釋牌號。</p>${renderTopFive(filtered,shownTotal)}<h3 class="spec-detail-heading">各產品訂單規格明細｜${activeDetailProduct?clean(activeDetailProduct):'全部產品分類'}</h3>${groupedDetails}`;
 }
 $s('specCountry').addEventListener('change',()=>{syncSpecYear();selected=null;activeDetailProduct='';updateProducts();draw();const m=country()==='德國'?'DE':'UK';if(typeof orderMarket!=='undefined'&&orderMarket!==m){orderMarket=m;orderYear=year()==='ALL'?'2026':year();renderOrders()}});
 $s('specYear').addEventListener('change',()=>{syncSpecYear();activeDetailProduct='';draw();if(year()!=='ALL'&&typeof orderYear!=='undefined'&&orderYear!==year()){orderYear=year();renderOrders()}});
-$s('specProduct').addEventListener('change',()=>{activeDetailProduct='';draw()});
+$s('specProduct').addEventListener('change',()=>{activeDetailProduct=$s('specProduct').value;draw()});
 $s('specQuery').addEventListener('input',()=>draw());
 $s('specReset').addEventListener('click',()=>{$s('specCountry').value='英國';$s('specYear').value='2026';$s('specQuery').value='';selected=null;activeDetailProduct='';updateProducts();draw()});
 $s('specDetails').addEventListener('click',e=>{let b=e.target.closest('[data-spec-product]');if(!b)return;activeDetailProduct=b.dataset.specProduct;$s('specProduct').value='';draw();$s('specDetails').scrollIntoView({behavior:'smooth',block:'start'});});
