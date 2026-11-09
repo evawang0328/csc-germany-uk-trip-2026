@@ -1,8 +1,8 @@
 {
   "source": "德英關稅表.xlsx（使用者提供）",
-  "sourceHeading": "原表標題2022年；含後續增補備註，仍須逐案查核",
+  "sourceHeading": "原表標題2022年；含後續增補備註，仍須逐案查核；來源國名稱已去除(註N)；日本EU HR複合AD欄位拆分各鋼廠（未另行查證現行適用）",
   "status": "歷史參考／尚未逐案查證現行有效性",
-  "generatedAt": "2026-11-09",
+  "generatedAt": "2026-11-09（來源名稱清理、個別鋼廠拆分）",
   "rows": [
     {
       "market": "EU",
@@ -162,20 +162,90 @@
       "market": "EU",
       "product": "HR",
       "origin": "日本",
-      "mill": "ALL",
-      "ad": "Definitive AD (2025/08/07)\nTokyo Steel 6.9%\nNippon Steel Corp : 30%\nOther Cooperating Companies-\nDaido Steel, JFE: 29.8%\nAll Other: 30%",
+      "mill": "Tokyo Steel",
+      "ad": "6.9%",
       "cvd": "",
       "safeguard": "",
-      "details": "",
+      "details": "；原始AD複合欄位：Definitive AD (2025/08/07) | Tokyo Steel 6.9% | Nippon Steel Corp : 30% | Other Cooperating Companies- | Daido Steel, JFE: 29.8% | All Other: 30%",
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 14,
-      "review": "待官方查證"
+      "review": "待查證（原始2025/08/07資料拆分）"
     },
     {
       "market": "EU",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "日本",
+      "mill": "Nippon Steel Corp",
+      "ad": "30%",
+      "cvd": "",
+      "safeguard": "",
+      "details": "；原始AD複合欄位：Definitive AD (2025/08/07) | Tokyo Steel 6.9% | Nippon Steel Corp : 30% | Other Cooperating Companies- | Daido Steel, JFE: 29.8% | All Other: 30%",
+      "remarks": "",
+      "sourceSheet": "EU",
+      "sourceRow": 14,
+      "review": "待查證（原始2025/08/07資料拆分）"
+    },
+    {
+      "market": "EU",
+      "product": "HR",
+      "origin": "日本",
+      "mill": "Daido Steel",
+      "ad": "29.8%",
+      "cvd": "",
+      "safeguard": "",
+      "details": "；原始AD複合欄位：Definitive AD (2025/08/07) | Tokyo Steel 6.9% | Nippon Steel Corp : 30% | Other Cooperating Companies- | Daido Steel, JFE: 29.8% | All Other: 30%",
+      "remarks": "",
+      "sourceSheet": "EU",
+      "sourceRow": 14,
+      "review": "待查證（原始2025/08/07資料拆分）"
+    },
+    {
+      "market": "EU",
+      "product": "HR",
+      "origin": "日本",
+      "mill": "JFE",
+      "ad": "29.8%",
+      "cvd": "",
+      "safeguard": "",
+      "details": "；原始AD複合欄位：Definitive AD (2025/08/07) | Tokyo Steel 6.9% | Nippon Steel Corp : 30% | Other Cooperating Companies- | Daido Steel, JFE: 29.8% | All Other: 30%",
+      "remarks": "",
+      "sourceSheet": "EU",
+      "sourceRow": 14,
+      "review": "待查證（原始2025/08/07資料拆分）"
+    },
+    {
+      "market": "EU",
+      "product": "HR",
+      "origin": "日本",
+      "mill": "Other Cooperating Companies",
+      "ad": "29.8%",
+      "cvd": "",
+      "safeguard": "",
+      "details": "；原始AD複合欄位：Definitive AD (2025/08/07) | Tokyo Steel 6.9% | Nippon Steel Corp : 30% | Other Cooperating Companies- | Daido Steel, JFE: 29.8% | All Other: 30%",
+      "remarks": "",
+      "sourceSheet": "EU",
+      "sourceRow": 14,
+      "review": "待查證（原始2025/08/07資料拆分）"
+    },
+    {
+      "market": "EU",
+      "product": "HR",
+      "origin": "日本",
+      "mill": "All Other",
+      "ad": "30%",
+      "cvd": "",
+      "safeguard": "",
+      "details": "；原始AD複合欄位：Definitive AD (2025/08/07) | Tokyo Steel 6.9% | Nippon Steel Corp : 30% | Other Cooperating Companies- | Daido Steel, JFE: 29.8% | All Other: 30%",
+      "remarks": "",
+      "sourceSheet": "EU",
+      "sourceRow": 14,
+      "review": "待查證（原始2025/08/07資料拆分）"
+    },
+    {
+      "market": "EU",
+      "product": "HR",
+      "origin": "大陸",
       "mill": "邯鄲",
       "ad": "10.3%",
       "cvd": "7.8%",
@@ -184,12 +254,14 @@
       "remarks": "反補貼 | https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1123",
       "sourceSheet": "EU",
       "sourceRow": 15,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "河鋼",
       "ad": "10.3%",
       "cvd": "7.8%",
@@ -198,12 +270,14 @@
       "remarks": "反傾銷 | https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1122",
       "sourceSheet": "EU",
       "sourceRow": 16,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "本鋼板材",
       "ad": "0",
       "cvd": "28.1%",
@@ -212,12 +286,14 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 17,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "張家港",
       "ad": "31.3%",
       "cvd": "4.6%",
@@ -226,12 +302,14 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 18,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "首鋼",
       "ad": "0",
       "cvd": "31.5%",
@@ -240,12 +318,14 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 19,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "鞍鋼",
       "ad": "10.8%",
       "cvd": "17.1%",
@@ -254,12 +334,14 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 20,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "其他廠商",
       "ad": "0",
       "cvd": "17.10~35.90%",
@@ -268,7 +350,9 @@
       "remarks": "反補貼適用17.1%稅率有鞍鋼、馬鞍山、日照及武漢鋼鐵",
       "sourceSheet": "EU",
       "sourceRow": 21,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
@@ -581,7 +665,7 @@
     {
       "market": "EU",
       "product": "PO",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "Habaş",
       "ad": "4.7%",
       "cvd": "",
@@ -590,12 +674,14 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 45,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "PO",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "Erdemir group",
       "ad": "4.9%",
       "cvd": "",
@@ -604,12 +690,14 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 46,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "PO",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "Ağir Haddecilik A.Ş.、Borçelik Çelik Sanayii Ticaret A.Ş.",
       "ad": "5.6%",
       "cvd": "",
@@ -618,12 +706,14 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 47,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "PO",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "其他",
       "ad": "7.3%",
       "cvd": "",
@@ -632,7 +722,9 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 48,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
@@ -1015,7 +1107,7 @@
     {
       "market": "EU",
       "product": "GI",
-      "origin": "大陸*(註5)",
+      "origin": "大陸",
       "mill": "首鋼",
       "ad": "17.2%",
       "cvd": "",
@@ -1024,12 +1116,14 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 76,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸*(註5)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "GI",
-      "origin": "大陸*(註5)",
+      "origin": "大陸",
       "mill": "張家港沙鋼",
       "ad": "27.9%",
       "cvd": "",
@@ -1038,12 +1132,14 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 77,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸*(註5)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "GI",
-      "origin": "大陸*(註5)",
+      "origin": "大陸",
       "mill": "河鋼、邯鄲、唐山",
       "ad": "27.8%",
       "cvd": "",
@@ -1052,12 +1148,14 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 78,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸*(註5)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
       "product": "GI",
-      "origin": "大陸*(註5)",
+      "origin": "大陸",
       "mill": "其他廠商",
       "ad": "26.1~27.9%",
       "cvd": "",
@@ -1066,7 +1164,9 @@
       "remarks": "",
       "sourceSheet": "EU",
       "sourceRow": 79,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸*(註5)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "EU",
@@ -1673,7 +1773,7 @@
     {
       "market": "UK",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "邯鄲",
       "ad": "10.3%",
       "cvd": "7.8%",
@@ -1682,12 +1782,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 15,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "河鋼(承德、唐山)",
       "ad": "10.3%",
       "cvd": "7.8%",
@@ -1696,12 +1798,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 16,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "本鋼板材",
       "ad": "0",
       "cvd": "28.1%",
@@ -1710,12 +1814,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 17,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "張家港",
       "ad": "31.3%",
       "cvd": "4.6%",
@@ -1724,12 +1830,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 18,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "首鋼",
       "ad": "0",
       "cvd": "31.5%",
@@ -1738,12 +1846,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 19,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "鞍鋼",
       "ad": "10.8%",
       "cvd": "17.1%",
@@ -1752,12 +1862,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 20,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "HR",
-      "origin": "大陸(註3)",
+      "origin": "大陸",
       "mill": "其他廠商",
       "ad": "0~10.8%",
       "cvd": "17.10~35.90%",
@@ -1766,7 +1878,9 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 21,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸(註3)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
@@ -1911,7 +2025,7 @@
     {
       "market": "UK",
       "product": "HR",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "Habaş",
       "ad": "4.7%",
       "cvd": "",
@@ -1920,12 +2034,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 32,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "HR",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "Erdemir group",
       "ad": "5%",
       "cvd": "",
@@ -1934,12 +2050,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 33,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "HR",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "Ağir Haddecilik A.Ş.、Borçelik Çelik Sanayii Ticaret A.Ş.",
       "ad": "5.7%",
       "cvd": "",
@@ -1948,12 +2066,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 34,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "HR",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "其他",
       "ad": "7.3%",
       "cvd": "",
@@ -1962,7 +2082,9 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 35,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
@@ -2191,7 +2313,7 @@
     {
       "market": "UK",
       "product": "PO",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "Habaş",
       "ad": "4.7%",
       "cvd": "",
@@ -2200,12 +2322,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 53,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "PO",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "Erdemir group",
       "ad": "4.9%",
       "cvd": "",
@@ -2214,12 +2338,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 54,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "PO",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "Ağir Haddecilik A.Ş.、Borçelik Çelik Sanayii Ticaret A.Ş.",
       "ad": "5.6%",
       "cvd": "",
@@ -2228,12 +2354,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 55,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "PO",
-      "origin": "土耳其\n(終判)",
+      "origin": "土耳其",
       "mill": "其他",
       "ad": "7.3%",
       "cvd": "",
@@ -2242,7 +2370,9 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 56,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "土耳其\n(終判)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
@@ -2429,7 +2559,7 @@
     {
       "market": "UK",
       "product": "GI",
-      "origin": "大陸*(註5)",
+      "origin": "大陸",
       "mill": "首鋼",
       "ad": "17.2%",
       "cvd": "",
@@ -2438,12 +2568,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 76,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸*(註5)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "GI",
-      "origin": "大陸*(註5)",
+      "origin": "大陸",
       "mill": "張家港沙鋼",
       "ad": "27.9%",
       "cvd": "",
@@ -2452,12 +2584,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 77,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸*(註5)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "GI",
-      "origin": "大陸*(註5)",
+      "origin": "大陸",
       "mill": "河鋼、邯鄲、唐山",
       "ad": "27.8%",
       "cvd": "",
@@ -2466,12 +2600,14 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 78,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸*(註5)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",
       "product": "GI",
-      "origin": "大陸*(註5)",
+      "origin": "大陸",
       "mill": "其他廠商",
       "ad": "26.1~27.9%",
       "cvd": "",
@@ -2480,7 +2616,9 @@
       "remarks": "",
       "sourceSheet": "UK",
       "sourceRow": 79,
-      "review": "待官方查證"
+      "review": "待官方查證",
+      "originOriginal": "大陸*(註5)",
+      "originNote": "來源國括號附註已自顯示名稱移除，原始註號保留在查證明細。"
     },
     {
       "market": "UK",

@@ -1,9 +1,9 @@
 {
-  "version": "2026-11-09-initial",
-  "updatedAt": "尚未由管理者更新",
-  "updatedBy": "管理者（待填）",
+  "version": "2026-11-09-CR-updated",
+  "updatedAt": "2026-11-09（依使用者提供，非系統即時同步）",
+  "updatedBy": "額度管理者",
   "source": "使用者提供之中鋼銷歐SG額度試算表截圖；基準日期未載明",
-  "notes": "G欄沿用截圖顯示額度，F欄為公告顯示比率，並非完整精度。4A類待政府公告。J=G-H-I。",
+  "notes": "G欄沿用截圖顯示額度，F欄為公告顯示比率，並非完整精度。4A類待政府公告。J=G-H-I。 本次更新：冷軋在途10,333MT、已接單未出貨56,025MT；其他鋼品沿用前版0MT設定。",
   "rows": [
     {
       "category": "1A",
@@ -29,8 +29,8 @@
       "freeQuota": 6717.31,
       "cscRatio": 85.43,
       "cscQuota": 109035.69,
-      "transit": 0,
-      "undelivered": 0,
+      "transit": 10333,
+      "undelivered": 56025,
       "status": "截圖基準／待核對"
     },
     {
@@ -62,5 +62,16 @@
       "status": "已申請，待政府公告"
     }
   ],
-  "history": []
+  "history": [
+    {
+      "date": "2026-11-09",
+      "by": "額度管理者",
+      "category": "2",
+      "product": "冷軋",
+      "transit": 10333,
+      "undelivered": 56025,
+      "remaining": 42677.69,
+      "note": "依使用者提供"
+    }
+  ]
 }
