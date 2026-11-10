@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-09 14:52",
+  "generated_at": "2026-11-10 12:30",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -61,6 +61,78 @@
   ],
   "items": [
     {
+      "title": "Ecomondo 2026: EU steel competitiveness under pressure as ETS and CBAM reshape market dynamics",
+      "date": "2026-11-10",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/ecomondo-2026-eu-steel-competitiveness-under-pressure-as-ets-and-cbam-reshape-market-dynamics/?utm_source=rss&utm_medium=rss&utm_campaign=ecomondo-2026-eu-steel-competitiveness-under-pressure-as-ets-and-cbam-reshape-market-dynamics",
+      "regions": [
+        "EU"
+      ],
+      "category": "政經政策",
+      "summary": "來源新聞標題：Ecomondo 2026: EU steel competitiveness under pressure as ETS and CBAM reshape market dynamics",
+      "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
+    },
+    {
+      "title": "European longs demand slows price recovery amid high energy costs, import segment reverses trend",
+      "date": "2026-11-10",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/european-longs-demand-slows-price-recovery-amid-high-energy-costs-import-segment-reverses-trend/?utm_source=rss&utm_medium=rss&utm_campaign=european-longs-demand-slows-price-recovery-amid-high-energy-costs-import-segment-reverses-trend",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：European longs demand slows price recovery amid high energy costs, import segment reverses trend",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "ENVI committee expedites automotive green steel credits",
+      "date": "2026-11-09",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/envi-committee-expedites-automotive-green-steel-credits/?utm_source=rss&utm_medium=rss&utm_campaign=envi-committee-expedites-automotive-green-steel-credits",
+      "regions": [
+        "EU"
+      ],
+      "category": "下游需求",
+      "summary": "來源新聞標題：ENVI committee expedites automotive green steel credits",
+      "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
+    },
+    {
+      "title": "European coil and green steel round-up: EU coil market rises on costs and trade restriction factors",
+      "date": "2026-11-09",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/european-coil-and-green-steel-round-up-eu-coil-market-rises-on-costs-and-trade-restriction-factors/?utm_source=rss&utm_medium=rss&utm_campaign=european-coil-and-green-steel-round-up-eu-coil-market-rises-on-costs-and-trade-restriction-factors",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：European coil and green steel round-up: EU coil market rises on costs and trade restriction factors",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "European stainless steel demand remains weak",
+      "date": "2026-11-09",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/european-stainless-steel-demand-remains-weak/?utm_source=rss&utm_medium=rss&utm_campaign=european-stainless-steel-demand-remains-weak",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：European stainless steel demand remains weak",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "European HRC prices edge higher as mills seek increases for early 2027",
+      "date": "2026-11-09",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/european-hrc-prices-edge-higher-as-mills-seek-increases-for-early-2027/?utm_source=rss&utm_medium=rss&utm_campaign=european-hrc-prices-edge-higher-as-mills-seek-increases-for-early-2027",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：European HRC prices edge higher as mills seek increases for early 2027",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
       "title": "Italian rebar prices rise on production cost pressure; demand remains weak",
       "date": "2026-11-07",
       "source": "EUROMETAL",
@@ -109,18 +181,6 @@
       "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
     },
     {
-      "title": "European HRC mills seek higher Q1 prices; spot activity remains slow",
-      "date": "2026-11-06",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/european-hrc-mills-seek-higher-q1-prices-spot-activity-remains-slow/?utm_source=rss&utm_medium=rss&utm_campaign=european-hrc-mills-seek-higher-q1-prices-spot-activity-remains-slow",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：European HRC mills seek higher Q1 prices; spot activity remains slow",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
       "title": "Production in September 2026: +0.7% on the previous month - Statistisches Bundesamt",
       "date": "2026-11-06",
       "source": "Destatis",
@@ -131,6 +191,18 @@
       "category": "產能鋼廠",
       "summary": "來源新聞標題：Production in September 2026: +0.7% on the previous month - Statistisches Bundesamt",
       "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "European HRC mills seek higher Q1 prices; spot activity remains slow",
+      "date": "2026-11-06",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/european-hrc-mills-seek-higher-q1-prices-spot-activity-remains-slow/?utm_source=rss&utm_medium=rss&utm_campaign=european-hrc-mills-seek-higher-q1-prices-spot-activity-remains-slow",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：European HRC mills seek higher Q1 prices; spot activity remains slow",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
     },
     {
       "title": "Production in September 2026: +0.7% on previous month",
