@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10 12:30",
+  "generated_at": "2026-11-11 10:36",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -60,6 +60,30 @@
     }
   ],
   "items": [
+    {
+      "title": "Arvedi and Jindal submit bids for acquisition of ex-Ilva steel plants",
+      "date": "2026-11-10",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/arvedi-and-jindal-submit-bids-for-acquisition-of-ex-ilva-steel-plants/?utm_source=rss&utm_medium=rss&utm_campaign=arvedi-and-jindal-submit-bids-for-acquisition-of-ex-ilva-steel-plants",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Arvedi and Jindal submit bids for acquisition of ex-Ilva steel plants",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "Metinvest advances plans to exit Piombino coil project",
+      "date": "2026-11-10",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/metinvest-advances-plans-to-exit-piombino-coil-project/?utm_source=rss&utm_medium=rss&utm_campaign=metinvest-advances-plans-to-exit-piombino-coil-project",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Metinvest advances plans to exit Piombino coil project",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
     {
       "title": "Ecomondo 2026: EU steel competitiveness under pressure as ETS and CBAM reshape market dynamics",
       "date": "2026-11-10",
