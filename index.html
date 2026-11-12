@@ -209,10 +209,10 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
   </div>
   <div id="eucStatus" class="euc-meta" aria-live="polite">正在讀取 CBAM 訪談資料…</div>
   <div class="euc-pane" id="euc-cost" role="tabpanel">
-   <div class="euc-card"><h3>各鋼廠 CBAM 成本估算比較</h3><p class="sub">以客戶、會議日期、估算區間及假設標示。未提供相同計算基準時，保留文字或區間，不製作虛假精確的排行。</p><div id="eucCostTable"></div></div>
+   <div class="euc-card"><h3>各鋼廠 CBAM 成本估算比較</h3><p class="sub">以客戶、會議日期、估算區間及假設標示。未提供相同計算基準時，保留文字或區間，不製作虛假精確的排行。</p><div id="eucCostTable"></div><h3 style="margin-top:22px">低碳鋼溢價、排放數值與完稅條件（非 CBAM 稅額）</h3><p class="sub">將會談中的綠鋼溢價、碳排強度、EPD 需求及成本分工另列，避免與 CBAM 每噸稅額混淆。</p><div id="eucPriceObservations"></div></div>
   </div>
   <div class="euc-pane" id="euc-views" role="tabpanel" hidden>
-   <div class="euc-card"><h3>跨客戶觀點對照</h3><p class="sub">彙整成本估算、實際值／預設值、查驗、採購決策、未來展望等主題。</p><div id="eucViewTable"></div></div>
+   <div class="euc-card"><h3>跨客戶觀點對照</h3><p class="sub">彙整成本估算、實際值／預設值、查驗、採購決策、未來展望等主題。</p><h3>多家客戶共同提及的議題</h3><p class="sub">同議題會合併列出客戶名稱，並分別保留各客戶原始看法與差異，不將一家客戶的估算當作其他客戶的獨立觀點。</p><div id="eucCommonViews"></div><h3 style="margin-top:22px">個別客戶觀點明細</h3><div id="eucViewTable"></div></div>
   </div>
   <div class="euc-pane" id="euc-actions" role="tabpanel" hidden>
    <div class="euc-card"><h3>對中鋼影響與追蹤清單</h3><p class="sub">依客戶紀錄建立追蹤事項，可註明責任窗口與狀態。</p><div id="eucActionTable"></div></div>
@@ -843,21 +843,28 @@ renderAllClients();
  const empty=msg=>'<div class="euc-empty">'+esc(msg)+'</div>';
  const table=(cols,rows)=>rows.length?'<div class="euc-table-scroll"><table class="euc-table"><thead><tr>'+cols.map(x=>'<th>'+esc(x)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(c=>'<td>'+esc(c)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>':empty('尚未加入訪談資料；待確認後依客戶及日期匯入。');
  function draw(){
-  const cost=[],view=[],actions=[];
+  const cost=[],view=[],actions=[],observations=[];const shared=new Map();
   for(const r of records){
    const label=(r.customer||'')+'｜'+(r.date||'');
    for(const x of r.cost_estimates||[])cost.push([label,x.mill||'',x.amount||'',x.note||'']);
-   for(const x of r.perspectives||[])view.push([label,x.topic||'',x.detail||'']);
+   for(const x of r.perspectives||[]){view.push([label,x.topic||'',x.detail||'']);const topic=x.topic||'未分類';if(!shared.has(topic))shared.set(topic,[]);shared.get(topic).push({customer:r.customer,date:r.date,detail:x.detail||''});}
+   for(const x of r.price_observations||[])observations.push([label,x.metric||'',x.amount||'',x.note||'']);
    for(const x of r.actions||[])actions.push([label,x.topic||'',x.owner||'待確認',x.status||'待追蹤']);
   }
   els.cost.innerHTML=table(['客戶／會談日','鋼廠／來源','估算成本（€/MT或原單位）','計算假設／限制'],cost);
+  document.getElementById('eucPriceObservations').innerHTML=table(['客戶／會談日','觀察項目','數值／條件','背景與限制'],observations);
+  const multi=[...shared.entries()].filter(([topic,items])=>new Set(items.map(x=>x.customer)).size>=2).map(([topic,items])=>[
+   topic,[...new Set(items.map(x=>x.customer))].join('、'),
+   items.map(x=>(x.customer||'未列客戶')+'（'+(x.date||'日期待補')+'）：'+x.detail).join('；')
+  ]);
+  document.getElementById('eucCommonViews').innerHTML=table(['共同議題','提及客戶','各自說法與差異'],multi);
   els.views.innerHTML=table(['客戶／會談日','議題','訪談觀點'],view);
   els.actions.innerHTML=table(['客戶／會談日','追蹤事項','責任窗口','狀態'],actions);
   const q=document.getElementById('eucSearch').value.trim().toLowerCase(),who=document.getElementById('eucCustomer').value;
   const filtered=records.filter(r=>(!who||who===r.customer)&&(!q||JSON.stringify(r).toLowerCase().includes(q))).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
   els.interviews.innerHTML=filtered.length?filtered.map(r=>{
-    let links=[];for(const [key,title] of [['pdf','📄 Duferco CBAM 專題 PDF'],['word','📝 Duferco CBAM 專題 Word']]){
-     const url=r.files?.[key];if(typeof url==='string'&&(/^(https:\/\/|cbam_records\/)/i).test(url))links.push('<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+title+' ↗</a>');
+    let links=[];for(const [key,title] of [['pdf','PDF'],['word','Word']]){
+     const url=r.files?.[key];if(typeof url==='string'&&(/^(https:\/\/|cbam_records\/)/i).test(url))links.push('<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+(key==='pdf'?'📄 ':'📝 ')+esc(r.customer||'客戶')+' '+(r.title?.includes('Green Steel')?'Green Steel／CBAM':'CBAM 專題')+' '+title+' ↗</a>');
     }
     return '<article class="euc-card"><h3>'+esc(r.customer||'客戶未標示')+'　<span class="euc-pill">'+esc(r.date||'日期待補')+'</span></h3><p class="euc-meta">'+esc(r.country||'')+'｜'+esc(r.title||'CBAM 專題訪談')+'</p><p>'+esc(r.summary||'摘要待補')+'</p>'+(links.length?'<div class="euc-files">'+links.join('')+'</div>':'<p class="euc-meta">尚未提供已授權的 Word／PDF 連結。</p>')+'</article>';
   }).join(''):empty('尚無符合條件的 CBAM 訪談紀錄。');
