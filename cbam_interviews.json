@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-11-12",
+  "description": "EU CBAM 客戶訪談資料庫。正式資料需經授權後由管理者填入；金額與政策觀點分別標示來源及限制。",
+  "items": [],
+  "field_guide": {
+    "id": "唯一記錄ID，例如 2026-11-11-duferco-cbam",
+    "customer": "客戶名稱",
+    "date": "YYYY-MM-DD",
+    "country": "國家",
+    "title": "訪談標題",
+    "summary": "繁體中文重點摘要",
+    "cost_estimates": [
+      {
+        "mill": "鋼廠名稱",
+        "amount": "成本區間與單位，例如 €XX–YY/MT",
+        "note": "來源及可比性限制"
+      }
+    ],
+    "perspectives": [
+      {
+        "topic": "採購決策／預設值／查驗等",
+        "detail": "客戶觀點，非官方法規"
+      }
+    ],
+    "actions": [
+      {
+        "topic": "中鋼追蹤事項",
+        "owner": "責任窗口",
+        "status": "待追蹤／處理中／完成"
+      }
+    ],
+    "files": {
+      "pdf": "授權文件網址或 meeting_records/...",
+      "word": "授權文件網址或 meeting_records/...",
+      "meeting_pdf": "完整會議PDF連結",
+      "meeting_word": "完整會議Word連結"
+    }
+  }
+}
