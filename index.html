@@ -172,28 +172,28 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
 </script><div class="banner">測試版 HTML 共用密碼僅為畫面鎖，不是真正的存取驗證。請勿輸入或上傳機密資料。</div><header><div class="eyebrow">CSC · OVERSEAS MARKET VISIT · 2026</div><h1>德國・英國市場考察</h1><p>2026 年 11 月 10 日 — 11 月 19 日　｜　德國 Düsseldorf / Duisburg / Hagen · 英國 London / Birmingham / Manchester</p></header><main><div class="tabs" id="tabs"><button data-tab="dashboard" class="active"><span class="tab-number">01</span> 出差首頁</button><button data-tab="schedule"><span class="tab-number">02</span> 每日行程</button><button data-tab="weather"><span class="tab-number">03</span> 天氣預報</button><button data-tab="flights"><span class="tab-number">04</span> 航班交通</button><button data-tab="hotels"><span class="tab-number">05</span> 住宿安排</button><button data-tab="clients"><span class="tab-number">06</span> 客戶資料</button><button data-tab="quota"><span class="tab-number">07</span> 中鋼銷歐額度及歐英通關</button><button data-tab="orders"><span class="tab-number">08</span> 中鋼銷歐訂單</button><button data-tab="interview"><span class="tab-number">09</span> 客戶訪談問題</button><button data-tab="tariffs"><span class="tab-number">10</span> 歐盟、英國關稅查詢</button><button data-tab="eu-country-quotas"><span class="tab-number">11</span> 歐盟各國配額</button><button data-tab="presentation"><span class="tab-number">12</span> 公司簡報</button><button data-tab="cbam"><span class="tab-number">13</span> UK CBAM 專區</button><button data-tab="market-intel"><span class="tab-number">14</span> 歐德英市場近況</button><button data-tab="eu-cbam"><span class="tab-number">15</span> EU CBAM 客戶觀點</button><button data-tab="followup"><span class="tab-number">16</span> 客戶拜訪追蹤</button></div>
 <!-- V2.34 mobile grouped navigation: four category buttons + one full-width panel. -->
 <nav class="mobile-grouped-nav" aria-label="全裝置功能分類選單">
- <div class="mobile-nav-bar"><strong>快速功能選單｜電腦、手機一致</strong><span id="mobileNavCurrent" aria-live="polite">01 出差首頁</span></div>
+ <div class="mobile-nav-bar"><strong>快速功能選單</strong><span id="mobileNavCurrent" aria-live="polite">A-1 出差首頁</span></div>
  <div class="mobile-category-grid" role="group" aria-label="功能分類">
-  <button class="mobile-category active" type="button" data-mobile-category="trip" aria-expanded="true">🧳 出差行程 <span>01–05</span></button>
-  <button class="mobile-category" type="button" data-mobile-category="client" aria-expanded="false">🤝 客戶與業務 <span>06–09、16</span></button>
-  <button class="mobile-category" type="button" data-mobile-category="market" aria-expanded="false">📊 市場與政策 <span>10、11、13–15</span></button>
-  <button class="mobile-category" type="button" data-mobile-category="company" aria-expanded="false">📑 公司資料 <span>12</span></button>
+  <button class="mobile-category active" type="button" data-mobile-category="trip" aria-expanded="true">🧳 A 出差行程</button>
+  <button class="mobile-category" type="button" data-mobile-category="client" aria-expanded="false">🤝 B 客戶與業務</button>
+  <button class="mobile-category" type="button" data-mobile-category="market" aria-expanded="false">📊 C 市場與政策</button>
+  <button class="mobile-category" type="button" data-mobile-category="company" aria-expanded="false">📑 D 公司資料</button>
  </div>
  <div class="mobile-category-panel" id="mobileCategoryPanel" aria-label="分類頁面">
   <div data-mobile-list="trip" class="mobile-page-list">
-   <button type="button" data-mobile-go="dashboard">01 出差首頁</button><button type="button" data-mobile-go="schedule">02 每日行程</button><button type="button" data-mobile-go="weather">03 天氣預報</button><button type="button" data-mobile-go="flights">04 航班交通</button><button type="button" data-mobile-go="hotels">05 住宿安排</button>
+   <button type="button" data-mobile-go="dashboard">A-1 出差首頁</button><button type="button" data-mobile-go="schedule">A-2 每日行程</button><button type="button" data-mobile-go="weather">A-3 天氣預報</button><button type="button" data-mobile-go="flights">A-4 航班交通</button><button type="button" data-mobile-go="hotels">A-5 住宿安排</button>
   </div>
   <div data-mobile-list="client" class="mobile-page-list" hidden>
-   <button type="button" data-mobile-go="clients">06 客戶資料</button><button type="button" data-mobile-go="quota">07 中鋼銷歐額度及歐英通關</button><button type="button" data-mobile-go="orders">08 中鋼銷歐訂單</button><button type="button" data-mobile-go="interview">09 客戶訪談問題</button><button type="button" data-mobile-go="followup">16 客戶拜訪追蹤</button>
+   <button type="button" data-mobile-go="clients">B-1 客戶資料</button><button type="button" data-mobile-go="quota">B-2 中鋼銷歐額度及歐英通關</button><button type="button" data-mobile-go="orders">B-3 中鋼銷歐訂單</button><button type="button" data-mobile-go="interview">B-4 客戶訪談問題</button><button type="button" data-mobile-go="followup">B-5 客戶拜訪追蹤</button>
   </div>
   <div data-mobile-list="market" class="mobile-page-list" hidden>
-   <button type="button" data-mobile-go="tariffs">10 歐盟、英國關稅查詢</button><button type="button" data-mobile-go="eu-country-quotas">11 歐盟各國配額</button><button type="button" data-mobile-go="cbam">13 UK CBAM 專區</button><button type="button" data-mobile-go="market-intel">14 歐德英市場近況</button><button type="button" data-mobile-go="eu-cbam">15 EU CBAM 客戶觀點</button>
+   <button type="button" data-mobile-go="tariffs">C-1 歐盟、英國關稅查詢</button><button type="button" data-mobile-go="eu-country-quotas">C-2 歐盟各國配額</button><button type="button" data-mobile-go="cbam">C-3 UK CBAM 專區</button><button type="button" data-mobile-go="market-intel">C-4 歐德英市場近況</button><button type="button" data-mobile-go="eu-cbam">C-5 EU CBAM 客戶觀點</button>
   </div>
   <div data-mobile-list="company" class="mobile-page-list" hidden>
-   <button type="button" data-mobile-go="presentation">12 公司簡報</button>
+   <button type="button" data-mobile-go="presentation">D-1 公司簡報</button>
   </div>
  </div>
- <div class="mobile-nav-version">統一選單 V2.34</div>
+ <div class="mobile-nav-version">分類選單 A–D</div>
 </nav>
 
 
@@ -864,7 +864,7 @@ renderAllClients();
   const filtered=records.filter(r=>(!who||who===r.customer)&&(!q||JSON.stringify(r).toLowerCase().includes(q))).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
   els.interviews.innerHTML=filtered.length?filtered.map(r=>{
     let links=[];for(const [key,title] of [['pdf','PDF'],['word','Word']]){
-     const url=r.files?.[key];if(typeof url==='string'&&(/^(https:\/\/|cbam_records\/)/i).test(url))links.push('<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+(key==='pdf'?'📄 ':'📝 ')+esc(r.customer||'客戶')+' '+(r.title?.includes('Green Steel')?'Green Steel／CBAM':'CBAM 專題')+' '+title+' ↗</a>');
+     const url=r.files?.[key];if(typeof url==='string'&&(/^(https:\/\/|cbam_records\/)/i).test(url))links.push('<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+(key==='pdf'?'📄 ':'📝 ')+esc(r.customer==='Carl Spaeter HQ'?'Spaeter CBAM／Green Steel':r.customer==='Knauf'?'Knauf Green Steel':r.customer==='Duferco'?'Duferco CBAM 專題':(r.customer||'客戶')+' CBAM 專題')+' '+title+' ↗</a>');
     }
     return '<article class="euc-card"><h3>'+esc(r.customer||'客戶未標示')+'　<span class="euc-pill">'+esc(r.date||'日期待補')+'</span></h3><p class="euc-meta">'+esc(r.country||'')+'｜'+esc(r.title||'CBAM 專題訪談')+'</p><p>'+esc(r.summary||'摘要待補')+'</p>'+(links.length?'<div class="euc-files">'+links.join('')+'</div>':'<p class="euc-meta">尚未提供已授權的 Word／PDF 連結。</p>')+'</article>';
   }).join(''):empty('尚無符合條件的 CBAM 訪談紀錄。');
