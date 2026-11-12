@@ -170,6 +170,34 @@ main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:16px;bo
 .euc-grouped-view td{line-height:1.65}
 .euc-grouped-view td:nth-child(3){min-width:135px}
 @media(max-width:700px){.euc-grouped-view{min-width:690px}}
+</style><style>
+/* EU CBAM: explicit-range cost chart and topic x customer comparison */
+.euc-chart{padding:16px;border-radius:12px;background:#fff;border:1px solid #d4e3ef;margin:12px 0 16px}
+.euc-chart-caption{font-size:12px;color:#657e93;line-height:1.6;margin:0 0 13px}
+.euc-chart-row{display:grid;grid-template-columns:minmax(145px,23%) minmax(150px,1fr) minmax(125px,20%);gap:12px;align-items:center;margin:15px 0}
+.euc-chart-name strong{display:block;font-size:13px;color:#163e60}.euc-chart-name small,.euc-chart-number small{display:block;font-size:11px;color:#697f92;margin-top:3px}
+.euc-chart-plot{height:28px;border-radius:5px;position:relative;background:repeating-linear-gradient(to right,#edf4f9 0,#edf4f9 calc(25% - 1px),#cadbe8 calc(25% - 1px),#cadbe8 25%);border-bottom:1px solid #abc4d7}
+.euc-chart-range{position:absolute;top:6px;height:15px;min-width:5px;border-radius:4px;background:#226a9f;box-shadow:0 0 0 1px #135b8b}
+.euc-chart-est{position:absolute;top:1px;height:25px;border-left:3px dashed #b47a28}
+.euc-chart-number{color:#194b70;font-weight:750;font-size:13px}
+.euc-chart-scale{display:flex;justify-content:space-between;margin-left:calc(23% + 12px);margin-right:calc(20% + 12px);color:#687f91;font-size:11px}
+.euc-chart-unplotted{border:1px dashed #a7c4d9;border-radius:9px;padding:12px;margin:12px 0;background:#f6fbfe;font-size:12px;color:#31516b}
+.euc-chart-pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.euc-chart-pills span{padding:5px 8px;border-radius:7px;background:#e7f1f9}
+.euc-compare-scroll{max-width:100%;overflow-x:auto}
+.euc-compare-table{min-width:960px;table-layout:fixed;border-collapse:separate;border-spacing:0}
+.euc-compare-table th,.euc-compare-table td{vertical-align:top;border-bottom:1px solid #d7e3ec;padding:13px 14px;line-height:1.65}
+.euc-compare-table thead th{background:#dfeef8;position:sticky;top:0;color:#173d5e}
+.euc-compare-table thead th:first-child{width:60px}
+.euc-compare-table thead th:nth-child(2){width:200px}
+.euc-compare-table tbody tr:nth-child(odd){background:#f8fbfe}
+.euc-compare-index{font-size:14px;color:#1d668e;white-space:nowrap}
+.euc-compare-topic{background:#ebf4fa;color:#173d60;font-size:13px}
+.euc-compare-topic .euc-meta{margin-top:6px}
+.euc-view-date{display:inline-block;color:#557690;font-size:11px;margin-bottom:6px}
+.euc-view-sep{height:1px;background:#d7e5f0;margin:10px 0}
+.euc-no-view{color:#8799a7;font-size:12px}
+@media(max-width:680px){.euc-chart-row{grid-template-columns:minmax(85px,24%) minmax(110px,1fr) minmax(95px,29%);gap:6px}.euc-chart-scale{margin-left:calc(24% + 6px);margin-right:calc(29% + 6px);font-size:9px}.euc-chart{padding:10px}.euc-chart-number{font-size:11px}.euc-compare-table{min-width:850px}}
 </style></head><body class="locked"><div id="loginGate"><form class="loginCard" id="loginForm"><div style="font-size:30px">🔒</div><h1>德國・英國出差行程</h1><p>請輸入測試版共用密碼</p><input id="tripPassword" type="password" autocomplete="off" placeholder="共用密碼" required><button type="submit">查看行程</button><p class="err" id="loginError" aria-live="polite"></p><p class="warn">注意：這只是 HTML 畫面鎖，不能保護原始碼或行程資料。請勿用於機密資訊；內部版內容可被任何人讀取。</p></form></div><script>
 // DEMO ONLY: the password and all itinerary data are readable in this HTML source.
 // Do not use this for access control or confidential information.
@@ -218,10 +246,10 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
   </div>
   <div id="eucStatus" class="euc-meta" aria-live="polite">正在讀取 CBAM 訪談資料…</div>
   <div class="euc-pane" id="euc-cost" role="tabpanel">
-   <div class="euc-card"><h3>各鋼廠 CBAM 成本估算比較</h3><p class="sub">以客戶、會議日期、估算區間及假設標示。未提供相同計算基準時，保留文字或區間，不製作虛假精確的排行。</p><div id="eucCostTable"></div><h3 style="margin-top:22px">低碳鋼溢價、排放數值與完稅條件（非 CBAM 稅額）</h3><p class="sub">將會談中的綠鋼溢價、碳排強度、EPD 需求及成本分工另列，避免與 CBAM 每噸稅額混淆。</p><div id="eucPriceObservations"></div></div>
+   <div class="euc-card"><h3>各鋼廠 CBAM 成本估算比較</h3><p class="sub">橫向顯示可辨識的客戶口述估值／區間；未提供明確上下界者不推定精確數字。下方簡表保留全部來源及計算限制。</p><div id="eucCostChart" role="figure" aria-label="各鋼廠 CBAM 客戶估算橫向圖表"></div><h3 style="margin-top:20px">成本估算明細與限制</h3><div id="eucCostTable"></div><h3 style="margin-top:22px">低碳鋼溢價、排放數值與完稅條件（非 CBAM 稅額）</h3><p class="sub">將會談中的綠鋼溢價、碳排強度、EPD 需求及成本分工另列，避免與 CBAM 每噸稅額混淆。</p><div id="eucPriceObservations"></div></div>
   </div>
   <div class="euc-pane" id="euc-views" role="tabpanel" hidden>
-   <div class="euc-card"><h3>跨客戶觀點對照｜依議題整合</h3><p class="sub">以同一議題為單位編號，列出各客戶及會談日期，再分別呈現不同說法；只有一家客戶提及的議題也保留，不重複列出第二張明細表。</p><div id="eucCommonViews"></div></div>
+   <div class="euc-card"><h3>跨客戶觀點對照｜依議題整合</h3><p class="sub">每個議題編號一列，橫向對照 Duferco、Spaeter、Knauf 及後續新增客戶；「未提及」僅表示目前紀錄沒有該議題，非客戶否定此說法。手機可左右滑動表格。</p><div id="eucCommonViews"></div></div>
   </div>
   <div class="euc-pane" id="euc-actions" role="tabpanel" hidden>
    <div class="euc-card"><h3>對中鋼影響與追蹤清單</h3><p class="sub">依客戶紀錄建立追蹤事項，可註明責任窗口與狀態。</p><div id="eucActionTable"></div></div>
@@ -860,20 +888,57 @@ renderAllClients();
    for(const x of r.price_observations||[])observations.push([label,x.metric||'',x.amount||'',x.note||'']);
    for(const x of r.actions||[])actions.push([label,x.topic||'',x.owner||'待確認',x.status||'待追蹤']);
   }
+  // A conservative graphic: only show numeric spans actually stated in the source.
+  // "70多", unspecified, or conflicting assumptions are NOT silently turned into numeric bands.
+  const maxCost=120;
+  const plotRows=[];
+  const unplotted=[];
+  for(const r of records){
+   for(const x of r.cost_estimates||[]){
+    const amount=String(x.amount||'');
+    const range=amount.match(/€\s*(\d+(?:\.\d+)?)\s*[–—\-~～]\s*(\d+(?:\.\d+)?)/);
+    const approx=amount.match(/(?:接近|約)\s*€\s*(\d+(?:\.\d+)?)(?!\s*多)/);
+    const isVague=/多|無可靠|未提供|不詳|N\/A/i.test(amount);
+    let datum=null;
+    if(range){const a=Number(range[1]),b=Number(range[2]);if(b>=a&&b<=maxCost)datum={low:a,high:b,type:'range'};}
+    else if(!isVague&&approx){const a=Number(approx[1]);if(a<=maxCost)datum={low:a,high:a,type:'approx'};}
+    const item={customer:r.customer||'',date:r.date||'',mill:x.mill||'',amount,note:x.note||'',datum};
+    (datum?plotRows:unplotted).push(item);
+   }
+  }
+  const scale='<div class="euc-chart-scale"><span>€0</span><span>€30</span><span>€60</span><span>€90</span><span>€120／MT</span></div>';
+  document.getElementById('eucCostChart').innerHTML=plotRows.length?'<div class="euc-chart"><div class="euc-chart-caption">單位：€/MT｜口述估算，非歐盟核定稅額；不同鋼廠假設可能不一致</div>'+plotRows.map(x=>{
+   const p=x.datum;
+   const from=(p.low/maxCost*100).toFixed(3),span=(Math.max(p.high-p.low,.75)/maxCost*100).toFixed(3);
+   const shape=p.type==='range'?'<span class="euc-chart-range" style="left:'+from+'%;width:'+span+'%"></span>':'<span class="euc-chart-est" style="left:'+from+'%"></span>';
+   return '<div class="euc-chart-row"><div class="euc-chart-name"><strong>'+esc(x.mill)+'</strong><small>'+esc(x.customer)+'｜'+esc(x.date)+'</small></div><div class="euc-chart-plot" title="'+esc(x.note)+'">'+shape+'</div><div class="euc-chart-number">'+esc(x.amount)+(p.type==='approx'?'<small>概略點估</small>':'<small>口述區間</small>')+'</div></div>';
+  }).join('')+scale+'<div class="euc-chart-caption">實線短區間＝有明確上下界；虛線標記＝「接近」的概略值。圖形不代表已校準至相同產品／計算基準。</div></div>':'';
+  if(unplotted.length)document.getElementById('eucCostChart').innerHTML+='<div class="euc-chart-unplotted"><strong>無法精確定位的其他估算（不畫成數值棒）</strong><div class="euc-chart-pills">'+unplotted.map(x=>'<span>'+esc(x.mill)+'：'+esc(x.amount)+'</span>').join('')+'</div></div>';
+  if(!plotRows.length&&!unplotted.length)document.getElementById('eucCostChart').innerHTML=empty('目前尚無 CBAM 成本估算。');
   els.cost.innerHTML=table(['客戶／會談日','鋼廠／來源','估算成本（€/MT或原單位）','計算假設／限制'],cost);
   document.getElementById('eucPriceObservations').innerHTML=table(['客戶／會談日','觀察項目','數值／條件','背景與限制'],observations);
-  const groups=[...shared.entries()].sort((a,b)=>{
-   const rank=['實際排放與第三方查驗','CBAM 與完稅成本','低碳／綠鋼採購商業條件','低碳鋼產品與 EPD／RC','未來成本情境','市場競爭','終端專案需求'];
-   const ia=rank.indexOf(a[0]),ib=rank.indexOf(b[0]);
-   return (ia<0?rank.length:ia)-(ib<0?rank.length:ib);
+  const priority=['實際排放與第三方查驗','CBAM 與完稅成本','低碳／綠鋼採購商業條件','低碳鋼產品與 EPD／RC','未來成本情境','市場競爭','終端專案需求'];
+  const topics=[...shared.entries()].sort((a,b)=>{
+   const ia=priority.indexOf(a[0]),ib=priority.indexOf(b[0]);
+   const pa=ia<0?priority.length:ia,pb=ib<0?priority.length:ib;
+   return pa-pb||a[0].localeCompare(b[0],'zh-Hant');
   });
-  document.getElementById('eucCommonViews').innerHTML=groups.length?'<div class="euc-table-scroll"><table class="euc-table euc-grouped-view"><thead><tr><th>項次</th><th>議題</th><th>客戶／會談日</th><th>各客戶的說法</th></tr></thead><tbody>'+groups.map(([topic,items],i)=>{
-   const customerGroups=[...new Set(items.map(x=>x.customer))].map(customer=>{
-     const rows=items.filter(x=>x.customer===customer);
-     return {customer,date:rows[0]?.date||'',detail:rows.map(x=>x.detail).filter(Boolean).join('；')};
-   });
-   return customerGroups.map((entry,j)=>'<tr class="'+(j===0?'euc-topic-start':'')+'">'+(j===0?'<td rowspan="'+customerGroups.length+'" class="euc-group-index">'+String(i+1).padStart(2,'0')+'</td><td rowspan="'+customerGroups.length+'" class="euc-group-topic"><strong>'+esc(topic)+'</strong><span class="euc-meta">'+customerGroups.length+' 家客戶</span></td>':'')+'<td><strong>'+esc(entry.customer||'未列客戶')+'</strong><div class="euc-meta">'+esc(entry.date||'日期待補')+'</div></td><td>'+esc(entry.detail||'未提供說法')+'</td></tr>').join('');
-  }).join('')+'</tbody></table></div>':empty('尚未加入客戶觀點。');
+  // Customer columns are data-driven; a UK client will automatically get its own column.
+  const preferred=['Duferco','Carl Spaeter HQ','Knauf'];
+  const customers=[...new Set(records.map(x=>x.customer).filter(Boolean))].sort((a,b)=>{
+   const ia=preferred.indexOf(a),ib=preferred.indexOf(b);
+   return (ia<0?preferred.length:ia)-(ib<0?preferred.length:ib)||a.localeCompare(b);
+  });
+  const colHead=['項次','比較議題',...customers.map(c=>c==='Carl Spaeter HQ'?'Carl Spaeter':c)];
+  const body=topics.map(([topic,entries],idx)=>{
+   const cells=customers.map(customer=>{
+    const views=entries.filter(x=>x.customer===customer);
+    if(!views.length)return '<td class="euc-no-view">— 未提及</td>';
+    return '<td class="euc-customer-view">'+views.map((v,n)=>'<div class="euc-view-entry">'+(n?'<div class="euc-view-sep"></div>':'')+'<span class="euc-view-date">'+esc(v.date||'日期未註')+'</span><div>'+esc(v.detail||'未提供說法')+'</div></div>').join('')+'</td>';
+   }).join('');
+   return '<tr><th scope="row" class="euc-compare-index">'+String(idx+1).padStart(2,'0')+'</th><td class="euc-compare-topic"><strong>'+esc(topic)+'</strong><div class="euc-meta">'+new Set(entries.map(x=>x.customer)).size+' 家客戶提及</div></td>'+cells+'</tr>';
+  }).join('');
+  document.getElementById('eucCommonViews').innerHTML=topics.length?'<div class="euc-table-scroll euc-compare-scroll"><table class="euc-table euc-compare-table"><thead><tr>'+colHead.map(x=>'<th scope="col">'+esc(x)+'</th>').join('')+'</tr></thead><tbody>'+body+'</tbody></table></div>':empty('尚未加入客戶觀點。');
   els.actions.innerHTML=table(['客戶／會談日','追蹤事項','責任窗口','狀態'],actions);
   const q=document.getElementById('eucSearch').value.trim().toLowerCase(),who=document.getElementById('eucCustomer').value;
   const filtered=records.filter(r=>(!who||who===r.customer)&&(!q||JSON.stringify(r).toLowerCase().includes(q))).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
