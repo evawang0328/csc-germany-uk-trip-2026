@@ -188,7 +188,7 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
   </div>
   <div class="euc-pane" id="euc-interviews" role="tabpanel" hidden>
    <div class="euc-card"><h3>CBAM 客戶訪談紀錄</h3>
-    <p class="sub">按日期與客戶查詢。可分別連到 CBAM 專題文件（PDF／Word）及完整會議紀錄。</p>
+    <p class="sub">按日期與客戶查詢 CBAM 專題整理（PDF／Word）。完整的跨議題會議紀錄請至「06 客戶資料」查看。</p>
     <div class="euc-tools"><input id="eucSearch" type="search" placeholder="搜尋客戶、議題或日期" aria-label="搜尋 CBAM 客戶訪談"><select id="eucCustomer" aria-label="篩選 CBAM 客戶"><option value="">全部客戶</option></select></div>
     <div id="eucInterviewList"></div>
    </div>
@@ -773,8 +773,8 @@ renderAllClients();
   const q=document.getElementById('eucSearch').value.trim().toLowerCase(),who=document.getElementById('eucCustomer').value;
   const filtered=records.filter(r=>(!who||who===r.customer)&&(!q||JSON.stringify(r).toLowerCase().includes(q))).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
   els.interviews.innerHTML=filtered.length?filtered.map(r=>{
-    let links=[];for(const [key,title] of [['pdf','📄 CBAM PDF'],['word','📝 CBAM Word'],['meeting_pdf','📄 完整會議 PDF'],['meeting_word','📝 完整會議 Word']]){
-     const url=r.files?.[key];if(typeof url==='string'&&(/^(https:\/\/|meeting_records\/)/i).test(url))links.push('<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+title+' ↗</a>');
+    let links=[];for(const [key,title] of [['pdf','📄 Duferco CBAM 專題 PDF'],['word','📝 Duferco CBAM 專題 Word']]){
+     const url=r.files?.[key];if(typeof url==='string'&&(/^(https:\/\/|cbam_records\/)/i).test(url))links.push('<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+title+' ↗</a>');
     }
     return '<article class="euc-card"><h3>'+esc(r.customer||'客戶未標示')+'　<span class="euc-pill">'+esc(r.date||'日期待補')+'</span></h3><p class="euc-meta">'+esc(r.country||'')+'｜'+esc(r.title||'CBAM 專題訪談')+'</p><p>'+esc(r.summary||'摘要待補')+'</p>'+(links.length?'<div class="euc-files">'+links.join('')+'</div>':'<p class="euc-meta">尚未提供已授權的 Word／PDF 連結。</p>')+'</article>';
   }).join(''):empty('尚無符合條件的 CBAM 訪談紀錄。');
