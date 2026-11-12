@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11 10:36",
+  "generated_at": "2026-11-12 11:40",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -60,6 +60,66 @@
     }
   ],
   "items": [
+    {
+      "title": "Bekaert to acquire Dextra for €140 million to expand construction reinforcement portfolio",
+      "date": "2026-11-11",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/bekaert-to-acquire-dextra-for-e140-million-to-expand-construction-reinforcement-portfolio/?utm_source=rss&utm_medium=rss&utm_campaign=bekaert-to-acquire-dextra-for-e140-million-to-expand-construction-reinforcement-portfolio",
+      "regions": [
+        "EU"
+      ],
+      "category": "下游需求",
+      "summary": "來源新聞標題：Bekaert to acquire Dextra for €140 million to expand construction reinforcement portfolio",
+      "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
+    },
+    {
+      "title": "European HRC prices firm on reduced imports, higher energy and transport costs",
+      "date": "2026-11-11",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/european-hrc-prices-firm-on-reduced-imports-higher-energy-and-transport-costs/?utm_source=rss&utm_medium=rss&utm_campaign=european-hrc-prices-firm-on-reduced-imports-higher-energy-and-transport-costs",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：European HRC prices firm on reduced imports, higher energy and transport costs",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Polish rebar, wire rod prices rise amid high production costs, weak demand",
+      "date": "2026-11-11",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/polish-rebar-wire-rod-prices-rise-amid-high-production-costs-weak-demand/?utm_source=rss&utm_medium=rss&utm_campaign=polish-rebar-wire-rod-prices-rise-amid-high-production-costs-weak-demand",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Polish rebar, wire rod prices rise amid high production costs, weak demand",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Steelmakers call for predictable ETS: Kallanish Green Steel Strategies",
+      "date": "2026-11-11",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/steelmakers-call-for-predictable-ets-kallanish-green-steel-strategies/?utm_source=rss&utm_medium=rss&utm_campaign=steelmakers-call-for-predictable-ets-kallanish-green-steel-strategies",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Steelmakers call for predictable ETS: Kallanish Green Steel Strategies",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "Policy-driven demand key to unlock green steel demand: Kallanish Green Steel Strategies",
+      "date": "2026-11-11",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/policy-driven-demand-key-to-unlock-green-steel-demand-kallanish-green-steel-strategies/?utm_source=rss&utm_medium=rss&utm_campaign=policy-driven-demand-key-to-unlock-green-steel-demand-kallanish-green-steel-strategies",
+      "regions": [
+        "EU"
+      ],
+      "category": "政經政策",
+      "summary": "來源新聞標題：Policy-driven demand key to unlock green steel demand: Kallanish Green Steel Strategies",
+      "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
+    },
     {
       "title": "Arvedi and Jindal submit bids for acquisition of ex-Ilva steel plants",
       "date": "2026-11-10",
