@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "updated_at": "2026-11-12",
-  "description": "EU CBAM 客戶訪談資料庫。正式資料需經授權後由管理者填入；金額與政策觀點分別標示來源及限制。",
+  "description": "EU CBAM 專題訪談資料庫，只提供 CBAM 專題 PDF／Word 連結；完整客戶會議紀錄另由第06頁客戶資料管理。",
   "items": [
     {
       "id": "2026-11-11-duferco-cbam",
@@ -92,9 +92,7 @@
       ],
       "files": {
         "pdf": "cbam_records/2026-11-11_Duferco_CBAM.pdf",
-        "word": "cbam_records/2026-11-11_Duferco_CBAM.docx",
-        "meeting_pdf": "meeting_records/2026-11-11_Duferco_Dinner_Meeting_Record.pdf",
-        "meeting_word": "meeting_records/2026-11-11_Duferco_Dinner_Meeting_Record.docx"
+        "word": "cbam_records/2026-11-11_Duferco_CBAM.docx"
       }
     }
   ],
@@ -126,10 +124,8 @@
       }
     ],
     "files": {
-      "pdf": "授權文件網址或 meeting_records/...",
-      "word": "授權文件網址或 meeting_records/...",
-      "meeting_pdf": "完整會議PDF連結",
-      "meeting_word": "完整會議Word連結"
+      "pdf": "CBAM 專題 PDF：HTTPS 授權網址或 cbam_records/相對路徑",
+      "word": "CBAM 專題 Word：HTTPS 授權網址或 cbam_records/相對路徑"
     }
   }
 }
