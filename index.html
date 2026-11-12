@@ -197,7 +197,7 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
  </div>
 </section>
 <section id="weather" class="hidden"><div class="panel"><h2>德英出差天氣預報｜Weather by Itinerary</h2><p class="sub">依 2026/11/10–11/19 每日所在城市查詢最高／最低溫、降雨機率及是否建議帶傘。資訊由 Open-Meteo 提供，超出可預測期間不顯示臆測值。</p><div class="iv-alert">天氣預報會持續變動；下方為即時查詢結果，出門前請再次確認當日天氣與交通狀況。若連線失敗，可點「重新取得天氣」。</div><div class="iv-toolbar"><button type="button" id="weatherRefresh">重新取得天氣預報</button><span id="weatherStatus" role="status" aria-live="polite"></span></div><div id="weatherGrid" class="weather-grid"><p>正在準備天氣資訊…</p></div><p class="sub">來源：Open-Meteo Weather Forecast API（無須帳號）；依各城市當地日期顯示，降雨建議屬便利提示、非氣象警報。</p></div></section>
-<section id="presentation" class="hidden"><div class="panel"><h2>中鋼公司簡報｜CSC Corporate Presentation</h2><p class="sub">Strengthening Our Partnership in Europe · November 2026</p><div class="iv-toolbar"><a class="csc-asset-link" href="CSC_Europe_Nov2026_20261109.pdf" target="_blank" rel="noopener">開啟 PDF 全螢幕預覽 ↗</a><a class="csc-asset-link" href="CSC_Europe_Nov2026_20261109.pptx" download>下載原始 PPTX</a></div><iframe title="CSC European Business Presentation PDF Preview" src="CSC_Europe_Nov2026_20261109.pdf#view=FitH" class="csc-slide-viewer"></iframe><p class="sub">若手機瀏覽器不支援內嵌 PDF，請使用上方「開啟 PDF」按鈕。未來更新簡報時，直接覆蓋同名 PDF 和 PPTX 檔即可，不需重新改版網站。</p></div></section>
+<section id="presentation" class="hidden"><div class="panel"><h2>中鋼公司簡報｜CSC Corporate Presentation</h2><p class="sub">Strengthening Our Partnership in Europe · November 2026</p><div class="iv-toolbar"><a class="csc-asset-link" href="CSC_Europe_Nov2026_20261109.pdf" target="_blank" rel="noopener">開啟 PDF 全螢幕預覽 ↗</a><a class="csc-asset-link" href="CSC_Europe_Nov2026_20261109.pptx" download>下載原始 PPTX</a></div><iframe id="cscPresentationIframe" title="CSC European Business Presentation PDF Preview" src="CSC_Europe_Nov2026_20261109.pdf#view=FitH" class="csc-slide-viewer"></iframe><p class="sub">若手機瀏覽器不支援內嵌 PDF，請使用上方「開啟 PDF」按鈕。未來更新簡報時，直接覆蓋同名 PDF 和 PPTX 檔即可，不需重新改版網站。</p></div></section>
 <section id="interview" class="hidden"><div class="panel iv-wrap">
 <h2>客戶訪談問題｜European Customer Interview Guide</h2>
 <p class="sub">Germany & United Kingdom · November 2026｜以附件訪談指南整理。出差時可直接在手機閱讀英文問題與中文提示。</p>
@@ -788,6 +788,25 @@ renderAllClients();
   [...new Set(records.map(r=>r.customer).filter(Boolean))].sort().forEach(name=>select.add(new Option(name,name)));
   document.getElementById('eucStatus').textContent='已載入 '+records.length+' 筆訪談；資料版本：'+(data.updated_at||'待更新');draw();
  }).catch(e=>{document.getElementById('eucStatus').textContent='讀取訪談資料失敗：'+e.message;draw()});
+})();
+</script>
+
+<script>
+/* Refresh presentation PDF on entry so overwritten same-name files do not remain in embedded PDF cache. */
+(function(){
+ const section=document.getElementById('presentation');
+ if(!section)return;
+ const frame=document.getElementById('cscPresentationIframe');
+ const pdfLink=section.querySelector('a[href="CSC_Europe_Nov2026_20261109.pdf"]');
+ const pdf='CSC_Europe_Nov2026_20261109.pdf';
+ function refreshPresentation(){
+  const url=pdf+'?rev='+Date.now();
+  if(frame)frame.src=url+'#view=FitH';
+  if(pdfLink)pdfLink.href=url;
+ }
+ document.querySelectorAll('[data-tab="presentation"],[data-mobile-go="presentation"]').forEach(button=>{
+   button.addEventListener('click',refreshPresentation);
+ });
 })();
 </script>
 </body></html>
