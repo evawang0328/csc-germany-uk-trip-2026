@@ -2,7 +2,102 @@
   "schema_version": "1.0",
   "updated_at": "2026-11-12",
   "description": "EU CBAM 客戶訪談資料庫。正式資料需經授權後由管理者填入；金額與政策觀點分別標示來源及限制。",
-  "items": [],
+  "items": [
+    {
+      "id": "2026-11-11-duferco-cbam",
+      "customer": "Duferco",
+      "country": "德國",
+      "date": "2026-11-11",
+      "title": "Duferco 對歐盟 CBAM 成本之評估與未來展望",
+      "summary": "Duferco 已將 CBAM 納入採購及報價決策，偏好可信且可被採信的實際排放值。客戶估計中鋼 CBAM 成本約 €70–72/MT，並關注最終申報若改採預設值所產生的補繳風險；未來成本上升幅度仍屬情境推測。",
+      "source_type": "客戶會談觀點，未經官方或第三方獨立驗證",
+      "cost_estimates": [
+        {
+          "mill": "中鋼 CSC",
+          "amount": "約 €70–72/MT",
+          "note": "Duferco 口述粗估；ETS 價格、排放強度、免費配額及產品代碼等計算條件尚待確認，非核定稅額。"
+        },
+        {
+          "mill": "土耳其 Yildiz",
+          "amount": "接近 €100/MT（近期略低）",
+          "note": "未提供完整公式或預設值採用情況，不能直接與 CSC 同基準比較。"
+        },
+        {
+          "mill": "印度 Jindal",
+          "amount": "約 €70 多/MT",
+          "note": "客戶概略估算；其提及的 EAF 約 0.9、BOF 約 2.9 tCO₂/t 是排放強度、不是碳成本。"
+        },
+        {
+          "mill": "中國邯鄲、唐山鋼廠",
+          "amount": "約 €70 多/MT",
+          "note": "未提供個別鋼廠產品及完整計算依據。"
+        },
+        {
+          "mill": "印尼 Dexin 等",
+          "amount": "無可靠 €/MT 成本",
+          "note": "客戶提及預設排放值約 8 tCO₂/t、實際值可能低於 2.4–2.5 tCO₂/t，均待核實，不換算成 CBAM 成本。"
+        }
+      ],
+      "perspectives": [
+        {
+          "topic": "報價與採購決策",
+          "detail": "已把 CBAM 成本納入報價與交易審查；盧加諾總部團隊負責碳排資料與成本估算，德國團隊著重銷售。"
+        },
+        {
+          "topic": "第三方查驗",
+          "detail": "客戶稱與 Bureau Veritas 合作處理鋼廠排放資料查核；查驗資料的可接受性與時程會影響採購。"
+        },
+        {
+          "topic": "實際值與預設值",
+          "detail": "對可信且可採信的鋼廠排放資料傾向使用實際值；最終若須改用較高預設值，恐產生補繳風險。"
+        },
+        {
+          "topic": "多重貿易成本",
+          "detail": "盧加諾總部風控部門綜合檢視 CBAM、反傾銷及防衛措施成本，可能影響交易核准。"
+        },
+        {
+          "topic": "市場競爭",
+          "detail": "Duferco 認為 CBAM 增加進口鋼材成本及貿易商的資金門檻，下游客戶在需求疲弱時未必能接受完全轉嫁。"
+        },
+        {
+          "topic": "未來成本情境",
+          "detail": "Duferco 推估未來約 3–5 年 CBAM 成本可能由約 €70/MT 升至 €250/MT；此為客戶情境推測，非歐盟官方稅額或已確定規則。"
+        },
+        {
+          "topic": "出口國碳定價",
+          "detail": "客戶認為出口國的碳定價及抵減安排可能影響成本，實際能否抵減仍取決於歐盟法規與已支付碳價。"
+        }
+      ],
+      "actions": [
+        {
+          "topic": "向盧加諾 CBAM 團隊確認 CSC €70–72/MT 估算的 CN Code、排放強度、免費配額、ETS 價格及實際值／預設值假設",
+          "owner": "中鋼業務／CBAM 專責窗口",
+          "status": "待追蹤"
+        },
+        {
+          "topic": "確認正式查驗證明、排放資料勾稽方式、申報格式與提供期限",
+          "owner": "中鋼 CBAM 專責窗口",
+          "status": "待追蹤"
+        },
+        {
+          "topic": "請客戶提供土耳其、印度、中國競爭鋼廠相同產品與相同基準的比較資料",
+          "owner": "中鋼業務窗口",
+          "status": "待追蹤"
+        },
+        {
+          "topic": "將 €250/MT 上升情境單獨分析，不直接用於當前報價或當作官方政策",
+          "owner": "中鋼市場研究／CBAM 專責窗口",
+          "status": "待追蹤"
+        }
+      ],
+      "files": {
+        "pdf": "cbam_records/2026-11-11_Duferco_CBAM.pdf",
+        "word": "cbam_records/2026-11-11_Duferco_CBAM.docx",
+        "meeting_pdf": "meeting_records/2026-11-11_Duferco_Dinner_Meeting_Record.pdf",
+        "meeting_word": "meeting_records/2026-11-11_Duferco_Dinner_Meeting_Record.docx"
+      }
+    }
+  ],
   "field_guide": {
     "id": "唯一記錄ID，例如 2026-11-11-duferco-cbam",
     "customer": "客戶名稱",
