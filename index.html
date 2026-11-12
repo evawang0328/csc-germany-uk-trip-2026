@@ -847,7 +847,7 @@ renderAllClients();
   for(const r of records){
    const label=(r.customer||'')+'｜'+(r.date||'');
    for(const x of r.cost_estimates||[])cost.push([label,x.mill||'',x.amount||'',x.note||'']);
-   for(const x of r.perspectives||[]){view.push([label,x.topic||'',x.detail||'']);const topic=x.topic||'未分類';if(!shared.has(topic))shared.set(topic,[]);shared.get(topic).push({customer:r.customer,date:r.date,detail:x.detail||''});}
+   for(const x of r.perspectives||[]){view.push([label,x.topic||'',x.detail||'']);const aliases={'第三方查驗':'實際排放與第三方查驗','實際值與預設值':'實際排放與第三方查驗','報價與採購決策':'CBAM 與完稅成本','多重貿易成本':'CBAM 與完稅成本'};const topic=aliases[x.topic]||x.topic||'未分類';if(!shared.has(topic))shared.set(topic,[]);shared.get(topic).push({customer:r.customer,date:r.date,detail:x.detail||''});}
    for(const x of r.price_observations||[])observations.push([label,x.metric||'',x.amount||'',x.note||'']);
    for(const x of r.actions||[])actions.push([label,x.topic||'',x.owner||'待確認',x.status||'待追蹤']);
   }
