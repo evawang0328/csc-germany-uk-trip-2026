@@ -161,6 +161,15 @@ main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:16px;bo
 .spec-customer-title{display:flex;flex:1 1 350px;align-items:center;flex-wrap:wrap;gap:9px 14px}
 .spec-customer-title h3{margin:0}
 @media(max-width:600px){.spec-year-switch button{font-size:12px;padding:7px 10px}}
+</style><style>
+/* Topic-first customer-view comparison: grouped rows and numbering */
+.euc-grouped-view .euc-topic-start{border-top:2px solid #95b5cb}
+.euc-grouped-view .euc-group-index{font-weight:800;color:#1a527d;white-space:nowrap;width:55px}
+.euc-grouped-view .euc-group-topic{min-width:160px;width:21%;background:#edf5fb;color:#173f60}
+.euc-grouped-view .euc-group-topic .euc-meta{display:block;margin-top:7px}
+.euc-grouped-view td{line-height:1.65}
+.euc-grouped-view td:nth-child(3){min-width:135px}
+@media(max-width:700px){.euc-grouped-view{min-width:690px}}
 </style></head><body class="locked"><div id="loginGate"><form class="loginCard" id="loginForm"><div style="font-size:30px">🔒</div><h1>德國・英國出差行程</h1><p>請輸入測試版共用密碼</p><input id="tripPassword" type="password" autocomplete="off" placeholder="共用密碼" required><button type="submit">查看行程</button><p class="err" id="loginError" aria-live="polite"></p><p class="warn">注意：這只是 HTML 畫面鎖，不能保護原始碼或行程資料。請勿用於機密資訊；內部版內容可被任何人讀取。</p></form></div><script>
 // DEMO ONLY: the password and all itinerary data are readable in this HTML source.
 // Do not use this for access control or confidential information.
@@ -212,7 +221,7 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
    <div class="euc-card"><h3>各鋼廠 CBAM 成本估算比較</h3><p class="sub">以客戶、會議日期、估算區間及假設標示。未提供相同計算基準時，保留文字或區間，不製作虛假精確的排行。</p><div id="eucCostTable"></div><h3 style="margin-top:22px">低碳鋼溢價、排放數值與完稅條件（非 CBAM 稅額）</h3><p class="sub">將會談中的綠鋼溢價、碳排強度、EPD 需求及成本分工另列，避免與 CBAM 每噸稅額混淆。</p><div id="eucPriceObservations"></div></div>
   </div>
   <div class="euc-pane" id="euc-views" role="tabpanel" hidden>
-   <div class="euc-card"><h3>跨客戶觀點對照</h3><p class="sub">彙整成本估算、實際值／預設值、查驗、採購決策、未來展望等主題。</p><h3>多家客戶共同提及的議題</h3><p class="sub">同議題會合併列出客戶名稱，並分別保留各客戶原始看法與差異，不將一家客戶的估算當作其他客戶的獨立觀點。</p><div id="eucCommonViews"></div><h3 style="margin-top:22px">個別客戶觀點明細</h3><div id="eucViewTable"></div></div>
+   <div class="euc-card"><h3>跨客戶觀點對照｜依議題整合</h3><p class="sub">以同一議題為單位編號，列出各客戶及會談日期，再分別呈現不同說法；只有一家客戶提及的議題也保留，不重複列出第二張明細表。</p><div id="eucCommonViews"></div></div>
   </div>
   <div class="euc-pane" id="euc-actions" role="tabpanel" hidden>
    <div class="euc-card"><h3>對中鋼影響與追蹤清單</h3><p class="sub">依客戶紀錄建立追蹤事項，可註明責任窗口與狀態。</p><div id="eucActionTable"></div></div>
@@ -853,12 +862,18 @@ renderAllClients();
   }
   els.cost.innerHTML=table(['客戶／會談日','鋼廠／來源','估算成本（€/MT或原單位）','計算假設／限制'],cost);
   document.getElementById('eucPriceObservations').innerHTML=table(['客戶／會談日','觀察項目','數值／條件','背景與限制'],observations);
-  const multi=[...shared.entries()].filter(([topic,items])=>new Set(items.map(x=>x.customer)).size>=2).map(([topic,items])=>[
-   topic,[...new Set(items.map(x=>x.customer))].join('、'),
-   items.map(x=>(x.customer||'未列客戶')+'（'+(x.date||'日期待補')+'）：'+x.detail).join('；')
-  ]);
-  document.getElementById('eucCommonViews').innerHTML=table(['共同議題','提及客戶','各自說法與差異'],multi);
-  els.views.innerHTML=table(['客戶／會談日','議題','訪談觀點'],view);
+  const groups=[...shared.entries()].sort((a,b)=>{
+   const rank=['實際排放與第三方查驗','CBAM 與完稅成本','低碳／綠鋼採購商業條件','低碳鋼產品與 EPD／RC','未來成本情境','市場競爭','終端專案需求'];
+   const ia=rank.indexOf(a[0]),ib=rank.indexOf(b[0]);
+   return (ia<0?rank.length:ia)-(ib<0?rank.length:ib);
+  });
+  document.getElementById('eucCommonViews').innerHTML=groups.length?'<div class="euc-table-scroll"><table class="euc-table euc-grouped-view"><thead><tr><th>項次</th><th>議題</th><th>客戶／會談日</th><th>各客戶的說法</th></tr></thead><tbody>'+groups.map(([topic,items],i)=>{
+   const customerGroups=[...new Set(items.map(x=>x.customer))].map(customer=>{
+     const rows=items.filter(x=>x.customer===customer);
+     return {customer,date:rows[0]?.date||'',detail:rows.map(x=>x.detail).filter(Boolean).join('；')};
+   });
+   return customerGroups.map((entry,j)=>'<tr class="'+(j===0?'euc-topic-start':'')+'">'+(j===0?'<td rowspan="'+customerGroups.length+'" class="euc-group-index">'+String(i+1).padStart(2,'0')+'</td><td rowspan="'+customerGroups.length+'" class="euc-group-topic"><strong>'+esc(topic)+'</strong><span class="euc-meta">'+customerGroups.length+' 家客戶</span></td>':'')+'<td><strong>'+esc(entry.customer||'未列客戶')+'</strong><div class="euc-meta">'+esc(entry.date||'日期待補')+'</div></td><td>'+esc(entry.detail||'未提供說法')+'</td></tr>').join('');
+  }).join('')+'</tbody></table></div>':empty('尚未加入客戶觀點。');
   els.actions.innerHTML=table(['客戶／會談日','追蹤事項','責任窗口','狀態'],actions);
   const q=document.getElementById('eucSearch').value.trim().toLowerCase(),who=document.getElementById('eucCustomer').value;
   const filtered=records.filter(r=>(!who||who===r.customer)&&(!q||JSON.stringify(r).toLowerCase().includes(q))).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
