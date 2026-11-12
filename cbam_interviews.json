@@ -110,6 +110,22 @@
         "pdf": "cbam_records/2026-11-12-Spaeter_CBAM_Green_Steel.pdf",
         "word": "cbam_records/2026-11-12-Spaeter_CBAM_Green_Steel.docx"
       }
+    },
+    {
+      "id": "2026-11-12-knauf-green-steel",
+      "customer": "Knauf",
+      "country": "德國",
+      "date": "2026-11-12",
+      "title": "Knauf Green Steel 專題會談",
+      "summary": "已上傳 Knauf Green Steel 專題 PDF／Word。內容尚未逐項核對與摘錄；此筆先建立文件連結，之後可補入 CBAM／綠鋼觀點、成本及追蹤事項。",
+      "source_type": "專題文件已上傳，待內容查核與分類",
+      "cost_estimates": [],
+      "perspectives": [],
+      "actions": [],
+      "files": {
+        "pdf": "cbam_records/2026-11-12 Knauf Green Steel.pdf",
+        "word": "cbam_records/2026-11-12 Knauf Green Steel.docx"
+      }
     }
   ],
   "field_guide": {
