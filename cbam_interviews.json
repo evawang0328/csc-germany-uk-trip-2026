@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-12",
+  "updated_at": "2026-11-13",
   "description": "EU CBAM 專題訪談資料庫，只提供 CBAM 專題 PDF／Word 連結；完整客戶會議紀錄另由第06頁客戶資料管理。",
   "items": [
     {
@@ -93,6 +93,22 @@
       "files": {
         "pdf": "cbam_records/2026-11-11_Duferco_CBAM.pdf",
         "word": "cbam_records/2026-11-11_Duferco_CBAM.docx"
+      }
+    },
+    {
+      "id": "2026-11-12-spaeter-cbam-green-steel",
+      "customer": "Carl Spaeter HQ",
+      "country": "德國",
+      "date": "2026-11-12",
+      "title": "Carl Spaeter CBAM／Green Steel 專題會談整理",
+      "summary": "已上傳 CBAM／Green Steel 專題訪談文件。內容涉及的客戶觀點、成本估算及後續追蹤，需核對文件後再分類匯入比較表。",
+      "source_type": "客戶會談專題文件；尚未逐項摘錄核實",
+      "cost_estimates": [],
+      "perspectives": [],
+      "actions": [],
+      "files": {
+        "pdf": "cbam_records/2026-11-12-Spaeter_CBAM_Green_Steel.pdf",
+        "word": "cbam_records/2026-11-12-Spaeter_CBAM_Green_Steel.docx"
       }
     }
   ],
