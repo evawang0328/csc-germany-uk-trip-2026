@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "updated_at": "2026-11-13",
-  "description": "EU CBAM 專題訪談資料庫，只提供 CBAM 專題 PDF／Word 連結；完整客戶會議紀錄另由第06頁客戶資料管理。",
+  "description": "EU CBAM 客戶專題；成本估算、低碳溢價／排放觀察及各客戶觀點分別呈現。同議題可橫向並列客戶說法，並保留來源日期。部分依已讀會議紀錄 r2/r3 摘要，尚未逐字核對 GitHub 上另存專題 PDF／Word。",
   "items": [
     {
       "id": "2026-11-11-duferco-cbam",
@@ -101,15 +101,69 @@
       "country": "德國",
       "date": "2026-11-12",
       "title": "Carl Spaeter CBAM／Green Steel 專題會談整理",
-      "summary": "已上傳 CBAM／Green Steel 專題訪談文件。內容涉及的客戶觀點、成本估算及後續追蹤，需核對文件後再分類匯入比較表。",
-      "source_type": "客戶會談專題文件；尚未逐項摘錄核實",
+      "summary": "Spaeter 肯定低碳冷熱軋、RC60 等合作機會；大型終端特定專案可能接受溢價，但一般採購仍須比較鋼價、運輸與 CBAM 的總成本。重視可查驗實際排放值、製程／廠區資料與交期，未確認之排放目標不得當作中鋼產品正式數值。",
+      "source_type": "2026/11/12 Spaeter 會議紀錄 r3 之會談觀點（CBAM／Green Steel 專題文件另有 PDF／Word）",
       "cost_estimates": [],
-      "perspectives": [],
-      "actions": [],
+      "perspectives": [
+        {
+          "topic": "實際排放與第三方查驗",
+          "detail": "希望依產品、廠區及年份取得可驗證 Actual Value；中鋼現場說明 SGS 初步審查已完成，正式查驗須銜接中龍前驅物資料，現場暫估 2027 年 4–5 月完成，尚非保證期限。"
+        },
+        {
+          "topic": "低碳／綠鋼採購商業條件",
+          "detail": "管理層稱特定大型終端可討論約 €150/MT 綠鋼溢價，但一般採購端不接受直接加價；需將鋼價、加工、運輸及 CBAM 節省合併評估總成本。"
+        },
+        {
+          "topic": "CBAM 與完稅成本",
+          "detail": "認為免費配額逐步退場將提高進口碳成本，採購除排放外仍受配額、價格與船期約束；相關法規時程應另行核對。"
+        },
+        {
+          "topic": "低碳鋼產品與 EPD／RC",
+          "detail": "對 DC01 RC60、DD11／S235JR RC 低碳產品有興趣，要求排放、再生料比例、性能及規格資料；再生料比例不能代替正式碳排數值。"
+        },
+        {
+          "topic": "終端專案需求",
+          "detail": "開關櫃、Siemens 相關及資料中心等特定專案有低碳鋼需求，會談提及約 30,000 MT 潛力但未形成訂單，需核對規格與實際量。"
+        }
+      ],
+      "actions": [
+        {
+          "topic": "補送 DC01 RC60、DD11／S235JR RC 各產品排放與規格資料，區分廠區、年份、直接／間接排放及再生料比例",
+          "owner": "技術／品保／碳管理；Vicky、Irene、Bjorn 協調",
+          "status": "待追蹤"
+        },
+        {
+          "topic": "推進 SGS 正式查驗與中龍前驅物資料銜接，向 Spaeter 提供可驗證 Actual Value 與文件適用範圍",
+          "owner": "碳管理／品保／Duferco",
+          "status": "待追蹤"
+        },
+        {
+          "topic": "比較常規／RC 之鋼價、加工、物流、CBAM 成本及配額限制，確認綠鋼專案是否有實際溢價與可爭取數量",
+          "owner": "業務／市場研究／碳管理；中貿及 Duferco",
+          "status": "待追蹤"
+        }
+      ],
       "files": {
         "pdf": "cbam_records/2026-11-12-Spaeter_CBAM_Green_Steel.pdf",
         "word": "cbam_records/2026-11-12-Spaeter_CBAM_Green_Steel.docx"
-      }
+      },
+      "price_observations": [
+        {
+          "metric": "特定終端綠鋼溢價（非 CBAM 稅額）",
+          "amount": "約 €150/MT",
+          "note": "Spaeter 管理層稱部分大型終端可能接受；採購端表示一般交易不接受直接加收，非通行成交價。"
+        },
+        {
+          "metric": "特定專案排放目標（非成本）",
+          "amount": "約 0.5–0.6 tCO₂/t",
+          "note": "客戶所提理想直接排放值；另有約低於 1.2、理想低於 1.1 的口述期待，產品口徑未釐清。"
+        },
+        {
+          "metric": "常規／RC 鍍鋅排放現場引用（非成本）",
+          "amount": "約 2.5／1.68 tCO₂/t",
+          "note": "僅為會談引用；不可取代 HR／CR 正式查驗數據。"
+        }
+      ]
     },
     {
       "id": "2026-11-12-knauf-green-steel",
@@ -117,15 +171,69 @@
       "country": "德國",
       "date": "2026-11-12",
       "title": "Knauf Green Steel 專題會談",
-      "summary": "已上傳 Knauf Green Steel 專題 PDF／Word。內容尚未逐項核對與摘錄；此筆先建立文件連結，之後可補入 CBAM／綠鋼觀點、成本及追蹤事項。",
-      "source_type": "專題文件已上傳，待內容查核與分類",
+      "summary": "Knauf 的綠鋼採購目前以少數具 EPD 要求的終端專案為主；資料中心用冷軋 EPD 具新增供應商機會，但一般詢價多回到標準材。Knauf 以含稅完稅成本購料，需取得經查驗實際排放資料，並由 Duferco 協調資料與風險分工。",
+      "source_type": "2026/11/12 Knauf 會議紀錄 r2 之會談觀點（Green Steel 專題文件另有 PDF／Word）",
       "cost_estimates": [],
-      "perspectives": [],
-      "actions": [],
+      "perspectives": [
+        {
+          "topic": "實際排放與第三方查驗",
+          "detail": "認為採購需能取得產品排放資料與正式查驗結果；中鋼表示 SGS 已進行初步審查，正式驗證尚未完成。"
+        },
+        {
+          "topic": "低碳／綠鋼採購商業條件",
+          "detail": "綠鋼仍屬少數專案，客戶常詢價後仍選一般材；2027 年未見顯著放量，須依個別終端專案確認可承受之成本。"
+        },
+        {
+          "topic": "CBAM 與完稅成本",
+          "detail": "Knauf 僅採購已含全部費用之完稅鋼材；Duferco 通常承擔 CBAM 與關稅風險，客戶採購以完整到岸／清關後成本判斷。"
+        },
+        {
+          "topic": "低碳鋼產品與 EPD／RC",
+          "detail": "資料中心指定冷軋具 EPD 需求，中鋼可補送冷軋與鍍鋅 EPD；EPD、再生料比例與已查驗的實際排放值須分開說明。"
+        },
+        {
+          "topic": "下游成品政策落差",
+          "detail": "Knauf／Duferco 認為鋼材面臨進口配額與碳成本，但部分下游製成品保護不足，增加外移壓力；此屬會談觀點，非政策定案。"
+        }
+      ],
+      "actions": [
+        {
+          "topic": "提供冷軋／鍍鋅 EPD，確認資料中心專案適用產品、廠區、數量、時程與文件要求",
+          "owner": "Vicky；Irene／Bjorn 協調",
+          "status": "待追蹤"
+        },
+        {
+          "topic": "取得經查驗排放實際值，依來源比較完整完稅成本與 Duferco 承擔 CBAM 的交易安排",
+          "owner": "碳管理／Vicky；Irene、Duferco",
+          "status": "待追蹤"
+        },
+        {
+          "topic": "確認低碳 RC 產品適用規格與價格接受度，不把 EPD 視為已達低碳或再生料比例證明",
+          "owner": "業務／技術／碳管理",
+          "status": "待追蹤"
+        }
+      ],
       "files": {
         "pdf": "cbam_records/2026-11-12 Knauf Green Steel.pdf",
         "word": "cbam_records/2026-11-12 Knauf Green Steel.docx"
-      }
+      },
+      "price_observations": [
+        {
+          "metric": "綠鋼／低碳專案採購占比（口述）",
+          "amount": "低於 5%，甚至約 2%",
+          "note": "Knauf 對自身近期商機的概略觀察，非德國市場統計，亦非 CBAM 成本。"
+        },
+        {
+          "metric": "完稅採購方式（非成本估算）",
+          "amount": "含稅完稅材料",
+          "note": "Knauf 表示僅採購含全部費用的材料；Duferco 通常承擔關稅及 CBAM 風險，個別條件另談。"
+        },
+        {
+          "metric": "CBAM 成本現場引用（Duferco 估算）",
+          "amount": "土耳其約 €100/MT；印度／CSC 約 €70/MT",
+          "note": "僅為 Duferco 在 Knauf 會議中的重述，不是 Knauf 另行獨立估價，避免重複列入各鋼廠 CBAM 稅額表。"
+        }
+      ]
     }
   ],
   "field_guide": {
