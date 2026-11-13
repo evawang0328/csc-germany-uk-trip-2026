@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.37</title><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.38</title><style>
 :root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#192b40;background:#f2f5fa}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#102b4b,#185783);color:white;padding:34px max(22px,calc((100vw - 1120px)/2)) 28px}header h1{margin:8px 0;font-size:clamp(24px,4vw,38px)}header p{opacity:.84;margin:8px 0}.eyebrow{letter-spacing:2px;font-size:12px;color:#b6d9f8}main{max-width:1120px;margin:auto;padding:24px 18px 70px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.tabs button,.daybtn,.filter{cursor:pointer;border:1px solid #d8e2ee;border-radius:11px;padding:11px 15px;background:white;color:#24425f;font-weight:700}.tabs button.active,.daybtn.active,.filter.active{background:#164c7a;color:white;border-color:#164c7a}.panel{background:white;border:1px solid #e1e8f1;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 6px 20px #183c6010}.panel h2{margin:0 0 14px;font-size:21px}.sub{color:#65778d;font-size:13px}.days{display:grid;grid-template-columns:repeat(10,minmax(70px,1fr));gap:7px;margin-bottom:16px}.daybtn{padding:12px 3px}.daybtn small{display:block;font-weight:400;margin-top:4px}.timeline{border-left:2px solid #bcd1e3;margin-left:9px;padding-left:20px}.event{position:relative;padding:4px 0 18px}.event:before{content:"";position:absolute;left:-27px;top:10px;width:11px;height:11px;border-radius:50%;background:#2578b2;border:3px solid white;box-shadow:0 0 0 1px #9cbcd7}.time{font-size:13px;font-weight:700;color:#17669b}.event h3{font-size:16px;margin:5px 0}.event p{margin:3px 0;color:#64748b;font-size:14px;white-space:pre-line}.pill{display:inline-block;padding:4px 8px;background:#eaf2fa;border-radius:20px;color:#285c83;font-size:12px;margin:5px 5px 0 0}.warning{background:#fff7e7;color:#815c19;border-left:4px solid #dfad42;padding:12px 15px;border-radius:8px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.client{border:1px solid #e0e8f1;border-radius:13px;padding:16px}.client h3{margin:0 0 9px;font-size:17px}.client p{font-size:13px;color:#617388}.flight{border-bottom:1px solid #e8edf4;padding:13px 0}.flight:last-child{border:0}.flight strong{font-size:17px}.search{padding:12px 14px;border:1px solid #ccd9e7;border-radius:10px;width:100%;max-width:380px;margin:0 0 15px}.btn{border:0;border-radius:9px;padding:9px 13px;background:#e5f0f9;color:#18517b;cursor:pointer}.note{width:100%;min-height:115px;padding:12px;border:1px solid #d1dce9;border-radius:10px;font:inherit;resize:vertical}.muted{color:#667a8f}.hidden{display:none}.stat{font-size:27px;font-weight:800;color:#194c77}.statlabel{font-size:13px;color:#708096}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.footer{font-size:12px;color:#718197;margin-top:25px}.banner{background:#fff4db;color:#6d4e0c;padding:12px 16px;font-size:13px}a{color:#17699d}@media(max-width:800px){.days{grid-template-columns:repeat(5,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.panel{padding:16px}header{padding:26px 18px}}
 
 /* V2.1 clickable customer details */
@@ -150,7 +150,16 @@ main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:16px;bo
 .fu-hint{padding:11px 13px;border-left:4px solid #dda84a;background:#fff7e9;color:#795b22;font-size:12px;border-radius:7px;line-height:1.65}
 .fu-edit{border:1px solid #bed2e2;border-radius:10px;padding:13px;margin:12px 0;display:grid;gap:10px;background:#f8fbfd}
 .fu-edit label{font-size:12px;font-weight:700;color:#284a65;display:grid;gap:5px}.fu-edit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.fu-home-list{display:grid;gap:7px;margin:10px 0}.fu-home-item{padding:8px 10px;border:1px solid #d8e5ef;border-radius:8px;font-size:13px}.fu-home-item strong{color:#194b70}
+/* V2.38: country and customer cards summarize every customer's open actions. */
+.fu-home-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}
+.fu-home-customer{appearance:none;min-width:0;padding:17px 15px;border:1px solid #cfe1f0;border-radius:13px;background:#fff;color:#173e60;text-align:left;font:inherit;cursor:pointer}
+.fu-home-customer:hover{background:#edf6fd}.fu-home-customer:focus-visible{outline:3px solid #286a9b;outline-offset:3px}
+.fu-home-customer-name{display:flex;justify-content:space-between;gap:9px;font-size:15px;font-weight:750;line-height:1.5;overflow-wrap:anywhere}
+.fu-home-customer-name small{font-size:13px;font-weight:600;color:#607a92}.fu-home-customer-arrow{color:#607a92}
+.fu-home-customer-count{display:flex;align-items:baseline;gap:9px;margin-top:14px}
+.fu-home-customer-count strong{font-size:32px;line-height:1.15;color:#194b70}.fu-home-customer-count>span{font-size:13px;color:#607a92}
+@media(max-width:600px){.fu-home-list{grid-template-columns:1fr}.fu-home-customer{display:flex;justify-content:space-between;align-items:center;gap:15px}.fu-home-customer-count{margin:0;flex-shrink:0}.fu-home-customer-count strong{font-size:26px}.fu-home-customer-arrow{display:none}}
+
 @media(max-width:760px){.fu-toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}.fu-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.fu-edit-grid{grid-template-columns:1fr}}
 </style><style>
 /* Customer-specific year selector in SPEC Explorer */
@@ -326,7 +335,7 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
    <select id="fuCountry" aria-label="篩選國家"><option value="">全部國家</option></select>
    <select id="fuCustomer" aria-label="篩選客戶"><option value="">全部客戶</option></select>
    <select id="fuCategory" aria-label="篩選議題"><option value="">全部議題</option></select>
-   <select id="fuStatus" aria-label="篩選進度"><option value="">全部狀態</option><option>待處理</option><option>處理中</option><option>待客戶回覆</option><option>已完成</option></select>
+   <select id="fuStatus" aria-label="篩選進度"><option value="">全部狀態</option><option value="__open">未完成（待辦）</option><option>待處理</option><option>處理中</option><option>待客戶回覆</option><option>已完成</option></select>
   </div>
   <div class="fu-inline-actions"><button id="fuExportWord" class="fu-btn primary" type="button" disabled>↓ 匯出 Word 檔</button><button id="fuAdd" class="fu-btn" type="button" disabled>＋ 新增事項</button><button id="fuExport" class="fu-btn primary" type="button" disabled>↓ 匯出更新版 JSON</button></div>
   <p id="fuStatusText" class="fu-muted" aria-live="polite">正在讀取 followup_actions.json…</p>
@@ -1111,7 +1120,7 @@ renderAllClients();
  function render(){
   const rows=allRows();kpis($('fuKpis'),rows);
   for(const [id,key] of [['fuCountry','country'],['fuCustomer','customer'],['fuCategory','category']])options(id,rows.map(x=>x[key]));
-  const filtered=rows.filter(x=>(!$('fuCountry').value||x.country===$('fuCountry').value)&&(!$('fuCustomer').value||x.customer===$('fuCustomer').value)&&(!$('fuCategory').value||x.category===$('fuCategory').value)&&(!$('fuStatus').value||x.status===$('fuStatus').value));
+  const filtered=rows.filter(x=>(!$('fuCountry').value||x.country===$('fuCountry').value)&&(!$('fuCustomer').value||x.customer===$('fuCustomer').value)&&(!$('fuCategory').value||x.category===$('fuCategory').value)&&(!$('fuStatus').value||($('fuStatus').value==='__open'?x.status!=='已完成':x.status===$('fuStatus').value)));
   const groups=new Map();for(const x of filtered){const key=JSON.stringify([x.country,x.customer]);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(x);}
   $('fuProposalPanel').hidden=false;
   $('fuProposalCount').textContent=rows.length+' 項｜'+rows.filter(x=>x.proposal).length+' 待核對';
@@ -1123,7 +1132,16 @@ renderAllClients();
   $('fuExportWord').disabled=!ready||!rows.length;
   $('fuAdd').disabled=!officialReady;$('fuExport').disabled=!officialReady;
   for(const button of page.querySelectorAll('[data-fu-row-edit]'))button.disabled=!officialReady;
-  kpis($('fuHomeKpis'),rows);$('fuHomeList').innerHTML=rows.filter(x=>x.status!=='已完成').slice(0,5).map(x=>'<div class="fu-home-item"><strong>'+esc(x.customer)+'</strong>　'+esc(displayText(x).headline)+' <span class="fu-muted">｜'+esc(x.status)+'</span></div>').join('')||'<p class="sub">目前沒有未完成事項。</p>';
+  kpis($('fuHomeKpis'),rows);renderHomeCards(rows);
+ }
+ function renderHomeCards(rows){
+  const groups=new Map();
+  for(const row of rows){const key=JSON.stringify([row.country||'',row.customer||'']);if(!groups.has(key))groups.set(key,{country:row.country||'',customer:row.customer||'',pending:0});if(row.status!=='已完成')groups.get(key).pending++;}
+  $('fuHomeList').innerHTML=[...groups.values()].sort((a,b)=>a.country.localeCompare(b.country,'zh-TW')||a.customer.localeCompare(b.customer,'en')).map(x=>'<button type="button" class="fu-home-customer" data-fu-home-customer="'+esc(x.customer)+'" data-fu-home-country="'+esc(x.country)+'" aria-label="'+esc((x.country||'國家待確認')+' '+x.customer+'，'+x.pending+' 項待辦，前往 B-5')+'"><span class="fu-home-customer-name"><span><small>'+esc(x.country||'國家待確認')+'｜</small>'+esc(x.customer||'未列客戶')+'</span><span class="fu-home-customer-arrow" aria-hidden="true">↗</span></span><span class="fu-home-customer-count"><strong>'+x.pending+'</strong><span>項待辦</span></span></button>').join('')||'<p class="sub">目前沒有追蹤事項。</p>';
+ }
+ function openFollowups(customer='',country='',openOnly=false){
+  $('fuCountry').value=country;$('fuCustomer').value=customer;$('fuCategory').value='';$('fuStatus').value=openOnly?'__open':'';
+  render();document.querySelector('.tabs [data-tab="followup"]')?.click();window.scrollTo({top:0,behavior:'smooth'});
  }
  function startEditing(){if(editing||!officialReady)return;editing=true;draft=clone(published);reviewed=new Set(publishedRoot.reviewed_proposal_ids||[]);dirty=false;render();}
  function edit(key){
@@ -1188,7 +1206,8 @@ renderAllClients();
  page.addEventListener('click',e=>{const b=e.target.closest('[data-fu-row-edit]');if(b)edit(b.dataset.fuRowEdit);});
  for(const id of ['fuCountry','fuCustomer','fuCategory','fuStatus'])$(id).addEventListener('change',render);
  window.addEventListener('meeting-record-index-ready',render);
- $('fuHomeOpen').onclick=()=>{document.querySelector('.tabs [data-tab="followup"]')?.click();window.scrollTo({top:0,behavior:'smooth'});};
+ $('fuHomeOpen').onclick=()=>openFollowups();
+ $('fuHomeList').addEventListener('click',e=>{const card=e.target.closest('[data-fu-home-customer]');if(card)openFollowups(card.dataset.fuHomeCustomer,card.dataset.fuHomeCountry,true);});
  const read=path=>fetch(path+'?rev='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();});
  Promise.allSettled([read('followup_actions.json'),read('followup_suggestions.json')]).then(([official,suggestions])=>{
   if(official.status==='fulfilled'&&Array.isArray(official.value.items)){publishedRoot=official.value;published=official.value.items;officialReady=true;}
