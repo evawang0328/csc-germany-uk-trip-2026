@@ -1028,7 +1028,7 @@ renderAllClients();
  const $=id=>document.getElementById(id);
  const esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
  const statuses=['待處理','處理中','待客戶回覆','已完成'];
- let published=[],draft=[],editing=false,editId=null,dirty=false;
+ let publishedRoot={},published=[],draft=[],editing=false,editId=null,dirty=false,proposals=[],approvedDraft=new Set();
  function clone(a){return JSON.parse(JSON.stringify(a))}
  function options(sel,vals){const old=sel.value; const label=sel.options[0].textContent;sel.innerHTML='<option value="">'+esc(label)+'</option>'+vals.sort().map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('');if(vals.includes(old))sel.value=old}
  function counts(items){return {total:items.length,pending:items.filter(x=>x.status==='待處理').length,progress:items.filter(x=>['處理中','待客戶回覆'].includes(x.status)).length,done:items.filter(x=>x.status==='已完成').length}}
@@ -1064,21 +1064,92 @@ renderAllClients();
    };
    $('fuCancelEdit').onclick=()=>{$('fuEditForm').hidden=true;};
  }
+
+ function renderProposals(){
+   const panel=$('fuProposalPanel'),list=$('fuProposalList');
+   panel.hidden=false;
+   $('fuProposalCount').textContent=proposals.length+' 筆待核對';
+   if(!proposals.length){list.innerHTML='<p class="fu-muted">目前沒有待審核的擷取事項。上傳新版 Word 並 Commit 後，部署流程會重新分析。</p>';$('fuApplyProposals').disabled=true;return;}
+   $('fuApplyProposals').disabled=false;
+   const customers=[...new Set(proposals.map(x=>x.customer||'未列客戶'))];
+   list.innerHTML=customers.map(customer=>{
+     const rows=proposals.filter(x=>x.customer===customer);
+     return '<section class="fu-proposal-group"><h4>'+esc(customer)+'｜'+rows.length+' 筆</h4>'+
+       rows.map(p=>{
+         const match=published.find(x=>x.id===p.suggested_match_id);
+         const hint=match?'可能對應：'+match.id+'｜'+match.task:'未找到可信的既有對應項，需人工確認是否重複';
+         return '<div class="fu-proposal-row"><strong>'+esc(p.topic||p.category||'其他')+'</strong><p>'+esc(p.task||'')+'</p>'+
+           (p.owner?'<p class="fu-proposal-meta">PIC：'+esc(p.owner)+'</p>':'')+
+           (p.note?'<p class="fu-proposal-meta">說明：'+esc(p.note)+'</p>':'')+
+           '<p class="fu-proposal-meta">來源：'+esc(p.source||'')+'｜表格第'+esc(p.source_row||'—')+'列'+
+           (p.status_hint?'｜<strong>文件標示：'+esc(p.status_hint)+'</strong>':'')+'</p>'+
+           '<p class="fu-proposal-note">'+esc(hint)+'</p>'+
+           '<label for="fud-'+esc(p.proposal_id)+'">處理方式（僅修改草稿）</label>'+
+           '<select id="fud-'+esc(p.proposal_id)+'" data-fu-decision="'+esc(p.proposal_id)+'">'+
+           '<option value="">稍後確認（不處理）</option>'+
+           '<option value="add">確認新增追蹤事項</option>'+
+           (match?'<option value="merge">合併到 '+esc(match.id)+'（保留目前狀態）</option>':'')+
+           '<option value="skip">確認略過（不採用）</option>'+
+           '</select></div>';
+       }).join('')+'</section>';
+   }).join('');
+ }
+ function applyProposalDecisions(){
+   const selected=[...$('fuProposalList').querySelectorAll('[data-fu-decision]')]
+     .map(el=>({id:el.dataset.fuDecision,decision:el.value})).filter(x=>x.decision);
+   if(!selected.length){alert('請先為需要處理的事項選擇「新增」、「合併既有」或「略過」。');return;}
+   if(!editing)$('fuToggleEdit').click();
+   let n=0;
+   for(const selection of selected){
+     const p=proposals.find(x=>x.proposal_id===selection.id);if(!p||approvedDraft.has(p.proposal_id))continue;
+     if(selection.decision==='add'){
+       const newId='AUTO-'+p.proposal_id;
+       if(!draft.some(x=>x.id===newId)){
+         const status=p.status_hint==='已完成'?'已完成':'待處理';
+         draft.push({id:newId,country:p.country||'德國',customer:p.customer||'',visit_date:p.visit_date||'',category:p.category||'其他',
+           task:p.task||'',owner:p.owner||'待指定',note:p.note||'',status,priority:'待確認',due_date:'',
+           source:p.source||'會議紀錄自動擷取',source_url:p.source_url||'',updated_at:new Date().toISOString().slice(0,10),
+           history:[{date:new Date().toISOString().slice(0,10),note:'管理者審核後由 Word 提案加入；請確認來源內容及狀態'}]});
+       }
+     }else if(selection.decision==='merge'){
+       const t=draft.find(x=>x.id===p.suggested_match_id);
+       if(!t){alert('找不到要合併的既有事項，請先核對後改選「新增」或「略過」。');continue;}
+       const supplement='會議 Word（'+(p.source||'')+'）擷取：'+(p.task||'')+(p.note?'；'+p.note:'');
+       if(!(t.note||'').includes(supplement))t.note=[t.note,supplement].filter(Boolean).join('\n');
+       // Preserve the task ID, prior status, owner, and history.
+       t.history=Array.isArray(t.history)?t.history:[];
+       t.history.push({date:new Date().toISOString().slice(0,10),note:'管理者合併 Word 擷取說明，原狀態與 PIC 保留'});
+       t.updated_at=new Date().toISOString().slice(0,10);
+     }else if(selection.decision!=='skip')continue;
+     approvedDraft.add(p.proposal_id);
+     dirty=true;n++;
+   }
+   if(n){proposals=proposals.filter(p=>!approvedDraft.has(p.proposal_id));renderProposals();render();
+     alert('已將 '+n+' 筆確認結果套用到編輯草稿，尚未發布。請再次檢查表格，然後「匯出更新版 JSON」並 Commit。');
+   }
+ }
+ $('fuApplyProposals').addEventListener('click',applyProposalDecisions);
+ fetch('followup_suggestions.json?rev='+Date.now(),{cache:'no-store'})
+  .then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()})
+  .then(d=>{if(!Array.isArray(d.proposals))throw Error('提案格式無效');proposals=d.proposals;renderProposals();})
+  .catch(e=>{$('fuProposalPanel').hidden=false;$('fuProposalCount').textContent='無法讀取';
+    $('fuProposalList').textContent='自動擷取資料尚未建立或無法讀取：'+e.message;
+    $('fuApplyProposals').disabled=true;});
  page.addEventListener('change',e=>{const id=e.target.getAttribute('data-fu-status');if(!id||!editing)return;const r=draft.find(x=>x.id===id);if(!r)return;const old=r.status;r.status=e.target.value;r.updated_at=new Date().toISOString().slice(0,10);r.history=Array.isArray(r.history)?r.history:[];r.history.push({date:r.updated_at,from:old,to:r.status});dirty=true;render()});
  page.addEventListener('click',e=>{const b=e.target.closest('[data-fu-edit]');if(b&&editing)edit(b.dataset.fuEdit)});
  window.addEventListener('meeting-record-index-ready',render);
  ['fuCountry','fuCustomer','fuCategory','fuStatus'].forEach(id=>$(id).addEventListener('change',render));
- $('fuToggleEdit').onclick=()=>{editing=true;draft=clone(published);dirty=false;$('fuAdd').hidden=false;$('fuExport').hidden=false;$('fuDiscard').hidden=false;$('fuToggleEdit').hidden=true;render()};
+ $('fuToggleEdit').onclick=()=>{editing=true;draft=clone(published);approvedDraft=new Set(publishedRoot.reviewed_proposal_ids||[]);dirty=false;$('fuAdd').hidden=false;$('fuExport').hidden=false;$('fuDiscard').hidden=false;$('fuToggleEdit').hidden=true;render()};
  $('fuAdd').onclick=()=>edit(null);
- $('fuDiscard').onclick=()=>{if(dirty&&!confirm('確定捨棄尚未發布的草稿嗎？'))return;editing=false;dirty=false;$('fuAdd').hidden=true;$('fuExport').hidden=true;$('fuDiscard').hidden=true;$('fuToggleEdit').hidden=false;$('fuEditForm').hidden=true;render()};
+ $('fuDiscard').onclick=()=>{if(dirty&&!confirm('確定捨棄尚未發布的草稿嗎？'))return;editing=false;dirty=false;approvedDraft=new Set();$('fuAdd').hidden=true;$('fuExport').hidden=true;$('fuDiscard').hidden=true;$('fuToggleEdit').hidden=false;$('fuEditForm').hidden=true;render()};
  $('fuExport').onclick=()=>{
-   const payload=JSON.stringify({schema_version:'1.0',updated_at:new Date().toISOString().slice(0,10),description:'Follow-up data published by GitHub commit',items:draft},null,2)+'\n';
+   const payload=JSON.stringify({...publishedRoot,schema_version:'1.0',updated_at:new Date().toISOString().slice(0,10),description:'Follow-up data published by GitHub commit after manual proposal review',reviewed_proposal_ids:[...approvedDraft],items:draft},null,2)+'\n';
    const blob=new Blob([payload],{type:'application/json;charset=utf-8'});
    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='followup_actions.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
    alert('已下載 followup_actions.json。請登入 GitHub，在 Repository 根目錄覆蓋同名檔案並 Commit；網站部署後同事才會看到更新。');
  };
  const homeOpen=$('fuHomeOpen');if(homeOpen)homeOpen.onclick=()=>{const btn=document.querySelector('.tabs [data-tab="followup"]');if(btn)btn.click();window.scrollTo({top:0,behavior:'smooth'})};
- fetch('followup_actions.json?rev='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{if(!Array.isArray(d.items))throw Error('invalid items');published=d.items;home();render()}).catch(e=>{$('fuStatusText').textContent='追蹤資料讀取失敗：'+e.message;$('fuHomeList').textContent='資料暫時無法取得';});
+ fetch('followup_actions.json?rev='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{if(!Array.isArray(d.items))throw Error('invalid items');publishedRoot=d;published=d.items;home();render();if(proposals.length)renderProposals()}).catch(e=>{$('fuStatusText').textContent='追蹤資料讀取失敗：'+e.message;$('fuHomeList').textContent='資料暫時無法取得';});
 })();
 </script>
 
