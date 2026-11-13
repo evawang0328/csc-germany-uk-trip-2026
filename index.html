@@ -1068,12 +1068,13 @@ renderAllClients();
  function renderProposals(){
    const panel=$('fuProposalPanel'),list=$('fuProposalList');
    panel.hidden=false;
-   $('fuProposalCount').textContent=proposals.length+' 筆待核對';
-   if(!proposals.length){list.innerHTML='<p class="fu-muted">目前沒有待審核的擷取事項。上傳新版 Word 並 Commit 後，部署流程會重新分析。</p>';$('fuApplyProposals').disabled=true;return;}
+   const pending=proposals.filter(p=>!approvedDraft.has(p.proposal_id));
+   $('fuProposalCount').textContent=pending.length+' 筆待核對';
+   if(!pending.length){list.innerHTML='<p class="fu-muted">目前沒有待審核的擷取事項。上傳新版 Word 並 Commit 後，部署流程會重新分析。</p>';$('fuApplyProposals').disabled=true;return;}
    $('fuApplyProposals').disabled=false;
-   const customers=[...new Set(proposals.map(x=>x.customer||'未列客戶'))];
+   const customers=[...new Set(pending.map(x=>x.customer||'未列客戶'))];
    list.innerHTML=customers.map(customer=>{
-     const rows=proposals.filter(x=>x.customer===customer);
+     const rows=pending.filter(x=>x.customer===customer);
      return '<section class="fu-proposal-group"><h4>'+esc(customer)+'｜'+rows.length+' 筆</h4>'+
        rows.map(p=>{
          const match=published.find(x=>x.id===p.suggested_match_id);
@@ -1124,7 +1125,7 @@ renderAllClients();
      approvedDraft.add(p.proposal_id);
      dirty=true;n++;
    }
-   if(n){proposals=proposals.filter(p=>!approvedDraft.has(p.proposal_id));renderProposals();render();
+   if(n){renderProposals();render();
      alert('已將 '+n+' 筆確認結果套用到編輯草稿，尚未發布。請再次檢查表格，然後「匯出更新版 JSON」並 Commit。');
    }
  }
@@ -1141,7 +1142,7 @@ renderAllClients();
  ['fuCountry','fuCustomer','fuCategory','fuStatus'].forEach(id=>$(id).addEventListener('change',render));
  $('fuToggleEdit').onclick=()=>{editing=true;draft=clone(published);approvedDraft=new Set(publishedRoot.reviewed_proposal_ids||[]);dirty=false;$('fuAdd').hidden=false;$('fuExport').hidden=false;$('fuDiscard').hidden=false;$('fuToggleEdit').hidden=true;render()};
  $('fuAdd').onclick=()=>edit(null);
- $('fuDiscard').onclick=()=>{if(dirty&&!confirm('確定捨棄尚未發布的草稿嗎？'))return;editing=false;dirty=false;approvedDraft=new Set();$('fuAdd').hidden=true;$('fuExport').hidden=true;$('fuDiscard').hidden=true;$('fuToggleEdit').hidden=false;$('fuEditForm').hidden=true;render()};
+ $('fuDiscard').onclick=()=>{if(dirty&&!confirm('確定捨棄尚未發布的草稿嗎？'))return;editing=false;dirty=false;approvedDraft=new Set();renderProposals();$('fuAdd').hidden=true;$('fuExport').hidden=true;$('fuDiscard').hidden=true;$('fuToggleEdit').hidden=false;$('fuEditForm').hidden=true;render()};
  $('fuExport').onclick=()=>{
    const payload=JSON.stringify({...publishedRoot,schema_version:'1.0',updated_at:new Date().toISOString().slice(0,10),description:'Follow-up data published by GitHub commit after manual proposal review',reviewed_proposal_ids:[...approvedDraft],items:draft},null,2)+'\n';
    const blob=new Blob([payload],{type:'application/json;charset=utf-8'});
