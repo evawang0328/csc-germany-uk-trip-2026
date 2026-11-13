@@ -233,6 +233,11 @@ main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:16px;bo
 .fu-proposal-editor label{font-size:12px;display:grid;gap:5px;font-weight:700;color:#355a78}
 .fu-proposal-editor input,.fu-proposal-editor textarea,.fu-proposal-editor select{box-sizing:border-box;width:100%;max-width:none;padding:9px;border:1px solid #b2cddd;border-radius:8px;background:white;color:#193f5c;font:inherit}
 @media(max-width:650px){.fu-proposal-table{min-width:760px}}
+</style><style>
+.fu-proposal-description .fu-main-headline{display:block;font-size:14px;line-height:1.65;color:#183e60;font-weight:800}
+.fu-description-lines{font-size:13px;line-height:1.85;color:#5b7388;margin-top:5px;white-space:normal}
+.fu-proposal-table td:last-child .fu-status{margin:3px 0 8px}
+.fu-proposal-decision-label{margin-top:10px}
 </style></head><body class="locked"><div id="loginGate"><form class="loginCard" id="loginForm"><div style="font-size:30px">🔒</div><h1>德國・英國出差行程</h1><p>請輸入測試版共用密碼</p><input id="tripPassword" type="password" autocomplete="off" placeholder="共用密碼" required><button type="submit">查看行程</button><p class="err" id="loginError" aria-live="polite"></p><p class="warn">注意：這只是 HTML 畫面鎖，不能保護原始碼或行程資料。請勿用於機密資訊；內部版內容可被任何人讀取。</p></form></div><script>
 // DEMO ONLY: the password and all itinerary data are readable in this HTML source.
 // Do not use this for access control or confidential information.
@@ -1090,6 +1095,25 @@ renderAllClients();
  }
 
 
+ function proposalDisplay(p){
+   const raw=String(p.task||'').trim(),extra=String(p.note||'').trim();
+   const separator=raw.search(/[｜|：:]/);
+   let headline=raw,detail=extra;
+   if(separator>0&&separator<=38){
+     headline=raw.slice(0,separator).trim();
+     detail=[raw.slice(separator+1).trim(),extra].filter(Boolean).join('\n');
+   }else{
+     const sentence=raw.search(/[。；;]/);
+     if(sentence>8&&sentence<=75&&raw.length>sentence+3){
+       headline=raw.slice(0,sentence).trim();
+       detail=[raw.slice(sentence+1).trim(),extra].filter(Boolean).join('\n');
+     }
+   }
+   return {headline,detail};
+ }
+ function formattedDetails(value){
+   return esc(value).replace(/\r?\n/g,'<br>').replace(/([。；;])(?=\s*[^\s])/g,'$1<br>');
+ }
  function renderProposals(){
    const panel=$('fuProposalPanel'),list=$('fuProposalList');
    panel.hidden=false;
@@ -1105,28 +1129,29 @@ renderAllClients();
      const rows=pending.filter(x=>x.customer===customer);
      return '<section class="fu-proposal-group"><h4>'+esc(customer)+' <small>｜'+rows.length+' 項</small></h4>'+
      '<div class="fu-table-wrap"><table class="fu-table fu-proposal-table"><thead><tr>'+
-     '<th>議題</th><th>追蹤事項／說明</th><th>責任單位／窗口</th><th>進度／處理</th></tr></thead><tbody>'+
+     '<th>議題</th><th>主要事項／補充說明</th><th>責任單位／窗口</th><th>匯入審核</th></tr></thead><tbody>'+
      rows.map(p=>{
        const match=published.find(x=>x.id===p.suggested_match_id);
        const choice=proposalDecisions.get(p.proposal_id)||'';
        const currentStatus=statuses.includes(p.status_hint)?p.status_hint:'待處理';
        const id=esc(p.proposal_id);
+       const display=proposalDisplay(p);
        return '<tr data-fu-proposal-row="'+id+'">'+
          '<td><span class="fu-label">'+esc(p.category||p.topic||'其他')+'</span></td>'+
-         '<td class="fu-proposal-description"><strong>'+esc(p.task||'')+'</strong>'+
-         (p.note?'<div class="fu-muted">'+esc(p.note)+'</div>':'')+
+         '<td class="fu-proposal-description"><strong class="fu-main-headline">'+esc(display.headline)+'</strong>'+
+         (display.detail?'<div class="fu-description-lines">'+formattedDetails(display.detail)+'</div>':'')+
          '<details class="fu-proposal-source"><summary>查看來源與比對結果</summary><div>來源：'+esc(p.source||'')+'｜表格第'+esc(p.source_row||'—')+'列</div>'+
          '<div>'+(match?'可能對應：'+esc(match.id)+'｜'+esc(match.task):'尚未找到可信的既有對應項，請核對是否重複')+'</div></details></td>'+
          '<td>'+esc(p.owner||'待指定')+'</td>'+
-         '<td><span class="fu-status">'+esc(currentStatus)+'</span>'+
+         '<td><span class="fu-muted">建議初始進度</span><div class="fu-status">'+esc(currentStatus)+'</div>'+
          (p.status_hint?'<div class="fu-muted">Word：'+esc(p.status_hint)+'</div>':'')+
          '<div class="fu-proposal-buttons"><button class="fu-btn" type="button" data-fu-proposal-edit="'+id+'">✎ 修改</button></div>'+
          '<label for="fud-'+id+'" class="fu-proposal-decision-label">確認方式</label>'+
          '<select id="fud-'+id+'" data-fu-decision="'+id+'">'+
-         '<option value=""'+(!choice?' selected':'')+'>稍後確認</option>'+
-         '<option value="add"'+(choice==='add'?' selected':'')+'>新增</option>'+
+         '<option value=""'+(!choice?' selected':'')+'>尚未決定</option>'+
+         '<option value="add"'+(choice==='add'?' selected':'')+'>新增正式事項</option>'+
          (match?'<option value="merge"'+(choice==='merge'?' selected':'')+'>合併 '+esc(match.id)+'</option>':'')+
-         '<option value="skip"'+(choice==='skip'?' selected':'')+'>略過</option></select></td></tr>'+
+         '<option value="skip"'+(choice==='skip'?' selected':'')+'>不匯入（略過）</option></select></td></tr>'+
          (proposalEditId===p.proposal_id?
          '<tr class="fu-proposal-editor-row"><td colspan="4"><form class="fu-proposal-editor" data-fu-proposal-form="'+id+'">'+
          '<strong>修改擷取內容｜'+esc(customer)+'</strong>'+
