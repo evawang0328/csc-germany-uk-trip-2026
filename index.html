@@ -313,7 +313,7 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
   <div class="fu-inline-actions"><button id="fuToggleEdit" class="fu-btn" type="button">✎ 開啟編輯草稿</button><button id="fuAdd" class="fu-btn" type="button" hidden>＋ 新增事項</button><button id="fuExport" class="fu-btn primary" type="button" hidden>↓ 匯出更新版 JSON</button><button id="fuDiscard" class="fu-btn" type="button" hidden>取消草稿</button></div>
   <p id="fuStatusText" class="fu-muted" aria-live="polite">正在讀取 followup_actions.json…</p>
   <div id="fuProposalPanel" class="fu-proposal-panel" hidden>
-    <div class="fu-head"><div><h3>Word 自動擷取｜待確認追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依最新版會議 Word 擷取，逐筆核對；不直接變動已發布清單與處理進度。</p></div></div>
+    <div class="fu-head"><div><h3>Word 自動擷取｜待確認追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依客戶分組的精簡表格。點「修改」可編輯並儲存本次草稿；核對後才能發布，不直接變動正式清單與處理進度。</p></div></div>
     <div id="fuProposalList"></div>
     <div class="fu-inline-actions"><button type="button" class="fu-btn primary" id="fuApplyProposals">將選取結果加入編輯草稿</button></div>
     <p class="fu-muted">選擇「新增」、「合併既有」或「略過」，再套用草稿；檢查後仍須點「匯出更新版 JSON」並用 GitHub 帳號 Commit 才會正式發布。自動擷取內容可能有欄位錯位，請依原始 Word 核對。</p>
@@ -1109,7 +1109,7 @@ renderAllClients();
      rows.map(p=>{
        const match=published.find(x=>x.id===p.suggested_match_id);
        const choice=proposalDecisions.get(p.proposal_id)||'';
-       const currentStatus=p.status_hint==='已完成'?'已完成':'待處理';
+       const currentStatus=statuses.includes(p.status_hint)?p.status_hint:'待處理';
        const id=esc(p.proposal_id);
        return '<tr data-fu-proposal-row="'+id+'">'+
          '<td><span class="fu-label">'+esc(p.category||p.topic||'其他')+'</span></td>'+
