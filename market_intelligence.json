@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12 11:40",
+  "generated_at": "2026-11-13 11:16",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -60,6 +60,42 @@
     }
   ],
   "items": [
+    {
+      "title": "Hydrogen still makes sense for Europe ironmaking: Kallanish Green Steel Strategies",
+      "date": "2026-11-13",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/hydrogen-still-makes-sense-for-europe-ironmaking-kallanish-green-steel-strategies/?utm_source=rss&utm_medium=rss&utm_campaign=hydrogen-still-makes-sense-for-europe-ironmaking-kallanish-green-steel-strategies",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Hydrogen still makes sense for Europe ironmaking: Kallanish Green Steel Strategies",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Construction output in Great Britain - Office for National Statistics",
+      "date": "2026-11-12",
+      "source": "ONS",
+      "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOeldqaENSNnBhWW90dWFYY2wwLWRsUFVrelV4a1R5ZGdxVUwwMXYteUNFVFU0Tk1NY1NOdE1vamoxdUQyemhMNUt3NkZRb3ByeHFVUnhNaXZEYklyMEZaV2c2X3JMQ1NJMC16eVkzV1Z3Z2Y2dUdsQjJXVDA5RDJTNnRxTFdaSVdYWGtRa0tHOXJhQ1YwV1YycVZyb2FKdHZYT1ltOUFkMGpaTmJTZUxtc1VNMVFtVFJKUWZyUThlN2l3ZWtIb3ViMkZGUENpbUZseGhHOXNzbGd4eFdSOVRpbHh5SlBMcHVCTm1KaUFlQWJ4UE9mQTNEMFo1UXQ3X0FIc1VjbXphUi1oM2o4NTNRREtIdFE?oc=5",
+      "regions": [
+        "UK"
+      ],
+      "category": "下游需求",
+      "summary": "來源新聞標題：Construction output in Great Britain - Office for National Statistics",
+      "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
+    },
+    {
+      "title": "UK trade: September 2026 - Office for National Statistics",
+      "date": "2026-11-12",
+      "source": "ONS",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNcnR4dHNzYndVZVpBTEE5RXhGYWFlLXFESjE3dkhUNUl5bTN6OGpiQkNIaklRSzNpLVlWU0tCSTdLdHFVbUxRcTR6ODBqbWlkTUFES2RjakdwWElRaEpaZ3FZRlRzRlY1eUhSX3JYMmUyMDJxQXNZOEk0SUlqcTh1RTdSZXV5dFM2V3hQdWZOU2l4amdDeW4xMVp5RHlwdw?oc=5",
+      "regions": [
+        "UK"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：UK trade: September 2026 - Office for National Statistics",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
     {
       "title": "Bekaert to acquire Dextra for €140 million to expand construction reinforcement portfolio",
       "date": "2026-11-11",
