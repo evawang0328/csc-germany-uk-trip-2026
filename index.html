@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.34</title><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.35</title><style>
 :root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#192b40;background:#f2f5fa}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#102b4b,#185783);color:white;padding:34px max(22px,calc((100vw - 1120px)/2)) 28px}header h1{margin:8px 0;font-size:clamp(24px,4vw,38px)}header p{opacity:.84;margin:8px 0}.eyebrow{letter-spacing:2px;font-size:12px;color:#b6d9f8}main{max-width:1120px;margin:auto;padding:24px 18px 70px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.tabs button,.daybtn,.filter{cursor:pointer;border:1px solid #d8e2ee;border-radius:11px;padding:11px 15px;background:white;color:#24425f;font-weight:700}.tabs button.active,.daybtn.active,.filter.active{background:#164c7a;color:white;border-color:#164c7a}.panel{background:white;border:1px solid #e1e8f1;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 6px 20px #183c6010}.panel h2{margin:0 0 14px;font-size:21px}.sub{color:#65778d;font-size:13px}.days{display:grid;grid-template-columns:repeat(10,minmax(70px,1fr));gap:7px;margin-bottom:16px}.daybtn{padding:12px 3px}.daybtn small{display:block;font-weight:400;margin-top:4px}.timeline{border-left:2px solid #bcd1e3;margin-left:9px;padding-left:20px}.event{position:relative;padding:4px 0 18px}.event:before{content:"";position:absolute;left:-27px;top:10px;width:11px;height:11px;border-radius:50%;background:#2578b2;border:3px solid white;box-shadow:0 0 0 1px #9cbcd7}.time{font-size:13px;font-weight:700;color:#17669b}.event h3{font-size:16px;margin:5px 0}.event p{margin:3px 0;color:#64748b;font-size:14px;white-space:pre-line}.pill{display:inline-block;padding:4px 8px;background:#eaf2fa;border-radius:20px;color:#285c83;font-size:12px;margin:5px 5px 0 0}.warning{background:#fff7e7;color:#815c19;border-left:4px solid #dfad42;padding:12px 15px;border-radius:8px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.client{border:1px solid #e0e8f1;border-radius:13px;padding:16px}.client h3{margin:0 0 9px;font-size:17px}.client p{font-size:13px;color:#617388}.flight{border-bottom:1px solid #e8edf4;padding:13px 0}.flight:last-child{border:0}.flight strong{font-size:17px}.search{padding:12px 14px;border:1px solid #ccd9e7;border-radius:10px;width:100%;max-width:380px;margin:0 0 15px}.btn{border:0;border-radius:9px;padding:9px 13px;background:#e5f0f9;color:#18517b;cursor:pointer}.note{width:100%;min-height:115px;padding:12px;border:1px solid #d1dce9;border-radius:10px;font:inherit;resize:vertical}.muted{color:#667a8f}.hidden{display:none}.stat{font-size:27px;font-weight:800;color:#194c77}.statlabel{font-size:13px;color:#708096}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.footer{font-size:12px;color:#718197;margin-top:25px}.banner{background:#fff4db;color:#6d4e0c;padding:12px 16px;font-size:13px}a{color:#17699d}@media(max-width:800px){.days{grid-template-columns:repeat(5,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.panel{padding:16px}header{padding:26px 18px}}
 
 /* V2.1 clickable customer details */
@@ -315,16 +315,13 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
    <select id="fuCategory" aria-label="篩選議題"><option value="">全部議題</option></select>
    <select id="fuStatus" aria-label="篩選進度"><option value="">全部狀態</option><option>待處理</option><option>處理中</option><option>待客戶回覆</option><option>已完成</option></select>
   </div>
-  <div class="fu-inline-actions"><button id="fuToggleEdit" class="fu-btn" type="button">✎ 開啟編輯草稿</button><button id="fuAdd" class="fu-btn" type="button" hidden>＋ 新增事項</button><button id="fuExport" class="fu-btn primary" type="button" hidden>↓ 匯出更新版 JSON</button><button id="fuDiscard" class="fu-btn" type="button" hidden>取消草稿</button></div>
+  <div class="fu-inline-actions"><button id="fuExportWord" class="fu-btn primary" type="button" disabled>↓ 匯出 Word 檔</button><button id="fuToggleEdit" class="fu-btn" type="button">✎ 開啟編輯草稿</button><button id="fuAdd" class="fu-btn" type="button" hidden>＋ 新增事項</button><button id="fuExport" class="fu-btn primary" type="button" hidden>↓ 匯出更新版 JSON</button><button id="fuDiscard" class="fu-btn" type="button" hidden>取消草稿</button></div>
   <p id="fuStatusText" class="fu-muted" aria-live="polite">正在讀取 followup_actions.json…</p>
   <div id="fuProposalPanel" class="fu-proposal-panel" hidden>
-    <div class="fu-head"><div><h3>Word 自動擷取｜待確認追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依客戶分組的精簡表格。點「修改」可編輯並儲存本次草稿；核對後才能發布，不直接變動正式清單與處理進度。</p></div></div>
+    <div class="fu-head"><div><h3>客戶追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依客戶分組，優先顯示最新版 Word 擷取內容；沒有 Word 事項的客戶顯示已發布紀錄。可匯出全部客戶，包含待核對事項。</p></div></div>
     <div id="fuProposalList"></div>
-    <div class="fu-inline-actions"><button type="button" class="fu-btn primary" id="fuApplyProposals">將選取結果加入編輯草稿</button></div>
-    <p class="fu-muted">選擇「新增」、「合併既有」或「略過」，再套用草稿；檢查後仍須點「匯出更新版 JSON」並用 GitHub 帳號 Commit 才會正式發布。自動擷取內容可能有欄位錯位，請依原始 Word 核對。</p>
   </div>
   <div id="fuEditForm" hidden></div>
-  <div class="fu-groups" id="fuGroups"></div>
   <div class="fu-hint" style="margin-top:15px">只有 GitHub Repository 的授權寫入者可以發布修改。此網站的「編輯草稿」不等於管理者登入，草稿不會自動同步或更新線上資料；請匯出 JSON 後，使用你的 GitHub 帳號覆蓋根目錄的 followup_actions.json 並 Commit。Repository 為 Public，請勿加入機密追蹤內容。</div>
   <p class="sub"><a href="https://github.com/evawang0328/csc-germany-uk-trip-2026" target="_blank" rel="noopener noreferrer">開啟 GitHub Repository ↗</a>｜文件參考連結請以已核實的會議紀錄為準。</p>
  </div>
@@ -1051,207 +1048,136 @@ renderAllClients();
 </script>
 
 <script>
-/* Single published follow-up data source; editing stays in-memory until GitHub commit */
+/* V2.35: one customer list, no import selectors, complete native DOCX export. */
 (function(){
- const page=document.getElementById('followup'); if(!page)return;
+ const page=document.getElementById('followup');if(!page)return;
  const $=id=>document.getElementById(id);
  const esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
  const statuses=['待處理','處理中','待客戶回覆','已完成'];
- let publishedRoot={},published=[],draft=[],editing=false,editId=null,dirty=false,proposals=[],approvedDraft=new Set(),proposalDecisions=new Map(),proposalEditId=null;
- function clone(a){return JSON.parse(JSON.stringify(a))}
- function options(sel,vals){const old=sel.value; const label=sel.options[0].textContent;sel.innerHTML='<option value="">'+esc(label)+'</option>'+vals.sort().map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('');if(vals.includes(old))sel.value=old}
- function counts(items){return {total:items.length,pending:items.filter(x=>x.status==='待處理').length,progress:items.filter(x=>['處理中','待客戶回覆'].includes(x.status)).length,done:items.filter(x=>x.status==='已完成').length}}
- function kpis(el,items){const c=counts(items);el.innerHTML=[['總事項',c.total],['待處理',c.pending],['進行中／待回覆',c.progress],['已完成',c.done]].map(x=>'<div class="fu-kpi"><small>'+x[0]+'</small><b>'+x[1]+'</b></div>').join('')}
- function home(){kpis($('fuHomeKpis'),published);const list=published.filter(x=>x.status!=='已完成').slice(0,5);$('fuHomeList').innerHTML=list.length?list.map(x=>'<div class="fu-home-item"><strong>'+esc(x.customer)+'</strong>　'+esc(x.task)+' <span class="fu-muted">｜'+esc(x.status)+'</span></div>').join(''):'<p class="sub">目前沒有未完成事項。</p>'}
+ let publishedRoot={},published=[],draft=[],proposals=[],editing=false,dirty=false,ready=false,officialReady=false,proposalError='';
+ let reviewed=new Set();
+ const clone=a=>JSON.parse(JSON.stringify(a));
+ const baseItems=()=>editing?draft:published;
+ function displayText(x){
+  const raw=String(x.task||'').trim(),extra=String(x.note||'').trim();
+  let headline=raw,detail=extra;const separator=raw.search(/[｜|：:]/);
+  if(separator>0&&separator<=38){headline=raw.slice(0,separator).trim();detail=[raw.slice(separator+1).trim(),extra].filter(Boolean).join('\n');}
+  else{const sentence=raw.search(/[。；;]/);if(sentence>8&&sentence<=75&&raw.length>sentence+3){headline=raw.slice(0,sentence).trim();detail=[raw.slice(sentence+1).trim(),extra].filter(Boolean).join('\n');}}
+  return {headline,detail};
+ }
+ const lines=v=>esc(v).replace(/\r?\n/g,'<br>').replace(/([。；;])(?=\s*[^\s])/g,'$1<br>');
+ // Word is the displayed list for customers with extracted actions. The older
+ // published rows stay intact in JSON; use them as fallback for other customers.
+ function allRows(){
+  const items=baseItems(),customers=new Set([...proposals.map(p=>p.customer),...items.filter(x=>x.word_proposal_id).map(x=>x.customer)]);
+  const rows=proposals.map(p=>{
+   const saved=items.find(x=>x.word_proposal_id===p.proposal_id||x.id==='AUTO-'+p.proposal_id);
+   if(saved)return {...saved,key:saved.id,review:'已核對'+(editing?'（草稿）':''),proposal:null};
+   const match=items.find(x=>x.id===p.suggested_match_id&&x.customer===p.customer);
+   return {...p,id:'AUTO-'+p.proposal_id,key:p.proposal_id,proposal:p,match,
+    status:match?.status||(statuses.includes(p.status_hint)?p.status_hint:'待處理'),review:'待核對'};
+  });
+  const used=new Set(rows.map(x=>x.id));
+  for(const x of items){
+   if(!used.has(x.id)&&(!customers.has(x.customer)||x.word_proposal_id||x.id.startsWith('AUTO-')||x.id.startsWith('FU-'))){
+    rows.push({...x,key:x.id,proposal:null,review:x.word_proposal_id?'已核對'+(editing?'（草稿）':''):'已發布'+(editing?'／編輯草稿':'')});used.add(x.id);
+   }
+  }
+  return rows;
+ }
+ function options(id,values){const el=$(id),old=el.value,label=el.options[0].textContent;el.innerHTML='<option value="">'+esc(label)+'</option>'+[...new Set(values.filter(Boolean))].sort().map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('');if(values.includes(old))el.value=old;}
+ function kpis(el,rows){const values=[['總事項',rows.length],['待處理',rows.filter(x=>x.status==='待處理').length],['進行中／待回覆',rows.filter(x=>['處理中','待客戶回覆'].includes(x.status)).length],['已完成',rows.filter(x=>x.status==='已完成').length]];el.innerHTML=values.map(([title,n])=>'<div class="fu-kpi"><small>'+title+'</small><b>'+n+'</b></div>').join('');}
+ function sourceURL(x){return x.source_url?.startsWith('meeting_records/')?(window.latestMeetingRecordURL?.(x.customer,'pdf')||x.source_url):x.source_url||'';}
  function render(){
-  const items=editing?draft:published;
-  options($('fuCountry'),[...new Set(items.map(x=>x.country).filter(Boolean))]);
-  options($('fuCustomer'),[...new Set(items.map(x=>x.customer).filter(Boolean))]);
-  options($('fuCategory'),[...new Set(items.map(x=>x.category).filter(Boolean))]);
-  kpis($('fuKpis'),items);
-  const f=items.filter(x=>(!$('fuCountry').value||x.country===$('fuCountry').value)&&(!$('fuCustomer').value||x.customer===$('fuCustomer').value)&&(!$('fuCategory').value||x.category===$('fuCategory').value)&&(!$('fuStatus').value||x.status===$('fuStatus').value));
-  const groups=[...new Set(f.map(x=>x.country+'||'+x.customer))];
-  $('fuGroups').innerHTML=groups.length?groups.map(g=>{
-   const [country,customer]=g.split('||'),rows=f.filter(x=>x.country===country&&x.customer===customer);
-   return '<div class="fu-group"><div class="fu-group-head"><strong>'+esc(customer)+' <span class="fu-muted">｜'+esc(country)+'</span></strong><span>'+rows.length+' 項</span></div><div class="fu-table-wrap"><table class="fu-table"><thead><tr><th>議題</th><th>追蹤事項／說明</th><th>責任單位／窗口</th><th>進度／處理</th></tr></thead><tbody>'+rows.map(x=>'<tr><td><span class="fu-label">'+esc(x.category)+'</span></td><td><strong>'+esc(x.task)+'</strong>'+(x.note?'<div class="fu-muted">'+esc(x.note)+'</div>':'')+((x.source_url?.startsWith('meeting_records/')?window.latestMeetingRecordURL?.(x.customer,'pdf'):x.source_url)?'<a class="fu-muted" target="_blank" rel="noopener noreferrer" href="'+esc(x.source_url?.startsWith('meeting_records/')?window.latestMeetingRecordURL?.(x.customer,'pdf'):x.source_url)+'">查看來源紀錄 ↗</a>':'')+'</td><td>'+esc(x.owner||'待指定')+'</td><td>'+(editing?'<select data-fu-status="'+esc(x.id)+'" aria-label="'+esc(x.customer)+' 狀態">'+statuses.map(v=>'<option'+(x.status===v?' selected':'')+'>'+v+'</option>').join('')+'</select><button type="button" class="fu-btn" data-fu-edit="'+esc(x.id)+'">編輯</button>':'<span class="fu-status">'+esc(x.status)+'</span>')+(x.updated_at?'<div class="fu-muted">更新：'+esc(x.updated_at)+'</div>':'')+'</td></tr>').join('')+'</tbody></table></div></div>';
-  }).join(''):'<div class="fu-group" style="padding:18px">此篩選沒有追蹤事項，未來可繼續加入英國客戶。</div>';
-  $('fuStatusText').textContent='已載入 '+published.length+' 筆正式事項'+(editing?'｜正在編輯 '+draft.length+' 筆草稿'+(dirty?'（尚未發布）':''):'｜同事唯讀顯示已發布資料');
+  const rows=allRows();kpis($('fuKpis'),rows);
+  for(const [id,key] of [['fuCountry','country'],['fuCustomer','customer'],['fuCategory','category']])options(id,rows.map(x=>x[key]));
+  const filtered=rows.filter(x=>(!$('fuCountry').value||x.country===$('fuCountry').value)&&(!$('fuCustomer').value||x.customer===$('fuCustomer').value)&&(!$('fuCategory').value||x.category===$('fuCategory').value)&&(!$('fuStatus').value||x.status===$('fuStatus').value));
+  const groups=new Map();for(const x of filtered){const key=JSON.stringify([x.country,x.customer]);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(x);}
+  $('fuProposalPanel').hidden=false;
+  $('fuProposalCount').textContent=rows.length+' 項｜'+rows.filter(x=>x.proposal).length+' 待核對';
+  $('fuProposalList').innerHTML=[...groups.values()].map(group=>'<section class="fu-proposal-group"><h4>'+esc(group[0].customer)+' <small>｜'+esc(group[0].country)+'｜'+group.length+' 項</small></h4><div class="fu-table-wrap"><table class="fu-table fu-proposal-table"><thead><tr><th>議題</th><th>主要事項／補充說明</th><th>責任單位／窗口</th><th>進度／處理</th></tr></thead><tbody>'+group.map(x=>{
+   const d=displayText(x),url=sourceURL(x);
+   return '<tr><td><span class="fu-label">'+esc(x.category||'其他')+'</span></td><td class="fu-proposal-description"><strong class="fu-main-headline">'+esc(d.headline)+'</strong>'+(d.detail?'<div class="fu-description-lines">'+lines(d.detail)+'</div>':'')+'<details class="fu-proposal-source"><summary>查看來源紀錄</summary><div>'+esc(x.source||'未列來源')+(x.source_row?'｜表格第 '+esc(x.source_row)+' 列':'')+'</div>'+(url&&/^(?:https?:|meeting_records\/|cbam_records\/)/.test(url)?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">開啟來源 ↗</a>':'')+(x.match?'<div>既有進度：'+esc(x.match.status)+'｜'+esc(x.match.id)+'</div>':'')+'</details></td><td>'+esc(x.owner||'待指定')+'</td><td><div class="fu-status">'+esc(x.status)+'</div><div class="fu-muted">'+esc(x.review)+'</div><div class="fu-proposal-buttons">'+(x.proposal||editing?'<button class="fu-btn" type="button" data-fu-row-edit="'+esc(x.key)+'">✎ 修改</button>':'')+'</div></td></tr>';
+  }).join('')+'</tbody></table></div></section>').join('')||'<p class="fu-muted">'+(ready?'此篩選沒有追蹤事項。':'正在載入追蹤事項…')+'</p>';
+  $('fuStatusText').textContent=(ready?'共 '+rows.length+' 項追蹤事項':'正在載入追蹤事項…')+(editing?'｜正在編輯草稿'+(dirty?'（尚未發布）':''):'')+(proposalError?'｜Word 擷取資料讀取失敗，暫顯示已發布清單：'+proposalError:'');
+  $('fuExportWord').disabled=!ready||!rows.length;
+  $('fuToggleEdit').disabled=!officialReady;
+  for(const button of page.querySelectorAll('[data-fu-row-edit]'))button.disabled=!officialReady;
+  kpis($('fuHomeKpis'),rows);$('fuHomeList').innerHTML=rows.filter(x=>x.status!=='已完成').slice(0,5).map(x=>'<div class="fu-home-item"><strong>'+esc(x.customer)+'</strong>　'+esc(displayText(x).headline)+' <span class="fu-muted">｜'+esc(x.status)+'</span></div>').join('')||'<p class="sub">目前沒有未完成事項。</p>';
  }
- function edit(id){
-   editId=id;const existing=draft.find(x=>x.id===id);const x=existing||{id:'',country:'德國',customer:'',visit_date:'',category:'其他',task:'',owner:'',note:'',status:'待處理',priority:'中',due_date:'',source:'',source_url:'',updated_at:'',history:[]};
-   $('fuEditForm').hidden=false;
-   $('fuEditForm').innerHTML='<div class="fu-edit"><strong>'+(existing?'編輯追蹤事項':'新增追蹤事項')+'</strong><div class="fu-edit-grid">'+
-   [['country','國家'],['customer','客戶'],['visit_date','拜訪日期 YYYY-MM-DD'],['category','議題'],['owner','責任單位／窗口'],['due_date','預計完成日 YYYY-MM-DD']].map(([key,label])=>'<label>'+label+'<input data-fu-field="'+key+'" value="'+esc(x[key]||'')+'"></label>').join('')+
-   '</div><label>追蹤事項<textarea data-fu-field="task" rows="2">'+esc(x.task)+'</textarea></label><label>處理進度／備註<textarea data-fu-field="note" rows="2">'+esc(x.note||'')+'</textarea></label><div class="fu-inline-actions"><button type="button" class="fu-btn primary" id="fuSaveDraft">儲存草稿</button><button type="button" class="fu-btn" id="fuCancelEdit">取消</button></div></div>';
-   $('fuSaveDraft').onclick=()=>{
-     const fields={};$('fuEditForm').querySelectorAll('[data-fu-field]').forEach(e=>fields[e.dataset.fuField]=e.value.trim());
-     if(!fields.customer||!fields.task){alert('請輸入客戶及追蹤事項');return}
-     const now=new Date().toISOString().slice(0,10);
-     if(existing){Object.assign(existing,fields);existing.updated_at=now;existing.history=Array.isArray(existing.history)?existing.history:[];existing.history.push({date:now,note:'修改追蹤內容'});}
-     else{const id='FU-'+Date.now();draft.push({...x,...fields,id,updated_at:now,history:[{date:now,note:'建立事項'}]})}
-     dirty=true;$('fuEditForm').hidden=true;render();
-   };
-   $('fuCancelEdit').onclick=()=>{$('fuEditForm').hidden=true;};
+ function startEditing(){if(editing||!officialReady)return;editing=true;draft=clone(published);reviewed=new Set(publishedRoot.reviewed_proposal_ids||[]);dirty=false;for(const id of ['fuAdd','fuExport','fuDiscard'])$(id).hidden=false;$('fuToggleEdit').hidden=true;render();}
+ function edit(key){
+  if(!officialReady)return;
+  const row=allRows().find(x=>x.key===key),x=row||{country:'德國',customer:'',category:'其他',task:'',owner:'',note:'',status:'待處理'};
+  startEditing();const form=$('fuEditForm');form.hidden=false;
+  form.innerHTML='<form class="fu-proposal-editor"><strong>'+(row?'修改追蹤事項':'新增追蹤事項')+'</strong><div class="fu-edit-grid">'+[['country','國家'],['customer','客戶'],['visit_date','拜訪日期 YYYY-MM-DD'],['category','議題'],['owner','責任單位／窗口'],['due_date','預計完成日 YYYY-MM-DD']].map(([name,title])=>'<label>'+title+'<input name="'+name+'" value="'+esc(x[name]||'')+'"'+(['country','customer','category'].includes(name)?' required':'')+'></label>').join('')+'</div><label>追蹤事項<textarea name="task" rows="3" required>'+esc(x.task)+'</textarea></label><label>說明／處理紀錄<textarea name="note" rows="3">'+esc(x.note||'')+'</textarea></label><label>處理進度<select name="status">'+statuses.map(v=>'<option'+(v===x.status?' selected':'')+'>'+esc(v)+'</option>').join('')+'</select></label><div class="fu-inline-actions"><button class="fu-btn primary" type="submit">儲存修改（草稿）</button><button class="fu-btn" id="fuCancelEdit" type="button">取消</button></div><p class="fu-muted">儲存表示已核對此項。匯出更新版 JSON 並 Commit 後發布；未修改的 Word 擷取事項仍保留待核對。</p></form>';
+  $('fuCancelEdit').onclick=()=>{form.hidden=true;};
+  form.querySelector('form').onsubmit=e=>{
+   e.preventDefault();const fields=Object.fromEntries([...new FormData(e.currentTarget)].map(([k,v])=>[k,String(v).trim()]));if(!fields.task||!fields.customer)return;
+   const now=new Date().toISOString().slice(0,10),p=x.proposal;
+   // One proposal per saved record. Never overwrite another row on a fuzzy match.
+   const id=row?x.id:'FU-'+Date.now();const prior=draft.find(t=>t.id===id);
+   const saved={...(prior||{}),...fields,id,priority:prior?.priority||'待確認',source:x.source||'',source_url:x.source_url||'',source_row:x.source_row||'',updated_at:now,history:[...(prior?.history||[]),{date:now,note:'人工核對並修改追蹤事項'}]};
+   if(p){saved.word_proposal_id=p.proposal_id;reviewed.add(p.proposal_id);}
+   if(prior)Object.assign(prior,saved);else draft.push(saved);
+   dirty=true;form.hidden=true;render();
+  };
+  form.scrollIntoView({behavior:'smooth',block:'center'});
  }
+ function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);}
 
-
- function proposalDisplay(p){
-   const raw=String(p.task||'').trim(),extra=String(p.note||'').trim();
-   const separator=raw.search(/[｜|：:]/);
-   let headline=raw,detail=extra;
-   if(separator>0&&separator<=38){
-     headline=raw.slice(0,separator).trim();
-     detail=[raw.slice(separator+1).trim(),extra].filter(Boolean).join('\n');
-   }else{
-     const sentence=raw.search(/[。；;]/);
-     if(sentence>8&&sentence<=75&&raw.length>sentence+3){
-       headline=raw.slice(0,sentence).trim();
-       detail=[raw.slice(sentence+1).trim(),extra].filter(Boolean).join('\n');
-     }
-   }
-   return {headline,detail};
+ // Minimal standards-compliant OOXML package, stored ZIP entries: no CDN needed.
+ function docxBlob(rows){
+  const xml=v=>String(v??'').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+  const run=(v,bold=false,color='000000')=>'<w:r><w:rPr>'+(bold?'<w:b/>':'')+'<w:color w:val="'+color+'"/></w:rPr>'+String(v??'').split(/\r?\n/).map((t,i)=>(i?'<w:br/>':'')+'<w:t xml:space="preserve">'+xml(t)+'</w:t>').join('')+'</w:r>';
+  const para=(v,style='',bold=false)=>'<w:p><w:pPr>'+(style?'<w:pStyle w:val="'+style+'"/>':'')+'<w:spacing w:after="100"/></w:pPr>'+run(v,bold)+'</w:p>';
+  const widths=[1050,4800,2050,1450];
+  const cell=(content,i,fill)=>'<w:tc><w:tcPr><w:tcW w:w="'+widths[i]+'" w:type="dxa"/><w:shd w:fill="'+fill+'"/><w:vAlign w:val="center"/></w:tcPr>'+content+'</w:tc>';
+  const groupMap=new Map();for(const x of rows){const key=JSON.stringify([x.country,x.customer]);if(!groupMap.has(key))groupMap.set(key,[]);groupMap.get(key).push(x);}
+  let body=para('2026年11月德英客戶拜訪追蹤事項','Title')+para('匯出日期 '+new Date().toLocaleDateString('zh-TW',{timeZone:'Asia/Taipei'})+'　共 '+rows.length+' 項')+para('彙整全部客戶追蹤事項，不受網頁篩選限制。標示「待核對」的內容請依原始會議紀錄確認。'+(editing?' 本檔包含目前已儲存的編輯草稿。':''));
+  for(const group of groupMap.values()){
+   body+=para(group[0].customer+'　'+(group[0].country||'')+'　'+group.length+' 項','Heading1');
+   body+='<w:tbl><w:tblPr><w:tblW w:w="9350" w:type="dxa"/><w:tblLayout w:type="fixed"/><w:tblBorders>'+['top','left','bottom','right','insideH','insideV'].map(x=>'<w:'+x+' w:val="single" w:sz="4" w:color="D9D9D9"/>').join('')+'</w:tblBorders><w:tblCellMar><w:top w:w="100" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:bottom w:w="100" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>'+widths.map(w=>'<w:gridCol w:w="'+w+'"/>').join('')+'</w:tblGrid>';
+   body+='<w:tr><w:trPr><w:tblHeader/></w:trPr>'+['議題','主要事項與補充說明','責任單位與窗口','進度與核對'].map((v,i)=>cell('<w:p>'+run(v,true,'FFFFFF')+'</w:p>',i,'235276')).join('')+'</w:tr>';
+   group.forEach((x,n)=>{const d=displayText(x),source=[x.source,x.source_row?'表格第 '+x.source_row+' 列':''].filter(Boolean).join('　');const content=[para(x.category||'其他'),para(d.headline,'',true)+(d.detail?para(d.detail.replace(/([。；;])(?=\s*[^\s])/g,'$1\n')):'')+(source?para('來源 '+source):''),para(x.owner||'待指定'),para(x.status)+para(x.review)+(x.due_date?para('期限 '+x.due_date):'')];body+='<w:tr>'+content.map((v,i)=>cell(v,i,n%2?'F1F6FA':'FFFFFF')).join('')+'</w:tr>';});
+   body+='</w:tbl>'+para('');
+  }
+  body+='<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1000" w:right="1278" w:bottom="1000" w:left="1278"/></w:sectPr>';
+  const files={
+   '[Content_Types].xml':'<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/></Types>',
+   '_rels/.rels':'<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>',
+   'word/_rels/document.xml.rels':'<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>',
+   'word/styles.xml':'<?xml version="1.0" encoding="UTF-8"?><w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Microsoft JhengHei"/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="100" w:line="260" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/></w:style><w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/><w:basedOn w:val="Normal"/><w:pPr><w:keepNext/></w:pPr><w:rPr><w:b/><w:color w:val="000000"/><w:sz w:val="28"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1"/><w:basedOn w:val="Normal"/><w:pPr><w:keepNext/><w:spacing w:before="220" w:after="120"/></w:pPr><w:rPr><w:b/><w:color w:val="000000"/><w:sz w:val="24"/></w:rPr></w:style></w:styles>',
+   'word/document.xml':'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>'+body+'</w:body></w:document>'
+  };
+  const enc=new TextEncoder(),parts=[],directory=[];let offset=0;
+  const crc=bytes=>{let c=0xFFFFFFFF;for(const b of bytes){c^=b;for(let n=0;n<8;n++)c=(c>>>1)^((c&1)?0xEDB88320:0);}return (c^0xFFFFFFFF)>>>0;};
+  const header=n=>{const a=new Uint8Array(n);return {a,v:new DataView(a.buffer)};};
+  for(const [name,content] of Object.entries(files)){
+   const nameBytes=enc.encode(name),data=enc.encode(content),sum=crc(data),local=header(30+nameBytes.length),central=header(46+nameBytes.length);
+   local.v.setUint32(0,0x04034B50,true);local.v.setUint16(4,20,true);local.v.setUint16(6,0x800,true);local.v.setUint16(12,0x21,true);local.v.setUint32(14,sum,true);local.v.setUint32(18,data.length,true);local.v.setUint32(22,data.length,true);local.v.setUint16(26,nameBytes.length,true);local.a.set(nameBytes,30);
+   central.v.setUint32(0,0x02014B50,true);central.v.setUint16(4,20,true);central.v.setUint16(6,20,true);central.v.setUint16(8,0x800,true);central.v.setUint16(14,0x21,true);central.v.setUint32(16,sum,true);central.v.setUint32(20,data.length,true);central.v.setUint32(24,data.length,true);central.v.setUint16(28,nameBytes.length,true);central.v.setUint32(42,offset,true);central.a.set(nameBytes,46);
+   parts.push(local.a,data);directory.push(central.a);offset+=local.a.length+data.length;
+  }
+  const end=header(22),size=directory.reduce((n,x)=>n+x.length,0);end.v.setUint32(0,0x06054B50,true);end.v.setUint16(8,directory.length,true);end.v.setUint16(10,directory.length,true);end.v.setUint32(12,size,true);end.v.setUint32(16,offset,true);
+  return new Blob([...parts,...directory,end.a],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
  }
- function formattedDetails(value){
-   return esc(value).replace(/\r?\n/g,'<br>').replace(/([。；;])(?=\s*[^\s])/g,'$1<br>');
- }
- function renderProposals(){
-   const panel=$('fuProposalPanel'),list=$('fuProposalList');
-   panel.hidden=false;
-   const pending=proposals.filter(p=>!approvedDraft.has(p.proposal_id));
-   $('fuProposalCount').textContent=pending.length+' 筆待核對';
-   if(!pending.length){
-     list.innerHTML='<p class="fu-muted">目前沒有待審核的擷取事項。上傳新版 Word 並 Commit 後，部署流程會重新分析。</p>';
-     $('fuApplyProposals').disabled=true;return;
-   }
-   $('fuApplyProposals').disabled=false;
-   const customers=[...new Set(pending.map(x=>x.customer||'未列客戶'))];
-   list.innerHTML=customers.map(customer=>{
-     const rows=pending.filter(x=>x.customer===customer);
-     return '<section class="fu-proposal-group"><h4>'+esc(customer)+' <small>｜'+rows.length+' 項</small></h4>'+
-     '<div class="fu-table-wrap"><table class="fu-table fu-proposal-table"><thead><tr>'+
-     '<th>議題</th><th>主要事項／補充說明</th><th>責任單位／窗口</th><th>匯入審核</th></tr></thead><tbody>'+
-     rows.map(p=>{
-       const match=published.find(x=>x.id===p.suggested_match_id);
-       const choice=proposalDecisions.get(p.proposal_id)||'';
-       const currentStatus=statuses.includes(p.status_hint)?p.status_hint:'待處理';
-       const id=esc(p.proposal_id);
-       const display=proposalDisplay(p);
-       return '<tr data-fu-proposal-row="'+id+'">'+
-         '<td><span class="fu-label">'+esc(p.category||p.topic||'其他')+'</span></td>'+
-         '<td class="fu-proposal-description"><strong class="fu-main-headline">'+esc(display.headline)+'</strong>'+
-         (display.detail?'<div class="fu-description-lines">'+formattedDetails(display.detail)+'</div>':'')+
-         '<details class="fu-proposal-source"><summary>查看來源與比對結果</summary><div>來源：'+esc(p.source||'')+'｜表格第'+esc(p.source_row||'—')+'列</div>'+
-         '<div>'+(match?'可能對應：'+esc(match.id)+'｜'+esc(match.task):'尚未找到可信的既有對應項，請核對是否重複')+'</div></details></td>'+
-         '<td>'+esc(p.owner||'待指定')+'</td>'+
-         '<td><span class="fu-muted">建議初始進度</span><div class="fu-status">'+esc(currentStatus)+'</div>'+
-         (p.status_hint?'<div class="fu-muted">Word：'+esc(p.status_hint)+'</div>':'')+
-         '<div class="fu-proposal-buttons"><button class="fu-btn" type="button" data-fu-proposal-edit="'+id+'">✎ 修改</button></div>'+
-         '<label for="fud-'+id+'" class="fu-proposal-decision-label">匯入方式</label>'+
-         '<select id="fud-'+id+'" data-fu-decision="'+id+'">'+
-         '<option value=""'+(!choice?' selected':'')+'>尚未決定</option>'+
-         '<option value="add"'+(choice==='add'?' selected':'')+'>新增正式事項</option>'+
-         (match?'<option value="merge"'+(choice==='merge'?' selected':'')+'>合併 '+esc(match.id)+'</option>':'')+
-         '<option value="skip"'+(choice==='skip'?' selected':'')+'>不匯入（略過）</option></select></td></tr>'+
-         (proposalEditId===p.proposal_id?
-         '<tr class="fu-proposal-editor-row"><td colspan="4"><form class="fu-proposal-editor" data-fu-proposal-form="'+id+'">'+
-         '<strong>修改擷取內容｜'+esc(customer)+'</strong>'+
-         '<div class="fu-edit-grid"><label>議題分類<input name="category" value="'+esc(p.category||'')+'" required></label>'+
-         '<label>責任單位／窗口<input name="owner" value="'+esc(p.owner||'')+'"></label></div>'+
-         '<label>追蹤事項<textarea name="task" rows="2" required>'+esc(p.task||'')+'</textarea></label>'+
-         '<label>說明／處理紀錄<textarea name="note" rows="2">'+esc(p.note||'')+'</textarea></label>'+
-         '<label>進度（新增事項的初始狀態）<select name="status_hint">'+
-         ['待處理','處理中','待客戶回覆','已完成'].map(st=>'<option value="'+esc(st)+'"'+(currentStatus===st?' selected':'')+'>'+esc(st)+'</option>').join('')+
-         '</select></label>'+
-         '<div class="fu-inline-actions"><button type="submit" class="fu-btn primary">儲存修改（草稿）</button>'+
-         '<button type="button" class="fu-btn" data-fu-proposal-cancel="'+id+'">取消</button></div>'+
-         '<p class="fu-muted">儲存僅更新本次網頁草稿；需選擇「新增／合併／略過」並匯出 JSON、Commit 後，其他同事才會看到。</p>'+
-         '</form></td></tr>':'');
-     }).join('')+'</tbody></table></div></section>';
-   }).join('');
- }
- $('fuProposalList').addEventListener('change',e=>{
-   const select=e.target.closest('[data-fu-decision]');
-   if(select)proposalDecisions.set(select.dataset.fuDecision,select.value);
- });
- $('fuProposalList').addEventListener('click',e=>{
-   const edit=e.target.closest('[data-fu-proposal-edit]');
-   const cancel=e.target.closest('[data-fu-proposal-cancel]');
-   if(edit){proposalEditId=edit.dataset.fuProposalEdit;renderProposals();}
-   if(cancel){proposalEditId=null;renderProposals();}
- });
- $('fuProposalList').addEventListener('submit',e=>{
-   const form=e.target.closest('[data-fu-proposal-form]');
-   if(!form)return;
-   e.preventDefault();
-   const p=proposals.find(x=>x.proposal_id===form.dataset.fuProposalForm);
-   if(!p)return;
-   const data=new FormData(form);
-   const task=String(data.get('task')||'').trim();
-   if(!task){alert('請填寫追蹤事項');return;}
-   p.task=task;
-   p.category=String(data.get('category')||'其他').trim()||'其他';
-   p.owner=String(data.get('owner')||'').trim();
-   p.note=String(data.get('note')||'').trim();
-   p.status_hint=String(data.get('status_hint')||'待處理');
-   proposalEditId=null;
-   renderProposals();
-   $('fuStatusText').textContent='擷取內容已儲存到本次編輯草稿（尚未發布至 GitHub）。';
- });
- function applyProposalDecisions(){
-   const selected=[...proposalDecisions.entries()].map(([id,decision])=>({id,decision})).filter(x=>x.decision);
-   if(!selected.length){alert('請先為需要處理的事項選擇「新增」、「合併既有」或「略過」。');return;}
-   if(!editing)$('fuToggleEdit').click();
-   let n=0;
-   for(const selection of selected){
-     const p=proposals.find(x=>x.proposal_id===selection.id);if(!p||approvedDraft.has(p.proposal_id))continue;
-     if(selection.decision==='add'){
-       const newId='AUTO-'+p.proposal_id;
-       if(!draft.some(x=>x.id===newId)){
-         const status=statuses.includes(p.status_hint)?p.status_hint:'待處理';
-         draft.push({id:newId,country:p.country||'德國',customer:p.customer||'',visit_date:p.visit_date||'',category:p.category||'其他',
-           task:p.task||'',owner:p.owner||'待指定',note:p.note||'',status,priority:'待確認',due_date:'',
-           source:p.source||'會議紀錄自動擷取',source_url:p.source_url||'',updated_at:new Date().toISOString().slice(0,10),
-           history:[{date:new Date().toISOString().slice(0,10),note:'管理者審核後由 Word 提案加入；請確認來源內容及狀態'}]});
-       }
-     }else if(selection.decision==='merge'){
-       const t=draft.find(x=>x.id===p.suggested_match_id);
-       if(!t){alert('找不到要合併的既有事項，請先核對後改選「新增」或「略過」。');continue;}
-       const supplement='會議 Word（'+(p.source||'')+'）擷取：'+(p.task||'')+(p.note?'；'+p.note:'');
-       if(!(t.note||'').includes(supplement))t.note=[t.note,supplement].filter(Boolean).join('\n');
-       // Preserve the task ID, prior status, owner, and history.
-       t.history=Array.isArray(t.history)?t.history:[];
-       t.history.push({date:new Date().toISOString().slice(0,10),note:'管理者合併 Word 擷取說明，原狀態與 PIC 保留'});
-       t.updated_at=new Date().toISOString().slice(0,10);
-     }else if(selection.decision!=='skip')continue;
-     approvedDraft.add(p.proposal_id);
-     dirty=true;n++;
-   }
-   if(n){for(const x of selected)if(approvedDraft.has(x.id))proposalDecisions.delete(x.id);renderProposals();render();
-     alert('已將 '+n+' 筆確認結果套用到編輯草稿，尚未發布。請再次檢查表格，然後「匯出更新版 JSON」並 Commit。');
-   }
- }
- $('fuApplyProposals').addEventListener('click',applyProposalDecisions);
- fetch('followup_suggestions.json?rev='+Date.now(),{cache:'no-store'})
-  .then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()})
-  .then(d=>{if(!Array.isArray(d.proposals))throw Error('提案格式無效');proposals=d.proposals;renderProposals();})
-  .catch(e=>{$('fuProposalPanel').hidden=false;$('fuProposalCount').textContent='無法讀取';
-    $('fuProposalList').textContent='自動擷取資料尚未建立或無法讀取：'+e.message;
-    $('fuApplyProposals').disabled=true;});
- page.addEventListener('change',e=>{const id=e.target.getAttribute('data-fu-status');if(!id||!editing)return;const r=draft.find(x=>x.id===id);if(!r)return;const old=r.status;r.status=e.target.value;r.updated_at=new Date().toISOString().slice(0,10);r.history=Array.isArray(r.history)?r.history:[];r.history.push({date:r.updated_at,from:old,to:r.status});dirty=true;render()});
- page.addEventListener('click',e=>{const b=e.target.closest('[data-fu-edit]');if(b&&editing)edit(b.dataset.fuEdit)});
+ $('fuExportWord').onclick=()=>{const rows=allRows();if(!ready||!rows.length)return;download(docxBlob(rows),'CSC_DE_UK_Followups_'+new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Taipei'}).replace(/-/g,'')+'.docx');};
+ $('fuToggleEdit').onclick=startEditing;$('fuAdd').onclick=()=>edit(null);
+ $('fuDiscard').onclick=()=>{if(dirty&&!confirm('確定捨棄尚未發布的草稿嗎？'))return;editing=false;dirty=false;reviewed=new Set();for(const id of ['fuAdd','fuExport','fuDiscard'])$(id).hidden=true;$('fuToggleEdit').hidden=false;$('fuEditForm').hidden=true;render();};
+ $('fuExport').onclick=()=>{download(new Blob([JSON.stringify({...publishedRoot,updated_at:new Date().toISOString().slice(0,10),reviewed_proposal_ids:[...reviewed],items:draft},null,2)+'\n'],{type:'application/json;charset=utf-8'}),'followup_actions.json');alert('已下載 followup_actions.json。請在 GitHub 覆蓋根目錄同名檔案並 Commit，發布核對後的修改。');};
+ page.addEventListener('click',e=>{const b=e.target.closest('[data-fu-row-edit]');if(b)edit(b.dataset.fuRowEdit);});
+ for(const id of ['fuCountry','fuCustomer','fuCategory','fuStatus'])$(id).addEventListener('change',render);
  window.addEventListener('meeting-record-index-ready',render);
- ['fuCountry','fuCustomer','fuCategory','fuStatus'].forEach(id=>$(id).addEventListener('change',render));
- $('fuToggleEdit').onclick=()=>{editing=true;draft=clone(published);approvedDraft=new Set(publishedRoot.reviewed_proposal_ids||[]);dirty=false;$('fuAdd').hidden=false;$('fuExport').hidden=false;$('fuDiscard').hidden=false;$('fuToggleEdit').hidden=true;render()};
- $('fuAdd').onclick=()=>edit(null);
- $('fuDiscard').onclick=()=>{if(dirty&&!confirm('確定捨棄尚未發布的草稿嗎？'))return;editing=false;dirty=false;approvedDraft=new Set();proposalDecisions.clear();proposalEditId=null;renderProposals();$('fuAdd').hidden=true;$('fuExport').hidden=true;$('fuDiscard').hidden=true;$('fuToggleEdit').hidden=false;$('fuEditForm').hidden=true;render()};
- $('fuExport').onclick=()=>{
-   const payload=JSON.stringify({...publishedRoot,schema_version:'1.0',updated_at:new Date().toISOString().slice(0,10),description:'Follow-up data published by GitHub commit after manual proposal review',reviewed_proposal_ids:[...approvedDraft],items:draft},null,2)+'\n';
-   const blob=new Blob([payload],{type:'application/json;charset=utf-8'});
-   const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='followup_actions.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
-   alert('已下載 followup_actions.json。請登入 GitHub，在 Repository 根目錄覆蓋同名檔案並 Commit；網站部署後同事才會看到更新。');
- };
- const homeOpen=$('fuHomeOpen');if(homeOpen)homeOpen.onclick=()=>{const btn=document.querySelector('.tabs [data-tab="followup"]');if(btn)btn.click();window.scrollTo({top:0,behavior:'smooth'})};
- fetch('followup_actions.json?rev='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{if(!Array.isArray(d.items))throw Error('invalid items');publishedRoot=d;published=d.items;home();render();if(proposals.length)renderProposals()}).catch(e=>{$('fuStatusText').textContent='追蹤資料讀取失敗：'+e.message;$('fuHomeList').textContent='資料暫時無法取得';});
+ $('fuHomeOpen').onclick=()=>{document.querySelector('.tabs [data-tab="followup"]')?.click();window.scrollTo({top:0,behavior:'smooth'});};
+ const read=path=>fetch(path+'?rev='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();});
+ Promise.allSettled([read('followup_actions.json'),read('followup_suggestions.json')]).then(([official,suggestions])=>{
+  if(official.status==='fulfilled'&&Array.isArray(official.value.items)){publishedRoot=official.value;published=official.value.items;officialReady=true;}
+  if(suggestions.status==='fulfilled'&&Array.isArray(suggestions.value.proposals))proposals=suggestions.value.proposals;
+  else proposalError=suggestions.reason?.message||'格式無效';
+  ready=true;render();
+  if(official.status==='rejected')$('fuStatusText').textContent+='｜正式資料讀取失敗：'+official.reason.message;
+ });
 })();
 </script>
 
