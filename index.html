@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.38</title><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.39</title><style>
 :root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#192b40;background:#f2f5fa}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#102b4b,#185783);color:white;padding:34px max(22px,calc((100vw - 1120px)/2)) 28px}header h1{margin:8px 0;font-size:clamp(24px,4vw,38px)}header p{opacity:.84;margin:8px 0}.eyebrow{letter-spacing:2px;font-size:12px;color:#b6d9f8}main{max-width:1120px;margin:auto;padding:24px 18px 70px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.tabs button,.daybtn,.filter{cursor:pointer;border:1px solid #d8e2ee;border-radius:11px;padding:11px 15px;background:white;color:#24425f;font-weight:700}.tabs button.active,.daybtn.active,.filter.active{background:#164c7a;color:white;border-color:#164c7a}.panel{background:white;border:1px solid #e1e8f1;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 6px 20px #183c6010}.panel h2{margin:0 0 14px;font-size:21px}.sub{color:#65778d;font-size:13px}.days{display:grid;grid-template-columns:repeat(10,minmax(70px,1fr));gap:7px;margin-bottom:16px}.daybtn{padding:12px 3px}.daybtn small{display:block;font-weight:400;margin-top:4px}.timeline{border-left:2px solid #bcd1e3;margin-left:9px;padding-left:20px}.event{position:relative;padding:4px 0 18px}.event:before{content:"";position:absolute;left:-27px;top:10px;width:11px;height:11px;border-radius:50%;background:#2578b2;border:3px solid white;box-shadow:0 0 0 1px #9cbcd7}.time{font-size:13px;font-weight:700;color:#17669b}.event h3{font-size:16px;margin:5px 0}.event p{margin:3px 0;color:#64748b;font-size:14px;white-space:pre-line}.pill{display:inline-block;padding:4px 8px;background:#eaf2fa;border-radius:20px;color:#285c83;font-size:12px;margin:5px 5px 0 0}.warning{background:#fff7e7;color:#815c19;border-left:4px solid #dfad42;padding:12px 15px;border-radius:8px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.client{border:1px solid #e0e8f1;border-radius:13px;padding:16px}.client h3{margin:0 0 9px;font-size:17px}.client p{font-size:13px;color:#617388}.flight{border-bottom:1px solid #e8edf4;padding:13px 0}.flight:last-child{border:0}.flight strong{font-size:17px}.search{padding:12px 14px;border:1px solid #ccd9e7;border-radius:10px;width:100%;max-width:380px;margin:0 0 15px}.btn{border:0;border-radius:9px;padding:9px 13px;background:#e5f0f9;color:#18517b;cursor:pointer}.note{width:100%;min-height:115px;padding:12px;border:1px solid #d1dce9;border-radius:10px;font:inherit;resize:vertical}.muted{color:#667a8f}.hidden{display:none}.stat{font-size:27px;font-weight:800;color:#194c77}.statlabel{font-size:13px;color:#708096}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.footer{font-size:12px;color:#718197;margin-top:25px}.banner{background:#fff4db;color:#6d4e0c;padding:12px 16px;font-size:13px}a{color:#17699d}@media(max-width:800px){.days{grid-template-columns:repeat(5,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.panel{padding:16px}header{padding:26px 18px}}
 
 /* V2.1 clickable customer details */
@@ -150,6 +150,13 @@ main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:16px;bo
 .fu-hint{padding:11px 13px;border-left:4px solid #dda84a;background:#fff7e9;color:#795b22;font-size:12px;border-radius:7px;line-height:1.65}
 .fu-edit{border:1px solid #bed2e2;border-radius:10px;padding:13px;margin:12px 0;display:grid;gap:10px;background:#f8fbfd}
 .fu-edit label{font-size:12px;font-weight:700;color:#284a65;display:grid;gap:5px}.fu-edit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+/* V2.39: direct GitHub publishing and local draft recovery. */
+.fu-auth-panel{margin:14px 0;padding:15px;border:1px solid #bfd5e5;border-radius:10px;background:#f5f9fc}
+.fu-auth-entry{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:7px}
+.fu-auth-entry input{flex:1 1 260px;min-width:0;padding:10px;border:1px solid #adc9dd;border-radius:8px;font:inherit;background:#fff;color:#193f5c}
+.fu-auth-help{margin:10px 0;font-size:12px;line-height:1.8}.fu-auth-help summary{cursor:pointer;font-weight:700;color:#235276}.fu-auth-help ol{padding-left:22px}
+.fu-publish-message{font-size:13px;line-height:1.65;color:#235276;margin:10px 0 0;overflow-wrap:anywhere}.fu-publish-message:empty,#fuDeploymentStatus:empty{display:none}.fu-publish-error{color:#a02d24}
+.fu-backup{font-size:12px;align-self:center}.fu-backup summary{cursor:pointer;color:#4d6e87;padding:9px}.fu-backup-actions{display:flex;gap:6px;flex-wrap:wrap;padding:7px 0}
 /* V2.38: country and customer cards summarize every customer's open actions. */
 .fu-home-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}
 .fu-home-customer{appearance:none;min-width:0;padding:17px 15px;border:1px solid #cfe1f0;border-radius:13px;background:#fff;color:#173e60;text-align:left;font:inherit;cursor:pointer}
@@ -337,14 +344,32 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
    <select id="fuCategory" aria-label="篩選議題"><option value="">全部議題</option></select>
    <select id="fuStatus" aria-label="篩選進度"><option value="">全部狀態</option><option value="__open">未完成（待辦）</option><option>待處理</option><option>處理中</option><option>待客戶回覆</option><option>已完成</option></select>
   </div>
-  <div class="fu-inline-actions"><button id="fuExportWord" class="fu-btn primary" type="button" disabled>↓ 匯出 Word 檔</button><button id="fuAdd" class="fu-btn" type="button" disabled>＋ 新增事項</button><button id="fuExport" class="fu-btn primary" type="button" disabled>↓ 匯出更新版 JSON</button></div>
+  <div class="fu-inline-actions">
+   <button id="fuExportWord" class="fu-btn" type="button" disabled>↓ 匯出 Word 檔</button>
+   <button id="fuAdd" class="fu-btn" type="button" disabled>＋ 新增事項</button>
+   <button id="fuAuthOpen" class="fu-btn" type="button">管理者授權</button>
+   <button id="fuPublish" class="fu-btn primary" type="button" disabled>儲存並發布</button>
+   <details class="fu-backup"><summary>備份</summary><div class="fu-backup-actions"><button id="fuExport" class="fu-btn" type="button" disabled>匯出 JSON 備份</button><button id="fuImport" class="fu-btn" type="button" disabled>匯入 JSON 備份</button><input id="fuImportFile" type="file" accept=".json,application/json" hidden></div></details>
+  </div>
+  <div id="fuAuthPanel" class="fu-auth-panel" hidden>
+   <form id="fuAuthForm" autocomplete="off">
+    <strong>GitHub 管理者授權</strong>
+    <p class="fu-muted">一般查詢不需授權。授權碼只保留在本分頁記憶體，重新整理後需重新輸入；不會寫入程式碼、備份檔或本機儲存空間。</p>
+    <details class="fu-auth-help"><summary>第一次使用：建立授權碼</summary><ol><li>開啟 <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">GitHub Fine-grained token 設定 ↗</a>，名稱可填 CSC Followups，並設定有效期限。</li><li>Resource owner 選 evawang0328；Repository access 選 Only select repositories，只選 csc-germany-uk-trip-2026。</li><li>Repository permissions 新增 Contents，設為 Read and write；不需另外增加其他權限。</li><li>按 Generate token，將授權碼貼入下方欄位。請勿貼到聊天或追蹤內容。</li></ol></details>
+    <label for="fuGitHubToken">GitHub 授權碼</label>
+    <div class="fu-auth-entry"><input id="fuGitHubToken" type="password" autocomplete="off" spellcheck="false" placeholder="輸入 fine-grained personal access token"><button id="fuAuthorize" class="fu-btn primary" type="submit">連線</button><button id="fuDisconnect" class="fu-btn" type="button" hidden>登出授權</button></div>
+    <p id="fuAuthState" class="fu-muted" role="status" aria-live="polite">尚未連線</p>
+   </form>
+  </div>
+  <p id="fuPublishMessage" class="fu-publish-message" role="status" aria-live="polite"></p>
+  <p id="fuDeploymentStatus" class="fu-muted" role="status" aria-live="polite"></p>
   <p id="fuStatusText" class="fu-muted" aria-live="polite">正在讀取 followup_actions.json…</p>
   <div id="fuProposalPanel" class="fu-proposal-panel" hidden>
     <div class="fu-head"><div><h3>客戶追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依客戶分組，優先顯示最新版 Word 擷取內容；沒有 Word 事項的客戶顯示已發布紀錄。可匯出全部客戶，包含待核對事項。</p></div></div>
     <div id="fuProposalList"></div>
   </div>
   <div id="fuEditForm" hidden></div>
-  <div class="fu-hint" style="margin-top:15px">只有 GitHub Repository 的授權寫入者可以發布修改。此網站的「編輯草稿」不等於管理者登入，草稿不會自動同步或更新線上資料；請匯出 JSON 後，使用你的 GitHub 帳號覆蓋根目錄的 followup_actions.json 並 Commit。Repository 為 Public，請勿加入機密追蹤內容。</div>
+  <p class="fu-muted">修改後按「儲存並發布」即會寫回 GitHub 並自動部署。未發布的草稿會自動保存在這台裝置；授權碼僅保留在當次分頁記憶體。</p>
   <p class="sub"><a href="https://github.com/evawang0328/csc-germany-uk-trip-2026" target="_blank" rel="noopener noreferrer">開啟 GitHub Repository ↗</a>｜文件參考連結請以已核實的會議紀錄為準。</p>
  </div>
 </section>
@@ -1070,6 +1095,81 @@ renderAllClients();
 </script>
 
 <script>
+/* GitHub publishing for one fixed repository and one fixed data file. */
+(function(global){
+ 'use strict';
+ const repository='evawang0328/csc-germany-uk-trip-2026';
+ const api='https://api.github.com/repos/'+repository;
+ const fileURL=api+'/contents/followup_actions.json';
+ const states=new Set(['待處理','處理中','待客戶回覆','已完成']);
+ const clone=x=>JSON.parse(JSON.stringify(x));
+ function canonical(x){if(Array.isArray(x))return x.map(canonical);if(x&&typeof x==='object')return Object.fromEntries(Object.keys(x).sort().map(k=>[k,canonical(x[k])]));return x;}
+ const same=(a,b)=>JSON.stringify(canonical(a))===JSON.stringify(canonical(b));
+ function normalizeRoot(value){
+  if(!value||!Array.isArray(value.items)||value.items.length>10000)throw Error('追蹤資料格式無效，請選擇 followup_actions.json 備份。');
+  const ids=new Set();
+  const fields=['id','country','customer','visit_date','category','task','owner','note','status','priority','due_date','source','source_url','updated_at','word_proposal_id'];
+  const items=value.items.map(item=>{
+   if(!item||typeof item!=='object'||typeof item.id!=='string'||!item.id||ids.has(item.id)||typeof item.task!=='string'||!item.task.trim()||typeof item.customer!=='string'||!item.customer.trim()||!states.has(item.status))throw Error('追蹤資料包含空白、重複編號或無效進度，尚未匯入。');
+   ids.add(item.id);const row={};for(const key of fields)if(item[key]!==undefined){if(typeof item[key]!=='string')throw Error('追蹤欄位格式無效。');row[key]=item[key];}
+   if(item.source_row!==undefined)row.source_row=String(item.source_row);
+   row.history=Array.isArray(item.history)?item.history.filter(x=>x&&typeof x==='object').map(x=>Object.fromEntries(Object.entries(x).filter(([k,v])=>['date','note','from','to'].includes(k)&&typeof v==='string'))):[];
+   return row;
+  });
+  return {schema_version:typeof value.schema_version==='string'?value.schema_version:'1.0',updated_at:typeof value.updated_at==='string'?value.updated_at:'',description:typeof value.description==='string'?value.description:'Germany & UK client follow-ups',reviewed_proposal_ids:[...new Set((Array.isArray(value.reviewed_proposal_ids)?value.reviewed_proposal_ids:[]).filter(x=>typeof x==='string'))],items};
+ }
+ function mergeRoot(baseValue,localValue,remoteValue){
+  const base=normalizeRoot(baseValue),local=normalizeRoot(localValue),remote=normalizeRoot(remoteValue);
+  const before=new Map(base.items.map(x=>[x.id,x])),after=new Map(local.items.map(x=>[x.id,x])),latest=new Map(remote.items.map(x=>[x.id,x]));
+  const conflicts=[];
+  for(const id of new Set([...before.keys(),...after.keys()])){
+   const old=before.get(id),edited=after.get(id),current=latest.get(id);
+   if(same(old,edited))continue;
+   if(!same(current,old)&&!same(current,edited)){conflicts.push((edited||old).customer+'｜'+(edited||old).task);continue;}
+   if(edited)latest.set(id,clone(edited));else latest.delete(id);
+  }
+  if(conflicts.length){const error=Error('GitHub 上已有不同修改，未覆蓋以下事項：'+conflicts.slice(0,3).join('；')+'。草稿已保留，請先核對最新版本。');error.code='CONFLICT';throw error;}
+  return {...remoteValue,schema_version:'1.0',updated_at:new Date().toISOString().slice(0,10),reviewed_proposal_ids:[...new Set([...remote.reviewed_proposal_ids,...local.reviewed_proposal_ids])],items:[...latest.values()]};
+ }
+ function decode(text){return new TextDecoder().decode(Uint8Array.from(atob(text.replace(/\s/g,'')),c=>c.charCodeAt(0)));}
+ function encode(text){return btoa(Array.from(new TextEncoder().encode(text),x=>String.fromCharCode(x)).join(''));}
+ function apiError(status){
+  const messages={401:'GitHub 授權碼無效或已到期，請重新授權。',403:'GitHub 拒絕寫入，請確認這個儲存庫的 Contents 已設為 Read and write，或稍後再試。',404:'無法存取指定儲存庫，請確認授權碼已選取 csc-germany-uk-trip-2026。',409:'發布時資料已被其他更新變更。草稿已保留，請重新發布以比對最新版本。',422:'GitHub 未接受這次提交，請檢查分支規則及追蹤資料。',429:'GitHub 請求次數過多，請稍後再試。'};
+  const error=Error(messages[status]||'GitHub 暫時無法完成請求（HTTP '+status+'），草稿已保留。');error.status=status;return error;
+ }
+ function create(){
+  let credential='';
+  async function request(url,options={},authenticated=true){
+   if(authenticated&&!credential)throw Error('請先完成管理者授權。');
+   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
+   const headers={Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2026-03-10',...(options.body?{'Content-Type':'application/json'}:{})};
+   if(authenticated)headers.Authorization='Bearer '+credential;
+   let response;
+   try{response=await fetch(url,{...options,headers,signal:controller.signal,cache:'no-store',credentials:'omit',redirect:'error'});}
+   catch{const error=Error('網路連線中斷或逾時，草稿已保留。');error.uncertain=options.method==='PUT';throw error;}
+   finally{clearTimeout(timer);}
+   if(!response.ok){if(response.status===401)credential='';throw apiError(response.status);}
+   try{return await response.json();}catch{const error=Error('未能確認 GitHub 回覆，草稿已保留。');error.uncertain=options.method==='PUT';throw error;}
+  }
+  async function read(){const file=await request(fileURL+'?ref=main');if(file.encoding!=='base64'||!file.sha||typeof file.content!=='string')throw Error('GitHub 檔案格式無效。');let root;try{root=JSON.parse(decode(file.content));}catch{throw Error('GitHub 追蹤資料不是有效 JSON。');}normalizeRoot(root);return {root,sha:file.sha};}
+  return {
+   connected:()=>!!credential,
+   disconnect:()=>{credential='';},
+   async authorize(input){credential='';if(typeof input!=='string'||!input.trim())throw Error('請輸入 GitHub 授權碼。');credential=input.trim();try{return await read();}catch(error){credential='';throw error;}},
+   read,
+   async write(payload,sha){
+    const body=JSON.stringify({message:'Update customer follow-ups from website',branch:'main',sha,content:encode(JSON.stringify(payload,null,2)+'\n')});
+    try{const result=await request(fileURL,{method:'PUT',body});return {commit:result.commit?.sha||'',recovered:false};}
+    catch(error){if(error.uncertain){try{const latest=await read();if(same(latest.root,payload))return {commit:'',recovered:true};}catch{}const unknown=Error('GitHub 提交結果尚未確認。草稿已保留，請先查看 GitHub 再重試。');unknown.code='UNCERTAIN';throw unknown;}throw error;}
+   },
+   async deployment(commit){if(!/^[a-f0-9]{40}$/.test(commit))return null;const result=await request(api+'/actions/runs?head_sha='+commit+'&per_page=20',{},false);return (result.workflow_runs||[]).find(x=>x.name==='Website Auto Deploy')||null;}
+  };
+ }
+ global.CSCFollowupGitHub=Object.freeze({create,normalizeRoot,mergeRoot,same,repository});
+})(window);
+
+</script>
+<script>
 /* V2.35: one customer list, no import selectors, complete native DOCX export. */
 (function(){
  const page=document.getElementById('followup');if(!page)return;
@@ -1078,6 +1178,89 @@ renderAllClients();
  const statuses=['待處理','處理中','待客戶回覆','已完成'];
  let publishedRoot={},published=[],draft=[],proposals=[],editing=false,dirty=false,ready=false,officialReady=false,proposalError='';
  let reviewed=new Set();
+ // Saved drafts never include authentication. Keep the access token only in apiClient.
+ const github=window.CSCFollowupGitHub,apiClient=github.create();
+ const draftKey='csc-de-uk-followup-draft-v1';
+ let draftBaseRoot=null,publishing=false,authorizing=false,editorChanged=false,deploymentTicket=0;
+ const message=(value,error=false)=>{const el=$('fuPublishMessage');el.textContent=value;el.classList.toggle('fu-publish-error',error);};
+ function payload(){return {...publishedRoot,schema_version:'1.0',updated_at:new Date().toISOString().slice(0,10),reviewed_proposal_ids:[...reviewed],items:clone(draft)};}
+ function persistDraft(){
+  if(!editing||!dirty)return;
+  try{localStorage.setItem(draftKey,JSON.stringify({version:1,base:github.normalizeRoot(draftBaseRoot||publishedRoot),draft:github.normalizeRoot(payload()),saved_at:new Date().toISOString()}));}
+  catch{message('本機無法儲存草稿，請先匯出 JSON 備份或直接發布。',true);}
+ }
+ function restoreDraft(){
+  try{const raw=localStorage.getItem(draftKey);if(!raw)return;const saved=JSON.parse(raw);if(saved.version!==1)return;
+   const base=github.normalizeRoot(saved.base),local=github.normalizeRoot(saved.draft);
+   draftBaseRoot=base;draft=local.items;reviewed=new Set(local.reviewed_proposal_ids);editing=true;dirty=true;
+   message('已恢復這台裝置尚未發布的草稿。修改後可直接「儲存並發布」。');
+  }catch{message('本機草稿無法讀取，請使用先前匯出的 JSON 備份。',true);}
+ }
+ function authPanel(){const el=$('fuAuthPanel');el.hidden=false;$('fuGitHubToken').focus();el.scrollIntoView({behavior:'smooth',block:'center'});}
+ function updatePublishingControls(){
+  $('fuPublish').disabled=!officialReady||publishing||authorizing;$('fuPublish').textContent=publishing?'正在發布…':'儲存並發布';
+  $('fuAuthOpen').textContent=apiClient.connected()?'管理者已連線':'管理者授權';$('fuAuthOpen').disabled=publishing||authorizing;
+  $('fuDisconnect').hidden=!apiClient.connected();$('fuDisconnect').disabled=publishing||authorizing;
+  $('fuAuthorize').disabled=publishing||authorizing;$('fuGitHubToken').disabled=publishing||authorizing;
+  $('fuAdd').disabled=!officialReady||publishing;$('fuImport').disabled=!officialReady||publishing;
+  for(const button of page.querySelectorAll('[data-fu-row-edit]'))button.disabled=!officialReady||publishing;
+  for(const control of $('fuEditForm').querySelectorAll('input,textarea,select,button'))control.disabled=publishing;
+ }
+ async function trackDeployment(commit){
+  const ticket=++deploymentTicket;
+  if(!commit){$('fuDeploymentStatus').textContent='正式資料已寫入 GitHub。可到 GitHub Actions 查看 Website Auto Deploy 部署結果。';return;}
+  $('fuDeploymentStatus').textContent='正式資料已寫入 GitHub，正在等待網站部署。';
+  for(let attempt=0;attempt<18&&ticket===deploymentTicket;attempt++){
+   try{const run=await apiClient.deployment(commit);if(ticket!==deploymentTicket)return;
+    if(run?.status==='completed'){$('fuDeploymentStatus').textContent=run.conclusion==='success'?'網站部署完成，同事重新整理後即可看到正式版本。':'資料已寫入 GitHub，但網站部署未成功，請查看 GitHub Actions。';return;}
+   }catch{if(ticket===deploymentTicket)$('fuDeploymentStatus').textContent='正式資料已寫入 GitHub；目前無法查詢部署進度，可到 GitHub Actions 查看。';return;}
+   await new Promise(resolve=>setTimeout(resolve,5000));
+  }
+  if(ticket===deploymentTicket)$('fuDeploymentStatus').textContent='正式資料已寫入 GitHub，網站仍在部署中；可到 GitHub Actions 查看。';
+ }
+ async function publishChanges(){
+  if(publishing||authorizing||!officialReady)return;
+  const form=$('fuEditForm').querySelector('form');
+  if(!$('fuEditForm').hidden&&form){if(!form.reportValidity())return;form.requestSubmit();if(!$('fuEditForm').hidden)return;}
+  if(!dirty){message('目前沒有修改需要發布。');return;}
+  persistDraft();
+  if(!apiClient.connected()){message('修改已保留，請先完成管理者授權，再按「儲存並發布」。');authPanel();return;}
+  publishing=true;updatePublishingControls();message('正在比對 GitHub 最新版本並發布修改…');
+  try{
+   const remote=await apiClient.read();
+   const merged=github.mergeRoot(draftBaseRoot||publishedRoot,payload(),remote.root);
+   const result=await apiClient.write(merged,remote.sha);
+   publishedRoot=clone(merged);published=clone(merged.items);draft=[];draftBaseRoot=null;reviewed=new Set(merged.reviewed_proposal_ids||[]);editing=false;dirty=false;editorChanged=false;
+   try{localStorage.removeItem(draftKey);}catch{}
+   $('fuEditForm').hidden=true;message('修改已成為 GitHub 正式資料。網站部署進度顯示於下方。');
+   render();void trackDeployment(result.commit);
+  }catch(error){message(error.message||'發布未完成，草稿已保留。',true);persistDraft();if(!apiClient.connected())$('fuAuthState').textContent='授權已失效，請重新連線。';}
+  finally{publishing=false;updatePublishingControls();}
+ }
+ $('fuAuthOpen').onclick=()=>{$('fuAuthPanel').hidden=!$('fuAuthPanel').hidden;if(!$('fuAuthPanel').hidden)$('fuGitHubToken').focus();};
+ $('fuDisconnect').onclick=()=>{apiClient.disconnect();$('fuGitHubToken').value='';$('fuAuthState').textContent='已登出授權；已儲存的草稿仍保留在這台裝置。';updatePublishingControls();};
+ $('fuAuthForm').onsubmit=async event=>{
+  event.preventDefault();if(authorizing||publishing)return;
+  let input=$('fuGitHubToken').value;$('fuGitHubToken').value='';authorizing=true;updatePublishingControls();$('fuAuthState').textContent='正在連線 GitHub…';
+  try{const pending=apiClient.authorize(input);input='';const latest=await pending;
+   if(!editing){publishedRoot=latest.root;published=latest.root.items;officialReady=true;render();}
+   $('fuAuthState').textContent='已連線 GitHub；發布時會驗證寫入權限。';message('管理者已連線，修改後按「儲存並發布」即可。');$('fuAuthPanel').hidden=true;
+  }catch(error){$('fuAuthState').textContent=error.message||'連線失敗，請重新輸入授權碼。';}
+  finally{input='';authorizing=false;updatePublishingControls();}
+ };
+ $('fuPublish').onclick=publishChanges;
+ $('fuExport').onclick=()=>{if(!officialReady)return;startEditing();download(new Blob([JSON.stringify(payload(),null,2)+'\n'],{type:'application/json;charset=utf-8'}),'followup_actions.json');message('已下載 JSON 備份；平時可直接使用「儲存並發布」。');};
+ $('fuImport').onclick=()=>$('fuImportFile').click();
+ $('fuImportFile').onchange=async event=>{
+  const file=event.target.files?.[0];event.target.value='';if(!file||publishing)return;
+  try{if(file.size>2000000)throw Error('備份檔過大，請選擇正確的 followup_actions.json。');const imported=github.normalizeRoot(JSON.parse(await file.text()));
+   if(dirty&&!confirm('匯入備份會取代目前尚未發布的草稿，是否繼續？'))return;
+   draftBaseRoot=clone(publishedRoot);const combined=new Map(published.map(x=>[x.id,clone(x)]));for(const row of imported.items)combined.set(row.id,clone(row));draft=[...combined.values()];reviewed=new Set([...(publishedRoot.reviewed_proposal_ids||[]),...imported.reviewed_proposal_ids]);editing=true;dirty=true;editorChanged=false;$('fuEditForm').hidden=true;
+   persistDraft();render();message('已匯入備份草稿，請核對後按「儲存並發布」。');
+  }catch(error){message(error instanceof SyntaxError?'這不是有效的 JSON 備份檔。':error.message,true);}
+ };
+ page.addEventListener('input',event=>{if(event.target.closest('#fuEditForm'))editorChanged=true;});
+ window.addEventListener('beforeunload',event=>{if(publishing||editorChanged){event.preventDefault();event.returnValue='';}});
  const clone=a=>JSON.parse(JSON.stringify(a));
  const baseItems=()=>editing?draft:published;
  function displayText(x){
@@ -1128,11 +1311,11 @@ renderAllClients();
    const d=displayText(x);
    return '<tr><td><span class="fu-label">'+esc(x.category||'其他')+'</span></td><td class="fu-proposal-description"><strong class="fu-main-headline">'+esc(d.headline)+'</strong>'+(d.detail?'<div class="fu-description-lines">'+lines(d.detail)+'</div>':'')+'</td><td>'+esc(x.owner||'待指定')+'</td><td><div class="fu-status-actions"><span class="fu-status">'+esc(x.status)+'</span><button class="fu-btn" type="button" data-fu-row-edit="'+esc(x.key)+'">✎ 修改</button></div></td></tr>';
   }).join('')+'</tbody></table></div></section>').join('')||'<p class="fu-muted">'+(ready?'此篩選沒有追蹤事項。':'正在載入追蹤事項…')+'</p>';
-  $('fuStatusText').textContent=(ready?'共 '+rows.length+' 項追蹤事項':'正在載入追蹤事項…')+(editing?'｜正在編輯草稿'+(dirty?'（尚未發布）':''):'')+(proposalError?'｜Word 擷取資料讀取失敗，暫顯示已發布清單：'+proposalError:'');
+  $('fuStatusText').textContent=(ready?'共 '+rows.length+' 項追蹤事項':'正在載入追蹤事項…')+(editing?'｜'+(dirty?'本機草稿已儲存，尚未發布':'正在編輯'):'')+(proposalError?'｜Word 擷取資料讀取失敗，暫顯示已發布清單：'+proposalError:'');
   $('fuExportWord').disabled=!ready||!rows.length;
   $('fuAdd').disabled=!officialReady;$('fuExport').disabled=!officialReady;
   for(const button of page.querySelectorAll('[data-fu-row-edit]'))button.disabled=!officialReady;
-  kpis($('fuHomeKpis'),rows);renderHomeCards(rows);
+  kpis($('fuHomeKpis'),rows);renderHomeCards(rows);updatePublishingControls();
  }
  function renderHomeCards(rows){
   const groups=new Map();
@@ -1143,13 +1326,14 @@ renderAllClients();
   $('fuCountry').value=country;$('fuCustomer').value=customer;$('fuCategory').value='';$('fuStatus').value=openOnly?'__open':'';
   render();document.querySelector('.tabs [data-tab="followup"]')?.click();window.scrollTo({top:0,behavior:'smooth'});
  }
- function startEditing(){if(editing||!officialReady)return;editing=true;draft=clone(published);reviewed=new Set(publishedRoot.reviewed_proposal_ids||[]);dirty=false;render();}
+ function startEditing(){if(editing||!officialReady||publishing)return;draftBaseRoot=clone(publishedRoot);editing=true;draft=clone(published);reviewed=new Set(publishedRoot.reviewed_proposal_ids||[]);dirty=false;render();}
  function edit(key){
-  if(!officialReady)return;
+  if(!officialReady||publishing)return;
+  editorChanged=false;
   const row=allRows().find(x=>x.key===key),x=row||{country:'德國',customer:'',category:'其他',task:'',owner:'',note:'',status:'待處理'};
   startEditing();const form=$('fuEditForm');form.hidden=false;
-  form.innerHTML='<form class="fu-proposal-editor"><strong>'+(row?'修改追蹤事項':'新增追蹤事項')+'</strong><div class="fu-edit-grid">'+[['country','國家'],['customer','客戶'],['visit_date','拜訪日期 YYYY-MM-DD'],['category','議題'],['owner','責任單位／窗口'],['due_date','預計完成日 YYYY-MM-DD']].map(([name,title])=>'<label>'+title+'<input name="'+name+'" value="'+esc(x[name]||'')+'"'+(['country','customer','category'].includes(name)?' required':'')+'></label>').join('')+'</div><label>追蹤事項<textarea name="task" rows="3" required>'+esc(x.task)+'</textarea></label><label>說明／處理紀錄<textarea name="note" rows="3">'+esc(x.note||'')+'</textarea></label><label>處理進度<select name="status">'+statuses.map(v=>'<option'+(v===x.status?' selected':'')+'>'+esc(v)+'</option>').join('')+'</select></label><div class="fu-inline-actions"><button class="fu-btn primary" type="submit">儲存修改（草稿）</button><button class="fu-btn" id="fuCancelEdit" type="button">取消</button></div><p class="fu-muted">儲存表示已核對此項。匯出更新版 JSON 並 Commit 後發布；未修改的 Word 擷取事項仍保留待核對。</p></form>';
-  $('fuCancelEdit').onclick=()=>{form.hidden=true;};
+  form.innerHTML='<form class="fu-proposal-editor"><strong>'+(row?'修改追蹤事項':'新增追蹤事項')+'</strong><div class="fu-edit-grid">'+[['country','國家'],['customer','客戶'],['visit_date','拜訪日期 YYYY-MM-DD'],['category','議題'],['owner','責任單位／窗口'],['due_date','預計完成日 YYYY-MM-DD']].map(([name,title])=>'<label>'+title+'<input name="'+name+'" value="'+esc(x[name]||'')+'"'+(['country','customer','category'].includes(name)?' required':'')+'></label>').join('')+'</div><label>追蹤事項<textarea name="task" rows="3" required>'+esc(x.task)+'</textarea></label><label>說明／處理紀錄<textarea name="note" rows="3">'+esc(x.note||'')+'</textarea></label><label>處理進度<select name="status">'+statuses.map(v=>'<option'+(v===x.status?' selected':'')+'>'+esc(v)+'</option>').join('')+'</select></label><div class="fu-inline-actions"><button class="fu-btn" type="submit">儲存修改</button><button class="fu-btn primary" type="submit" data-fu-publish-after-save>儲存並發布</button><button class="fu-btn" id="fuCancelEdit" type="button">取消</button></div><p class="fu-muted">「儲存修改」會保留在本機；「儲存並發布」會直接寫回 GitHub。第一次發布請先完成管理者授權。</p></form>';
+  $('fuCancelEdit').onclick=()=>{form.hidden=true;editorChanged=false;};
   form.querySelector('form').onsubmit=e=>{
    e.preventDefault();const fields=Object.fromEntries([...new FormData(e.currentTarget)].map(([k,v])=>[k,String(v).trim()]));if(!fields.task||!fields.customer)return;
    const now=new Date().toISOString().slice(0,10),p=x.proposal;
@@ -1158,7 +1342,8 @@ renderAllClients();
    const saved={...(prior||{}),...fields,id,priority:prior?.priority||'待確認',source:x.source||'',source_url:x.source_url||'',source_row:x.source_row||'',updated_at:now,history:[...(prior?.history||[]),{date:now,note:'人工核對並修改追蹤事項'}]};
    if(p){saved.word_proposal_id=p.proposal_id;reviewed.add(p.proposal_id);}
    if(prior)Object.assign(prior,saved);else draft.push(saved);
-   dirty=true;form.hidden=true;render();
+   dirty=true;editorChanged=false;form.hidden=true;persistDraft();render();
+   if(e.submitter?.hasAttribute('data-fu-publish-after-save'))void publishChanges();
   };
   form.scrollIntoView({behavior:'smooth',block:'center'});
  }
@@ -1202,7 +1387,6 @@ renderAllClients();
  }
  $('fuExportWord').onclick=()=>{const rows=allRows();if(!ready||!rows.length)return;download(docxBlob(rows),'CSC_DE_UK_Followups_'+new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Taipei'}).replace(/-/g,'')+'.docx');};
  $('fuAdd').onclick=()=>edit(null);
- $('fuExport').onclick=()=>{if(!officialReady)return;startEditing();download(new Blob([JSON.stringify({...publishedRoot,updated_at:new Date().toISOString().slice(0,10),reviewed_proposal_ids:[...reviewed],items:draft},null,2)+'\n'],{type:'application/json;charset=utf-8'}),'followup_actions.json');alert('已下載 followup_actions.json。請在 GitHub 覆蓋根目錄同名檔案並 Commit，發布核對後的修改。');};
  page.addEventListener('click',e=>{const b=e.target.closest('[data-fu-row-edit]');if(b)edit(b.dataset.fuRowEdit);});
  for(const id of ['fuCountry','fuCustomer','fuCategory','fuStatus'])$(id).addEventListener('change',render);
  window.addEventListener('meeting-record-index-ready',render);
@@ -1213,7 +1397,7 @@ renderAllClients();
   if(official.status==='fulfilled'&&Array.isArray(official.value.items)){publishedRoot=official.value;published=official.value.items;officialReady=true;}
   if(suggestions.status==='fulfilled'&&Array.isArray(suggestions.value.proposals))proposals=suggestions.value.proposals;
   else proposalError=suggestions.reason?.message||'格式無效';
-  ready=true;render();
+  ready=true;restoreDraft();render();
   if(official.status==='rejected')$('fuStatusText').textContent+='｜正式資料讀取失敗：'+official.reason.message;
  });
 })();
