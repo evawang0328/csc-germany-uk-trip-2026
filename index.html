@@ -209,6 +209,30 @@ main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:16px;bo
 .fu-proposal-row select{min-width:220px;max-width:100%;border:1px solid #b8d0e4;border-radius:8px;padding:9px;background:#fff;color:#204361}
 .fu-proposal-meta{font-size:12px;color:#647f94;line-height:1.6}
 .fu-proposal-note{font-size:12px;color:#8a6220}
+</style><style>
+/* Compact Word-extracted follow-up proposals, matching published customer tables */
+.fu-proposal-group{margin:14px 0;background:#fff}
+.fu-proposal-group h4{font-size:16px;padding:12px 16px}
+.fu-proposal-group h4 small{font-weight:500;font-size:12px}
+.fu-proposal-table{min-width:780px}
+.fu-proposal-table th:nth-child(1){width:13%}
+.fu-proposal-table th:nth-child(2){width:48%}
+.fu-proposal-table th:nth-child(3){width:22%}
+.fu-proposal-table th:nth-child(4){width:17%}
+.fu-proposal-description strong{font-weight:750}
+.fu-proposal-description .fu-muted{margin-top:5px}
+.fu-proposal-source{font-size:11px;color:#607c90;margin-top:7px}
+.fu-proposal-source summary{cursor:pointer;display:inline-block;color:#386987}
+.fu-proposal-source div{padding:3px 0}
+.fu-proposal-buttons{margin:9px 0}
+.fu-proposal-buttons .fu-btn{padding:6px 11px}
+.fu-proposal-decision-label{font-size:11px;display:block;color:#56718a;margin:6px 0 4px;font-weight:650}
+.fu-proposal-table select{width:100%;min-width:125px;max-width:200px;background:#fff;border:1px solid #bed1e1;border-radius:7px;padding:7px;color:#1f4665}
+.fu-proposal-editor-row td{background:#eaf4fb!important}
+.fu-proposal-editor{display:grid;gap:10px;padding:8px 3px}
+.fu-proposal-editor label{font-size:12px;display:grid;gap:5px;font-weight:700;color:#355a78}
+.fu-proposal-editor input,.fu-proposal-editor textarea,.fu-proposal-editor select{box-sizing:border-box;width:100%;max-width:none;padding:9px;border:1px solid #b2cddd;border-radius:8px;background:white;color:#193f5c;font:inherit}
+@media(max-width:650px){.fu-proposal-table{min-width:760px}}
 </style></head><body class="locked"><div id="loginGate"><form class="loginCard" id="loginForm"><div style="font-size:30px">🔒</div><h1>德國・英國出差行程</h1><p>請輸入測試版共用密碼</p><input id="tripPassword" type="password" autocomplete="off" placeholder="共用密碼" required><button type="submit">查看行程</button><p class="err" id="loginError" aria-live="polite"></p><p class="warn">注意：這只是 HTML 畫面鎖，不能保護原始碼或行程資料。請勿用於機密資訊；內部版內容可被任何人讀取。</p></form></div><script>
 // DEMO ONLY: the password and all itinerary data are readable in this HTML source.
 // Do not use this for access control or confidential information.
@@ -1028,7 +1052,7 @@ renderAllClients();
  const $=id=>document.getElementById(id);
  const esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
  const statuses=['待處理','處理中','待客戶回覆','已完成'];
- let publishedRoot={},published=[],draft=[],editing=false,editId=null,dirty=false,proposals=[],approvedDraft=new Set();
+ let publishedRoot={},published=[],draft=[],editing=false,editId=null,dirty=false,proposals=[],approvedDraft=new Set(),proposalDecisions=new Map(),proposalEditId=null;
  function clone(a){return JSON.parse(JSON.stringify(a))}
  function options(sel,vals){const old=sel.value; const label=sel.options[0].textContent;sel.innerHTML='<option value="">'+esc(label)+'</option>'+vals.sort().map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('');if(vals.includes(old))sel.value=old}
  function counts(items){return {total:items.length,pending:items.filter(x=>x.status==='待處理').length,progress:items.filter(x=>['處理中','待客戶回覆'].includes(x.status)).length,done:items.filter(x=>x.status==='已完成').length}}
@@ -1065,39 +1089,91 @@ renderAllClients();
    $('fuCancelEdit').onclick=()=>{$('fuEditForm').hidden=true;};
  }
 
+
  function renderProposals(){
    const panel=$('fuProposalPanel'),list=$('fuProposalList');
    panel.hidden=false;
    const pending=proposals.filter(p=>!approvedDraft.has(p.proposal_id));
    $('fuProposalCount').textContent=pending.length+' 筆待核對';
-   if(!pending.length){list.innerHTML='<p class="fu-muted">目前沒有待審核的擷取事項。上傳新版 Word 並 Commit 後，部署流程會重新分析。</p>';$('fuApplyProposals').disabled=true;return;}
+   if(!pending.length){
+     list.innerHTML='<p class="fu-muted">目前沒有待審核的擷取事項。上傳新版 Word 並 Commit 後，部署流程會重新分析。</p>';
+     $('fuApplyProposals').disabled=true;return;
+   }
    $('fuApplyProposals').disabled=false;
    const customers=[...new Set(pending.map(x=>x.customer||'未列客戶'))];
    list.innerHTML=customers.map(customer=>{
      const rows=pending.filter(x=>x.customer===customer);
-     return '<section class="fu-proposal-group"><h4>'+esc(customer)+'｜'+rows.length+' 筆</h4>'+
-       rows.map(p=>{
-         const match=published.find(x=>x.id===p.suggested_match_id);
-         const hint=match?'可能對應：'+match.id+'｜'+match.task:'未找到可信的既有對應項，需人工確認是否重複';
-         return '<div class="fu-proposal-row"><strong>'+esc(p.topic||p.category||'其他')+'</strong><p>'+esc(p.task||'')+'</p>'+
-           (p.owner?'<p class="fu-proposal-meta">PIC：'+esc(p.owner)+'</p>':'')+
-           (p.note?'<p class="fu-proposal-meta">說明：'+esc(p.note)+'</p>':'')+
-           '<p class="fu-proposal-meta">來源：'+esc(p.source||'')+'｜表格第'+esc(p.source_row||'—')+'列'+
-           (p.status_hint?'｜<strong>文件標示：'+esc(p.status_hint)+'</strong>':'')+'</p>'+
-           '<p class="fu-proposal-note">'+esc(hint)+'</p>'+
-           '<label for="fud-'+esc(p.proposal_id)+'">處理方式（僅修改草稿）</label>'+
-           '<select id="fud-'+esc(p.proposal_id)+'" data-fu-decision="'+esc(p.proposal_id)+'">'+
-           '<option value="">稍後確認（不處理）</option>'+
-           '<option value="add">確認新增追蹤事項</option>'+
-           (match?'<option value="merge">合併到 '+esc(match.id)+'（保留目前狀態）</option>':'')+
-           '<option value="skip">確認略過（不採用）</option>'+
-           '</select></div>';
-       }).join('')+'</section>';
+     return '<section class="fu-proposal-group"><h4>'+esc(customer)+' <small>｜'+rows.length+' 項</small></h4>'+
+     '<div class="fu-table-wrap"><table class="fu-table fu-proposal-table"><thead><tr>'+
+     '<th>議題</th><th>追蹤事項／說明</th><th>責任單位／窗口</th><th>進度／處理</th></tr></thead><tbody>'+
+     rows.map(p=>{
+       const match=published.find(x=>x.id===p.suggested_match_id);
+       const choice=proposalDecisions.get(p.proposal_id)||'';
+       const currentStatus=p.status_hint==='已完成'?'已完成':'待處理';
+       const id=esc(p.proposal_id);
+       return '<tr data-fu-proposal-row="'+id+'">'+
+         '<td><span class="fu-label">'+esc(p.category||p.topic||'其他')+'</span></td>'+
+         '<td class="fu-proposal-description"><strong>'+esc(p.task||'')+'</strong>'+
+         (p.note?'<div class="fu-muted">'+esc(p.note)+'</div>':'')+
+         '<details class="fu-proposal-source"><summary>查看來源與比對結果</summary><div>來源：'+esc(p.source||'')+'｜表格第'+esc(p.source_row||'—')+'列</div>'+
+         '<div>'+(match?'可能對應：'+esc(match.id)+'｜'+esc(match.task):'尚未找到可信的既有對應項，請核對是否重複')+'</div></details></td>'+
+         '<td>'+esc(p.owner||'待指定')+'</td>'+
+         '<td><span class="fu-status">'+esc(currentStatus)+'</span>'+
+         (p.status_hint?'<div class="fu-muted">Word：'+esc(p.status_hint)+'</div>':'')+
+         '<div class="fu-proposal-buttons"><button class="fu-btn" type="button" data-fu-proposal-edit="'+id+'">✎ 修改</button></div>'+
+         '<label for="fud-'+id+'" class="fu-proposal-decision-label">確認方式</label>'+
+         '<select id="fud-'+id+'" data-fu-decision="'+id+'">'+
+         '<option value=""'+(!choice?' selected':'')+'>稍後確認</option>'+
+         '<option value="add"'+(choice==='add'?' selected':'')+'>新增</option>'+
+         (match?'<option value="merge"'+(choice==='merge'?' selected':'')+'>合併 '+esc(match.id)+'</option>':'')+
+         '<option value="skip"'+(choice==='skip'?' selected':'')+'>略過</option></select></td></tr>'+
+         (proposalEditId===p.proposal_id?
+         '<tr class="fu-proposal-editor-row"><td colspan="4"><form class="fu-proposal-editor" data-fu-proposal-form="'+id+'">'+
+         '<strong>修改擷取內容｜'+esc(customer)+'</strong>'+
+         '<div class="fu-edit-grid"><label>議題分類<input name="category" value="'+esc(p.category||'')+'" required></label>'+
+         '<label>責任單位／窗口<input name="owner" value="'+esc(p.owner||'')+'"></label></div>'+
+         '<label>追蹤事項<textarea name="task" rows="2" required>'+esc(p.task||'')+'</textarea></label>'+
+         '<label>說明／處理紀錄<textarea name="note" rows="2">'+esc(p.note||'')+'</textarea></label>'+
+         '<label>進度（新增事項的初始狀態）<select name="status_hint">'+
+         ['待處理','處理中','待客戶回覆','已完成'].map(st=>'<option value="'+esc(st)+'"'+(currentStatus===st?' selected':'')+'>'+esc(st)+'</option>').join('')+
+         '</select></label>'+
+         '<div class="fu-inline-actions"><button type="submit" class="fu-btn primary">儲存修改（草稿）</button>'+
+         '<button type="button" class="fu-btn" data-fu-proposal-cancel="'+id+'">取消</button></div>'+
+         '<p class="fu-muted">儲存僅更新本次網頁草稿；需選擇「新增／合併／略過」並匯出 JSON、Commit 後，其他同事才會看到。</p>'+
+         '</form></td></tr>':'');
+     }).join('')+'</tbody></table></div></section>';
    }).join('');
  }
+ $('fuProposalList').addEventListener('change',e=>{
+   const select=e.target.closest('[data-fu-decision]');
+   if(select)proposalDecisions.set(select.dataset.fuDecision,select.value);
+ });
+ $('fuProposalList').addEventListener('click',e=>{
+   const edit=e.target.closest('[data-fu-proposal-edit]');
+   const cancel=e.target.closest('[data-fu-proposal-cancel]');
+   if(edit){proposalEditId=edit.dataset.fuProposalEdit;renderProposals();}
+   if(cancel){proposalEditId=null;renderProposals();}
+ });
+ $('fuProposalList').addEventListener('submit',e=>{
+   const form=e.target.closest('[data-fu-proposal-form]');
+   if(!form)return;
+   e.preventDefault();
+   const p=proposals.find(x=>x.proposal_id===form.dataset.fuProposalForm);
+   if(!p)return;
+   const data=new FormData(form);
+   const task=String(data.get('task')||'').trim();
+   if(!task){alert('請填寫追蹤事項');return;}
+   p.task=task;
+   p.category=String(data.get('category')||'其他').trim()||'其他';
+   p.owner=String(data.get('owner')||'').trim();
+   p.note=String(data.get('note')||'').trim();
+   p.status_hint=String(data.get('status_hint')||'待處理');
+   proposalEditId=null;
+   renderProposals();
+   $('fuStatusText').textContent='擷取內容已儲存到本次編輯草稿（尚未發布至 GitHub）。';
+ });
  function applyProposalDecisions(){
-   const selected=[...$('fuProposalList').querySelectorAll('[data-fu-decision]')]
-     .map(el=>({id:el.dataset.fuDecision,decision:el.value})).filter(x=>x.decision);
+   const selected=[...proposalDecisions.entries()].map(([id,decision])=>({id,decision})).filter(x=>x.decision);
    if(!selected.length){alert('請先為需要處理的事項選擇「新增」、「合併既有」或「略過」。');return;}
    if(!editing)$('fuToggleEdit').click();
    let n=0;
@@ -1106,7 +1182,7 @@ renderAllClients();
      if(selection.decision==='add'){
        const newId='AUTO-'+p.proposal_id;
        if(!draft.some(x=>x.id===newId)){
-         const status=p.status_hint==='已完成'?'已完成':'待處理';
+         const status=statuses.includes(p.status_hint)?p.status_hint:'待處理';
          draft.push({id:newId,country:p.country||'德國',customer:p.customer||'',visit_date:p.visit_date||'',category:p.category||'其他',
            task:p.task||'',owner:p.owner||'待指定',note:p.note||'',status,priority:'待確認',due_date:'',
            source:p.source||'會議紀錄自動擷取',source_url:p.source_url||'',updated_at:new Date().toISOString().slice(0,10),
@@ -1125,7 +1201,7 @@ renderAllClients();
      approvedDraft.add(p.proposal_id);
      dirty=true;n++;
    }
-   if(n){renderProposals();render();
+   if(n){for(const x of selected)if(approvedDraft.has(x.id))proposalDecisions.delete(x.id);renderProposals();render();
      alert('已將 '+n+' 筆確認結果套用到編輯草稿，尚未發布。請再次檢查表格，然後「匯出更新版 JSON」並 Commit。');
    }
  }
@@ -1142,7 +1218,7 @@ renderAllClients();
  ['fuCountry','fuCustomer','fuCategory','fuStatus'].forEach(id=>$(id).addEventListener('change',render));
  $('fuToggleEdit').onclick=()=>{editing=true;draft=clone(published);approvedDraft=new Set(publishedRoot.reviewed_proposal_ids||[]);dirty=false;$('fuAdd').hidden=false;$('fuExport').hidden=false;$('fuDiscard').hidden=false;$('fuToggleEdit').hidden=true;render()};
  $('fuAdd').onclick=()=>edit(null);
- $('fuDiscard').onclick=()=>{if(dirty&&!confirm('確定捨棄尚未發布的草稿嗎？'))return;editing=false;dirty=false;approvedDraft=new Set();renderProposals();$('fuAdd').hidden=true;$('fuExport').hidden=true;$('fuDiscard').hidden=true;$('fuToggleEdit').hidden=false;$('fuEditForm').hidden=true;render()};
+ $('fuDiscard').onclick=()=>{if(dirty&&!confirm('確定捨棄尚未發布的草稿嗎？'))return;editing=false;dirty=false;approvedDraft=new Set();proposalDecisions.clear();proposalEditId=null;renderProposals();$('fuAdd').hidden=true;$('fuExport').hidden=true;$('fuDiscard').hidden=true;$('fuToggleEdit').hidden=false;$('fuEditForm').hidden=true;render()};
  $('fuExport').onclick=()=>{
    const payload=JSON.stringify({...publishedRoot,schema_version:'1.0',updated_at:new Date().toISOString().slice(0,10),description:'Follow-up data published by GitHub commit after manual proposal review',reviewed_proposal_ids:[...approvedDraft],items:draft},null,2)+'\n';
    const blob=new Blob([payload],{type:'application/json;charset=utf-8'});
