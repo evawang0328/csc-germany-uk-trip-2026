@@ -183,7 +183,9 @@ def similarity(left: str, right: str) -> float:
 
 def main():
     idx = json.loads(INDEX.read_text(encoding="utf-8"))
-    published = json.loads(CURRENT.read_text(encoding="utf-8")).get("items", [])
+    official = json.loads(CURRENT.read_text(encoding="utf-8"))
+    published = official.get("items", [])
+    reviewed_ids = set(official.get("reviewed_proposal_ids", []))
     proposals = []
     documents = []
     for customer_key, versions in sorted(idx.get("customers", {}).items()):
@@ -216,6 +218,8 @@ def main():
             # ID is deterministic across same document revisions unless text changes;
             # approval UI also checks against existing records.
             classification = "可能與既有事項重疊" if confidence >= 0.42 else "可能新增事項"
+            if customer_key + "-" + fingerprint in reviewed_ids:
+                continue
             proposals.append({
                 "proposal_id": customer_key + "-" + fingerprint,
                 "classification": classification,
