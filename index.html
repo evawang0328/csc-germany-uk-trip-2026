@@ -198,6 +198,17 @@ main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:16px;bo
 .euc-view-sep{height:1px;background:#d7e5f0;margin:10px 0}
 .euc-no-view{color:#8799a7;font-size:12px}
 @media(max-width:680px){.euc-chart-row{grid-template-columns:minmax(85px,24%) minmax(110px,1fr) minmax(95px,29%);gap:6px}.euc-chart-scale{margin-left:calc(24% + 6px);margin-right:calc(29% + 6px);font-size:9px}.euc-chart{padding:10px}.euc-chart-number{font-size:11px}.euc-compare-table{min-width:850px}}
+</style><style>
+.fu-proposal-panel{margin:17px 0;padding:17px;border:1px solid #b8d4e9;border-radius:13px;background:#f2f8fd}
+.fu-proposal-panel h3{margin:0 0 7px;color:#173e60}
+.fu-proposal-group{margin:12px 0;border:1px solid #d7e5ef;border-radius:10px;overflow:hidden;background:#fff}
+.fu-proposal-group h4{margin:0;padding:11px 12px;background:#e2eff9;color:#154b72}
+.fu-proposal-row{padding:13px;border-top:1px solid #dae6ef}
+.fu-proposal-row p{margin:7px 0;line-height:1.65}
+.fu-proposal-row label{display:block;color:#335a75;font-weight:700;font-size:12px;margin:8px 0 5px}
+.fu-proposal-row select{min-width:220px;max-width:100%;border:1px solid #b8d0e4;border-radius:8px;padding:9px;background:#fff;color:#204361}
+.fu-proposal-meta{font-size:12px;color:#647f94;line-height:1.6}
+.fu-proposal-note{font-size:12px;color:#8a6220}
 </style></head><body class="locked"><div id="loginGate"><form class="loginCard" id="loginForm"><div style="font-size:30px">🔒</div><h1>德國・英國出差行程</h1><p>請輸入測試版共用密碼</p><input id="tripPassword" type="password" autocomplete="off" placeholder="共用密碼" required><button type="submit">查看行程</button><p class="err" id="loginError" aria-live="polite"></p><p class="warn">注意：這只是 HTML 畫面鎖，不能保護原始碼或行程資料。請勿用於機密資訊；內部版內容可被任何人讀取。</p></form></div><script>
 // DEMO ONLY: the password and all itinerary data are readable in this HTML source.
 // Do not use this for access control or confidential information.
@@ -277,6 +288,12 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
   </div>
   <div class="fu-inline-actions"><button id="fuToggleEdit" class="fu-btn" type="button">✎ 開啟編輯草稿</button><button id="fuAdd" class="fu-btn" type="button" hidden>＋ 新增事項</button><button id="fuExport" class="fu-btn primary" type="button" hidden>↓ 匯出更新版 JSON</button><button id="fuDiscard" class="fu-btn" type="button" hidden>取消草稿</button></div>
   <p id="fuStatusText" class="fu-muted" aria-live="polite">正在讀取 followup_actions.json…</p>
+  <div id="fuProposalPanel" class="fu-proposal-panel" hidden>
+    <div class="fu-head"><div><h3>Word 自動擷取｜待確認追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依最新版會議 Word 擷取，逐筆核對；不直接變動已發布清單與處理進度。</p></div></div>
+    <div id="fuProposalList"></div>
+    <div class="fu-inline-actions"><button type="button" class="fu-btn primary" id="fuApplyProposals">將選取結果加入編輯草稿</button></div>
+    <p class="fu-muted">選擇「新增」、「合併既有」或「略過」，再套用草稿；檢查後仍須點「匯出更新版 JSON」並用 GitHub 帳號 Commit 才會正式發布。自動擷取內容可能有欄位錯位，請依原始 Word 核對。</p>
+  </div>
   <div id="fuEditForm" hidden></div>
   <div class="fu-groups" id="fuGroups"></div>
   <div class="fu-hint" style="margin-top:15px">只有 GitHub Repository 的授權寫入者可以發布修改。此網站的「編輯草稿」不等於管理者登入，草稿不會自動同步或更新線上資料；請匯出 JSON 後，使用你的 GitHub 帳號覆蓋根目錄的 followup_actions.json 並 Commit。Repository 為 Public，請勿加入機密追蹤內容。</div>
