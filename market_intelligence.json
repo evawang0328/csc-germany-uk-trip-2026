@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-13 11:16",
+  "generated_at": "2026-11-14 10:56",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -60,6 +60,93 @@
     }
   ],
   "items": [
+    {
+      "title": "Meta, Stegra sign multiyear green steel certificate deal",
+      "date": "2026-11-14",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/meta-stegra-sign-multiyear-green-steel-certificate-deal/?utm_source=rss&utm_medium=rss&utm_campaign=meta-stegra-sign-multiyear-green-steel-certificate-deal",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Meta, Stegra sign multiyear green steel certificate deal",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Nations collaborate in OECD Framework to tackle worsening global steel overcapacity",
+      "date": "2026-11-14",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/nations-collaborate-in-oecd-framework-to-tackle-worsening-global-steel-overcapacity/?utm_source=rss&utm_medium=rss&utm_campaign=nations-collaborate-in-oecd-framework-to-tackle-worsening-global-steel-overcapacity",
+      "regions": [
+        "UK",
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Nations collaborate in OECD Framework to tackle worsening global steel overcapacity",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "EU industrial emissions decreased by 3.3%, carbon market revenue reached EUR 43.2 billion",
+      "date": "2026-11-14",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/eu-industrial-emissions-decreased-by-3-3-carbon-market-revenue-reached-eur-43-2-billion/?utm_source=rss&utm_medium=rss&utm_campaign=eu-industrial-emissions-decreased-by-3-3-carbon-market-revenue-reached-eur-43-2-billion",
+      "regions": [
+        "UK",
+        "EU"
+      ],
+      "category": "下游需求",
+      "summary": "來源新聞標題：EU industrial emissions decreased by 3.3%, carbon market revenue reached EUR 43.2 billion",
+      "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
+    },
+    {
+      "title": "European domestic HRC market squeezed between sluggish end-user demand and mills’ price hike attempts",
+      "date": "2026-11-13",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/european-domestic-hrc-market-squeezed-between-sluggish-end-user-demand-and-mills-price-hike-attempts/?utm_source=rss&utm_medium=rss&utm_campaign=european-domestic-hrc-market-squeezed-between-sluggish-end-user-demand-and-mills-price-hike-attempts",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：European domestic HRC market squeezed between sluggish end-user demand and mills’ price hike attempts",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Local Northern European steel plate prices rise on tight availability; Italian market edges up",
+      "date": "2026-11-13",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/local-northern-european-steel-plate-prices-rise-on-tight-availability-italian-market-edges-up/?utm_source=rss&utm_medium=rss&utm_campaign=local-northern-european-steel-plate-prices-rise-on-tight-availability-italian-market-edges-up",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Local Northern European steel plate prices rise on tight availability; Italian market edges up",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Mercedes-Benz and HyIron advance hydrogen-based steel production following successful pilot project",
+      "date": "2026-11-13",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/mercedes-benz-and-hyiron-advance-hydrogen-based-steel-production-following-successful-pilot-project/?utm_source=rss&utm_medium=rss&utm_campaign=mercedes-benz-and-hyiron-advance-hydrogen-based-steel-production-following-successful-pilot-project",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Mercedes-Benz and HyIron advance hydrogen-based steel production following successful pilot project",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "Italian rebar prices stable amid weak demand, high costs; German prices rise",
+      "date": "2026-11-13",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/italian-rebar-prices-stable-amid-weak-demand-high-costs-german-prices-rise/?utm_source=rss&utm_medium=rss&utm_campaign=italian-rebar-prices-stable-amid-weak-demand-high-costs-german-prices-rise",
+      "regions": [
+        "DE",
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Italian rebar prices stable amid weak demand, high costs; German prices rise",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
     {
       "title": "Hydrogen still makes sense for Europe ironmaking: Kallanish Green Steel Strategies",
       "date": "2026-11-13",
@@ -335,93 +422,6 @@
       "category": "下游需求",
       "summary": "德國9月工業生產月增0.7%，汽車業產量月增17.1%，建築產出下降2.6%。",
       "implication": "分別詢問汽車、工程與建築客戶是否有實際補庫。"
-    },
-    {
-      "title": "New orders in manufacturing in September 2026: +4.4% on the previous month - Statistisches Bundesamt",
-      "date": "2026-11-05",
-      "source": "Destatis",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ZOGM5cFEtaUNHT0pROHNnNWJHVWJEUFhiTTNpNmtjV3FiUnJTUjU5ZkpHdXc0LVd0bEROank0bTl1WXpEV2o5cXZEYVJ1QmJ4ZUR1Y2tNb2RZZ1NjcGRiRFBxQWdudE1ZOXc?oc=5",
-      "regions": [
-        "DE"
-      ],
-      "category": "下游需求",
-      "summary": "來源新聞標題：New orders in manufacturing in September 2026: +4.4% on the previous month - Statistisches Bundesamt",
-      "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
-    },
-    {
-      "title": "ArcelorMittal reports third quarter 2026 results",
-      "date": "2026-11-05",
-      "source": "ArcelorMittal",
-      "url": "https://corporate.arcelormittal.com/media/news/regulatory-news/arcelormittal-reports-third-quarter-2026-results",
-      "regions": [
-        "EU",
-        "DE"
-      ],
-      "category": "產能鋼廠",
-      "summary": "ArcelorMittal稱新TRQ下歐洲高爐已恢復運轉，鋼價正反映成本及供需變化。",
-      "implication": "追蹤鋼廠復產是否改善交期，並與客戶驗證成交價變化。"
-    },
-    {
-      "title": "New orders in manufacturing in September 2026: +4.4%",
-      "date": "2026-11-05",
-      "source": "Destatis",
-      "url": "https://www.destatis.de/EN/Press/2026/11/PE26_385_421.html",
-      "regions": [
-        "DE"
-      ],
-      "category": "下游需求",
-      "summary": "德國9月製造業新訂單月增4.4%，汽車業新訂單月增10.5%。",
-      "implication": "訂單改善不一定立即反映鋼材採購，追蹤拉貨延遲。"
-    },
-    {
-      "title": "September 2026 crude steel production",
-      "date": "2026-10-23",
-      "source": "worldsteel",
-      "url": "https://worldsteel.org/media/press-releases/2026/september-2026-crude-steel-production/",
-      "regions": [
-        "EU",
-        "DE",
-        "UK"
-      ],
-      "category": "產能鋼廠",
-      "summary": "歐盟27國9月粗鋼產量10.1 Mt，年減5.0%。",
-      "implication": "留意低產能利用率和價格上漲是否並存。"
-    },
-    {
-      "title": "Construction output in Great Britain: August 2026",
-      "date": "2026-10-15",
-      "source": "ONS",
-      "url": "https://www.ons.gov.uk/businessindustryandtrade/constructionindustry/bulletins/constructionoutputingreatbritain/LATEST",
-      "regions": [
-        "UK"
-      ],
-      "category": "下游需求",
-      "summary": "截至8月三個月建築產出下降1.0%，私人新建住宅下降3.2%。",
-      "implication": "詢問建築與加工客戶訂單需求是否延後。"
-    },
-    {
-      "title": "Industrial production in EU: August 2026",
-      "date": "2026-10-15",
-      "source": "Eurostat",
-      "url": "https://ec.europa.eu/eurostat/en/web/products/euro-indicators/w/4-15102026-ap",
-      "regions": [
-        "EU"
-      ],
-      "category": "政經政策",
-      "summary": "8月歐盟工業生產月減0.3%，年減0.2%。",
-      "implication": "觀察宏觀需求疲弱是否影響中鋼出口產品組合。"
-    },
-    {
-      "title": "UK steel trade measure from 1 July 2026",
-      "date": "2026-07-01",
-      "source": "GOV.UK",
-      "url": "https://www.gov.uk/government/publications/uks-steel-trade-measure-from-1-july-2026/uks-steel-trade-measure-from-1-july-2026",
-      "regions": [
-        "UK"
-      ],
-      "category": "政經政策",
-      "summary": "英國新鋼材進口措施較前制縮減總免稅配額51%，配額外稅率50%。",
-      "implication": "訪談客戶詢問配額限制及進口採購策略。"
     }
   ]
 }
