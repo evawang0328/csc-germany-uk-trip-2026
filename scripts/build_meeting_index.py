@@ -22,33 +22,43 @@ A = '{http://schemas.openxmlformats.org/drawingml/2006/main}'
 ALIASES = {'CARLSPAETERHQ':'SPAETER','CARLSPAETER':'SPAETER','SPAETER':'SPAETER',
  'KNAUFINTERFER':'KNAUF','KNAUF':'KNAUF','DUFERCO':'DUFERCO','HFS':'HFS',
  'UPTONSTEEL':'UPTON','UPTON':'UPTON','BELMONT':'BELMONT','TOPTUBES':'TOPTUBES',
- 'STEELALLOY':'STEELALLOY','WILLIAMKING':'WILLIAMKING','COOPERJACKSON':'COOPERJACKSON'}
+ 'STEELALLOY':'STEELALLOY','WILLIAMKING':'WILLIAMKING','COOPERANDJACKSON':'COOPERJACKSON','COOPERJACKSON':'COOPERJACKSON'}
 
 def text(el):
     return re.sub(r'\s+', ' ', ' '.join(''.join(t.text or '' for t in p.iter(W+'t')) for p in el.iter(W+'p'))).strip()
 
 def parse_name(name):
-    m = re.match(r'^(\d{4}[-.]\d{2}[-.]\d{2})(?:_(\d{2}))?[_\s-]+(.+)\.(pdf|docx)$', name, re.I)
+    m = re.match(r'^(\d{4}[-.]\d{2}(?:[-.]\d{2})?)(?:_(\d{2}))?[_\s-]+(.+)\.(pdf|docx)$', name, re.I)
     if not m:
         return None
     date, end, body, ext = m.groups()
     date = date.replace('.', '-')
+    if end and len(date)!=10: return None
     end_date = date[:8]+end if end else date
     try:
-        datetime.strptime(date, '%Y-%m-%d'); datetime.strptime(end_date, '%Y-%m-%d')
+        datetime.strptime(date, '%Y-%m-%d' if len(date)==10 else '%Y-%m'); datetime.strptime(end_date, '%Y-%m-%d' if len(end_date)==10 else '%Y-%m')
         if end_date < date: return None
     except ValueError:
         return None
     meeting = re.search(r'(?:^|[_\s-])Meeting[_\s-]*Record(?:[_\s-]*r(\d+))?$', body, re.I)
-    if not meeting:
-        return None
-    label = body[:meeting.start()].strip('_ -')
+    short_revision = 0
+    if meeting:
+        label = body[:meeting.start()].strip('_ -')
+    else:
+        # Accept existing uploads such as YYYY-MM-DD_Upton_Steel.docx.
+        # Restrict short filenames to known customer aliases so other files
+        # (e.g. CBAM notes) cannot become visit records accidentally.
+        short = re.fullmatch(r'(.+?)(?:[_\s-]+r(\d+))?', body, re.I)
+        label = short.group(1).strip('_ -') if short else ''
+        normal_short = re.sub(r'[^A-Z0-9]', '', label.upper())
+        if normal_short not in ALIASES: return None
+        short_revision = int(short.group(2) or 0)
     normal = re.sub(r'[^A-Z0-9]', '', label.upper())
     customer = next((v for k,v in ALIASES.items() if normal.startswith(k)), normal)
     if not customer: return None
     kind = '晚餐交流' if re.search('Dinner', label, re.I) else '結束會議' if re.search('Clos(?:e|ing)', label, re.I) else '會議紀錄'
     if end: kind = '合併會議紀錄'
-    revision = int(meeting.group(1) or 0)
+    revision = int(meeting.group(1) or 0) if meeting else short_revision
     return customer, {'id':f'{date}_{end_date}_{kind}', 'date':date, 'end_date':end_date,
        'label':(date if date == end_date else date+' ～ '+end_date)+'｜'+kind,
        'kind':kind, 'revision':revision, 'ext':ext.lower(), 'name':name,
@@ -56,7 +66,7 @@ def parse_name(name):
 
 def read_word(path, asset_root):
     overview = {'procurement':[], 'import_ratio':[], 'downstream':[], 'products':[], 'outlook':[]}
-    media, seen, section, attachment = [], set(), '', ''
+    media, seen, section, attachment, attendees = [], set(), '', '', []
     with zipfile.ZipFile(path) as z:
         body = ET.fromstring(z.read('word/document.xml')).find(W+'body')
         rels = {}
@@ -67,8 +77,16 @@ def read_word(path, asset_root):
         for pos, block in enumerate(blocks):
             value = text(block)
             if block.tag == W+'p':
+                people=re.match(r'^(?:出席|與會|參加|會議出席)人員[：:]\s*(.+)',value)
+                if people: attendees.append(people.group(1))
+            if block.tag == W+'tbl':
+                for tr in block.findall(W+'tr'):
+                    cells=[text(tc) for tc in tr.findall(W+'tc')]
+                    if len(cells)>1 and re.fullmatch(r'(?:出席|與會|參加|會議出席)人員[：:]?',cells[0]):
+                        attendees.extend(x for x in cells[1:] if x)
+            if block.tag == W+'p':
                 if re.match(r'^[一二三四五六七八九十]+[、.\s]', value) and len(value)<90: section=value
-                if re.match(r'^附件', value) and len(value)<100: attachment=value; section=value
+                if (re.match(r'^附件', value) or re.fullmatch(r'(?:客戶)?(?:拜訪合照|拜訪照片|名片|合照與出席人員)',value)) and len(value)<100: attachment=value; section=value
                 if re.search('市場行情|需求展望|市場展望', section) and value != section and value and not attachment and (len(value)>40 or '。' in value):
                     overview['outlook'].append({'label':section, 'text':value})
             elif block.tag == W+'tbl' and not attachment:
@@ -100,9 +118,9 @@ def read_word(path, asset_root):
                 dest.write_bytes(data)
                 after=text(blocks[pos+1]) if pos+1<len(blocks) and blocks[pos+1].tag==W+'p' else ''
                 caption=after if after and not re.match(r'^附件',after) and len(after)<600 else attachment or '會議紀錄圖片'
-                kind='card' if '名片' in attachment else 'photo' if re.search('合照|拜訪照片',attachment) else 'other'
+                kind='card' if '名片' in attachment else 'photo' if re.search('合照|拜訪照片',attachment) or re.search('由左至右|由右至左',caption) else 'other'
                 media.append({'url':str(dest.relative_to(ROOT)), 'kind':kind, 'caption':caption, 'section':attachment})
-    return overview, media
+    return overview, media, list(dict.fromkeys(attendees))
 
 def build(root=None):
     global ROOT
@@ -126,7 +144,7 @@ def build(root=None):
             visit['version_mismatch']=bool(pdf and word and pdf['revision']!=word['revision'])
             if word:
                 try:
-                    visit['overview'],visit['media']=read_word(ROOT/'meeting_records'/word['name'],ROOT/'meeting_media'/key/sha256(word['name'].encode()).hexdigest()[:10])
+                    visit['overview'],visit['media'],visit['attendees']=read_word(ROOT/'meeting_records'/word['name'],ROOT/'meeting_media'/key/sha256(word['name'].encode()).hexdigest()[:10])
                 except (zipfile.BadZipFile,ET.ParseError,KeyError,OSError) as e:
                     visit['extraction_error']=str(e)[:160]
         for ext in ['pdf','docx']:
@@ -140,3 +158,4 @@ def build(root=None):
     return payload
 
 if __name__ == '__main__': build()
+

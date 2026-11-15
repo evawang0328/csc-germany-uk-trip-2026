@@ -30,6 +30,7 @@ DISPLAY = {
     "DUFERCO": "Duferco",
     "HFS": "HFS",
     "UPTON": "Upton Steel",
+    "COOPERJACKSON": "Cooper & Jackson",
     "BELMONT": "Belmont",
     "TOPTUBES": "Top Tubes",
     "STEELALLOY": "Steel & Alloy",
@@ -224,7 +225,7 @@ def main():
                 "proposal_id": customer_key + "-" + fingerprint,
                 "classification": classification,
                 "customer": customer,
-                "country": "英國" if customer_key in {"UPTON", "BELMONT", "TOPTUBES", "STEELALLOY"} else "德國",
+                "country": "英國" if customer_key in {"UPTON", "COOPERJACKSON", "BELMONT", "TOPTUBES", "STEELALLOY"} else "德國",
                 "visit_date": date,
                 "category": category_for(row["topic"], comparable),
                 "topic": row["topic"],
@@ -253,3 +254,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

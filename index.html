@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.40</title><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.41</title><style>
 :root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#192b40;background:#f2f5fa}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#102b4b,#185783);color:white;padding:34px max(22px,calc((100vw - 1120px)/2)) 28px}header h1{margin:8px 0;font-size:clamp(24px,4vw,38px)}header p{opacity:.84;margin:8px 0}.eyebrow{letter-spacing:2px;font-size:12px;color:#b6d9f8}main{max-width:1120px;margin:auto;padding:24px 18px 70px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.tabs button,.daybtn,.filter{cursor:pointer;border:1px solid #d8e2ee;border-radius:11px;padding:11px 15px;background:white;color:#24425f;font-weight:700}.tabs button.active,.daybtn.active,.filter.active{background:#164c7a;color:white;border-color:#164c7a}.panel{background:white;border:1px solid #e1e8f1;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 6px 20px #183c6010}.panel h2{margin:0 0 14px;font-size:21px}.sub{color:#65778d;font-size:13px}.days{display:grid;grid-template-columns:repeat(10,minmax(70px,1fr));gap:7px;margin-bottom:16px}.daybtn{padding:12px 3px}.daybtn small{display:block;font-weight:400;margin-top:4px}.timeline{border-left:2px solid #bcd1e3;margin-left:9px;padding-left:20px}.event{position:relative;padding:4px 0 18px}.event:before{content:"";position:absolute;left:-27px;top:10px;width:11px;height:11px;border-radius:50%;background:#2578b2;border:3px solid white;box-shadow:0 0 0 1px #9cbcd7}.time{font-size:13px;font-weight:700;color:#17669b}.event h3{font-size:16px;margin:5px 0}.event p{margin:3px 0;color:#64748b;font-size:14px;white-space:pre-line}.pill{display:inline-block;padding:4px 8px;background:#eaf2fa;border-radius:20px;color:#285c83;font-size:12px;margin:5px 5px 0 0}.warning{background:#fff7e7;color:#815c19;border-left:4px solid #dfad42;padding:12px 15px;border-radius:8px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.client{border:1px solid #e0e8f1;border-radius:13px;padding:16px}.client h3{margin:0 0 9px;font-size:17px}.client p{font-size:13px;color:#617388}.flight{border-bottom:1px solid #e8edf4;padding:13px 0}.flight:last-child{border:0}.flight strong{font-size:17px}.search{padding:12px 14px;border:1px solid #ccd9e7;border-radius:10px;width:100%;max-width:380px;margin:0 0 15px}.btn{border:0;border-radius:9px;padding:9px 13px;background:#e5f0f9;color:#18517b;cursor:pointer}.note{width:100%;min-height:115px;padding:12px;border:1px solid #d1dce9;border-radius:10px;font:inherit;resize:vertical}.muted{color:#667a8f}.hidden{display:none}.stat{font-size:27px;font-weight:800;color:#194c77}.statlabel{font-size:13px;color:#708096}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.footer{font-size:12px;color:#718197;margin-top:25px}.banner{background:#fff4db;color:#6d4e0c;padding:12px 16px;font-size:13px}a{color:#17699d}@media(max-width:800px){.days{grid-template-columns:repeat(5,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.panel{padding:16px}header{padding:26px 18px}}
 
 /* V2.1 clickable customer details */
@@ -315,6 +315,18 @@ main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:16px;bo
 #clientModal .profile-topic>div{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 #clientModal .profile-topic .pill{flex-shrink:0}#clientModal button:focus-visible,#clientModal a:focus-visible{outline:3px solid #6aa6d4;outline-offset:3px}
 @media(max-width:650px){#clientModal .profile-order-tops,#clientModal .profile-overview-grid,#clientModal .profile-media-grid{grid-template-columns:1fr}#clientModal .profile-tab{font-size:13px;padding:9px 10px}#clientModal .profile-order-kpis{gap:7px}#clientModal .profile-order-kpis>div{padding:10px 8px}#clientModal .profile-order-kpis strong{font-size:22px}#clientModal .profile-order-kpis b{font-size:12px}#clientModal .profile-date-bar select{width:100%}}
+</style><style>
+/* V2.41: compact historic documents; attendees stay with the visit photo. */
+#clientModal .profile-document-missing{display:inline-block;padding:12px 18px;border:1px dashed #bdd2e3;border-radius:10px;color:#6a8194;background:#f3f7fb;font-size:15px}
+#clientModal .profile-photo-attendee-group{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(230px,1fr);gap:20px;align-items:start;margin:18px 0 28px}
+#clientModal .profile-photo-attendee-group:not(:has(.profile-photo-attendees)){grid-template-columns:1fr}
+#clientModal .profile-visit-photos{min-width:0;display:grid;gap:14px}
+#clientModal .profile-visit-photos figure img{width:100%;max-height:none;object-fit:contain}
+#clientModal .profile-photo-attendees{padding:18px;background:#f0f6fc;border:1px solid #d2e2ee;border-radius:10px;font-size:15px;line-height:1.85;overflow-wrap:anywhere}
+#clientModal .profile-photo-attendees ul{padding-left:22px;margin:8px 0}
+#clientModal .profile-photo-attendees li{margin-bottom:10px}
+#clientModal .profile-legacy-summary{border-top:1px solid #dbe7ef;padding-top:14px}
+@media(max-width:700px){#clientModal .profile-photo-attendee-group{grid-template-columns:1fr;gap:12px}#clientModal .profile-photo-attendees{font-size:14px;padding:15px}}
 </style></head><body class="locked"><div id="loginGate"><form class="loginCard" id="loginForm"><div style="font-size:30px">🔒</div><h1>德國・英國出差行程</h1><p>請輸入測試版共用密碼</p><input id="tripPassword" type="password" autocomplete="off" placeholder="共用密碼" required><button type="submit">查看行程</button><p class="err" id="loginError" aria-live="polite"></p><p class="warn">注意：這只是 HTML 畫面鎖，不能保護原始碼或行程資料。請勿用於機密資訊；內部版內容可被任何人讀取。</p></form></div><script>
 // DEMO ONLY: the password and all itinerary data are readable in this HTML source.
 // Do not use this for access control or confidential information.
@@ -558,6 +570,7 @@ function meetingKey(name){
  if(n.includes('DUFERCO'))return 'DUFERCO';
  if(n.startsWith('UPTON'))return 'UPTON';
  if(n.startsWith('HFS'))return 'HFS';
+ if(n.startsWith('COOPERJACKSON')||n.startsWith('COOPERANDJACKSON'))return 'COOPERJACKSON';
  return n;
 }
 function hasMeetingRecord(name){return ['DUFERCO','SPAETER','KNAUF'].includes(meetingKey(name))||!!meetingRecordsCache?.customers?.[meetingKey(name)]}
@@ -582,29 +595,41 @@ function profileVisits(c){
  const group=meetingRecordsCache?.customers?.[meetingKey(c.name)];
  const visits=(group?.visits||[]).slice();
  if(!visits.length&&(group?.docx||group?.pdf)){const file=group.docx||group.pdf;visits.push({id:file.date,date:file.date,label:file.date+'｜會議紀錄',...group});}
- if(c.internalSections?.length||c.previousVisitPhoto||c.historySource)visits.push({id:'previous-202602',date:'2026-02',label:'2026-02｜前次拜訪紀錄',historical:true});
+ if((c.internalSections?.length||c.previousVisitPhoto||c.historySource)&&!visits.some(v=>String(v.date||'').startsWith('2026-02')))visits.push({id:'previous-202602',date:'2026-02',label:'2026-02｜前次拜訪紀錄',historical:true});
+ visits.sort((a,b)=>String(b.end_date||b.date||'').localeCompare(String(a.end_date||a.date||'')));
  return visits;
 }
-function profileLink(file,label){return file?'<a class="detail-link" href="'+esc(file.url)+'" target="_blank" rel="noopener noreferrer">'+label+'（'+esc(file.version)+'） ↗</a>':'<span class="detail-muted">'+label+'：未提供</span>';}
+function profileLink(file,label){return file?'<a class="detail-link" href="'+esc(file.url)+'" target="_blank" rel="noopener noreferrer">'+label+(file.version==='未標版本'?'':'（'+esc(file.version)+'）')+' ↗</a>':'<span class="profile-document-missing">'+(label.includes('PDF')?'PDF':'Word')+' 待上傳</span>';}
+function renderProfileMedia(c,visit){
+ const isFebruary=String(visit.date||'').startsWith('2026-02');
+ const attendees=visit.attendees?.length?visit.attendees:(isFebruary?c.previousAttendees||[]:[]);
+ let media=(visit.media||[]).slice();
+ // Keep the existing February photo until the uploaded Word supplies that photo.
+ if(isFebruary&&c.previousVisitPhoto&&!media.some(m=>m.kind==='photo'))media.unshift({url:c.previousVisitPhoto,kind:'photo',caption:c.previousPhotoCaption||'2026 年 2 月拜訪合照'});
+ const figure=m=>'<figure><a href="'+esc(m.url)+'" target="_blank" rel="noopener noreferrer"><img src="'+esc(m.url)+'" alt="'+esc(m.caption||'會議照片')+'" loading="lazy"></a><figcaption>'+esc(m.caption||'')+'</figcaption></figure>';
+ const people=attendees.length?'<aside class="profile-photo-attendees"><h4>出席人員</h4><ul>'+attendees.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ul><p class="detail-muted">'+esc(visit.label)+'｜'+(visit.attendees?.length?'依當次 Word 紀錄':'依原始拜訪報告')+'</p></aside>':'';
+ const photos=media.filter(m=>m.kind==='photo');
+ let content='';
+ if(photos.length||people)content='<h3>拜訪合照與出席人員</h3><div class="profile-photo-attendee-group'+(!photos.length?' profile-without-photo':'')+'"><div class="profile-visit-photos">'+(photos.length?photos.map(figure).join(''):'<p class="detail-muted">此日期尚無拜訪合照。</p>')+'</div>'+people+'</div>';
+ for(const [kind,title] of [['card','客戶名片'],['other','其他會議照片']]){const images=media.filter(m=>m.kind===kind);if(images.length)content+='<h3>'+title+'</h3><div class="profile-media-grid">'+images.map(figure).join('')+'</div>';}
+ $('profile-media').innerHTML=(content||'<p class="detail-muted">'+(visit.extraction_error?'Word 圖片讀取失敗，請開啟原始會議紀錄。':'此日期尚無名片與合照。')+'</p>')+'<p class="detail-muted">來源：'+esc(visit.docx?.name||c.historySource||visit.label)+'</p>';
+}
 function renderProfileVisits(){
  if(!profileState)return;
  const c=profileState.customer,visits=profileVisits(c);
  if(!visits.some(v=>v.id===profileState.visit))profileState.visit=visits[0]?.id||'';
  $('profileVisitSelect').innerHTML=visits.map(v=>'<option value="'+esc(v.id)+'">'+esc(v.label)+'</option>').join('')||'<option value="">尚無會議紀錄</option>';
- $('profileVisitSelect').value=profileState.visit;
- $('profileVisitSelect').disabled=!visits.length;
- const visit=visits.find(v=>v.id===profileState.visit);
- const records=$('profile-records');
+ $('profileVisitSelect').value=profileState.visit;$('profileVisitSelect').disabled=!visits.length;
+ const visit=visits.find(v=>v.id===profileState.visit),records=$('profile-records');
  if(!visit){records.innerHTML='<p class="detail-muted">'+(meetingRecordsCache?'尚無已上傳的會議紀錄。':'正在讀取會議紀錄…')+'</p>';$('profile-media').innerHTML='<p class="detail-muted">尚無可顯示的名片與合照。</p>';return;}
+ records.innerHTML='<h3>'+esc(visit.label)+'</h3><div class="profile-documents">'+profileLink(visit.pdf,'開啟 PDF')+profileLink(visit.docx,'下載 Word')+'</div>'+(visit.historical?'<p class="detail-muted">請將此前次拜訪的 PDF、Word 上傳至 meeting_records，發布後會自動顯示開啟按鈕。</p>':'')+(visit.version_mismatch?'<p class="detail-note">PDF 與 Word 版本不同，請核對後使用。</p>':'')+'<details class="profile-source"><summary>文件版本與來源</summary>'+(['pdf','docx'].filter(ext=>visit[ext]).map(ext=>'<p>'+esc(visit[ext].name)+'</p>').join('')||(visit.historical?'<p>'+esc(c.historySource||'2026 年 2 月前次拜訪報告')+'</p>':'<p>尚未提供文件。</p>'))+(visit.historical&&c.internalDocumentUrl&&/^https:\/\//.test(c.internalDocumentUrl)?'<p><a href="'+esc(c.internalDocumentUrl)+'" target="_blank" rel="noopener noreferrer">開啟原始內部紀錄 ↗</a></p>':'')+'</details>';
  if(visit.historical){
-  records.innerHTML='<h3>2026 年 2 月前次拜訪</h3><p>'+esc(c.publicHistorySummary||c.history||'')+'</p><p class="detail-muted">'+esc(c.historySource||'')+'</p>'+ (c.internalDocumentUrl&&/^https:\/\//.test(c.internalDocumentUrl)?'<p><a class="detail-link" href="'+esc(c.internalDocumentUrl)+'" target="_blank" rel="noopener noreferrer">開啟前次完整紀錄 ↗</a></p>':'')+(c.previousAttendees?.length?'<h3>前次出席人員</h3><ul>'+c.previousAttendees.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ul>':'')+(c.internalSections||[]).map(s=>'<section class="detail-section"><h3>'+esc(s.title)+'</h3><ul>'+s.points.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ul></section>').join('');
-  $('profile-media').innerHTML=c.previousVisitPhoto?'<a href="'+esc(c.previousVisitPhoto)+'" target="_blank" rel="noopener noreferrer"><img class="profile-photo" src="'+esc(c.previousVisitPhoto)+'" alt="'+esc(c.name)+' 前次拜訪合照"></a><p class="detail-muted">'+esc(c.previousPhotoCaption||c.historySource||'2026 年 2 月')+'</p>':'<p class="detail-muted">此日期未提供名片與合照。</p>';
-  return;
+  const sections=(c.internalSections||[]).map(s=>'<section class="detail-section"><h4>'+esc(s.title)+'</h4><ul>'+s.points.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ul></section>').join('');
+  records.innerHTML+='<details class="profile-source profile-legacy-summary"><summary>前次紀錄摘要（原有資料）</summary><p>'+esc(c.publicHistorySummary||c.history||'')+'</p>'+sections+'</details>';
  }
- records.innerHTML='<h3>'+esc(visit.label)+'</h3><div class="profile-documents">'+profileLink(visit.pdf,'開啟 PDF')+profileLink(visit.docx,'下載 Word')+'</div>'+(visit.version_mismatch?'<p class="detail-note">PDF 與 Word 版本不同，請核對後使用。</p>':'')+'<details class="profile-source"><summary>文件版本與來源</summary>'+['pdf','docx'].filter(ext=>visit[ext]).map(ext=>'<p>'+esc(visit[ext].name)+'</p>').join('')+'</details>';
- const media=visit.media||[];
- $('profile-media').innerHTML=media.length?['card','photo','other'].map(kind=>{const images=media.filter(m=>m.kind===kind);return images.length?'<h3>'+({card:'客戶名片',photo:'拜訪合照',other:'其他會議照片'}[kind])+'</h3><div class="profile-media-grid">'+images.map(m=>'<figure><a href="'+esc(m.url)+'" target="_blank" rel="noopener noreferrer"><img src="'+esc(m.url)+'" alt="'+esc(m.caption)+'" loading="lazy"></a><figcaption>'+esc(m.caption)+'</figcaption></figure>').join('')+'</div>':''}).join('')+'<p class="detail-muted">來源：'+esc(visit.docx?.name||'')+'</p>':'<p class="detail-muted">'+(visit.extraction_error?'Word 圖片讀取失敗，請開啟原始會議紀錄。':'此日期尚無從 Word 擷取的圖片。')+'</p>';
+ renderProfileMedia(c,visit);
 }
+
 function renderProfileOverview(){
  if(!profileState)return;
  const c=profileState.customer,latest=profileVisits(c).find(v=>v.docx),ov=latest?.overview||{};
@@ -1590,4 +1615,5 @@ renderAllClients();
  }
 })();
 </script></body></html>
+
 
