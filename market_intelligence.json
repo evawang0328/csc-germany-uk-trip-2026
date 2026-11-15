@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-14 10:56",
+  "generated_at": "2026-11-15 10:27",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -60,6 +60,18 @@
     }
   ],
   "items": [
+    {
+      "title": "European CRC prices play by own rules",
+      "date": "2026-11-14",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/european-crc-prices-play-by-own-rules/?utm_source=rss&utm_medium=rss&utm_campaign=european-crc-prices-play-by-own-rules",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：European CRC prices play by own rules",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
     {
       "title": "Meta, Stegra sign multiyear green steel certificate deal",
       "date": "2026-11-14",
@@ -182,6 +194,18 @@
       "category": "價格／供需",
       "summary": "來源新聞標題：UK trade: September 2026 - Office for National Statistics",
       "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "[sts_inpr_m] Production in industry - monthly data - European Commission",
+      "date": "2026-11-11",
+      "source": "Eurostat",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOX3BfN29jQ3hGajM0bkNwY3p2Y19zdEFhdEMzU3dFQ0t3YnQ4MUNUZFg0SmxhSDMxMkQtWHVJbDV5Y2NaZDk2THZ5V3VCekJweUx4WkJqaHZPaXNRZEZvRTZBc2o0alJBclE2aHowY3lSelp0czRKTEtTdEM0NzExTWZGX3VLckRNbFlsbEVycHc4U3ItMVYtd2ZyRQ?oc=5",
+      "regions": [
+        "EU"
+      ],
+      "category": "政經政策",
+      "summary": "來源新聞標題：[sts_inpr_m] Production in industry - monthly data - European Commission",
+      "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
     },
     {
       "title": "Bekaert to acquire Dextra for €140 million to expand construction reinforcement portfolio",
@@ -398,30 +422,6 @@
       "category": "產能鋼廠",
       "summary": "來源新聞標題：Production in September 2026: +0.7% on the previous month - Statistisches Bundesamt",
       "implication": "關注復產、產能利用率、交期及產量變化。"
-    },
-    {
-      "title": "European HRC mills seek higher Q1 prices; spot activity remains slow",
-      "date": "2026-11-06",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/european-hrc-mills-seek-higher-q1-prices-spot-activity-remains-slow/?utm_source=rss&utm_medium=rss&utm_campaign=european-hrc-mills-seek-higher-q1-prices-spot-activity-remains-slow",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：European HRC mills seek higher Q1 prices; spot activity remains slow",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Production in September 2026: +0.7% on previous month",
-      "date": "2026-11-06",
-      "source": "Destatis",
-      "url": "https://www.destatis.de/EN/Press/2026/11/PE26_389_421.html",
-      "regions": [
-        "DE"
-      ],
-      "category": "下游需求",
-      "summary": "德國9月工業生產月增0.7%，汽車業產量月增17.1%，建築產出下降2.6%。",
-      "implication": "分別詢問汽車、工程與建築客戶是否有實際補庫。"
     }
   ]
 }
