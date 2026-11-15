@@ -602,7 +602,8 @@ function profileVisits(c){
 function profileLink(file,label){return file?'<a class="detail-link" href="'+esc(file.url)+'" target="_blank" rel="noopener noreferrer">'+label+(file.version==='未標版本'?'':'（'+esc(file.version)+'）')+' ↗</a>':'<span class="profile-document-missing">'+(label.includes('PDF')?'PDF':'Word')+' 待上傳</span>';}
 function renderProfileMedia(c,visit){
  const isFebruary=String(visit.date||'').startsWith('2026-02');
- const attendees=visit.attendees?.length?visit.attendees:(isFebruary?c.previousAttendees||[]:[]);
+ const attendeeRows=visit.attendees?.length?visit.attendees:(isFebruary?c.previousAttendees||[]:[]);
+ const attendees=attendeeRows.flatMap(row=>String(row).split(/(?:^|\s)\d+[.、]\s*/).map(x=>x.trim()).filter(Boolean));
  let media=(visit.media||[]).slice();
  // Keep the existing February photo until the uploaded Word supplies that photo.
  if(isFebruary&&c.previousVisitPhoto&&!media.some(m=>m.kind==='photo'))media.unshift({url:c.previousVisitPhoto,kind:'photo',caption:c.previousPhotoCaption||'2026 年 2 月拜訪合照'});

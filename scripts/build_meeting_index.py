@@ -19,6 +19,9 @@ ROOT = Path(__file__).resolve().parents[1]
 W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
 R = '{http://schemas.openxmlformats.org/officeDocument/2006/relationships}'
 A = '{http://schemas.openxmlformats.org/drawingml/2006/main}'
+# Group photographs visually checked in the uploaded February records. These
+# converted Word files have no photo heading; trailing page numbers are captions.
+CONFIRMED_PHOTOS = {'526d11dd1c01d2ed6114', 'b0e7c8879b7ed7f13bf0'}
 ALIASES = {'CARLSPAETERHQ':'SPAETER','CARLSPAETER':'SPAETER','SPAETER':'SPAETER',
  'KNAUFINTERFER':'KNAUF','KNAUF':'KNAUF','DUFERCO':'DUFERCO','HFS':'HFS',
  'UPTONSTEEL':'UPTON','UPTON':'UPTON','BELMONT':'BELMONT','TOPTUBES':'TOPTUBES',
@@ -119,6 +122,9 @@ def read_word(path, asset_root):
                 after=text(blocks[pos+1]) if pos+1<len(blocks) and blocks[pos+1].tag==W+'p' else ''
                 caption=after if after and not re.match(r'^附件',after) and len(after)<600 else attachment or '會議紀錄圖片'
                 kind='card' if '名片' in attachment else 'photo' if re.search('合照|拜訪照片',attachment) or re.search('由左至右|由右至左',caption) else 'other'
+                if dest.stem in CONFIRMED_PHOTOS:
+                    kind='photo'
+                    if not caption or caption.isdigit(): caption='拜訪合照（取自當次會議 Word）'
                 media.append({'url':str(dest.relative_to(ROOT)), 'kind':kind, 'caption':caption, 'section':attachment})
     return overview, media, list(dict.fromkeys(attendees))
 
