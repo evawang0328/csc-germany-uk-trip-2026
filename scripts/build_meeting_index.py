@@ -14,6 +14,7 @@ import json
 import re
 import zipfile
 import xml.etree.ElementTree as ET
+from customer_knowledge import extract_knowledge
 
 ROOT = Path(__file__).resolve().parents[1]
 W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
@@ -151,6 +152,9 @@ def build(root=None):
             if word:
                 try:
                     visit['overview'],visit['media'],visit['attendees']=read_word(ROOT/'meeting_records'/word['name'],ROOT/'meeting_media'/key/sha256(word['name'].encode()).hexdigest()[:10])
+                    knowledge=extract_knowledge(ROOT/'meeting_records'/word['name'])
+                    visit['overview']=knowledge['overview'];visit['card']=knowledge['card'];visit['topics']=knowledge['topics']
+                    visit['knowledge_method']=knowledge['method'];visit['source_sha']=knowledge['source_sha']
                 except (zipfile.BadZipFile,ET.ParseError,KeyError,OSError) as e:
                     visit['extraction_error']=str(e)[:160]
         for ext in ['pdf','docx']:
@@ -164,4 +168,5 @@ def build(root=None):
     return payload
 
 if __name__ == '__main__': build()
+
 
