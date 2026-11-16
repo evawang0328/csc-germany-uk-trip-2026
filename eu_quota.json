@@ -1,9 +1,11 @@
 {
-  "version": "2026-11-09-ES-updated-v2.25",
-  "updatedAt": "2026-11-09（依使用者提供，非系統即時同步）",
+  "schema_version": "2.0",
+  "version": "2026-11-13-baseline-v2.47",
+  "basis_date": "2026-11-13",
+  "updatedAt": "2026-11-16T08:19:13.447975+00:00",
   "updatedBy": "額度管理者",
-  "source": "使用者提供之中鋼銷歐SG額度試算表截圖；基準日期未載明",
-  "notes": "G欄沿用原截圖基準；4A類待政府公告；J=G-H-I。最新更新3B/ES：在途10,382MT、已接單未出貨5,500MT。其餘沿用前次：1A/熱軋在途81,603MT、未出貨46,725MT；2/冷軋在途10,333MT、未出貨56,025MT；4A/GI在途2,910.625MT、未出貨0MT。",
+  "source": "使用者提供2026.11.13中鋼銷歐SG新制額度試算表截圖",
+  "notes": "A/F/G/H/I沿用原表精度；K/L/M可由管理者更新；N=L-M。L可依I-K帶入或手動調整。4A基準未確認，暫不納入待銷售合計。",
   "rows": [
     {
       "category": "1A",
@@ -15,9 +17,13 @@
       "freeQuota": 13946.13,
       "cscRatio": 58.64,
       "cscQuota": 155394.43,
-      "transit": 81603,
+      "transit": 11362,
+      "quotaBalance": 144032.434,
+      "cleared": 71307.165,
+      "balance": 72725.269,
       "undelivered": 46725,
-      "status": "截圖基準／待核對"
+      "basisConfirmed": true,
+      "sellable": 26000.269
     },
     {
       "category": "2",
@@ -30,8 +36,12 @@
       "cscRatio": 85.43,
       "cscQuota": 109035.69,
       "transit": 10333,
-      "undelivered": 56025,
-      "status": "截圖基準／待核對"
+      "quotaBalance": 98702.688,
+      "cleared": 0,
+      "balance": 98702.688,
+      "undelivered": 86025,
+      "basisConfirmed": true,
+      "sellable": 12677.688
     },
     {
       "category": "3B",
@@ -43,23 +53,32 @@
       "freeQuota": 0,
       "cscRatio": 97.54,
       "cscQuota": 20158.22,
-      "transit": 10382,
+      "transit": 7394,
+      "quotaBalance": 12764.224,
+      "cleared": 11611.58,
+      "balance": 1152.644,
       "undelivered": 5500,
-      "status": "截圖基準／待核對"
+      "basisConfirmed": true,
+      "sellable": -4347.356
     },
     {
       "category": "4A",
       "product": "鍍鋅",
       "countryQuota": 135133.55,
-      "allocatedRatio": 90,
-      "freeRatio": 10,
-      "allocatedQuota": 121620.2,
-      "freeQuota": 13513.36,
+      "allocatedRatio": 80,
+      "freeRatio": 20,
+      "allocatedQuota": 108106.84,
+      "freeQuota": 27026.71,
       "cscRatio": 8.7,
-      "cscQuota": 10580.34,
-      "transit": 2910.625,
+      "cscQuota": 9404.75,
+      "transit": 6481.4,
+      "quotaBalance": null,
+      "cleared": 4046,
+      "balance": null,
       "undelivered": 0,
-      "status": "已申請，待政府公告"
+      "basisConfirmed": false,
+      "sellable": null,
+      "basisNote": "原圖I為2923，另註系統5143.0323??；L、N為#VALUE!，待核對。"
     }
   ],
   "history": [
