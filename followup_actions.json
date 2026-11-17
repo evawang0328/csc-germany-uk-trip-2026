@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-13",
+  "updated_at": "2026-11-17",
   "description": "Germany & UK client visit follow-ups. State is initial/unverified; admin changes require a new JSON commit. Public repository: do not add confidential notes.",
   "items": [
     {
@@ -121,6 +121,52 @@
       "source_url": "meeting_records/2026-11-12_KNAUF_Meeting_Record_r3.pdf",
       "updated_at": "",
       "history": []
+    },
+    {
+      "id": "FU-UK-UPTON-20261116-DC01",
+      "category": "產品規格",
+      "task": "資料中心冷軋｜優先評估 DC01 2.5 mm × 1,000 mm",
+      "note": "經 Belmont 取得降伏強度單位、尺寸公差、驗收條件、試料及年度需求，區分 Upton 與終端總用量。",
+      "source_row": "2",
+      "country": "英國",
+      "customer": "Upton Steel",
+      "visit_date": "2026-11-16",
+      "owner": "待指定",
+      "status": "待處理",
+      "priority": "待確認",
+      "due_date": "",
+      "source": "2026-11-16_UPTON_STEEL_Meeting_Record R2.docx",
+      "source_url": "meeting_records/2026-11-16_UPTON_STEEL_Meeting_Record%20R2.pdf",
+      "updated_at": "2026-11-17",
+      "history": [
+        {
+          "date": "2026-11-17",
+          "note": "依使用者提供之會議紀錄截圖加入 B-4。"
+        }
+      ]
+    },
+    {
+      "id": "FU-UK-UPTON-20261116-RC",
+      "category": "CBAM／低碳",
+      "task": "RC 與低碳專案｜由明確指定回收料或低排放的終端專案切入",
+      "note": "取得正式綠鋼定義及 Rittal 計畫，以相同排放邊界比較 XCarb、價格與到廠成本，提供可供鋼種／尺寸及查驗進度。",
+      "source_row": "3",
+      "country": "英國",
+      "customer": "Upton Steel",
+      "visit_date": "2026-11-16",
+      "owner": "待指定",
+      "status": "待處理",
+      "priority": "待確認",
+      "due_date": "",
+      "source": "2026-11-16_UPTON_STEEL_Meeting_Record R2.docx",
+      "source_url": "meeting_records/2026-11-16_UPTON_STEEL_Meeting_Record%20R2.pdf",
+      "updated_at": "2026-11-17",
+      "history": [
+        {
+          "date": "2026-11-17",
+          "note": "依使用者提供之會議紀錄截圖加入 B-4。"
+        }
+      ]
     }
   ]
 }
