@@ -25,6 +25,7 @@ CURRENT = ROOT / "followup_actions.json"
 INDEX = ROOT / "meeting_records_index.json"
 W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 DISPLAY = {
+    "AMDS": "AMDS (ArcelorMittal Distribution Solution)",
     "SPAETER": "Carl Spaeter HQ",
     "KNAUF": "Knauf",
     "DUFERCO": "Duferco",
@@ -225,7 +226,7 @@ def main():
                 "proposal_id": customer_key + "-" + fingerprint,
                 "classification": classification,
                 "customer": customer,
-                "country": "英國" if customer_key in {"UPTON", "COOPERJACKSON", "BELMONT", "TOPTUBES", "STEELALLOY"} else "德國",
+                "country": "英國" if customer_key in {"UPTON", "COOPERJACKSON", "BELMONT", "TOPTUBES", "STEELALLOY", "AMDS"} else "德國",
                 "visit_date": date,
                 "category": category_for(row["topic"], comparable),
                 "topic": row["topic"],
