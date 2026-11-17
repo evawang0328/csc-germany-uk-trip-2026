@@ -134,10 +134,12 @@ def read_word(path, asset_root):
 def build(root=None):
     global ROOT
     if root is not None: ROOT=Path(root)
-    customers={}
+    customers={}; ignored=[]
     for path in sorted((ROOT/'meeting_records').glob('*')):
         parsed=parse_name(path.name)
-        if not parsed or not path.is_file(): continue
+        if not parsed or not path.is_file():
+            if path.is_file() and path.suffix.lower() in {".pdf", ".docx"}: ignored.append(path.name)
+            continue
         key,item=parsed; group=customers.setdefault(key,{'visits':[]})
         visit=next((v for v in group['visits'] if v['id']==item['id']),None)
         if visit is None:
@@ -164,7 +166,7 @@ def build(root=None):
             if candidate: group[ext]=candidate
         pdf,word=group.get('pdf'),group.get('docx')
         group['version_mismatch']=bool(pdf and word and (pdf['visit_id'],pdf['revision'])!=(word['visit_id'],word['revision']))
-    payload={'schema_version':'2.0','generated_at':datetime.now(timezone.utc).isoformat(timespec='seconds'),'source':'meeting_records/','customers':customers}
+    payload={'schema_version':'2.0','generated_at':datetime.now(timezone.utc).isoformat(timespec='seconds'),'source':'meeting_records/','unrecognized_files':ignored,'customers':customers}
     (ROOT/'meeting_records_index.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'Built meeting index: {len(customers)} customers, {sum(len(v["visits"]) for v in customers.values())} visits')
     return payload

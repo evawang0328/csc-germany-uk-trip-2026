@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 from difflib import SequenceMatcher
-from hashlib import sha256
+from hashlib import sha1, sha256
 from pathlib import Path
 from urllib.parse import unquote
 import json
@@ -37,8 +37,8 @@ DISPLAY = {
     "STEELALLOY": "Steel & Alloy",
 }
 NEAR = re.compile(r"後續|追蹤|待辦|辦理事項|主要工作|待處理|商機.*後續")
-HEADER = re.compile(r"議題|事項|主要工作|客戶需求|需求與商機|協辦|責任|窗口|PIC|說明|順序|優先序")
-ITEM_HEADER = re.compile(r"追蹤事項|後續辦理|主要工作|客戶需求與商機|待辦事項")
+HEADER = re.compile(r"議題|事項|主要工作|客戶需求|需求與商機|協辦|責任|窗口|PIC|說明|順序|優先序|合作方向|商機及辦理重點")
+ITEM_HEADER = re.compile(r"追蹤事項|後續辦理|主要工作|客戶需求與商機|待辦事項|商機及辦理重點")
 DONE = re.compile(r"已解決|已完成|結案|已辦妥")
 UNSAFE = re.compile(r"\b\d{2,3}-\d{2,3}-\d{3,4}\b")  # example phone-like substrings
 
@@ -104,8 +104,8 @@ def rows_from_docx(path: Path) -> list[dict]:
         def find_col(*words):
             return next((j for j, x in enumerate(headers) if any(w.upper() in x for w in words)), None)
         owner_idx = find_col("PIC", "責任", "窗口", "協辦")
-        issue_idx = find_col("議題", "產品", "類別")
-        task_idx = find_col("追蹤事項", "主要工作", "客戶需求與商機", "辦理事項", "需求", "工作內容")
+        issue_idx = find_col("議題", "產品", "類別", "合作方向")
+        task_idx = find_col("追蹤事項", "主要工作", "客戶需求與商機", "辦理事項", "需求", "工作內容", "商機及辦理重點")
         note_idx = find_col("說明", "備註", "協辦方向")
         status_idx = find_col("狀態", "進度")
         if task_idx is None:
@@ -183,6 +183,23 @@ def similarity(left: str, right: str) -> float:
     overlap = 2 * len(sa & sb) / (len(sa) + len(sb)) if sa and sb else 0.0
     return round(max(direct, overlap), 3)
 
+
+def source_row_published(row, filename, source_sha, published):
+    """Only reuse a manual approval for the same immutable Word blob and row."""
+    topic_key = lambda value: re.sub(r"[\W_]", "", value.casefold())
+    title = topic_key(row.get("topic", ""))
+    if not title:
+        return False
+    for item in published:
+        if item.get("source_sha") != source_sha or item.get("source") != filename:
+            continue
+        if str(item.get("source_row", "")) != str(row["row"]):
+            continue
+        headline = re.split(r"[｜|]", item.get("task", ""), maxsplit=1)[0]
+        if topic_key(headline) == title:
+            return True
+    return False
+
 def main():
     idx = json.loads(INDEX.read_text(encoding="utf-8"))
     official = json.loads(CURRENT.read_text(encoding="utf-8"))
@@ -201,9 +218,14 @@ def main():
         customer = DISPLAY.get(customer_key, customer_key.title())
         date = word.get("date", "")
         relevant = [x for x in published if x.get("customer", "").casefold() == customer.casefold()]
-        doc_record = {"customer": customer, "file": word["url"], "version": word.get("version"), "date": date}
+        raw = path.read_bytes()
+        source_sha = sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
+        doc_record = {"customer": customer, "file": word["url"], "version": word.get("version"), "date": date, "published_rows": 0, "warnings": []}
         try:
             rows = rows_from_docx(path)
+            has_heading = any(kind == "paragraph" and len(block) < 105 and NEAR.search(block) for kind, block in docx_blocks(path))
+            if has_heading and not rows:
+                doc_record["warnings"].append("偵測到追蹤段落，但未擷取出事項；請核對原文及表格欄名。")
         except (ValueError, KeyError, ET.ParseError, zipfile.BadZipFile) as exc:
             doc_record["error"] = str(exc)[:160]
             documents.append(doc_record)
@@ -211,6 +233,9 @@ def main():
         doc_record["extracted_rows"] = len(rows)
         documents.append(doc_record)
         for row in rows:
+            if source_row_published(row, path.name, source_sha, relevant):
+                doc_record["published_rows"] += 1
+                continue
             comparable = row["task"]
             scored = sorted(
                 ((similarity(comparable, x.get("task", "") + " " + x.get("note", "")), x) for x in relevant),
@@ -237,6 +262,7 @@ def main():
                 "source": path.name,
                 "source_url": word["url"],
                 "source_row": row["row"],
+                "source_sha": source_sha,
                 "suggested_match_id": match.get("id") if match and confidence >= 0.42 else None,
                 "similarity": confidence,
             })
@@ -250,6 +276,13 @@ def main():
         "documents": documents,
         "proposals": proposals,
     }
+    by_file = {record["file"]: record for record in documents}
+    for group in idx.get("customers", {}).values():
+        for visit in group.get("visits", []):
+            result = by_file.get(visit.get("docx", {}).get("url"))
+            if result:
+                visit["followup_extraction"] = result
+    INDEX.write_text(json.dumps(idx, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {OUTPUT.name}: {len(documents)} DOCX, {len(proposals)} review suggestions (no official records changed).")
 

@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout latest main
         uses: actions/checkout@v4
+      - name: Verify meeting upload extraction
+        run: python3 scripts/test_meeting_sync.py
       - name: Build latest client meeting record links
         run: python3 scripts/build_meeting_index.py
       - name: Extract client follow-up proposals for admin review
