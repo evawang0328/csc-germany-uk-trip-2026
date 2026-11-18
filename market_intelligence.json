@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-17 12:59",
+  "generated_at": "2026-11-18 12:04",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
-  "warning": "部分來源更新失敗：Destatis (HTTPError), ONS (HTTPError), GOV.UK (HTTPError)",
+  "warning": "部分來源更新失敗：Destatis (HTTPError)",
   "highlights": [
     {
       "region": "EU",
@@ -61,6 +61,103 @@
   ],
   "items": [
     {
+      "title": "Steel production halted at some EU facilities due to high energy costs.",
+      "date": "2026-11-17",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/steel-production-halted-at-some-eu-facilities-due-to-high-energy-costs/?utm_source=rss&utm_medium=rss&utm_campaign=steel-production-halted-at-some-eu-facilities-due-to-high-energy-costs",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Steel production halted at some EU facilities due to high energy costs.",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "Salzgitter AG CEO: steel industry needs competitive electricity prices and lead markets",
+      "date": "2026-11-17",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/salzgitter-ag-ceo-steel-industry-needs-competitive-electricity-prices-and-lead-markets/?utm_source=rss&utm_medium=rss&utm_campaign=salzgitter-ag-ceo-steel-industry-needs-competitive-electricity-prices-and-lead-markets",
+      "regions": [
+        "DE",
+        "EU"
+      ],
+      "category": "下游需求",
+      "summary": "來源新聞標題：Salzgitter AG CEO: steel industry needs competitive electricity prices and lead markets",
+      "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
+    },
+    {
+      "title": "Pittini Group to halt production at two plants amid rising energy costs",
+      "date": "2026-11-17",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/pittini-group-to-halt-production-at-two-plants-amid-rising-energy-costs/?utm_source=rss&utm_medium=rss&utm_campaign=pittini-group-to-halt-production-at-two-plants-amid-rising-energy-costs",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Pittini Group to halt production at two plants amid rising energy costs",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "Polish rebar prices widen upward amid tight supply, high energy costs",
+      "date": "2026-11-17",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/polish-rebar-prices-widen-upward-amid-tight-supply-high-energy-costs/?utm_source=rss&utm_medium=rss&utm_campaign=polish-rebar-prices-widen-upward-amid-tight-supply-high-energy-costs",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Polish rebar prices widen upward amid tight supply, high energy costs",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "European Commission imposes anti-dumping duties on cold-rolled coil imports from India, Japan, Taiwan, Turkey, Vietnam",
+      "date": "2026-11-17",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/european-commission-imposes-anti-dumping-duties-on-cold-rolled-coil-imports-from-india-japan-taiwan-turkey-vietnam/?utm_source=rss&utm_medium=rss&utm_campaign=european-commission-imposes-anti-dumping-duties-on-cold-rolled-coil-imports-from-india-japan-taiwan-turkey-vietnam",
+      "regions": [
+        "EU"
+      ],
+      "category": "政經政策",
+      "summary": "來源新聞標題：European Commission imposes anti-dumping duties on cold-rolled coil imports from India, Japan, Taiwan, Turkey, Vietnam",
+      "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
+    },
+    {
+      "title": "Beltrame halts production until year-end on energy costs",
+      "date": "2026-11-17",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/beltrame-halts-production-until-year-end-on-energy-costs/?utm_source=rss&utm_medium=rss&utm_campaign=beltrame-halts-production-until-year-end-on-energy-costs",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Beltrame halts production until year-end on energy costs",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "ArcelorMittal halts mills on energy costs, Italians follow",
+      "date": "2026-11-17",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/arcelormittal-halts-mills-on-energy-costs-italians-follow/?utm_source=rss&utm_medium=rss&utm_campaign=arcelormittal-halts-mills-on-energy-costs-italians-follow",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：ArcelorMittal halts mills on energy costs, Italians follow",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "Reporting the country of melt and pour for certain steel imports - GOV.UK",
+      "date": "2026-11-17",
+      "source": "GOV.UK",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNRGxhRXlwb1h5dWZzNWFwcVY0Z3hRTWFRcEtxNjE4T2t3ZVphY3I4VFRmTXVaNnR5TVBjdjgteWRqMElDZmpyNUVtUlROemNDVjNhZGVxbVZlQ090TU15UE5SbU5hakhocmNScGFsd3lXR1BpYjdtUDVBbzVKWkYtSjltRnViTEo1YVYxcjBTVWJvalpLNVhfOXBabm8xR0k4MnFGWFpmc0FXaHF1SHJQRjJ0eWpUZ3RHV1VydFM5RElCamwxejQ5aHp5UzBhRlNfbWZ3WkNIa1luakJXQlc4WkJValAzYTZqcWFOcTRzS3BNRTRiTkY0bEtiVFVhd2JERXc?oc=5",
+      "regions": [
+        "UK"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Reporting the country of melt and pour for certain steel imports - GOV.UK",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
       "title": "European CRC prices play by own rules",
       "date": "2026-11-14",
       "source": "EUROMETAL",
@@ -111,6 +208,18 @@
       "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
     },
     {
+      "title": "[sts_inpr_m] Production in industry - monthly data - European Commission",
+      "date": "2026-11-13",
+      "source": "Eurostat",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOX3BfN29jQ3hGajM0bkNwY3p2Y19zdEFhdEMzU3dFQ0t3YnQ4MUNUZFg0SmxhSDMxMkQtWHVJbDV5Y2NaZDk2THZ5V3VCekJweUx4WkJqaHZPaXNRZEZvRTZBc2o0alJBclE2aHowY3lSelp0czRKTEtTdEM0NzExTWZGX3VLckRNbFlsbEVycHc4U3ItMVYtd2ZyRQ?oc=5",
+      "regions": [
+        "EU"
+      ],
+      "category": "政經政策",
+      "summary": "來源新聞標題：[sts_inpr_m] Production in industry - monthly data - European Commission",
+      "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
+    },
+    {
       "title": "European domestic HRC market squeezed between sluggish end-user demand and mills’ price hike attempts",
       "date": "2026-11-13",
       "source": "EUROMETAL",
@@ -147,18 +256,6 @@
       "implication": "關注復產、產能利用率、交期及產量變化。"
     },
     {
-      "title": "[sts_inpr_m] Production in industry - monthly data - European Commission",
-      "date": "2026-11-13",
-      "source": "Eurostat",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOX3BfN29jQ3hGajM0bkNwY3p2Y19zdEFhdEMzU3dFQ0t3YnQ4MUNUZFg0SmxhSDMxMkQtWHVJbDV5Y2NaZDk2THZ5V3VCekJweUx4WkJqaHZPaXNRZEZvRTZBc2o0alJBclE2aHowY3lSelp0czRKTEtTdEM0NzExTWZGX3VLckRNbFlsbEVycHc4U3ItMVYtd2ZyRQ?oc=5",
-      "regions": [
-        "EU"
-      ],
-      "category": "政經政策",
-      "summary": "來源新聞標題：[sts_inpr_m] Production in industry - monthly data - European Commission",
-      "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
-    },
-    {
       "title": "Italian rebar prices stable amid weak demand, high costs; German prices rise",
       "date": "2026-11-13",
       "source": "EUROMETAL",
@@ -184,18 +281,6 @@
       "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
     },
     {
-      "title": "UK trade: September 2026 - Office for National Statistics",
-      "date": "2026-11-12",
-      "source": "ONS",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNcnR4dHNzYndVZVpBTEE5RXhGYWFlLXFESjE3dkhUNUl5bTN6OGpiQkNIaklRSzNpLVlWU0tCSTdLdHFVbUxRcTR6ODBqbWlkTUFES2RjakdwWElRaEpaZ3FZRlRzRlY1eUhSX3JYMmUyMDJxQXNZOEk0SUlqcTh1RTdSZXV5dFM2V3hQdWZOU2l4amdDeW4xMVp5RHlwdw?oc=5",
-      "regions": [
-        "UK"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：UK trade: September 2026 - Office for National Statistics",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
       "title": "Construction output in Great Britain - Office for National Statistics",
       "date": "2026-11-12",
       "source": "ONS",
@@ -206,6 +291,18 @@
       "category": "下游需求",
       "summary": "來源新聞標題：Construction output in Great Britain - Office for National Statistics",
       "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
+    },
+    {
+      "title": "UK trade: September 2026 - Office for National Statistics",
+      "date": "2026-11-12",
+      "source": "ONS",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNcnR4dHNzYndVZVpBTEE5RXhGYWFlLXFESjE3dkhUNUl5bTN6OGpiQkNIaklRSzNpLVlWU0tCSTdLdHFVbUxRcTR6ODBqbWlkTUFES2RjakdwWElRaEpaZ3FZRlRzRlY1eUhSX3JYMmUyMDJxQXNZOEk0SUlqcTh1RTdSZXV5dFM2V3hQdWZOU2l4amdDeW4xMVp5RHlwdw?oc=5",
+      "regions": [
+        "UK"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：UK trade: September 2026 - Office for National Statistics",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
     },
     {
       "title": "Bekaert to acquire Dextra for €140 million to expand construction reinforcement portfolio",
@@ -326,102 +423,6 @@
       "category": "下游需求",
       "summary": "來源新聞標題：ENVI committee expedites automotive green steel credits",
       "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
-    },
-    {
-      "title": "European coil and green steel round-up: EU coil market rises on costs and trade restriction factors",
-      "date": "2026-11-09",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/european-coil-and-green-steel-round-up-eu-coil-market-rises-on-costs-and-trade-restriction-factors/?utm_source=rss&utm_medium=rss&utm_campaign=european-coil-and-green-steel-round-up-eu-coil-market-rises-on-costs-and-trade-restriction-factors",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：European coil and green steel round-up: EU coil market rises on costs and trade restriction factors",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "European stainless steel demand remains weak",
-      "date": "2026-11-09",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/european-stainless-steel-demand-remains-weak/?utm_source=rss&utm_medium=rss&utm_campaign=european-stainless-steel-demand-remains-weak",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：European stainless steel demand remains weak",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "European HRC prices edge higher as mills seek increases for early 2027",
-      "date": "2026-11-09",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/european-hrc-prices-edge-higher-as-mills-seek-increases-for-early-2027/?utm_source=rss&utm_medium=rss&utm_campaign=european-hrc-prices-edge-higher-as-mills-seek-increases-for-early-2027",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：European HRC prices edge higher as mills seek increases for early 2027",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Italian rebar prices rise on production cost pressure; demand remains weak",
-      "date": "2026-11-07",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/italian-rebar-prices-rise-on-production-cost-pressure-demand-remains-weak/?utm_source=rss&utm_medium=rss&utm_campaign=italian-rebar-prices-rise-on-production-cost-pressure-demand-remains-weak",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：Italian rebar prices rise on production cost pressure; demand remains weak",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Nordic steel demand continues slow improvement: BE Group",
-      "date": "2026-11-07",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/nordic-steel-demand-continues-slow-improvement-be-group/?utm_source=rss&utm_medium=rss&utm_campaign=nordic-steel-demand-continues-slow-improvement-be-group",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：Nordic steel demand continues slow improvement: BE Group",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Acciaierie d’Italia begins shutdown of blast furnaces at Italy’s largest steel plant",
-      "date": "2026-11-07",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/acciaierie-ditalia-begins-shutdown-of-blast-furnaces-at-italys-largest-steel-plant/?utm_source=rss&utm_medium=rss&utm_campaign=acciaierie-ditalia-begins-shutdown-of-blast-furnaces-at-italys-largest-steel-plant",
-      "regions": [
-        "EU"
-      ],
-      "category": "產能鋼廠",
-      "summary": "來源新聞標題：Acciaierie d’Italia begins shutdown of blast furnaces at Italy’s largest steel plant",
-      "implication": "關注復產、產能利用率、交期及產量變化。"
-    },
-    {
-      "title": "Aperam Jan-Sept steel shipments rise 1.7% on year",
-      "date": "2026-11-07",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/aperam-jan-sept-steel-shipments-rise-1-7-on-year/?utm_source=rss&utm_medium=rss&utm_campaign=aperam-jan-sept-steel-shipments-rise-1-7-on-year",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：Aperam Jan-Sept steel shipments rise 1.7% on year",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Production in September 2026: +0.7% on the previous month - Statistisches Bundesamt",
-      "date": "2026-11-06",
-      "source": "Destatis",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9OMEVsNVk1SE1BanhGdjRCOWc0ajdDdGxaYW10bnRWdUJ5dE1hZlBkZ1M0dlJFOURhSGpWZkxQSWV2UVJBZkhBWGRoemw2bmFaWkVmeG80YVFJa2ExLTVDeTNkSGQxMFlpVnc?oc=5",
-      "regions": [
-        "DE"
-      ],
-      "category": "產能鋼廠",
-      "summary": "來源新聞標題：Production in September 2026: +0.7% on the previous month - Statistisches Bundesamt",
-      "implication": "關注復產、產能利用率、交期及產量變化。"
     }
   ]
 }
