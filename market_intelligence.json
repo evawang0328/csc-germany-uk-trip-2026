@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18 12:04",
+  "generated_at": "2026-11-19 12:00",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
-  "warning": "部分來源更新失敗：Destatis (HTTPError)",
+  "warning": "",
   "highlights": [
     {
       "region": "EU",
@@ -61,6 +61,57 @@
   ],
   "items": [
     {
+      "title": "German Steel Summit sees demands for government support",
+      "date": "2026-11-18",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/german-steel-summit-sees-demands-for-government-support/?utm_source=rss&utm_medium=rss&utm_campaign=german-steel-summit-sees-demands-for-government-support",
+      "regions": [
+        "DE",
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：German Steel Summit sees demands for government support",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "EU industrial emissions fall as Commission outlines proposed CBAM extension to 180 downstream steel and aluminium products",
+      "date": "2026-11-18",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/eu-industrial-emissions-fall-as-commission-outlines-proposed-cbam-extension-to-180-downstream-steel-and-aluminium-products/?utm_source=rss&utm_medium=rss&utm_campaign=eu-industrial-emissions-fall-as-commission-outlines-proposed-cbam-extension-to-180-downstream-steel-and-aluminium-products",
+      "regions": [
+        "UK",
+        "EU"
+      ],
+      "category": "政經政策",
+      "summary": "來源新聞標題：EU industrial emissions fall as Commission outlines proposed CBAM extension to 180 downstream steel and aluminium products",
+      "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
+    },
+    {
+      "title": "Two more Italian mills announce production stoppages due to high energy costs",
+      "date": "2026-11-18",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/two-more-italian-mills-announce-production-stoppages-due-to-high-energy-costs/?utm_source=rss&utm_medium=rss&utm_campaign=two-more-italian-mills-announce-production-stoppages-due-to-high-energy-costs",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Two more Italian mills announce production stoppages due to high energy costs",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "German steel alliance calls for stronger EU steel trade protection and competitive energy prices",
+      "date": "2026-11-18",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/german-steel-alliance-calls-for-stronger-eu-steel-trade-protection-and-competitive-energy-prices/?utm_source=rss&utm_medium=rss&utm_campaign=german-steel-alliance-calls-for-stronger-eu-steel-trade-protection-and-competitive-energy-prices",
+      "regions": [
+        "DE",
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：German steel alliance calls for stronger EU steel trade protection and competitive energy prices",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
       "title": "Steel production halted at some EU facilities due to high energy costs.",
       "date": "2026-11-17",
       "source": "EUROMETAL",
@@ -110,6 +161,18 @@
       "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
     },
     {
+      "title": "Reporting the country of melt and pour for certain steel imports - GOV.UK",
+      "date": "2026-11-17",
+      "source": "GOV.UK",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNRGxhRXlwb1h5dWZzNWFwcVY0Z3hRTWFRcEtxNjE4T2t3ZVphY3I4VFRmTXVaNnR5TVBjdjgteWRqMElDZmpyNUVtUlROemNDVjNhZGVxbVZlQ090TU15UE5SbU5hakhocmNScGFsd3lXR1BpYjdtUDVBbzVKWkYtSjltRnViTEo1YVYxcjBTVWJvalpLNVhfOXBabm8xR0k4MnFGWFpmc0FXaHF1SHJQRjJ0eWpUZ3RHV1VydFM5RElCamwxejQ5aHp5UzBhRlNfbWZ3WkNIa1luakJXQlc4WkJValAzYTZqcWFOcTRzS3BNRTRiTkY0bEtiVFVhd2JERXc?oc=5",
+      "regions": [
+        "UK"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Reporting the country of melt and pour for certain steel imports - GOV.UK",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
       "title": "European Commission imposes anti-dumping duties on cold-rolled coil imports from India, Japan, Taiwan, Turkey, Vietnam",
       "date": "2026-11-17",
       "source": "EUROMETAL",
@@ -144,18 +207,6 @@
       "category": "產能鋼廠",
       "summary": "來源新聞標題：ArcelorMittal halts mills on energy costs, Italians follow",
       "implication": "關注復產、產能利用率、交期及產量變化。"
-    },
-    {
-      "title": "Reporting the country of melt and pour for certain steel imports - GOV.UK",
-      "date": "2026-11-17",
-      "source": "GOV.UK",
-      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNRGxhRXlwb1h5dWZzNWFwcVY0Z3hRTWFRcEtxNjE4T2t3ZVphY3I4VFRmTXVaNnR5TVBjdjgteWRqMElDZmpyNUVtUlROemNDVjNhZGVxbVZlQ090TU15UE5SbU5hakhocmNScGFsd3lXR1BpYjdtUDVBbzVKWkYtSjltRnViTEo1YVYxcjBTVWJvalpLNVhfOXBabm8xR0k4MnFGWFpmc0FXaHF1SHJQRjJ0eWpUZ3RHV1VydFM5RElCamwxejQ5aHp5UzBhRlNfbWZ3WkNIa1luakJXQlc4WkJValAzYTZqcWFOcTRzS3BNRTRiTkY0bEtiVFVhd2JERXc?oc=5",
-      "regions": [
-        "UK"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：Reporting the country of melt and pour for certain steel imports - GOV.UK",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
     },
     {
       "title": "European CRC prices play by own rules",
@@ -375,54 +426,6 @@
       "category": "產能鋼廠",
       "summary": "來源新聞標題：Arvedi and Jindal submit bids for acquisition of ex-Ilva steel plants",
       "implication": "關注復產、產能利用率、交期及產量變化。"
-    },
-    {
-      "title": "Metinvest advances plans to exit Piombino coil project",
-      "date": "2026-11-10",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/metinvest-advances-plans-to-exit-piombino-coil-project/?utm_source=rss&utm_medium=rss&utm_campaign=metinvest-advances-plans-to-exit-piombino-coil-project",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：Metinvest advances plans to exit Piombino coil project",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Ecomondo 2026: EU steel competitiveness under pressure as ETS and CBAM reshape market dynamics",
-      "date": "2026-11-10",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/ecomondo-2026-eu-steel-competitiveness-under-pressure-as-ets-and-cbam-reshape-market-dynamics/?utm_source=rss&utm_medium=rss&utm_campaign=ecomondo-2026-eu-steel-competitiveness-under-pressure-as-ets-and-cbam-reshape-market-dynamics",
-      "regions": [
-        "EU"
-      ],
-      "category": "政經政策",
-      "summary": "來源新聞標題：Ecomondo 2026: EU steel competitiveness under pressure as ETS and CBAM reshape market dynamics",
-      "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
-    },
-    {
-      "title": "European longs demand slows price recovery amid high energy costs, import segment reverses trend",
-      "date": "2026-11-10",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/european-longs-demand-slows-price-recovery-amid-high-energy-costs-import-segment-reverses-trend/?utm_source=rss&utm_medium=rss&utm_campaign=european-longs-demand-slows-price-recovery-amid-high-energy-costs-import-segment-reverses-trend",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：European longs demand slows price recovery amid high energy costs, import segment reverses trend",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "ENVI committee expedites automotive green steel credits",
-      "date": "2026-11-09",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/envi-committee-expedites-automotive-green-steel-credits/?utm_source=rss&utm_medium=rss&utm_campaign=envi-committee-expedites-automotive-green-steel-credits",
-      "regions": [
-        "EU"
-      ],
-      "category": "下游需求",
-      "summary": "來源新聞標題：ENVI committee expedites automotive green steel credits",
-      "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
     }
   ]
 }
