@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-20 11:54",
+  "generated_at": "2026-11-21 11:50",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -60,6 +60,67 @@
     }
   ],
   "items": [
+    {
+      "title": "OECD: Latin America’s steel imports surge 47 percent as global excess capacity threatens regional producers",
+      "date": "2026-11-20",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/oecd-latin-americas-steel-imports-surge-47-percent-as-global-excess-capacity-threatens-regional-producers/?utm_source=rss&utm_medium=rss&utm_campaign=oecd-latin-americas-steel-imports-surge-47-percent-as-global-excess-capacity-threatens-regional-producers",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：OECD: Latin America’s steel imports surge 47 percent as global excess capacity threatens regional producers",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "Italian rebar prices stable amid production cuts; Northern European prices rise",
+      "date": "2026-11-20",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/italian-rebar-prices-stable-amid-production-cuts-northern-european-prices-rise/?utm_source=rss&utm_medium=rss&utm_campaign=italian-rebar-prices-stable-amid-production-cuts-northern-european-prices-rise",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Italian rebar prices stable amid production cuts; Northern European prices rise",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Romanian longs market faces price pressure amid limited demand, tight liquidity",
+      "date": "2026-11-20",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/romanian-longs-market-faces-price-pressure-amid-limited-demand-tight-liquidity/?utm_source=rss&utm_medium=rss&utm_campaign=romanian-longs-market-faces-price-pressure-amid-limited-demand-tight-liquidity",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Romanian longs market faces price pressure amid limited demand, tight liquidity",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Supply disruptions and model changeovers weigh on Czech car production",
+      "date": "2026-11-20",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/supply-disruptions-and-model-changeovers-weigh-on-czech-car-production/?utm_source=rss&utm_medium=rss&utm_campaign=supply-disruptions-and-model-changeovers-weigh-on-czech-car-production",
+      "regions": [
+        "UK",
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：Supply disruptions and model changeovers weigh on Czech car production",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
+    {
+      "title": "EUROMETAL attended the OECD Steel Committee’s 100th session in Paris",
+      "date": "2026-11-20",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/eurometal-attended-the-oecd-steel-committees-100th-session-in-paris/?utm_source=rss&utm_medium=rss&utm_campaign=eurometal-attended-the-oecd-steel-committees-100th-session-in-paris",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：EUROMETAL attended the OECD Steel Committee’s 100th session in Paris",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
     {
       "title": "UK to make declaration of melt and pour country mandatory for steel imports",
       "date": "2026-11-20",
@@ -366,67 +427,6 @@
       ],
       "category": "價格／供需",
       "summary": "來源新聞標題：Local Northern European steel plate prices rise on tight availability; Italian market edges up",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Mercedes-Benz and HyIron advance hydrogen-based steel production following successful pilot project",
-      "date": "2026-11-13",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/mercedes-benz-and-hyiron-advance-hydrogen-based-steel-production-following-successful-pilot-project/?utm_source=rss&utm_medium=rss&utm_campaign=mercedes-benz-and-hyiron-advance-hydrogen-based-steel-production-following-successful-pilot-project",
-      "regions": [
-        "EU"
-      ],
-      "category": "產能鋼廠",
-      "summary": "來源新聞標題：Mercedes-Benz and HyIron advance hydrogen-based steel production following successful pilot project",
-      "implication": "關注復產、產能利用率、交期及產量變化。"
-    },
-    {
-      "title": "Italian rebar prices stable amid weak demand, high costs; German prices rise",
-      "date": "2026-11-13",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/italian-rebar-prices-stable-amid-weak-demand-high-costs-german-prices-rise/?utm_source=rss&utm_medium=rss&utm_campaign=italian-rebar-prices-stable-amid-weak-demand-high-costs-german-prices-rise",
-      "regions": [
-        "DE",
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：Italian rebar prices stable amid weak demand, high costs; German prices rise",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Hydrogen still makes sense for Europe ironmaking: Kallanish Green Steel Strategies",
-      "date": "2026-11-13",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/hydrogen-still-makes-sense-for-europe-ironmaking-kallanish-green-steel-strategies/?utm_source=rss&utm_medium=rss&utm_campaign=hydrogen-still-makes-sense-for-europe-ironmaking-kallanish-green-steel-strategies",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：Hydrogen still makes sense for Europe ironmaking: Kallanish Green Steel Strategies",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Construction output in Great Britain - Office for National Statistics",
-      "date": "2026-11-12",
-      "source": "ONS",
-      "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOeldqaENSNnBhWW90dWFYY2wwLWRsUFVrelV4a1R5ZGdxVUwwMXYteUNFVFU0Tk1NY1NOdE1vamoxdUQyemhMNUt3NkZRb3ByeHFVUnhNaXZEYklyMEZaV2c2X3JMQ1NJMC16eVkzV1Z3Z2Y2dUdsQjJXVDA5RDJTNnRxTFdaSVdYWGtRa0tHOXJhQ1YwV1YycVZyb2FKdHZYT1ltOUFkMGpaTmJTZUxtc1VNMVFtVFJKUWZyUThlN2l3ZWtIb3ViMkZGUENpbUZseGhHOXNzbGd4eFdSOVRpbHh5SlBMcHVCTm1KaUFlQWJ4UE9mQTNEMFo1UXQ3X0FIc1VjbXphUi1oM2o4NTNRREtIdFE?oc=5",
-      "regions": [
-        "UK"
-      ],
-      "category": "下游需求",
-      "summary": "來源新聞標題：Construction output in Great Britain - Office for National Statistics",
-      "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
-    },
-    {
-      "title": "UK trade: September 2026 - Office for National Statistics",
-      "date": "2026-11-12",
-      "source": "ONS",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNcnR4dHNzYndVZVpBTEE5RXhGYWFlLXFESjE3dkhUNUl5bTN6OGpiQkNIaklRSzNpLVlWU0tCSTdLdHFVbUxRcTR6ODBqbWlkTUFES2RjakdwWElRaEpaZ3FZRlRzRlY1eUhSX3JYMmUyMDJxQXNZOEk0SUlqcTh1RTdSZXV5dFM2V3hQdWZOU2l4amdDeW4xMVp5RHlwdw?oc=5",
-      "regions": [
-        "UK"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：UK trade: September 2026 - Office for National Statistics",
       "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
     }
   ]
