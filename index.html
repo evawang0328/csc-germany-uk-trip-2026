@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.50</title><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.51</title><style>
 :root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#192b40;background:#f2f5fa}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#102b4b,#185783);color:white;padding:34px max(22px,calc((100vw - 1120px)/2)) 28px}header h1{margin:8px 0;font-size:clamp(24px,4vw,38px)}header p{opacity:.84;margin:8px 0}.eyebrow{letter-spacing:2px;font-size:12px;color:#b6d9f8}main{max-width:1120px;margin:auto;padding:24px 18px 70px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.tabs button,.daybtn,.filter{cursor:pointer;border:1px solid #d8e2ee;border-radius:11px;padding:11px 15px;background:white;color:#24425f;font-weight:700}.tabs button.active,.daybtn.active,.filter.active{background:#164c7a;color:white;border-color:#164c7a}.panel{background:white;border:1px solid #e1e8f1;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 6px 20px #183c6010}.panel h2{margin:0 0 14px;font-size:21px}.sub{color:#65778d;font-size:13px}.days{display:grid;grid-template-columns:repeat(10,minmax(70px,1fr));gap:7px;margin-bottom:16px}.daybtn{padding:12px 3px}.daybtn small{display:block;font-weight:400;margin-top:4px}.timeline{border-left:2px solid #bcd1e3;margin-left:9px;padding-left:20px}.event{position:relative;padding:4px 0 18px}.event:before{content:"";position:absolute;left:-27px;top:10px;width:11px;height:11px;border-radius:50%;background:#2578b2;border:3px solid white;box-shadow:0 0 0 1px #9cbcd7}.time{font-size:13px;font-weight:700;color:#17669b}.event h3{font-size:16px;margin:5px 0}.event p{margin:3px 0;color:#64748b;font-size:14px;white-space:pre-line}.pill{display:inline-block;padding:4px 8px;background:#eaf2fa;border-radius:20px;color:#285c83;font-size:12px;margin:5px 5px 0 0}.warning{background:#fff7e7;color:#815c19;border-left:4px solid #dfad42;padding:12px 15px;border-radius:8px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.client{border:1px solid #e0e8f1;border-radius:13px;padding:16px}.client h3{margin:0 0 9px;font-size:17px}.client p{font-size:13px;color:#617388}.flight{border-bottom:1px solid #e8edf4;padding:13px 0}.flight:last-child{border:0}.flight strong{font-size:17px}.search{padding:12px 14px;border:1px solid #ccd9e7;border-radius:10px;width:100%;max-width:380px;margin:0 0 15px}.btn{border:0;border-radius:9px;padding:9px 13px;background:#e5f0f9;color:#18517b;cursor:pointer}.note{width:100%;min-height:115px;padding:12px;border:1px solid #d1dce9;border-radius:10px;font:inherit;resize:vertical}.muted{color:#667a8f}.hidden{display:none}.stat{font-size:27px;font-weight:800;color:#194c77}.statlabel{font-size:13px;color:#708096}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.footer{font-size:12px;color:#718197;margin-top:25px}.banner{background:#fff4db;color:#6d4e0c;padding:12px 16px;font-size:13px}a{color:#17699d}@media(max-width:800px){.days{grid-template-columns:repeat(5,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.panel{padding:16px}header{padding:26px 18px}}
 
 .fu-country-heading{font-size:19px;color:#153e62;border-bottom:2px solid #b9d2e5;padding:12px 4px 10px;margin:20px 0 12px}.fu-country-heading:first-child{margin-top:5px}
@@ -466,7 +466,7 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
   <p id="fuStatusText" class="fu-muted" aria-live="polite">正在讀取 followup_actions.json…</p>
   <div id="fuUploadCheck"></div>
   <div id="fuProposalPanel" class="fu-proposal-panel" hidden>
-    <div class="fu-head"><div><h3>客戶追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依德國、英國分組；各國貿易商優先，其餘客戶按英文字母排序。金色標題為貿易商，中貿協調事項列於最後。優先顯示最新版 Word 擷取內容；沒有 Word 事項的客戶顯示已發布紀錄。</p></div></div>
+    <div class="fu-head"><div><h3>客戶追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依德國、英國分組；各國貿易商優先，其餘客戶按英文字母排序。金色標題為貿易商，中貿協調事項列於最後。追蹤事項依各客戶最新 Word 顯示，保留手動新增事項；舊版會議事項不重複列入。</p></div></div>
     <div id="fuProposalList"></div>
   </div>
   <div id="fuEditForm" hidden></div>
@@ -1559,7 +1559,7 @@ renderAllClients();
  const $=id=>document.getElementById(id);
  const esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
  const statuses=['待處理','處理中','待客戶回覆','已完成'];
- let publishedRoot={},published=[],draft=[],proposals=[],editing=false,dirty=false,ready=false,officialReady=false,proposalError='';
+ let publishedRoot={},published=[],draft=[],proposals=[],wordDocuments=[],editing=false,dirty=false,ready=false,officialReady=false,proposalError='';
  let reviewed=new Set();
  // Saved drafts never include authentication. Keep the access token only in apiClient.
  const github=window.CSCFollowupGitHub,apiClient=github.create();
@@ -1657,22 +1657,25 @@ renderAllClients();
   return {headline,detail};
  }
  const lines=v=>esc(v).replace(/\r?\n/g,'<br>').replace(/([。；;])(?=\s*[^\s])/g,'$1<br>');
- // Word is the displayed list for customers with extracted actions. The older
- // published rows stay intact in JSON; use them as fallback for other customers.
+ // A successfully parsed latest Word owns that customer's source-derived list.
+ // Manual additions remain separate. Historical source rows stay in storage,
+ // but cannot be re-added by an old draft or an earlier approval.
  function allRows(){
-  const items=baseItems(),customers=new Set([...proposals.map(p=>p.customer),...items.filter(x=>x.word_proposal_id).map(x=>x.customer)]);
+  const items=baseItems();
+  const currentDocuments=new Map(wordDocuments.filter(d=>Number.isInteger(d.extracted_rows)&&!d.error&&!d.warnings?.length).map(d=>[meetingKey(d.customer),d]));
+  const isWordItem=x=>!!(x.word_proposal_id||x.source_sha||String(x.id||'').startsWith('AUTO-')||/^(?:meeting_records|cbam_records)\//.test(x.source_url||''));
   const rows=proposals.map(p=>{
-   const saved=items.find(x=>x.word_proposal_id===p.proposal_id||x.id==='AUTO-'+p.proposal_id);
-   if(saved)return {...saved,key:saved.id,review:'已核對'+(editing?'（草稿）':''),proposal:null};
-   const match=items.find(x=>x.id===p.suggested_match_id&&x.customer===p.customer);
-   return {...p,id:'AUTO-'+p.proposal_id,key:p.proposal_id,proposal:p,match,
-    status:match?.status||(statuses.includes(p.status_hint)?p.status_hint:'待處理'),review:'待核對'};
+   const saved=items.find(x=>meetingKey(x.customer)===meetingKey(p.customer)&&(x.word_proposal_id===p.proposal_id||x.id==='AUTO-'+p.proposal_id||p.source_sha&&x.source_sha===p.source_sha&&String(x.source_row)===String(p.source_row)));
+   const sameSource=!!saved&&!!p.source_sha&&saved.source_sha===p.source_sha;
+   if(sameSource)return {...p,...saved,key:saved.id,review:'已核對'+(editing?'（草稿）':''),proposal:null};
+   return {...p,id:saved?.id||'AUTO-'+p.proposal_id,key:p.proposal_id,proposal:p,match:saved,
+    status:saved?.status||(statuses.includes(p.status_hint)?p.status_hint:'待處理'),review:'待核對'};
   });
   const used=new Set(rows.map(x=>x.id));
   for(const x of items){
-   if(!used.has(x.id)&&(!customers.has(x.customer)||x.word_proposal_id||x.id.startsWith('AUTO-')||x.id.startsWith('FU-'))){
-    rows.push({...x,key:x.id,proposal:null,review:x.word_proposal_id?'已核對'+(editing?'（草稿）':''):'已發布'+(editing?'／編輯草稿':'')});used.add(x.id);
-   }
+   if(used.has(x.id))continue;
+   if(currentDocuments.has(meetingKey(x.customer))&&isWordItem(x))continue;
+   rows.push({...x,key:x.id,proposal:null,review:x.word_proposal_id?'已核對'+(editing?'（草稿）':''):'已發布'+(editing?'／編輯草稿':'')});used.add(x.id);
   }
   return rows;
  }
@@ -1816,7 +1819,7 @@ renderAllClients();
  const read=path=>fetch(path+'?rev='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();});
  Promise.allSettled([read('followup_actions.json'),read('followup_suggestions.json')]).then(([official,suggestions])=>{
   if(official.status==='fulfilled'&&Array.isArray(official.value.items)){publishedRoot=official.value;published=official.value.items;officialReady=true;}
-  if(suggestions.status==='fulfilled'&&Array.isArray(suggestions.value.proposals))proposals=suggestions.value.proposals;
+  if(suggestions.status==='fulfilled'&&Array.isArray(suggestions.value.proposals)){proposals=suggestions.value.proposals;wordDocuments=Array.isArray(suggestions.value.documents)?suggestions.value.documents:[];}
   else proposalError=suggestions.reason?.message||'格式無效';
   ready=true;restoreDraft();render();
   if(official.status==='rejected')$('fuStatusText').textContent+='｜正式資料讀取失敗：'+official.reason.message;

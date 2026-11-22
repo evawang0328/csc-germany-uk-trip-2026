@@ -5,6 +5,9 @@ import tempfile
 import unittest
 from xml.sax.saxutils import escape
 import zipfile
+import json
+from unittest.mock import patch
+import extract_meeting_followups as extraction
 from extract_meeting_followups import rows_from_docx, source_row_published, DISPLAY
 from build_meeting_index import parse_name
 
@@ -66,6 +69,53 @@ class FollowupSyncTests(unittest.TestCase):
         self.assertTrue(source_row_published(row, "meeting.docx", "original", published))
         self.assertFalse(source_row_published(row, "meeting.docx", "revised", published))
         self.assertFalse(source_row_published({"topic": "其他議題", "row": 3}, "meeting.docx", "original", published))
+
+    def test_latest_customer_table_labels_and_owners(self):
+        layouts = [
+            (["項目／進度", "規格、商業條件與下一步", "建議主責／協辦"], ["RC材評估", "開發有RC材之AI機櫃專案。", "中貿、中鋼"]),
+            (["議題", "客戶需求與商機", "承辦單位"], ["高強度酸洗料", "可結合既有 CR 船期進行供貨評估。", "中貿"]),
+            (["案件／進度", "下一步與必要條件", "窗口／建議分工"], ["冷軋詢價", "同意寄送現行詢價並納入每月通知。", "中貿"]),
+            (["品項／狀態", "採購條件與限制", "PIC"], ["冷軋約 500 公噸詢單", "已報價，可追蹤對 RC、DC06 之需求。", "中貿"]),
+        ]
+        for headers, values in layouts:
+            with self.subTest(headers=headers), tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / "meeting.docx"
+                write_docx(path, headers, [values])
+                rows = rows_from_docx(path)
+                self.assertEqual(len(rows), 1)
+                self.assertEqual(rows[0]["topic"], values[0])
+                self.assertEqual(rows[0]["task"], values[0] + "｜" + values[1])
+                self.assertEqual(rows[0]["owner"], values[2])
+
+    def test_factory_table_is_not_added_to_followups(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "meeting.docx"
+            write_docx(path, ["項目", "參訪紀要"], [["製管範圍", "兩條製管線分大小管徑，供工廠參觀。"]])
+            self.assertEqual(rows_from_docx(path), [])
+
+    def test_approval_does_not_remove_current_source_row(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            meetings = root / "meeting_records"
+            meetings.mkdir()
+            filename = "2026-11-16_UPTON_STEEL_Meeting_Record_r2.docx"
+            write_docx(meetings / filename, ["項目／進度", "規格、商業條件與下一步", "建議主責／協辦"], [["RC材評估", "開發有RC材之AI機櫃專案。", "中貿、中鋼"]])
+            index, current, output = [root / name for name in ["index.json", "official.json", "suggestions.json"]]
+            index.write_text(json.dumps({"customers": {"UPTON": {"docx": {"url": "meeting_records/" + filename, "date": "2026-11-16", "version": "r2"}}}}))
+            current.write_text(json.dumps({"items": []}))
+            with patch.multiple(extraction, MEETINGS=meetings, INDEX=index, CURRENT=current, OUTPUT=output):
+                extraction.main()
+                first = json.loads(output.read_text())
+                proposal = first["proposals"][0]
+                official = {"items": [{**proposal, "id": "FU-approved", "status": "已完成", "source_row": "2"}], "reviewed_proposal_ids": [proposal["proposal_id"]]}
+                current.write_text(json.dumps(official))
+                original = current.read_bytes()
+                extraction.main()
+                second = json.loads(output.read_text())
+            self.assertEqual(len(second["proposals"]), 1)
+            self.assertEqual(second["documents"][0]["published_rows"], 1)
+            self.assertEqual(second["documents"][0]["source_sha"], proposal["source_sha"])
+            self.assertEqual(current.read_bytes(), original)
 
 if __name__ == "__main__":
     unittest.main()

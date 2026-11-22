@@ -90,6 +90,9 @@ def rows_from_docx(path: Path) -> list[dict]:
     for kind, block in docx_blocks(path):
         if kind == "paragraph":
             text = str(block)
+            if re.match(r"^(?:附件|附錄|圖\s*\d+|照片)", text):
+                heading = ""
+                continue
             if (re.match(r"^[一二三四五六七八九十\d]+\s*[、.\s]", text) or NEAR.search(text)) and len(text) < 105:
                 heading = text
             continue
@@ -105,15 +108,13 @@ def rows_from_docx(path: Path) -> list[dict]:
         headers = [re.sub(r"[\s\u3000]", "", x).upper() for x in header]
         def find_col(*words):
             return next((j for j, x in enumerate(headers) if any(w.upper() in x for w in words)), None)
-        owner_idx = find_col("PIC", "責任", "窗口", "協辦")
-        issue_idx = find_col("議題", "產品", "類別", "合作方向")
-        task_idx = find_col("追蹤事項", "主要工作", "客戶需求與商機", "辦理事項", "需求", "工作內容", "商機及辦理重點")
+        owner_idx = find_col("PIC", "責任", "窗口", "協辦", "主責", "承辦")
+        issue_idx = find_col("議題", "產品", "類別", "合作方向", "項目", "品項", "案件")
+        task_idx = find_col("追蹤事項", "後續辦理", "主要工作", "客戶需求與商機", "辦理事項", "需求", "工作內容", "商機及辦理重點", "下一步", "採購條件", "建議辦理內容")
         note_idx = find_col("說明", "備註", "協辦方向")
         status_idx = find_col("狀態", "進度")
-        if task_idx is None:
-            if not in_followup_section:
-                continue
-            task_idx = next((i for i in range(len(header)) if i not in [issue_idx, owner_idx, note_idx, status_idx] and not re.search(r"優先|順序|項次", headers[i])), None)
+        if status_idx == issue_idx:
+            status_idx = None
         # Some source records put the action text in a generic description
         # column. Reuse it only inside an explicit follow-up section with a
         # separate product/topic column; ordinary information tables stay out.
@@ -168,7 +169,7 @@ def rows_from_docx(path: Path) -> list[dict]:
 
 def category_for(topic: str, task: str) -> str:
     s = topic + " " + task
-    if re.search("CBAM|EPD|碳排|低碳|綠鋼|RC60|再生料|排放", s, re.I):
+    if re.search(r"CBAM|EPD|碳排|低碳|綠鋼|RC60|RC\s*材|\bRC\b|再生料|排放", s, re.I):
         return "CBAM／低碳"
     if re.search("規格|尺寸|試產|試樣|鋼種|產製|酸洗|搪瓷|寬幅|EG", s, re.I):
         return "產品規格"
@@ -211,7 +212,6 @@ def main():
     idx = json.loads(INDEX.read_text(encoding="utf-8"))
     official = json.loads(CURRENT.read_text(encoding="utf-8"))
     published = official.get("items", [])
-    reviewed_ids = set(official.get("reviewed_proposal_ids", []))
     proposals = []
     documents = []
     for customer_key, versions in sorted(idx.get("customers", {}).items()):
@@ -227,10 +227,11 @@ def main():
         relevant = [x for x in published if x.get("customer", "").casefold() == customer.casefold()]
         raw = path.read_bytes()
         source_sha = sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
-        doc_record = {"customer": customer, "file": word["url"], "version": word.get("version"), "date": date, "published_rows": 0, "warnings": []}
+        doc_record = {"customer": customer, "file": word["url"], "source_sha": source_sha, "version": word.get("version"), "date": date, "published_rows": 0, "warnings": []}
         try:
             rows = rows_from_docx(path)
             has_heading = any(kind == "paragraph" and len(block) < 105 and NEAR.search(block) for kind, block in docx_blocks(path))
+            doc_record["followup_section_found"] = bool(has_heading)
             if has_heading and not rows:
                 doc_record["warnings"].append("偵測到追蹤段落，但未擷取出事項；請核對原文及表格欄名。")
         except (ValueError, KeyError, ET.ParseError, zipfile.BadZipFile) as exc:
@@ -242,7 +243,6 @@ def main():
         for row in rows:
             if source_row_published(row, path.name, source_sha, relevant):
                 doc_record["published_rows"] += 1
-                continue
             comparable = row["task"]
             scored = sorted(
                 ((similarity(comparable, x.get("task", "") + " " + x.get("note", "")), x) for x in relevant),
@@ -252,8 +252,9 @@ def main():
             # ID is deterministic across same document revisions unless text changes;
             # approval UI also checks against existing records.
             classification = "可能與既有事項重疊" if confidence >= 0.42 else "可能新增事項"
-            if customer_key + "-" + fingerprint in reviewed_ids:
-                continue
+            # Emit every current Word row, including previously reviewed rows.
+            # The view joins saved edits by immutable source/row or proposal ID;
+            # old approvals must not suppress or add rows from a new revision.
             proposals.append({
                 "proposal_id": customer_key + "-" + fingerprint,
                 "classification": classification,
