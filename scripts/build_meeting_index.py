@@ -42,7 +42,8 @@ def parse_name(name):
         return None
     date, end, body, ext = m.groups()
     # Browser uploads sometimes append (1), (2) after the revision number.
-    body = re.sub(r'\s*\(\d+\)
+    body = re.sub(r'\s*\(\d+\)$', '', body).strip()
+    date = date.replace('.', '-')
     if end and len(date)!=10: return None
     end_date = date[:8]+end if end else date
     try:
