@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21 11:50",
+  "generated_at": "2026-11-22 10:53",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -60,6 +60,32 @@
     }
   ],
   "items": [
+    {
+      "title": "UK imposes anti-dumping duty on steel plate from South Korea",
+      "date": "2026-11-21",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/uk-imposes-anti-dumping-duty-on-steel-plate-from-south-korea/?utm_source=rss&utm_medium=rss&utm_campaign=uk-imposes-anti-dumping-duty-on-steel-plate-from-south-korea",
+      "regions": [
+        "UK",
+        "EU"
+      ],
+      "category": "政經政策",
+      "summary": "來源新聞標題：UK imposes anti-dumping duty on steel plate from South Korea",
+      "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
+    },
+    {
+      "title": "UK and EU carbon border rules reshape steel trade flows: EY",
+      "date": "2026-11-20",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/uk-and-eu-carbon-border-rules-reshape-steel-trade-flows-ey/?utm_source=rss&utm_medium=rss&utm_campaign=uk-and-eu-carbon-border-rules-reshape-steel-trade-flows-ey",
+      "regions": [
+        "UK",
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：UK and EU carbon border rules reshape steel trade flows: EY",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
     {
       "title": "OECD: Latin America’s steel imports surge 47 percent as global excess capacity threatens regional producers",
       "date": "2026-11-20",
@@ -404,30 +430,6 @@
       "category": "政經政策",
       "summary": "來源新聞標題：[sts_inpr_m] Production in industry - monthly data - European Commission",
       "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
-    },
-    {
-      "title": "European domestic HRC market squeezed between sluggish end-user demand and mills’ price hike attempts",
-      "date": "2026-11-13",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/european-domestic-hrc-market-squeezed-between-sluggish-end-user-demand-and-mills-price-hike-attempts/?utm_source=rss&utm_medium=rss&utm_campaign=european-domestic-hrc-market-squeezed-between-sluggish-end-user-demand-and-mills-price-hike-attempts",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：European domestic HRC market squeezed between sluggish end-user demand and mills’ price hike attempts",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Local Northern European steel plate prices rise on tight availability; Italian market edges up",
-      "date": "2026-11-13",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/local-northern-european-steel-plate-prices-rise-on-tight-availability-italian-market-edges-up/?utm_source=rss&utm_medium=rss&utm_campaign=local-northern-european-steel-plate-prices-rise-on-tight-availability-italian-market-edges-up",
-      "regions": [
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：Local Northern European steel plate prices rise on tight availability; Italian market edges up",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
     }
   ]
 }
