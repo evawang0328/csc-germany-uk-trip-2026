@@ -35,6 +35,8 @@ DISPLAY = {
     "BELMONT": "Belmont",
     "TOPTUBES": "Top Tubes",
     "STEELALLOY": "Steel & Alloy",
+    "WILLIAMKING": "William King",
+    "TATASTEELPARK": "Tata Steel Park",
 }
 NEAR = re.compile(r"後續|追蹤|待辦|辦理事項|主要工作|待處理|商機.*後續")
 HEADER = re.compile(r"議題|事項|主要工作|客戶需求|需求與商機|協辦|責任|窗口|PIC|說明|順序|優先序|合作方向|商機及辦理重點")
@@ -112,6 +114,11 @@ def rows_from_docx(path: Path) -> list[dict]:
             if not in_followup_section:
                 continue
             task_idx = next((i for i in range(len(header)) if i not in [issue_idx, owner_idx, note_idx, status_idx] and not re.search(r"優先|順序|項次", headers[i])), None)
+        # Some source records put the action text in a generic description
+        # column. Reuse it only inside an explicit follow-up section with a
+        # separate product/topic column; ordinary information tables stay out.
+        if task_idx is None and in_followup_section and issue_idx is not None and note_idx is not None and note_idx not in (issue_idx, owner_idx, status_idx):
+            task_idx, note_idx = note_idx, None
         if task_idx is None:
             continue
         # Ignore tables that are ordinary specification/price tables.
@@ -163,9 +170,9 @@ def category_for(topic: str, task: str) -> str:
     s = topic + " " + task
     if re.search("CBAM|EPD|碳排|低碳|綠鋼|RC60|再生料|排放", s, re.I):
         return "CBAM／低碳"
-    if re.search("規格|尺寸|試產|試樣|鋼種|產製|酸洗|寬幅|EG", s, re.I):
+    if re.search("規格|尺寸|試產|試樣|鋼種|產製|酸洗|搪瓷|寬幅|EG", s, re.I):
         return "產品規格"
-    if re.search("詢價|報價|採購|商機|汽車用鋼|電磁鋼片", s, re.I):
+    if re.search("詢價|詢單|報價|採購|商機|汽車用鋼|電磁鋼片", s, re.I):
         return "商機／詢價"
     return "其他"
 
@@ -251,7 +258,7 @@ def main():
                 "proposal_id": customer_key + "-" + fingerprint,
                 "classification": classification,
                 "customer": customer,
-                "country": "英國" if customer_key in {"UPTON", "COOPERJACKSON", "BELMONT", "TOPTUBES", "STEELALLOY", "AMDS"} else "德國",
+                "country": "英國" if customer_key in {"UPTON", "COOPERJACKSON", "BELMONT", "TOPTUBES", "STEELALLOY", "AMDS", "WILLIAMKING", "TATASTEELPARK"} else "德國",
                 "visit_date": date,
                 "category": category_for(row["topic"], comparable),
                 "topic": row["topic"],
@@ -288,4 +295,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

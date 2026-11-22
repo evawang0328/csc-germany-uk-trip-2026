@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.49</title><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中鋼｜2026 德英出差行程 V2.50</title><style>
 :root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#192b40;background:#f2f5fa}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#102b4b,#185783);color:white;padding:34px max(22px,calc((100vw - 1120px)/2)) 28px}header h1{margin:8px 0;font-size:clamp(24px,4vw,38px)}header p{opacity:.84;margin:8px 0}.eyebrow{letter-spacing:2px;font-size:12px;color:#b6d9f8}main{max-width:1120px;margin:auto;padding:24px 18px 70px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.tabs button,.daybtn,.filter{cursor:pointer;border:1px solid #d8e2ee;border-radius:11px;padding:11px 15px;background:white;color:#24425f;font-weight:700}.tabs button.active,.daybtn.active,.filter.active{background:#164c7a;color:white;border-color:#164c7a}.panel{background:white;border:1px solid #e1e8f1;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 6px 20px #183c6010}.panel h2{margin:0 0 14px;font-size:21px}.sub{color:#65778d;font-size:13px}.days{display:grid;grid-template-columns:repeat(10,minmax(70px,1fr));gap:7px;margin-bottom:16px}.daybtn{padding:12px 3px}.daybtn small{display:block;font-weight:400;margin-top:4px}.timeline{border-left:2px solid #bcd1e3;margin-left:9px;padding-left:20px}.event{position:relative;padding:4px 0 18px}.event:before{content:"";position:absolute;left:-27px;top:10px;width:11px;height:11px;border-radius:50%;background:#2578b2;border:3px solid white;box-shadow:0 0 0 1px #9cbcd7}.time{font-size:13px;font-weight:700;color:#17669b}.event h3{font-size:16px;margin:5px 0}.event p{margin:3px 0;color:#64748b;font-size:14px;white-space:pre-line}.pill{display:inline-block;padding:4px 8px;background:#eaf2fa;border-radius:20px;color:#285c83;font-size:12px;margin:5px 5px 0 0}.warning{background:#fff7e7;color:#815c19;border-left:4px solid #dfad42;padding:12px 15px;border-radius:8px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.client{border:1px solid #e0e8f1;border-radius:13px;padding:16px}.client h3{margin:0 0 9px;font-size:17px}.client p{font-size:13px;color:#617388}.flight{border-bottom:1px solid #e8edf4;padding:13px 0}.flight:last-child{border:0}.flight strong{font-size:17px}.search{padding:12px 14px;border:1px solid #ccd9e7;border-radius:10px;width:100%;max-width:380px;margin:0 0 15px}.btn{border:0;border-radius:9px;padding:9px 13px;background:#e5f0f9;color:#18517b;cursor:pointer}.note{width:100%;min-height:115px;padding:12px;border:1px solid #d1dce9;border-radius:10px;font:inherit;resize:vertical}.muted{color:#667a8f}.hidden{display:none}.stat{font-size:27px;font-weight:800;color:#194c77}.statlabel{font-size:13px;color:#708096}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.footer{font-size:12px;color:#718197;margin-top:25px}.banner{background:#fff4db;color:#6d4e0c;padding:12px 16px;font-size:13px}a{color:#17699d}@media(max-width:800px){.days{grid-template-columns:repeat(5,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.panel{padding:16px}header{padding:26px 18px}}
 
 .fu-country-heading{font-size:19px;color:#153e62;border-bottom:2px solid #b9d2e5;padding:12px 4px 10px;margin:20px 0 12px}.fu-country-heading:first-child{margin-top:5px}
@@ -231,6 +231,10 @@ main .mobile-grouped-nav{display:block!important;margin:0 0 16px;padding:16px;bo
 .fu-proposal-group{margin:14px 0;background:#fff}
 .fu-proposal-group h4{font-size:16px;padding:12px 16px}
 .fu-proposal-group h4 small{font-weight:500;font-size:12px}
+.fu-trader-group{border-color:#d9bc80}
+.fu-trader-group h4{background:#fff0d2;color:#6e4812}
+.fu-trader-group h4 .fu-meeting-link{color:#6e4812}
+.fu-trader-badge{display:inline-block;padding:3px 8px;border-radius:6px;background:#855716;color:white;font-size:11px;vertical-align:middle;white-space:nowrap}
 .fu-proposal-table{min-width:780px}
 .fu-proposal-table th:nth-child(1){width:13%}
 .fu-proposal-table th:nth-child(2){width:48%}
@@ -462,7 +466,7 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
   <p id="fuStatusText" class="fu-muted" aria-live="polite">正在讀取 followup_actions.json…</p>
   <div id="fuUploadCheck"></div>
   <div id="fuProposalPanel" class="fu-proposal-panel" hidden>
-    <div class="fu-head"><div><h3>客戶追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">排序：A. 德國 GERMANY（Duferco、Carl Spaeter、HFS、Knauf）；B. 英國 UK（Belmont 優先，其餘依英文名稱）。優先顯示最新版 Word 擷取內容；沒有 Word 事項的客戶顯示已發布紀錄。</p><p class="sub">B-4 排序版本：2026-11-22／r2</p></div></div>
+    <div class="fu-head"><div><h3>客戶追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依德國、英國分組；各國貿易商優先，其餘客戶按英文字母排序。金色標題為貿易商。優先顯示最新版 Word 擷取內容；沒有 Word 事項的客戶顯示已發布紀錄。</p></div></div>
     <div id="fuProposalList"></div>
   </div>
   <div id="fuEditForm" hidden></div>
@@ -1680,18 +1684,13 @@ renderAllClients();
   return {rank:2,label:c||'國家待確認'};
  };
  const fuClientKey=name=>String(name||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
- const fuOrder={
-  0:['DUFERCO','CARLSPAETER','SPAETER','HFS','HSF','KNAUF'],
-  1:['BELMONT']
+ const fuIsTrader=(name,country)=>{
+  const key=fuClientKey(name),rank=fuCountryInfo(country).rank;
+  return rank===0&&key.startsWith('DUFERCO')||rank===1&&key.startsWith('BELMONT');
  };
  function fuCompareClients(a,b,country){
-  const info=fuCountryInfo(country),list=fuOrder[info.rank]||[];
-  const score=name=>{
-   const key=fuClientKey(name);
-   const index=list.findIndex(alias=>key===alias||key.startsWith(alias));
-   return index<0?100:index;
-  };
-  return score(a)-score(b)||String(a).localeCompare(String(b),'en',{sensitivity:'base'});
+  return Number(fuIsTrader(b,country))-Number(fuIsTrader(a,country))||
+   String(a).localeCompare(String(b),'en',{sensitivity:'base'});
  }
  function fuCompareGroups(a,b){
   const ca=fuCountryInfo(a[0].country),cb=fuCountryInfo(b[0].country);
@@ -1722,7 +1721,7 @@ renderAllClients();
   $('fuProposalCount').textContent=rows.length+' 項｜'+rows.filter(x=>x.proposal).length+' 待核對';
   let currentCountry='',countryNumber=0,customerNumber=0;
   $('fuProposalList').innerHTML=orderedGroups.map(group=>{const info=fuCountryInfo(group[0].country);const section=info.label!==currentCountry?(currentCountry=info.label,customerNumber=0,++countryNumber,'<h3 class="fu-country-heading">'+(info.rank<2?String.fromCharCode(65+info.rank):String.fromCharCode(64+countryNumber))+'. '+esc(info.label)+'</h3>'):'';customerNumber++;
-   return section+'<section class="fu-proposal-group"><h4><span>'+customerNumber+'. '+esc(group[0].customer)+' <small>｜'+group.length+' 項</small></span>'+meetingLinks(rows.filter(x=>x.customer===group[0].customer&&x.country===group[0].country))+'</h4><div class="fu-table-wrap"><table class="fu-table fu-proposal-table"><thead><tr><th>議題</th><th>主要事項／補充說明</th><th>責任單位／窗口</th><th>進度／處理</th></tr></thead><tbody>'+group.map(x=>{
+   return section+'<section class="fu-proposal-group'+(fuIsTrader(group[0].customer,group[0].country)?' fu-trader-group':'')+'"><h4><span>'+customerNumber+'. '+esc(group[0].customer)+(fuIsTrader(group[0].customer,group[0].country)?' <span class="fu-trader-badge">貿易商</span>':'')+' <small>｜'+group.length+' 項</small></span>'+meetingLinks(rows.filter(x=>x.customer===group[0].customer&&x.country===group[0].country))+'</h4><div class="fu-table-wrap"><table class="fu-table fu-proposal-table"><thead><tr><th>議題</th><th>主要事項／補充說明</th><th>責任單位／窗口</th><th>進度／處理</th></tr></thead><tbody>'+group.map(x=>{
    const d=displayText(x);
    return '<tr><td><span class="fu-label">'+esc(x.category||'其他')+'</span></td><td class="fu-proposal-description"><strong class="fu-main-headline">'+esc(d.headline)+'</strong>'+(d.detail?'<div class="fu-description-lines">'+lines(d.detail)+'</div>':'')+'</td><td>'+esc(x.owner||'待指定')+'</td><td><div class="fu-status-actions"><span class="fu-status">'+esc(x.status)+'</span><button class="fu-btn" type="button" data-fu-row-edit="'+esc(x.key)+'">✎ 修改</button></div></td></tr>';
   }).join('')+'</tbody></table></div></section>';}).join('')||'<p class="fu-muted">'+(ready?'此篩選沒有追蹤事項。':'正在載入追蹤事項…')+'</p>';
@@ -2024,6 +2023,3 @@ renderAllClients();
 })();
 
 </script></body></html>
-
-
-

@@ -5,7 +5,8 @@ import tempfile
 import unittest
 from xml.sax.saxutils import escape
 import zipfile
-from extract_meeting_followups import rows_from_docx, source_row_published
+from extract_meeting_followups import rows_from_docx, source_row_published, DISPLAY
+from build_meeting_index import parse_name
 
 def write_docx(path, header, data, heading="八、中鋼合作方向與後續辦理事項"):
     def paragraph(value):
@@ -17,6 +18,11 @@ def write_docx(path, header, data, heading="八、中鋼合作方向與後續辦
         archive.writestr("word/document.xml", xml)
 
 class FollowupSyncTests(unittest.TestCase):
+    def test_william_king_uploaded_filename(self):
+        key, record = parse_name("2026-11-17_William_King_Meeting_Record r2.docx")
+        self.assertEqual(key, "WILLIAMKING")
+        self.assertEqual(record["revision"], 2)
+        self.assertEqual(DISPLAY[key], "William King")
     def test_two_column_cooperation_table(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "meeting.docx"
@@ -36,6 +42,24 @@ class FollowupSyncTests(unittest.TestCase):
             rows = rows_from_docx(path)
             self.assertEqual(len(rows), 1)
             self.assertEqual(rows[0]["owner"], "待指定")
+    def test_description_column_in_followup_section(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "meeting.docx"
+            write_docx(path, ["產品／進度", "說明", "PIC"], [
+                ["冷軋詢單", "爭取第二季冷軋及特殊強度料續供。", "中貿"],
+                ["搪瓷鋼", "追蹤 DC04 ED／EK 加工及品質結果。", "中貿"],
+                ["酸洗轉冷軋", "評估特定酸洗規格改用冷軋。", "中貿"]], heading="七、產品商機與後續辦理事項")
+            rows = rows_from_docx(path)
+            self.assertEqual(len(rows), 3)
+            self.assertEqual([row["topic"] for row in rows], ["冷軋詢單", "搪瓷鋼", "酸洗轉冷軋"])
+            self.assertTrue(all(row["owner"] == "中貿" for row in rows))
+            self.assertTrue(all(row["note"] == "" for row in rows))
+            self.assertIn("DC04 ED／EK", rows[1]["task"])
+    def test_description_table_outside_followup_is_not_an_action(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "meeting.docx"
+            write_docx(path, ["產品／進度", "說明", "PIC"], [["冷軋", "客戶現有產品及加工能力說明。", "中貿"]], heading="三、產品與加工能力")
+            self.assertEqual(rows_from_docx(path), [])
     def test_manual_item_reused_only_for_exact_source(self):
         row = {"topic": "RC 與低碳專案", "row": 3}
         published = [{"source": "meeting.docx", "source_sha": "original", "source_row": "3", "task": "RC 與低碳專案｜確認資料"}]
