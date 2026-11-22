@@ -466,7 +466,7 @@ document.getElementById('loginForm').addEventListener('submit',function(e){e.pre
   <p id="fuStatusText" class="fu-muted" aria-live="polite">正在讀取 followup_actions.json…</p>
   <div id="fuUploadCheck"></div>
   <div id="fuProposalPanel" class="fu-proposal-panel" hidden>
-    <div class="fu-head"><div><h3>客戶追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依德國、英國分組；各國貿易商優先，其餘客戶按英文字母排序。金色標題為貿易商。優先顯示最新版 Word 擷取內容；沒有 Word 事項的客戶顯示已發布紀錄。</p></div></div>
+    <div class="fu-head"><div><h3>客戶追蹤事項 <span id="fuProposalCount" class="fu-label"></span></h3><p class="sub">依德國、英國分組；各國貿易商優先，其餘客戶按英文字母排序。金色標題為貿易商，中貿協調事項列於最後。優先顯示最新版 Word 擷取內容；沒有 Word 事項的客戶顯示已發布紀錄。</p></div></div>
     <div id="fuProposalList"></div>
   </div>
   <div id="fuEditForm" hidden></div>
@@ -1684,17 +1684,19 @@ renderAllClients();
   return {rank:2,label:c||'國家待確認'};
  };
  const fuClientKey=name=>String(name||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+ const fuIsCsgt=name=>/^(?:中貿|中貿國際|CSGT|CHINA STEEL GLOBAL TRADING)(?:$|[（(\s])/i.test(String(name||'').trim());
+ const fuGroupInfo=row=>fuIsCsgt(row.customer)?{rank:2,label:'中貿協調事項'}:fuCountryInfo(row.country);
  const fuIsTrader=(name,country)=>{
   const key=fuClientKey(name),rank=fuCountryInfo(country).rank;
-  return rank===0&&key.startsWith('DUFERCO')||rank===1&&key.startsWith('BELMONT');
+  return fuIsCsgt(name)||rank===0&&key.startsWith('DUFERCO')||rank===1&&key.startsWith('BELMONT');
  };
  function fuCompareClients(a,b,country){
   return Number(fuIsTrader(b,country))-Number(fuIsTrader(a,country))||
    String(a).localeCompare(String(b),'en',{sensitivity:'base'});
  }
  function fuCompareGroups(a,b){
-  const ca=fuCountryInfo(a[0].country),cb=fuCountryInfo(b[0].country);
-  return ca.rank-cb.rank||(ca.rank===2?ca.label.localeCompare(cb.label,'en'):0)||
+  const ca=fuGroupInfo(a[0]),cb=fuGroupInfo(b[0]);
+  return Number(fuIsCsgt(a[0].customer))-Number(fuIsCsgt(b[0].customer))||ca.rank-cb.rank||(ca.rank===2?ca.label.localeCompare(cb.label,'en'):0)||
    fuCompareClients(a[0].customer,b[0].customer,a[0].country);
  }
  function fuOrderedGroups(rows){
@@ -1720,7 +1722,7 @@ renderAllClients();
   $('fuProposalPanel').hidden=false;
   $('fuProposalCount').textContent=rows.length+' 項｜'+rows.filter(x=>x.proposal).length+' 待核對';
   let currentCountry='',countryNumber=0,customerNumber=0;
-  $('fuProposalList').innerHTML=orderedGroups.map(group=>{const info=fuCountryInfo(group[0].country);const section=info.label!==currentCountry?(currentCountry=info.label,customerNumber=0,++countryNumber,'<h3 class="fu-country-heading">'+(info.rank<2?String.fromCharCode(65+info.rank):String.fromCharCode(64+countryNumber))+'. '+esc(info.label)+'</h3>'):'';customerNumber++;
+  $('fuProposalList').innerHTML=orderedGroups.map(group=>{const info=fuGroupInfo(group[0]);const section=info.label!==currentCountry?(currentCountry=info.label,customerNumber=0,++countryNumber,'<h3 class="fu-country-heading">'+(info.rank<2?String.fromCharCode(65+info.rank):String.fromCharCode(64+countryNumber))+'. '+esc(info.label)+'</h3>'):'';customerNumber++;
    return section+'<section class="fu-proposal-group'+(fuIsTrader(group[0].customer,group[0].country)?' fu-trader-group':'')+'"><h4><span>'+customerNumber+'. '+esc(group[0].customer)+(fuIsTrader(group[0].customer,group[0].country)?' <span class="fu-trader-badge">貿易商</span>':'')+' <small>｜'+group.length+' 項</small></span>'+meetingLinks(rows.filter(x=>x.customer===group[0].customer&&x.country===group[0].country))+'</h4><div class="fu-table-wrap"><table class="fu-table fu-proposal-table"><thead><tr><th>議題</th><th>主要事項／補充說明</th><th>責任單位／窗口</th><th>進度／處理</th></tr></thead><tbody>'+group.map(x=>{
    const d=displayText(x);
    return '<tr><td><span class="fu-label">'+esc(x.category||'其他')+'</span></td><td class="fu-proposal-description"><strong class="fu-main-headline">'+esc(d.headline)+'</strong>'+(d.detail?'<div class="fu-description-lines">'+lines(d.detail)+'</div>':'')+'</td><td>'+esc(x.owner||'待指定')+'</td><td><div class="fu-status-actions"><span class="fu-status">'+esc(x.status)+'</span><button class="fu-btn" type="button" data-fu-row-edit="'+esc(x.key)+'">✎ 修改</button></div></td></tr>';
@@ -1775,7 +1777,7 @@ renderAllClients();
   let body=para('2026年11月德英客戶拜訪追蹤事項','Title')+para('匯出日期 '+new Date().toLocaleDateString('zh-TW',{timeZone:'Asia/Taipei'})+'　共 '+rows.length+' 項')+para('彙整全部客戶追蹤事項，不受網頁篩選限制。標示「待核對」的內容請依原始會議紀錄確認。'+(editing?' 本檔包含目前已儲存的編輯草稿。':''));
   let exportCountry='',exportCountryNumber=0,exportCustomerNumber=0;
   for(const group of exportGroups){
-   const info=fuCountryInfo(group[0].country);
+   const info=fuGroupInfo(group[0]);
    if(info.label!==exportCountry){exportCountry=info.label;exportCountryNumber++;exportCustomerNumber=0;body+=para((info.rank<2?String.fromCharCode(65+info.rank):String.fromCharCode(64+exportCountryNumber))+'. '+info.label,'Heading1');}
    exportCustomerNumber++;
    body+=para(exportCustomerNumber+'. '+group[0].customer+'　'+group.length+' 項','Heading2');
