@@ -1721,7 +1721,7 @@ renderAllClients();
   $('fuProposalPanel').hidden=false;
   $('fuProposalCount').textContent=rows.length+' 項｜'+rows.filter(x=>x.proposal).length+' 待核對';
   let currentCountry='',countryNumber=0,customerNumber=0;
-  $('fuProposalList').innerHTML=orderedGroups.map(group=>{const info=fuCountryInfo(group[0].country);const section=info.label!==currentCountry?(currentCountry=info.label,customerNumber=0,++countryNumber,'<h3 class="fu-country-heading">'+String.fromCharCode(64+countryNumber)+'. '+esc(info.label)+'</h3>'):'';customerNumber++;
+  $('fuProposalList').innerHTML=orderedGroups.map(group=>{const info=fuCountryInfo(group[0].country);const section=info.label!==currentCountry?(currentCountry=info.label,customerNumber=0,++countryNumber,'<h3 class="fu-country-heading">'+(info.rank<2?String.fromCharCode(65+info.rank):String.fromCharCode(64+countryNumber))+'. '+esc(info.label)+'</h3>'):'';customerNumber++;
    return section+'<section class="fu-proposal-group"><h4><span>'+customerNumber+'. '+esc(group[0].customer)+' <small>｜'+group.length+' 項</small></span>'+meetingLinks(rows.filter(x=>x.customer===group[0].customer&&x.country===group[0].country))+'</h4><div class="fu-table-wrap"><table class="fu-table fu-proposal-table"><thead><tr><th>議題</th><th>主要事項／補充說明</th><th>責任單位／窗口</th><th>進度／處理</th></tr></thead><tbody>'+group.map(x=>{
    const d=displayText(x);
    return '<tr><td><span class="fu-label">'+esc(x.category||'其他')+'</span></td><td class="fu-proposal-description"><strong class="fu-main-headline">'+esc(d.headline)+'</strong>'+(d.detail?'<div class="fu-description-lines">'+lines(d.detail)+'</div>':'')+'</td><td>'+esc(x.owner||'待指定')+'</td><td><div class="fu-status-actions"><span class="fu-status">'+esc(x.status)+'</span><button class="fu-btn" type="button" data-fu-row-edit="'+esc(x.key)+'">✎ 修改</button></div></td></tr>';
@@ -1777,7 +1777,7 @@ renderAllClients();
   let exportCountry='',exportCountryNumber=0,exportCustomerNumber=0;
   for(const group of exportGroups){
    const info=fuCountryInfo(group[0].country);
-   if(info.label!==exportCountry){exportCountry=info.label;exportCountryNumber++;exportCustomerNumber=0;body+=para(String.fromCharCode(64+exportCountryNumber)+'. '+info.label,'Heading1');}
+   if(info.label!==exportCountry){exportCountry=info.label;exportCountryNumber++;exportCustomerNumber=0;body+=para((info.rank<2?String.fromCharCode(65+info.rank):String.fromCharCode(64+exportCountryNumber))+'. '+info.label,'Heading1');}
    exportCustomerNumber++;
    body+=para(exportCustomerNumber+'. '+group[0].customer+'　'+group.length+' 項','Heading2');
    body+='<w:tbl><w:tblPr><w:tblW w:w="9350" w:type="dxa"/><w:tblLayout w:type="fixed"/><w:tblBorders>'+['top','left','bottom','right','insideH','insideV'].map(x=>'<w:'+x+' w:val="single" w:sz="4" w:color="D9D9D9"/>').join('')+'</w:tblBorders><w:tblCellMar><w:top w:w="100" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:bottom w:w="100" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>'+widths.map(w=>'<w:gridCol w:w="'+w+'"/>').join('')+'</w:tblGrid>';
