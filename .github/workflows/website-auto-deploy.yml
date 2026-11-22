@@ -25,7 +25,9 @@ jobs:
       - name: Checkout latest main
         uses: actions/checkout@v4
       - name: Verify meeting upload extraction
-        run: python3 scripts/test_meeting_sync.py
+        run: |
+          python3 scripts/test_meeting_sync.py
+          python3 scripts/test_customer_overviews.py
       - name: Build latest client meeting record links
         run: python3 scripts/build_meeting_index.py
       - name: Extract client follow-up proposals for admin review
@@ -35,6 +37,7 @@ jobs:
           node scripts/test_followup_view.js
           node scripts/test_profile_topics.js
           node scripts/test_customer_map.js
+          node scripts/test_overview_display.js
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload website files

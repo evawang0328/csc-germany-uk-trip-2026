@@ -52,18 +52,23 @@ def generic_knowledge(path):
     for e in entries:
         label,section=e['label'],e['section']
         if label=='公司名稱':continue
+        if re.search('中鋼訂購量與主要規格',section) and label!=section and re.search('熱軋|冷軋|鍍鋅|HRPO|HC420|DC01',label):
+            add('products','會中產品／需求（非已接單）',label+'：'+e['text'],e,True)
         if re.search('公司簡介|集團與分工|公司與規模|組織與規模|營運規模|產業',label):add('company',label,e['text'],e)
         if re.search(r'^[一二三四五六七八九十]+[、.\s]*(?:會議|客戶|拜訪)摘要',section) and len(e['text'])>25:add('company','會議摘要',e['text'],e)
         for value in snippets(e):
-            business=bool(re.search('公司營運|採購概況|[一二三四五六七八九十]+[、.\s]*(?:會議|客戶|拜訪)摘要',section) or label in {'公司簡介','營運狀況','料源分佈','採購來源','下游與市場','產品組合'})
+            business=bool(re.search(r'公司營運|採購概況|營運規模|採購結構|[一二三四五六七八九十]+[、.\s]*(?:會議|客戶|拜訪)摘要',section) or re.search('公司簡介|營運狀況|供應與產品|處理規模|自主採購結構|料源分佈|採購來源|下游與市場|產品組合',label))
             if business and re.search(r'(?:年採購|採購量|用鋼量|需求[：:]?\s*\d|需求約\s*\d)',value):add('procurement','採購／全來源需求',value,e)
-            elif business and re.search('(?:處理量|年銷量|年量|加工量)',value) and re.search(r'\d',value):
-                kind='處理量／目標' if '處理量' in value else '銷量' if '銷量' in value else '加工／營運量'
+            elif business and re.search(r'(?:處理量|年處理|年銷|年供應|全年產量|年量|加工量)',value) and re.search(r'\d',value):
+                kind='年供應量' if '年供應' in value else '年銷量' if '年銷' in value else '產量' if '產量' in value else '處理／加工量'
                 add('procurement',kind+'（非整體採購量）',value,e,True)
             if re.search('歷史|過去|回顧',value) and re.search(r'採購中鋼.*\d',value):add('procurement','歷史中鋼採購（非整體採購量）',value,e,True)
-            if re.search('採購來源|料源分佈|主要料源|主要合作鋼廠',label+' '+section) or re.search('進口料源|進口占|進口量.*%|%進口料|%.*當地',value):add('import_ratio','進口比率／料源',value,e)
-            if re.search('下游|客群|客戶與通路',label) or re.search(r'下游[：:]|下游客戶|客群含|汽車\s*\d.*%',value):add('downstream',label or '下游／客群',value,e)
-            if re.search('產品組合|主要產品',label) or re.search('產品組合|冷軋.*佔|鍍鋅.*占|鍍鋅.*佔',value):add('products','產品結構',value,e)
+            if re.search(r'集團內購|集團內.*外購',value):
+                add('import_ratio','集團內外購（非進口占比）',value,e,True)
+            elif re.search('採購來源|料源分佈|主要料源|主要合作鋼廠|供應來源|供應商選擇|進口鋼廠|料源與配置',label+' '+section) or re.search(r'進口料源|進口占|進口量.*%|進口料.*%|%.*(?:進口|當地)|冷軋.*來自.*台灣',value):
+                add('import_ratio','進口／料源（依原文口徑）',value,e)
+            if re.search('下游|客群|客戶與通路|客戶與用途|客戶結構',label) or re.search(r'下游[：:]|下游客戶|客群含|終端需求|汽車\s*\d.*%',value):add('downstream','下游產業／用途',value,e)
+            if re.search('產品組合|主要產品|產品結構|供應與產品|自主採購結構|常用鋼種',label) or re.search('產品組合|冷軋.*佔|鍍鋅.*占|鍍鋅.*佔|HDG.*%',value):add('products','採購／供應產品（依原文口徑）',value,e)
             if re.search('討論主題|展望|市場行情',label+' '+section) and re.search('價格|鋼價|需求|展望|景氣|市場競爭|供應',value):add('outlook',label,value,e)
     for key in fields:fields[key]=fields[key][:4 if key=='outlook' else 2]
     topics=[]
@@ -418,10 +423,18 @@ REVIEWED=json.loads(r'''{
   }
 }''')
 
+# Current summaries apply only to their exact uploaded Word blob. New revisions
+# automatically return to literal extraction until their summary is reviewed.
+_OVERVIEWS_PATH=Path(__file__).resolve().parents[1]/'customer_overview_summaries.json'
+CURRENT_OVERVIEWS={item['source_sha']:item for item in json.loads(_OVERVIEWS_PATH.read_text(encoding='utf-8')).get('summaries',[])} if _OVERVIEWS_PATH.exists() else {}
+
 def extract_knowledge(path):
     raw=path.read_bytes();blob=sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
-    generic=generic_knowledge(path);reviewed=REVIEWED.get(blob)
+    generic=generic_knowledge(path);reviewed=REVIEWED.get(blob) or CURRENT_OVERVIEWS.get(blob)
     if reviewed:
-        generic['overview'].update(reviewed.get('overview',{}));generic['card']=reviewed['card'];generic['topics']=reviewed.get('topics',[]);generic['method']='reviewed_meeting_summary'
+        generic['overview'].update(reviewed.get('overview',{}))
+        if 'card' in reviewed:generic['card']=reviewed['card']
+        if 'topics' in reviewed:generic['topics']=reviewed['topics']
+        generic['method']='reviewed_meeting_summary'
     generic['source_sha']=blob
     return generic

@@ -1,0 +1,1545 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-11-22",
+  "description": "Overview summaries reviewed against the complete latest UK meeting DOCX files. Exact Git blob matching prevents carrying these summaries to another revision. Original evidence, year and quantity scope are retained.",
+  "summaries": [
+    {
+      "customer_key": "AMDS",
+      "source_file": "2026-11-16_AMDS_Meeting_Record_r8.docx",
+      "source_sha": "5820722c7e2e0456495e20e1a936d35fd9e156a9",
+      "overview": {
+        "procurement": [
+          {
+            "label": "三據點年銷量（非採購量）",
+            "text": "未列年度採購總量；三處裁剪廠年銷約25萬噸。依年銷量×冷軋8%，全來源冷軋粗估2萬噸／年，非已下單中鋼數量。",
+            "relation": "related",
+            "source_label": "一、客戶摘要；四、中鋼訂購量與主要規格／一般冷軋薄板"
+          },
+          {
+            "label": "內外購及補庫",
+            "text": "集團內購約75%、外購約25%，商機合適可調至60%／40%；每月依銷售、需求預測及45–60天目標庫存補庫。",
+            "relation": "direct",
+            "source_label": "三、採購來源、定價與中鋼供貨／內外購配置、訂量與庫存"
+          }
+        ],
+        "import_ratio": [
+          {
+            "label": "進口結構（未列總比率）",
+            "text": "未列總採購進口比率；外購以進口為主，冷軋主要來自韓國，另含印度、日本、越南及臺灣。",
+            "relation": "related",
+            "source_label": "三、採購來源、定價與中鋼供貨／進口鋼廠"
+          },
+          {
+            "label": "集團內供來源（非境內採購）",
+            "text": "內供料多由法國AM Atlantique體系經Dunkirk出運；不能將75%內購直接視為英國境內採購。",
+            "relation": "related",
+            "source_label": "三、採購來源、定價與中鋼供貨／料源與配置"
+          }
+        ],
+        "downstream": [
+          {
+            "label": "三據點客群",
+            "text": "服務數百家客戶，涵蓋營建、滾輪成形、貨架及家電；熱浸鍍鋅中約60%–70%用於營建，冷軋主要供倉儲貨架、層架及電纜橋架。",
+            "relation": "direct",
+            "source_label": "二、營運規模、產品與客群／據點與客群、產品結構"
+          },
+          {
+            "label": "低碳料用途",
+            "text": "部分下游客戶規律訂購XCarb，用於資料中心、架高地板及太陽能工程。",
+            "relation": "direct",
+            "source_label": "七、低碳鋼與採購合約條件／XCarb定價與用途"
+          }
+        ],
+        "products": [
+          {
+            "label": "產品組合",
+            "text": "熱浸鍍鋅約85%、冷軋約8%，其餘含電鍍鋅及鍍鋁；一般冷軋用DC01。",
+            "relation": "direct",
+            "source_label": "二、營運規模、產品與客群；四、一般冷軋薄板"
+          },
+          {
+            "label": "高加工材／試材商機",
+            "text": "Manchester可加工DX54D鍍鋅、DC04冷軋與電鍍鋅深引伸料；廚具搪瓷詢問可供DC04EK／ED，並願接收中鋼RC樣品及型錄。",
+            "relation": "direct",
+            "source_label": "四、廚具搪瓷料；五、曼徹斯特配置；七、再生鋼比較"
+          }
+        ],
+        "outlook": [
+          {
+            "label": "2027年需求",
+            "text": "第一季專案多已定案，正等第二季詢價；客戶認為2027年鋼需仍艱困，新建工程及年底鍋爐、家電需求偏弱。",
+            "relation": "direct",
+            "source_label": "六、英國行情、競爭與需求展望"
+          },
+          {
+            "label": "外購競爭條件",
+            "text": "集團要求2027年增加外購；Steve表示外購通常須較內供便宜逾£20／噸，可爭取下一批一般冷軋並跟進搪瓷料。",
+            "relation": "direct",
+            "source_label": "一、客戶摘要；三、內外購配置；八、合作商機"
+          },
+          {
+            "label": "碳資料與合約",
+            "text": "AMDS規劃2027年1月起逐捲登錄排放；須審閱集團採購條款、資料交付與查驗值調價機制。",
+            "relation": "direct",
+            "source_label": "七、排放與合約；八、CBAM條款／待審閱"
+          }
+        ]
+      },
+      "card": {
+        "intro": "ArcelorMittal英國扁平材裁剪通路，Manchester、Wolverhampton及Birmingham三據點年銷合計約25萬噸，以營建用熱浸鍍鋅為主。",
+        "highlights": [
+          "集團內購約75%、外購約25%；此為內外購結構，並非進口比例。",
+          "冷軋占8%，依三據點銷量粗估全來源約2萬噸／年，非中鋼已獲訂單。",
+          "2027年擬增加外購，可爭取一般冷軋、搪瓷及RC材。"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "procurement",
+          "quote": "三處裁剪廠年銷約 25 萬噸",
+          "source_label": "一、客戶摘要；四、中鋼訂購量與主要規格／一般冷軋薄板"
+        },
+        {
+          "field": "procurement",
+          "quote": "以三據點年銷 25 萬噸乘冷軋占比 8%，粗估全來源約 2 萬噸／年。",
+          "source_label": "一、客戶摘要；四、中鋼訂購量與主要規格／一般冷軋薄板"
+        },
+        {
+          "field": "procurement",
+          "quote": "集團內購約 75%、外購約 25%，商機合適時可調至 60% 與 40%。",
+          "source_label": "三、採購來源、定價與中鋼供貨／內外購配置、訂量與庫存"
+        },
+        {
+          "field": "procurement",
+          "quote": "以每月銷售、需求預測和45-60 天目標庫存決定補庫量",
+          "source_label": "三、採購來源、定價與中鋼供貨／內外購配置、訂量與庫存"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "外購以進口為主。冷軋主要來自韓國，會中提及 POSCO，另曾買印度 JSW，偶購日本製鐵。外購料源亦含越南、臺灣，過去曾購巴西料。",
+          "source_label": "三、採購來源、定價與中鋼供貨／進口鋼廠"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "多數內供料由法國AM Atlantique 體系經 Dunkirk 出運",
+          "source_label": "三、採購來源、定價與中鋼供貨／料源與配置"
+        },
+        {
+          "field": "downstream",
+          "quote": "三處據點(Manchester本次拜訪廠、Wolverhampton、Birmingham)合計服務數百家客戶，供應營建、滾輪成形、貨架及家電等產業。",
+          "source_label": "二、營運規模、產品與客群／據點與客群、產品結構"
+        },
+        {
+          "field": "downstream",
+          "quote": "熱浸鍍鋅約占 85%，其中約 60%-70% 用於營建。冷軋約占 8%，以倉儲貨架、層架及電纜橋架為主。",
+          "source_label": "二、營運規模、產品與客群／據點與客群、產品結構"
+        },
+        {
+          "field": "downstream",
+          "quote": "部分下游客戶已將 XCarb 列入型錄，從個別專案轉為規律訂購，用於資料中心、架高地板及太陽能工程。",
+          "source_label": "七、低碳鋼與採購合約條件／XCarb定價與用途"
+        },
+        {
+          "field": "products",
+          "quote": "熱浸鍍鋅約占 85%",
+          "source_label": "二、營運規模、產品與客群；四、一般冷軋薄板"
+        },
+        {
+          "field": "products",
+          "quote": "冷軋約占 8%",
+          "source_label": "二、營運規模、產品與客群；四、一般冷軋薄板"
+        },
+        {
+          "field": "products",
+          "quote": "其餘含電鍍鋅與鍍鋁鋼品。",
+          "source_label": "二、營運規模、產品與客群；四、一般冷軋薄板"
+        },
+        {
+          "field": "products",
+          "quote": "使用規格為DC01 一般材質。",
+          "source_label": "二、營運規模、產品與客群；四、一般冷軋薄板"
+        },
+        {
+          "field": "products",
+          "quote": "可處理鍍層與未鍍層鋼，含 DX54D 鍍鋅、DC04 冷軋及電鍍鋅深引伸料。",
+          "source_label": "四、廚具搪瓷料；五、曼徹斯特配置；七、再生鋼比較"
+        },
+        {
+          "field": "products",
+          "quote": "Steve 主動詢問搪瓷鋼級，中鋼可供 DC04EK、DC04ED。",
+          "source_label": "四、廚具搪瓷料；五、曼徹斯特配置；七、再生鋼比較"
+        },
+        {
+          "field": "products",
+          "quote": "Steve 同意接收中鋼再生鋼 (RC) 樣品，並索取型錄。",
+          "source_label": "四、廚具搪瓷料；五、曼徹斯特配置；七、再生鋼比較"
+        },
+        {
+          "field": "outlook",
+          "quote": "2027 年第 1 季專案多已定案，AMDS 正等第 2 季詢價。Steve 認為英國成長偏重服務業，明年鋼需仍艱困。",
+          "source_label": "六、英國行情、競爭與需求展望"
+        },
+        {
+          "field": "outlook",
+          "quote": "新建工程少，連通常年底較忙的鍋爐與家電也偏弱。",
+          "source_label": "六、英國行情、競爭與需求展望"
+        },
+        {
+          "field": "outlook",
+          "quote": "集團鼓勵 2027 年增加外購，Steve 表示外購通常須比內供便宜每噸逾 20 英鎊。",
+          "source_label": "一、客戶摘要；三、內外購配置；八、合作商機"
+        },
+        {
+          "field": "outlook",
+          "quote": "爭取下一批一般冷軋薄板。",
+          "source_label": "一、客戶摘要；三、內外購配置；八、合作商機"
+        },
+        {
+          "field": "outlook",
+          "quote": "評估廚具搪瓷料替代。",
+          "source_label": "一、客戶摘要；三、內外購配置；八、合作商機"
+        },
+        {
+          "field": "outlook",
+          "quote": "AMDS 規劃自 2027 年 1 月逐捲登錄排放",
+          "source_label": "七、排放與合約；八、CBAM條款／待審閱"
+        },
+        {
+          "field": "outlook",
+          "quote": "Steve 寄集團範本予中鋼審閱，回覆可接受文字、資料交付時程及是否可依查驗值調價。",
+          "source_label": "七、排放與合約；八、CBAM條款／待審閱"
+        }
+      ],
+      "audit_note": [
+        "僅以本客戶最新Word全文（含表格、附件說明）為依據；未加入外部或其他客戶資料。"
+      ]
+    },
+    {
+      "customer_key": "BELMONT",
+      "source_file": "2026-11-16_BELMONT_Meeting_Record_r6.docx",
+      "source_sha": "e2ed26c2741faa1847a71fe5adf38ef675620422",
+      "overview": {
+        "procurement": [
+          {
+            "label": "中鋼訂購量（非全來源採購量）",
+            "text": "2026 年向中鋼訂購超過 20,000 MT；其中 Upton 約占 40–50%。",
+            "relation": "related",
+            "source_label": "2026/11/16｜三、供貨占比與客戶集中度"
+          },
+          {
+            "label": "供應商要求量（非實際採購量）",
+            "text": "日本製鐵約每季要求 Belmont 採購 1–2 萬噸；紀錄未載全來源實際採購總量。",
+            "relation": "related",
+            "source_label": "2026/11/16｜三、主要合作鋼廠與採購策略"
+          }
+        ],
+        "import_ratio": [
+          {
+            "label": "採購來源（整體進口比率未載）",
+            "text": "日本製鐵為重要冷軋來源；中鋼為積極合作來源，另有 POSCO、CSVC、印度 JSW 採購經驗。",
+            "relation": "related",
+            "source_label": "2026/11/16｜三、主要合作鋼廠與採購策略"
+          }
+        ],
+        "downstream": [
+          {
+            "label": "中鋼材料銷售客戶（非全公司產業占比）",
+            "text": "2026 年中鋼訂購量流向包括 Upton（40–50%）、Fowle／Steelco、John Tainton、Hitech、Cooper & Jackson（各 10–15%）等服務中心。",
+            "relation": "direct",
+            "source_label": "2026/11/16｜三、供貨占比與客戶集中度"
+          }
+        ],
+        "products": [
+          {
+            "label": "核心採購產品",
+            "text": "以冷軋為核心；日本製鐵以 DC01 為主，中鋼已開發 ED 級料，並討論汽車與特殊鋼種。",
+            "relation": "direct",
+            "source_label": "2026/11/16｜一、摘要及三、主要合作鋼廠"
+          },
+          {
+            "label": "備庫尺寸（依船期與客需）",
+            "text": "冷軋會額外購入熟悉常用尺寸，例如配船增加約 500 MT、厚 1.1–1.42 mm 材料。",
+            "relation": "direct",
+            "source_label": "2026/11/16｜三、庫存與物流安排"
+          }
+        ],
+        "outlook": [
+          {
+            "label": "2026/11/16｜需求與進口替代",
+            "text": "Scott 認為一般工業需求疲弱，能源成本、製造業外移及政策變動抑制投資；其稱 Tata 冷軋及鍍鋅供應縮減，促使服務中心尋找進口來源。",
+            "relation": "direct",
+            "source_label": "2026/11/16｜三、市場行情與需求展望"
+          },
+          {
+            "label": "2026/11/16｜服務中心整併判斷",
+            "text": "Scott 估近兩年約 5–6 家中小服務中心結束營業，未來 5–10 年仍有退出或整併壓力；屬客戶市場判斷。",
+            "relation": "direct",
+            "source_label": "2026/11/16｜二、家族企業與跨世代客戶關係"
+          }
+        ]
+      },
+      "card": {
+        "intro": "以冷軋為核心的英國貿易商，結合鋼廠採購、DDP 交貨、融資與信用管理；John 與 Scott 維繫跨世代客戶關係。",
+        "highlights": [
+          "2026 年向中鋼訂購逾 20,000 MT；屬中鋼來源量，非全來源採購量。",
+          "日本製鐵為重要冷軋來源，中鋼以尺寸、鋼種彈性及在地協調補充供應。"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "procurement",
+          "quote": "Belmont表示2026年向中鋼訂購超過20,000 MT，其中客戶分布為: Upton 40–50% 、Fowle／Steelco 10–15%、John Tainton 10–15%、Hitech 10–15%、Cooper and Jackson10–15%、Tinalloy約 5%、Williams Lee約 5%、ArcelorMittal (AMDS)約3%、Cutler and Rule／其他小客戶約 5%。"
+        },
+        {
+          "field": "procurement",
+          "quote": "數量: 約每季要求Belmont採購1~2萬噸，"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "日本製鐵為重要冷軋來源，中鋼則以尺寸、鋼種彈性及在地協調能力補充供應。"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "印度 JSW"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "曾採購冷軋；亦談及過往規律鍍鋅採購，為既有合作經驗之一。"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "過往主要冷軋採購來源；Scott 在 Samsung 時已有相關供貨經驗。"
+        },
+        {
+          "field": "downstream",
+          "quote": "Belmont表示2026年向中鋼訂購超過20,000 MT，其中客戶分布為: Upton 40–50% 、Fowle／Steelco 10–15%、John Tainton 10–15%、Hitech 10–15%、Cooper and Jackson10–15%、Tinalloy約 5%、Williams Lee約 5%、ArcelorMittal (AMDS)約3%、Cutler and Rule／其他小客戶約 5%。"
+        },
+        {
+          "field": "products",
+          "quote": "目前積極合作之冷軋來源；已開發 ED 級料，討論汽車及其他特殊鋼種。"
+        },
+        {
+          "field": "products",
+          "quote": "缺點: 以 DC01 為主，不接太複雜規格。"
+        },
+        {
+          "field": "products",
+          "quote": "庫存與物流安排: Belmont 不自有倉庫，使用港口倉庫；Scott 稱通常有4 週免費倉儲，超期另計費。一般交易以客戶需求為基礎，但冷軋會額外購入熟悉的常用尺寸，例如配合船舶增加約 500 MT、厚 1.1–1.42 mm 的材料，再由 John 與 Scott 銷售。其表示此舉主要配合客戶及船期，並非必須判斷價格落底才進貨。"
+        },
+        {
+          "field": "outlook",
+          "quote": "Scott 認為一般工業需求疲弱，能源成本、製造業外移及政策變動壓抑投資與大批採購。其提及 Tata 冷軋及鍍鋅供應縮減，推動服務中心尋找進口來源。"
+        },
+        {
+          "field": "outlook",
+          "quote": "Scott 認為部分中小服務中心未來 5–10 年將面臨退出或整併，並估近兩年已有約 5–6 家結束營業。因此，本次安排優先選擇其判斷資金較充足、設備較完善的客戶。此為其市場判斷；家族經營本身不能作為財務強弱的判準。"
+        },
+        {
+          "field": "card.intro",
+          "quote": "Belmont 以冷軋為核心，結合鋼廠採購、英國銷售、DDP 交貨及授信服務，透過 John 與 Scott 維繫客戶兩代的人脈。"
+        }
+      ],
+      "audit_note": "全來源實際採購總量與整體進口占比未載；日本製鐵季度要求量不等於已實現採購量。不得沿用同篇他述 Upton 的 99% 冷軋進口比率。"
+    },
+    {
+      "customer_key": "COOPERJACKSON",
+      "source_file": "2026-11-18_Cooper_and_Jackson_Meeting_Record_r3.docx",
+      "source_sha": "9e7a705765aef92b1223e888658aacd422574a80",
+      "overview": {
+        "procurement": [
+          {
+            "label": "月銷售量（非採購量）",
+            "text": "每月銷售約 2,500 公噸；約 80% 鋼材銷售採背對背交易，其餘為代工。",
+            "relation": "related",
+            "source_label": "2026/11/18｜一、摘要及二、營運結構"
+          },
+          {
+            "label": "中鋼來源量（非全來源採購量）",
+            "text": "2026 年 C&J 約占 Belmont 向中鋼訂購量的 10–15%，約 2,000–3,000 公噸；中鋼與 POSCO 供貨規模相當。",
+            "relation": "related",
+            "source_label": "2026/11/18｜三、中鋼供應與 POSCO 占比"
+          }
+        ],
+        "import_ratio": [
+          {
+            "label": "冷軋進口來源占比（非全產品）",
+            "text": "冷軋約 70–80% 來自台灣、越南及韓國，交期約 5–6 個月；未載全產品整體進口比率。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜三、遠東與本地料源"
+          }
+        ],
+        "downstream": [
+          {
+            "label": "2026 年直接客群（銷售，不含代工）",
+            "text": "IT 機櫃 19%、沖孔金屬 15%、包裝 13%、照明及家電各 10%；汽車 2%。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜四、下游銷售與需求展望"
+          },
+          {
+            "label": "Rittal 機櫃供應鏈",
+            "text": "直接供 Rittal 約 300–400 公噸／月，含分包商約 600–700 公噸／月；兩者不得重複加總。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜五、機櫃供應鏈"
+          }
+        ],
+        "products": [
+          {
+            "label": "2023 年採購產品組合（歷史口徑）",
+            "text": "冷軋 62%、熱軋酸洗塗油 15%、熱浸鍍鋅 13%、鍍鋁鋅 4%、電鍍鋅 3%；非 2026 年產品占比。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜二、2023 年採購產品表"
+          },
+          {
+            "label": "機櫃用鋼與替代需求",
+            "text": "機櫃用鋼約半數為冷軋 DC01／CA200；HX340 鍍鋅及 HSLA 酸洗需求增加，並開始以 HC380 冷軋替代部分 S355MCP 熱軋。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜五、常用與替代鋼種"
+          }
+        ],
+        "outlook": [
+          {
+            "label": "2026/11/18｜需求分歧",
+            "text": "Rittal 終端需求成長，但 C&J 對該客戶直接銷量多年變動不大；包裝需求穩定，家電預測偏弱、汽車銷售占比下降。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜四、下游需求及五、機櫃供應鏈"
+          },
+          {
+            "label": "2026/11/18｜庫存與價格競爭",
+            "text": "提前到貨使庫存約 2 個月，高於常態 4–6 週；客戶稱中國低價報盤壓低通用級冷軋議價空間。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜三、庫存及中國料報價"
+          }
+        ]
+      },
+      "card": {
+        "intro": "英國獨立裁剪中心，成立於 1979 年，近期轉為員工持股信託；擅長精密分條與落料。",
+        "highlights": [
+          "每月銷售約 2,500 公噸，非採購量；2026 年中鋼與 POSCO 供貨規模相當。",
+          "冷軋約 70–80% 來自台灣、越南與韓國；2026 年 IT 機櫃為最大直接客群。"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "procurement",
+          "quote": "C&J 為英國獨立裁剪中心，每月銷售約 2,500 公噸，擅長精密分條與落料。"
+        },
+        {
+          "field": "procurement",
+          "quote": "公司兼營鋼材銷售(約80%為back to back sales) ，可自行選擇鋼廠，其餘為及代工。"
+        },
+        {
+          "field": "procurement",
+          "quote": "CJ佔Belmont向中鋼訂購2026年購量約10~15% (2,000~3,000公噸)。"
+        },
+        {
+          "field": "procurement",
+          "quote": "客戶回顧2025年POSCO 曾接近 40%， 2026 年可確認的是中鋼與 POSCO 供貨規模相當。"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "冷軋約 70%–80% 來自台灣、越南及韓國，交期約 5–6 個月；過去 Tata 在地冷軋約 6 週。"
+        },
+        {
+          "field": "downstream",
+          "quote": "2026 年截至拜訪日的需求觀察（銷售，不含代工）"
+        },
+        {
+          "field": "downstream",
+          "quote": "IT 機櫃"
+        },
+        {
+          "field": "downstream",
+          "quote": "19%"
+        },
+        {
+          "field": "downstream",
+          "quote": "沖孔金屬"
+        },
+        {
+          "field": "downstream",
+          "quote": "15%"
+        },
+        {
+          "field": "downstream",
+          "quote": "包裝"
+        },
+        {
+          "field": "downstream",
+          "quote": "13%"
+        },
+        {
+          "field": "downstream",
+          "quote": "照明／家電"
+        },
+        {
+          "field": "downstream",
+          "quote": "各 10%"
+        },
+        {
+          "field": "downstream",
+          "quote": "汽車"
+        },
+        {
+          "field": "downstream",
+          "quote": "2%"
+        },
+        {
+          "field": "downstream",
+          "quote": "C&J 與主要機櫃客戶(Rittal)合作約 10 年。終端按商務條件在三家供應商間分單，也指定分包商向 C&J 買料。直接供貨約 300–400 公噸／月，含分包商約 600–700 公噸／月。終端需求成長，但 C&J 對該客戶的直接銷量多年來變動不大。"
+        },
+        {
+          "field": "products",
+          "quote": "2023年採購產品"
+        },
+        {
+          "field": "products",
+          "quote": "冷軋（CR）"
+        },
+        {
+          "field": "products",
+          "quote": "62%"
+        },
+        {
+          "field": "products",
+          "quote": "熱軋酸洗塗油（HRPO）"
+        },
+        {
+          "field": "products",
+          "quote": "15%"
+        },
+        {
+          "field": "products",
+          "quote": "熱浸鍍鋅（HDG）"
+        },
+        {
+          "field": "products",
+          "quote": "13%"
+        },
+        {
+          "field": "products",
+          "quote": "鍍鋁鋅"
+        },
+        {
+          "field": "products",
+          "quote": "4%"
+        },
+        {
+          "field": "products",
+          "quote": "電鍍鋅（EG／EZ）"
+        },
+        {
+          "field": "products",
+          "quote": "3%"
+        },
+        {
+          "field": "products",
+          "quote": "機櫃用鋼約半數為冷軋，採 DC01 或 CA200（最低降伏強度 200 MPa）；部分已由中鋼供應。終端已由冷軋外送鍍鋅轉向直接購買鍍鋅材，HSLA 酸洗材及 HX340 鍍鋅用量增加。客戶質疑部分用途是否需要 HX340，仍依指定規格採購。"
+        },
+        {
+          "field": "products",
+          "quote": "客戶開始以 HC380 高強度冷軋替代部分熱軋 S355MCP。"
+        },
+        {
+          "field": "outlook",
+          "quote": "終端需求成長，但 C&J 對該客戶的直接銷量多年來變動不大。"
+        },
+        {
+          "field": "outlook",
+          "quote": "以冷軋為主；長期大客戶訂單忙碌，需求穩定。"
+        },
+        {
+          "field": "outlook",
+          "quote": "家電較淡，已議定 2027 年 1–6 月售價；預測偏弱，本期實際提貨已超過原估。"
+        },
+        {
+          "field": "outlook",
+          "quote": "直接供 Tier 1／Tier 2 零件商。英國汽車業萎縮，C&J 銷售占比下降。"
+        },
+        {
+          "field": "outlook",
+          "quote": "近期到貨提前，庫存增至約 2 個月，高於常態 4–6 週，過去約兩年則經常偏低。"
+        },
+        {
+          "field": "outlook",
+          "quote": "C&J 表示，據其所知約兩批中國料正進入英國，會前一週已見低價報盤。即使大客戶限制來源，貿易商的庫存報價仍壓低通用級冷軋議價空間。"
+        }
+      ],
+      "audit_note": "2023 年產品與料源占比為歷史表格，不套用為 2026 年比例；本次未載全產品進口比率，亦不回填 2026 年 2 月的 90%。"
+    },
+    {
+      "customer_key": "STEELALLOY",
+      "source_file": "2026-11-17_STEEL_AND_ALLOY_Meeting_Record_r3.docx",
+      "source_sha": "56f7d78ab22a91e8a9d5537db3fc7f51205a2fe1",
+      "overview": {
+        "procurement": [
+          {
+            "label": "年處理量（非採購量）",
+            "text": "年處理鋼鋁材約24–25萬噸，鋼材約90%、鋁材約10%；車用約18萬噸、一般工業約5–6萬噸，均為原紀錄概數，非採購量。",
+            "relation": "related",
+            "source_label": "2026/11/17｜一、摘要及二、處理規模"
+          },
+          {
+            "label": "替代案需求（非中鋼訂單）",
+            "text": "HC340LA 潛在年需求：2.45 mm 約 2,000–3,000 噸、2.0 mm 約 1,000 噸、1.5 mm 約 500 噸，合計 3,500–4,500 噸。",
+            "relation": "related",
+            "source_label": "2026/11/17｜三、厚規冷軋替代案"
+          }
+        ],
+        "import_ratio": [
+          {
+            "label": "料源與採購權限（進口比率未載）",
+            "text": "車用料源由車廠議定，以英歐料為主、少量韓中料；一般工業自主比價，曾採土耳其熱軋，未載整體進口占比。",
+            "relation": "related",
+            "source_label": "2026/11/17｜二、車用及一般工業業務"
+          }
+        ],
+        "downstream": [
+          {
+            "label": "車廠客群",
+            "text": "為 JLR 在英國的三家直供裁剪中心之一，亦曾服務 Honda、Nissan、Volvo。",
+            "relation": "direct",
+            "source_label": "2026/11/17｜二、車用業務"
+          },
+          {
+            "label": "一般工業與開發用途",
+            "text": "厚規冷軋替代方向為資料中心電纜支架；其他討論用途包括屋架齒板及建築過樑，須驗證成形後鍍鋅適用性。",
+            "relation": "direct",
+            "source_label": "2026/11/17｜一、摘要及六、合作商機"
+          }
+        ],
+        "products": [
+          {
+            "label": "一般工業產品結構（非全公司）",
+            "text": "鍍鋅約 60%、熱軋酸洗約 30%、冷軋約 5–10%；冷軋替代案擬採 HC340LA。",
+            "relation": "direct",
+            "source_label": "2026/11/17｜二、一般工業及三、替代案"
+          }
+        ],
+        "outlook": [
+          {
+            "label": "2026/11/17｜專案放緩與庫存",
+            "text": "大型營建及資料中心專案進度放緩，客戶工業用鋼材庫存約 27,000 噸；近期採購以價格為先。",
+            "relation": "direct",
+            "source_label": "2026/11/17｜一、摘要及四、市場行情"
+          },
+          {
+            "label": "2026/11/17｜市場去庫存估計",
+            "text": "客戶估第四季越南等料源約 7 萬噸在途或到港，為英國市場量，去化或延至 2027 年第一或第二季。",
+            "relation": "direct",
+            "source_label": "2026/11/17｜四、市場行情"
+          },
+          {
+            "label": "2026/11/17｜採購時程與綠鋼",
+            "text": "1–3 月採購已結束，詢價轉向 4–6 月；綠鋼詢問較 18–24 個月前降溫，終端目前不接受溢價。",
+            "relation": "direct",
+            "source_label": "2026/11/17｜四、採購時程"
+          }
+        ]
+      },
+      "card": {
+        "intro": "隸屬西班牙 Gonvarri 的英國鋼鋁加工服務中心；汽車料源由車廠指定，一般工業用料可自行採購。",
+        "highlights": [
+          "年處理鋼鋁材約 24–25 萬噸，屬加工量，非採購量。",
+          "HC340LA 冷軋替代酸洗案約 3,500–4,500 噸／年，須通過厚度公差與後續鍍鋅驗證。"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "procurement",
+          "quote": "Steel & Alloy 隸屬西班牙 Gonvarri，年處理鋼鋁材約 24–25 萬噸。"
+        },
+        {
+          "field": "procurement",
+          "quote": "鋼材約 90%、鋁材約 10%。車用年處理約 18 萬噸，一般工業約 5–6 萬噸。"
+        },
+        {
+          "field": "procurement",
+          "quote": "英國熱軋配額吃緊，雙方研議以冷軋取代 2.5 mm 熱軋酸洗料，供應固定電纜托架的帶孔 U 型支架（strut channel）。 HC340LA需求如下: 2.45 mm，約2,000–3,000 噸、2.0 mm，約 1,000 噸、1.5 mm約500 噸，合計共3,500–4,500 噸／年。"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "車廠議定料源及價格(代工)，客戶依年約與每月預報採購，另收加工費。以英歐料為主，另有少量韓中料。"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "自主採購比價，曾採購土耳其熱軋。"
+        },
+        {
+          "field": "downstream",
+          "quote": "與 William King、Tata Steel 同為 Jaguar Land Rover (JLR) 在英國的三家直供裁剪中心，亦曾服務 Honda、Nissan、Volvo。"
+        },
+        {
+          "field": "downstream",
+          "quote": "下一步可爭取以厚規冷軋替代熱軋酸洗料，供資料中心電纜支架。"
+        },
+        {
+          "field": "downstream",
+          "quote": "評估 3 mm 以下熱軋改用冷軋，用途含屋架齒板及建築過樑 ，材料擬用於型鋼，並於後續進行鍍鋅。"
+        },
+        {
+          "field": "products",
+          "quote": "鍍鋅約 60%、熱軋酸洗 30%、冷軋 5–10% (2,500~5,-000噸/年)。"
+        },
+        {
+          "field": "outlook",
+          "quote": "大型營建及資料中心專案進度放緩，工業用鋼材庫存約 27,000 噸。"
+        },
+        {
+          "field": "outlook",
+          "quote": "客戶工業用鋼庫存偏高，近期採購仍以價格為先。"
+        },
+        {
+          "field": "outlook",
+          "quote": "會中估計第四季越南等料源約 7 萬噸在途或到港，為英國市場量 ；客戶估計去化可能延至 2027 年第一或第二季。"
+        },
+        {
+          "field": "outlook",
+          "quote": "1–3 月份採購已結束，詢價轉向 4–6 月；綠鋼詢問熱度較約 18–24 個月前下降，終端連一般市價亦承壓，目前不接受綠鋼溢價。"
+        }
+      ],
+      "audit_note": "處理量不等於採購量；總量與車用／工業分項略有差異，保留原文並待核。冷軋年量原文「2,500~5,-000噸/年」有誤植，未自行修正採用；整體進口比率未載。"
+    },
+    {
+      "customer_key": "TATASTEELPARK",
+      "source_file": "2026-11-18_Tata_Steel_Park_Meeting_Record_r2.docx",
+      "source_sha": "d25594bf149752b0a81c2e465fa9f16e5767ca69",
+      "overview": {
+        "procurement": [
+          {
+            "label": "裁剪中心體系年用量（非 Steelpark 單廠）",
+            "text": "Tata 裁剪中心表列冷軋約 50,000 公噸／年、熱軋約 350,000 公噸／年、熱浸鍍鋅約 200,000 公噸／年；後二者包含集團供料／自產。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜三、TATA 裁剪中心購買鋼材表"
+          },
+          {
+            "label": "中鋼供貨實績（非年度需求量）",
+            "text": "曾透過其他貿易管道收用中鋼冷軋約 1,000 噸，對品質無異議；本期每月公開詢價，各供應商占比隨報價調整。",
+            "relation": "related",
+            "source_label": "2026/11/18｜四、既有供貨及本期標案"
+          }
+        ],
+        "import_ratio": [
+          {
+            "label": "冷軋全數進口（非全產品）",
+            "text": "裁剪中心體系冷軋約 50,000 公噸／年，全進口（日韓印）；韓國料為主，尤其 POSCO，亦採日本料，偶見印度報價。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜三、冷軋料源及用量表"
+          }
+        ],
+        "downstream": [
+          {
+            "label": "冷軋終端用途（Tata 裁剪中心體系）",
+            "text": "資料中心相關用途約 20,000 噸／年、約占冷軋四成；其餘包括辦公家具、層架、製桶及庫存商。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜一、摘要及三、冷軋用量表"
+          },
+          {
+            "label": "整體客群（非冷軋占比）",
+            "text": "服務汽車及工業；裁剪中心體系下游涵蓋建材、農業、一般用途、資料中心與 AI、辦公家具、製桶及庫存商。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜一、摘要及三、下游客群"
+          }
+        ],
+        "products": [
+          {
+            "label": "裁剪中心產品組合（跨據點）",
+            "text": "熱軋、退火冷軋、熱浸鍍鋅，另有中厚板及鋁材；部分厚規厚鍍層鍍鋅品項另行外購。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜三、裁剪中心購買鋼材表"
+          },
+          {
+            "label": "Steelpark 加工規格（非採購產品占比）",
+            "text": "此地集中加工冷軋，常加工輕規材約 0.4–3.0 mm，設備包含雷射焊接、輪廓切割、分條與開捲。",
+            "relation": "related",
+            "source_label": "2026/11/18｜三、分銷據點與加工能力"
+          }
+        ],
+        "outlook": [
+          {
+            "label": "2026/11/18｜電爐轉型與冷軋外購",
+            "text": "客戶預計 2028 年啟用年產能 300 萬噸電爐、依需求逐步增產；初期仍外購底材，無重啟冷軋線計畫。屬當次會議預期。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜二、重軋轉型"
+          },
+          {
+            "label": "2026/11/18｜低碳需求與溢價",
+            "text": "資料中心目前較關心再生料含量，尚無通用排放門檻，僅部分專案願付溢價；Tata 正研究自家電爐料定價。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜五、低碳與電爐試料"
+          },
+          {
+            "label": "2026/11/18｜傳統冷軋終端縮減",
+            "text": "客戶稱英國散熱器等冷軋終端縮減，部分用戶移往土耳其及波蘭。",
+            "relation": "direct",
+            "source_label": "2026/11/18｜三、下游需求"
+          }
+        ]
+      },
+      "card": {
+        "intro": "Tata Steel UK 位於 Wolverhampton 的裁剪中心，服務汽車及一般工業；Steelpark 集中加工冷軋。",
+        "highlights": [
+          "Tata 裁剪中心體系冷軋年用量約 50,000 公噸，全數進口；資料中心用途約 20,000 公噸／年。",
+          "曾透過其他貿易管道收用中鋼冷軋約 1,000 噸，品質無異議；同意納入每月詢價通知。"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "procurement",
+          "quote": "TATA購買鋼材如下表，下游客戶涵蓋建材類、農業、一般用途、資料中心及 AI、辦公家具、製桶與庫存商，英國散熱器等冷軋終端縮減，其中部分用戶移往土耳其、波蘭。"
+        },
+        {
+          "field": "procurement",
+          "quote": "年用量（公噸）"
+        },
+        {
+          "field": "procurement",
+          "quote": "約 350,000"
+        },
+        {
+          "field": "procurement",
+          "quote": "為集團供料，厚規熱軋及建築用料主要由 Llanwern 加工。"
+        },
+        {
+          "field": "procurement",
+          "quote": "約 50,000"
+        },
+        {
+          "field": "procurement",
+          "quote": "約 200,000"
+        },
+        {
+          "field": "procurement",
+          "quote": "含集團自產，厚規且需厚鍍層的部分品項另行外購。"
+        },
+        {
+          "field": "procurement",
+          "quote": "Tata曾透過其他貿易管道收用中鋼冷軋 約 1,000 噸，對品質無異議。"
+        },
+        {
+          "field": "procurement",
+          "quote": "Tata 每月公開詢價，各供應商占比隨報價變動。"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "全進口(日韓印)，資料中心相關用途約 20,000 噸／年，其餘包括辦公家具、層架、製桶及庫存商。"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "Tata 冷軋現以韓國料為主，尤其 POSCO，亦採日本料，偶見印度報價。"
+        },
+        {
+          "field": "downstream",
+          "quote": "每年外購退火冷軋約 5 萬噸，資料中心相關用途約占四成。"
+        },
+        {
+          "field": "downstream",
+          "quote": "全進口(日韓印)，資料中心相關用途約 20,000 噸／年，其餘包括辦公家具、層架、製桶及庫存商。"
+        },
+        {
+          "field": "downstream",
+          "quote": "Steelpark 是 Tata Steel UK 服務汽車及工業客戶裁剪中心 。"
+        },
+        {
+          "field": "downstream",
+          "quote": "TATA購買鋼材如下表，下游客戶涵蓋建材類、農業、一般用途、資料中心及 AI、辦公家具、製桶與庫存商，英國散熱器等冷軋終端縮減，其中部分用戶移往土耳其、波蘭。"
+        },
+        {
+          "field": "products",
+          "quote": "含集團自產，厚規且需厚鍍層的部分品項另行外購。"
+        },
+        {
+          "field": "products",
+          "quote": "熱軋"
+        },
+        {
+          "field": "products",
+          "quote": "冷軋"
+        },
+        {
+          "field": "products",
+          "quote": "熱浸鍍鋅"
+        },
+        {
+          "field": "products",
+          "quote": "中厚板"
+        },
+        {
+          "field": "products",
+          "quote": "鋁材（Alu）"
+        },
+        {
+          "field": "products",
+          "quote": "包括雷射焊接、輪廓切割、分條及開捲。此地集中加工冷軋，常加工輕規材約 0.4–3.0 mm。廠圖另標示落料、分條及汽車用料區。"
+        },
+        {
+          "field": "outlook",
+          "quote": "客戶預計 2028 年啟用產能 300 萬噸的電爐，依市場需求逐步增產，以供應既有熱軋、鍍鋅、彩塗、馬口鐵及鋼管業務。初期仍會外購底材，也沒有重啟冷軋線計畫。"
+        },
+        {
+          "field": "outlook",
+          "quote": "資料中心目前較關心再生料含量，尚無通用的排放門檻，僅部分專案願付溢價。"
+        },
+        {
+          "field": "outlook",
+          "quote": "Tata 正研究自家電爐料定價；"
+        },
+        {
+          "field": "outlook",
+          "quote": "英國散熱器等冷軋終端縮減，其中部分用戶移往土耳其、波蘭。"
+        }
+      ],
+      "audit_note": "產品年用量表涵蓋 Tata 裁剪／分銷體系，不推定為 Steelpark 單一廠區。英國業務另列扁鋼胚 200 萬噸及熱軋底材 100 萬噸，未與裁剪中心產品量加總；表格合計「61,5000」未採用。"
+    },
+    {
+      "customer_key": "TOPTUBES",
+      "source_file": "2026-11-17_TOP_TUBES_Meeting_Record_r3.docx",
+      "source_sha": "9857838e00102794b13599843d45cdb801651af8",
+      "overview": {
+        "procurement": [
+          {
+            "label": "年需求（非實際採購）",
+            "text": "未列年度實際採購總量；年需求：HRPO 12,000、HR 6,000、GI 10,000、CR 4,000、汽車高強度CR 500噸；年產量約35,000–40,000噸，各口徑不可混用。",
+            "relation": "related",
+            "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+          },
+          {
+            "label": "季度招標／首批中鴻",
+            "text": "滾動規劃4–6個月供應，按季度需求招標；首批中鴻熱軋1,500噸預計2026年12月上中旬抵Bristol港，計畫年底前清關。",
+            "relation": "direct",
+            "source_label": "二、採購與議價；三、訂購量；四、首批清關安排"
+          }
+        ],
+        "import_ratio": [
+          {
+            "label": "原料進口占比",
+            "text": "原料約98%仰賴進口；熱軋全球採購，近期主要比價越南Hoa Phat；冷軋原以POSCO為主。",
+            "relation": "direct",
+            "source_label": "一、會議摘要；二、供應來源"
+          }
+        ],
+        "downstream": [
+          {
+            "label": "客群與終端流向",
+            "text": "約200家客戶，涵蓋農業、園藝、家具與汽車售後市場；依下游客戶用途概估70%留英、30%外銷（含愛爾蘭），此為下游流向，非原料進口比例。",
+            "relation": "direct",
+            "source_label": "二、客戶結構"
+          },
+          {
+            "label": "接單轉型",
+            "text": "約95%依訂單生產、直接經營終端客戶；約十家備庫及分批叫料客戶占業務5%，不代表全公司普遍備成品庫存。",
+            "relation": "direct",
+            "source_label": "二、通路轉型"
+          }
+        ],
+        "products": [
+          {
+            "label": "主力鋼種",
+            "text": "HRPO為DD11、冷軋主要DC01；汽車高強度CR為HC420LA、厚1.45／2.31 mm，供單一汽車客戶、年需約500噸。",
+            "relation": "direct",
+            "source_label": "三、中鋼訂購量與主要規格"
+          },
+          {
+            "label": "製管／雷射加工",
+            "text": "供圓、方、矩形、橢圓及打孔管；雷射二次加工約占業務30%，可切碳鋼壁厚至12 mm、鋁與不鏽鋼至6 mm。",
+            "relation": "direct",
+            "source_label": "二、營運與定位；附件一、製管範圍、加工與交期"
+          }
+        ],
+        "outlook": [
+          {
+            "label": "2027年需求持平",
+            "text": "預期與2026年相近；農業家具較佳主要靠搶同業訂單，成長重點為市占與附加價值。摩洛哥溫室專案若得標，可能帶來約2,000噸，尚非確定訂單。",
+            "relation": "direct",
+            "source_label": "五、市場行情與需求展望"
+          },
+          {
+            "label": "價格與低碳料限制",
+            "text": "1B授權用途熱軋競爭激烈，Hoa Phat報價具競爭性；願付臺灣品質溢價但價差不能過大。綠鋼僅一家小型客戶列入合約，尚無廣泛需求。",
+            "relation": "direct",
+            "source_label": "四、綠鋼實際需求；五、1B熱軋競爭、中國大陸低價料"
+          },
+          {
+            "label": "中鋼試料與供應",
+            "text": "提供DC01可供尺寸清單，評估HC420LA厚1.45／2.31 mm、年需約500噸；品質須經試料及不同終端測試認可，爭取穩定季度供應。",
+            "relation": "direct",
+            "source_label": "一、會議摘要；二、採購與議價；六、合作商機"
+          }
+        ]
+      },
+      "card": {
+        "intro": "英國製管與雷射加工業者，自述為英國第二大製管商，約151人、兩條製管線，全年產量約3.5萬–4萬噸。",
+        "highlights": [
+          "原料約98%仰賴進口；以季度需求招標、規劃4–6個月供應。",
+          "首批中鴻熱軋1,500噸預計2026年12月上中旬抵Bristol。",
+          "2027年預期與2026年相近，重點為DC01試料與HC420LA年需500噸。"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "procurement",
+          "quote": "全年產量約 35,000–40,000 MT",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": "熱軋酸洗 HRPO",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": " 12,000",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": "熱軋黑皮 HR",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": " 6,000",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": "鍍鋅鋼材 GI",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": " 10,000",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": "冷軋 CR",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": "4,000",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": "汽車高強度 CR",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": " 500",
+          "source_label": "一、會議摘要；三、中鋼訂購量與主要規格／年需求MT表"
+        },
+        {
+          "field": "procurement",
+          "quote": "滾動規劃 4–6 個月供應，以季度需求招標",
+          "source_label": "二、採購與議價；三、訂購量；四、首批清關安排"
+        },
+        {
+          "field": "procurement",
+          "quote": "首批中鴻熱軋1,500公噸預計 2026 年 12 月上中旬抵達 Bristol 港。",
+          "source_label": "二、採購與議價；三、訂購量；四、首批清關安排"
+        },
+        {
+          "field": "procurement",
+          "quote": "12 月到港之中鴻熱軋計畫於 2026 年底前完成清關",
+          "source_label": "二、採購與議價；三、訂購量；四、首批清關安排"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "原料約 98% 仰賴進口。",
+          "source_label": "一、會議摘要；二、供應來源"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "熱軋向全球採購，過去包含埃及等來源，近期主要比價對象為越南 Hoa Phat。",
+          "source_label": "一、會議摘要；二、供應來源"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "冷軋原以 POSCO 為主。",
+          "source_label": "一、會議摘要；二、供應來源"
+        },
+        {
+          "field": "downstream",
+          "quote": "服務約 200 家客戶，涵蓋農業、園藝、家具、汽車售後市場等，無單一客戶過度曝險。",
+          "source_label": "二、客戶結構"
+        },
+        {
+          "field": "downstream",
+          "quote": "就下游客戶用途概估約 70% 留英、30% 外銷，包含愛爾蘭。",
+          "source_label": "二、客戶結構"
+        },
+        {
+          "field": "downstream",
+          "quote": "現約 95% 依訂單生產，直接經營終端客戶。約十家客戶採備庫及分批叫料，占業務約 5%，並非全公司普遍備成品庫存。",
+          "source_label": "二、通路轉型"
+        },
+        {
+          "field": "products",
+          "quote": "DD11，供製管及家具等用途。",
+          "source_label": "三、中鋼訂購量與主要規格"
+        },
+        {
+          "field": "products",
+          "quote": "主要為 DC01。",
+          "source_label": "三、中鋼訂購量與主要規格"
+        },
+        {
+          "field": "products",
+          "quote": "HC420LA，厚度 1.45、2.31 mm，供單一汽車客戶。",
+          "source_label": "三、中鋼訂購量與主要規格"
+        },
+        {
+          "field": "products",
+          "quote": " 500",
+          "source_label": "三、中鋼訂購量與主要規格"
+        },
+        {
+          "field": "products",
+          "quote": "雷射二次加工已約占業務 30%",
+          "source_label": "二、營運與定位；附件一、製管範圍、加工與交期"
+        },
+        {
+          "field": "products",
+          "quote": "圓管直徑 18–76.2 mm，方管 16–60 mm，另有矩形、橢圓及排氣消音器用打孔管。",
+          "source_label": "二、營運與定位；附件一、製管範圍、加工與交期"
+        },
+        {
+          "field": "products",
+          "quote": "可切割 碳鋼壁厚至 12 mm、鋁及不鏽鋼至 6 mm",
+          "source_label": "二、營運與定位；附件一、製管範圍、加工與交期"
+        },
+        {
+          "field": "outlook",
+          "quote": "預期全年規模與 2026 年相近",
+          "source_label": "五、市場行情與需求展望"
+        },
+        {
+          "field": "outlook",
+          "quote": "農業及家具表現較佳，主要源於搶得同業訂單，非產業全面擴張。摩洛哥溫室棚架等專案若得標可能帶來約 2,000 MT 用量。",
+          "source_label": "五、市場行情與需求展望"
+        },
+        {
+          "field": "outlook",
+          "quote": "Hoa Phat 報價尤其具競爭性。",
+          "source_label": "四、綠鋼實際需求；五、1B熱軋競爭、中國大陸低價料"
+        },
+        {
+          "field": "outlook",
+          "quote": "願支付臺灣品質溢價，但價差不能過大。",
+          "source_label": "四、綠鋼實際需求；五、1B熱軋競爭、中國大陸低價料"
+        },
+        {
+          "field": "outlook",
+          "quote": "目前僅 一家小型客戶將綠鋼列入合約",
+          "source_label": "四、綠鋼實際需求；五、1B熱軋競爭、中國大陸低價料"
+        },
+        {
+          "field": "outlook",
+          "quote": "尚無廣泛需求",
+          "source_label": "四、綠鋼實際需求；五、1B熱軋競爭、中國大陸低價料"
+        },
+        {
+          "field": "outlook",
+          "quote": "品質認可仍須經試料、製程及不同終端客戶測試建立基準。",
+          "source_label": "一、會議摘要；二、採購與議價；六、合作商機"
+        },
+        {
+          "field": "outlook",
+          "quote": "提供 DC01 可供尺寸清單。",
+          "source_label": "一、會議摘要；二、採購與議價；六、合作商機"
+        },
+        {
+          "field": "outlook",
+          "quote": "評估 HC420LA，1.45、2.31 mm，年需求約 500 MT",
+          "source_label": "一、會議摘要；二、採購與議價；六、合作商機"
+        },
+        {
+          "field": "outlook",
+          "quote": "穩定季度供應",
+          "source_label": "一、會議摘要；二、採購與議價；六、合作商機"
+        }
+      ],
+      "audit_note": [
+        "僅以本客戶最新Word全文（含表格、附件說明）為依據；未加入外部或其他客戶資料。"
+      ]
+    },
+    {
+      "customer_key": "UPTON",
+      "source_file": "2026-11-16_UPTON_STEEL_Meeting_Record_r2.docx",
+      "source_sha": "819a493c0d27bb5873d07c14c7929151d261e41e",
+      "overview": {
+        "procurement": [
+          {
+            "label": "年供應量（非採購量）",
+            "text": "未列年度採購總量；年供應約12萬噸，以裁板供應為主。",
+            "relation": "related",
+            "source_label": "二、公司營運、採購及下游客群／供應與產品"
+          },
+          {
+            "label": "庫存與交易",
+            "text": "庫存約4個月；合約與現貨各約一半，新品先取得下游可信用量預估，再逐步列為常備規格。",
+            "relation": "related",
+            "source_label": "二、公司營運、採購及下游客群／備庫與交易"
+          }
+        ],
+        "import_ratio": [
+          {
+            "label": "進口占比",
+            "text": "進口料約99%；熱軋板少量向英國境內採購。",
+            "relation": "direct",
+            "source_label": "二、公司營運、採購及下游客群／供應與產品"
+          }
+        ],
+        "downstream": [
+          {
+            "label": "客群與主要用途",
+            "text": "過去12個月下單約900家，最大客戶約占3%；冷軋第一大用途為AI機櫃，其次超市貨架、零售展示架；鍍鋅供風管，電鍍鋅供發電機隔音箱。",
+            "relation": "direct",
+            "source_label": "二、公司營運、採購及下游客群／客戶與用途"
+          },
+          {
+            "label": "資料中心用量（Upton→分包商）",
+            "text": "約500噸／月，近18–24個月增長；多用日本製鐵料。此為Upton分包商供貨口徑，不等於終端Rittal總需求。",
+            "relation": "direct",
+            "source_label": "三、中鋼既有供貨與資料中心用料／Upton→下包商"
+          }
+        ],
+        "products": [
+          {
+            "label": "產品組合",
+            "text": "HDG約50%、冷軋約45%，少量電鍍鋅（不接受band mark）及境內採購熱軋板。",
+            "relation": "direct",
+            "source_label": "二、公司營運、採購及下游客群／供應與產品"
+          },
+          {
+            "label": "機櫃冷軋與開平能力",
+            "text": "既有機櫃用DC01厚2.5 mm、主寬1,000 mm，少量1,500 mm；開平厚約0.5–3.0 mm，另可供風管用鍍鋅小捲。",
+            "relation": "direct",
+            "source_label": "三、資料中心用料；五、工廠參觀／產線與尺寸、小量與品質"
+          }
+        ],
+        "outlook": [
+          {
+            "label": "2027年資料中心／鍍鋅",
+            "text": "客戶預期資料中心續增、鍍鋅額度較難取得，備足現貨者有承接空間；分包商固定材料預算仍限制可接受鋼價。",
+            "relation": "direct",
+            "source_label": "四、市場競爭、價格與需求展望"
+          },
+          {
+            "label": "中鋼商機",
+            "text": "爭取DC01厚2.5／3.0 mm、寬1,000／1,250 mm詢單與分包商常備尺寸補庫，並評估RC材AI機櫃專案。",
+            "relation": "direct",
+            "source_label": "七、合作商機與後續辦理事項"
+          }
+        ]
+      },
+      "card": {
+        "intro": "英國鋼材服務中心，年供應約12萬噸，以多規格備庫、小批開平及快速配送服務約900家客戶。",
+        "highlights": [
+          "進口料約99%，HDG約50%、冷軋約45%。",
+          "資料中心相關用量約500噸／月，主要由日本製鐵供應，可爭取DC01替代。",
+          "預期2027年資料中心續增，鍍鋅額度取得較難。"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "procurement",
+          "quote": "年供應約 120,000 噸，僅供應裁版(無分條)。",
+          "source_label": "二、公司營運、採購及下游客群／供應與產品"
+        },
+        {
+          "field": "procurement",
+          "quote": "庫存水位約 4 個月(相較其他裁剪中心較高水位)",
+          "source_label": "二、公司營運、採購及下游客群／備庫與交易"
+        },
+        {
+          "field": "procurement",
+          "quote": "新品先向下游取得可採信的用量預估，持續出貨後才列為常備規格。",
+          "source_label": "二、公司營運、採購及下游客群／備庫與交易"
+        },
+        {
+          "field": "procurement",
+          "quote": "據既有紀錄，合約與現貨各約一半",
+          "source_label": "二、公司營運、採購及下游客群／備庫與交易"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "進口料約占 99%。",
+          "source_label": "二、公司營運、採購及下游客群／供應與產品"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "熱軋板則少量向英國境內採購。",
+          "source_label": "二、公司營運、採購及下游客群／供應與產品"
+        },
+        {
+          "field": "downstream",
+          "quote": "過去 12 個月內下單者共 900 家，最大客戶約占業務量 3%。冷軋第一大用途冷軋為AI機櫃，第二大用途為超市貨架及零售展示架。鍍鋅與小捲供通風管，電鍍鋅板供發電機隔音箱。",
+          "source_label": "二、公司營運、採購及下游客群／客戶與用途"
+        },
+        {
+          "field": "downstream",
+          "quote": "資料中心相關用量約 500 噸/月，近 18-24 個月增長，多由日本製鐵 (Nippon Steel)供應。",
+          "source_label": "三、中鋼既有供貨與資料中心用料／Upton→下包商"
+        },
+        {
+          "field": "products",
+          "quote": "HDG約50%，冷軋約 45%， 少量EG (不接受band mark)，熱軋板則少量向英國境內採購。",
+          "source_label": "二、公司營運、採購及下游客群／供應與產品"
+        },
+        {
+          "field": "products",
+          "quote": "用於機櫃零組件，採一般冷軋 DC01，厚 2.5 mm、主寬 1,000 mm，少量寬 1,500 mm。",
+          "source_label": "三、資料中心用料；五、工廠參觀／產線與尺寸、小量與品質"
+        },
+        {
+          "field": "products",
+          "quote": "加工厚度約 0.5-3.0 mm",
+          "source_label": "三、資料中心用料；五、工廠參觀／產線與尺寸、小量與品質"
+        },
+        {
+          "field": "products",
+          "quote": "另有 1 條重捲線供應風管用鍍鋅小捲",
+          "source_label": "三、資料中心用料；五、工廠參觀／產線與尺寸、小量與品質"
+        },
+        {
+          "field": "outlook",
+          "quote": "客戶預期 2027 年資料中心續增，鍍鋅額度取得較難，能備足現貨者有承接空間。",
+          "source_label": "四、市場競爭、價格與需求展望"
+        },
+        {
+          "field": "outlook",
+          "quote": "即使資料中心訂單成長，分包商可接受的鋼價仍受預算限制。",
+          "source_label": "四、市場競爭、價格與需求展望"
+        },
+        {
+          "field": "outlook",
+          "quote": "爭取分包商常備尺寸補庫，追蹤DC01之2.5 、3.0 mm× 1,000 /1250 mm詢單。",
+          "source_label": "七、合作商機與後續辦理事項"
+        },
+        {
+          "field": "outlook",
+          "quote": "開發有RC材之AI機櫃專案。",
+          "source_label": "七、合作商機與後續辦理事項"
+        }
+      ],
+      "audit_note": [
+        "僅以本客戶最新Word全文（含表格、附件說明）為依據；未加入外部或其他客戶資料。"
+      ]
+    },
+    {
+      "customer_key": "WILLIAMKING",
+      "source_file": "2026-11-17_William_King_Meeting_Record r2.docx",
+      "source_sha": "fb6d609f5a867e0ee94ee0a1c41ec8067c4f332a",
+      "overview": {
+        "procurement": [
+          {
+            "label": "英國規模（口徑待核對）",
+            "text": "摘要稱年加工約25萬噸，採購章稱英國年採購約25萬噸，口徑待核對；約65%屬車廠轉售協議，車廠議價、指定料源並擔任進口申報人。",
+            "relation": "direct",
+            "source_label": "一、客戶摘要；二、營運規模與採購決策／汽車轉售協議(代工)"
+          },
+          {
+            "label": "兩據點自主採購",
+            "text": "英國兩據點約8萬噸／年：鍍鋅約4萬噸，冷軋、熱軋、馬口鐵各約1萬噸，分項未涵蓋全數；近18個月增約3萬噸，擬再增1.5–2萬噸。",
+            "relation": "direct",
+            "source_label": "二、營運規模與採購決策／自主採購結構"
+          }
+        ],
+        "import_ratio": [
+          {
+            "label": "料源與進口方式（未列比率）",
+            "text": "未列英國整體或自主採購進口比率。冷軋供應商含中鋼、POSCO、JSW、日本製鐵；熱軋採英國或歐洲料。",
+            "relation": "related",
+            "source_label": "四、英國市場競爭與採購條件／供應商選擇"
+          },
+          {
+            "label": "進口風險安排",
+            "text": "亞洲與土耳其進口透過貿易商，以DDP完稅交貨轉移物流、關稅與碳成本風險；英歐指定來源可向鋼廠直購。",
+            "relation": "related",
+            "source_label": "四、英國市場競爭與採購條件／供應商選擇"
+          }
+        ],
+        "downstream": [
+          {
+            "label": "車用與非車用",
+            "text": "業務量比由車用：非車用約80：20轉為60：40，目標各半；建築為第二大用途，含結構、屋頂、隔間、照明。",
+            "relation": "direct",
+            "source_label": "二、營運規模與採購決策／業務組合；三、下游需求"
+          },
+          {
+            "label": "既有終端與開發市場",
+            "text": "中鋼料供Dextra Lighting照明、JCB／Caterpillar駕駛室底板；機櫃廠間接供Meta、HP，另接觸暖氣與核能，國防仍在開發。",
+            "relation": "direct",
+            "source_label": "三、中鋼供貨實績、下游需求"
+          }
+        ],
+        "products": [
+          {
+            "label": "自主採購產品",
+            "text": "鍍鋅、冷軋、熱軋與馬口鐵；中鋼DC01照明料已加工良好，另開發厚冷軋工程機具料。",
+            "relation": "direct",
+            "source_label": "二、自主採購結構；三、中鋼供貨實績"
+          },
+          {
+            "label": "搪瓷試料／本廠製程",
+            "text": "中鋼DC04 ED／EK前週加工送下游，主要烘焙器具、尚待結果；West Bromwich以分條、沖壓及定尺裁切為主。電磁鋼實績在捷克，本廠尚無。",
+            "relation": "direct",
+            "source_label": "二、三地加工／捷克Mi-King；三、搪瓷；六、加工能力"
+          }
+        ],
+        "outlook": [
+          {
+            "label": "增量與第二季詢單",
+            "text": "短期成長有限、下游需求停滯，增量須搶同業業務；即將進入2027年第二季冷軋採購，爭取一般冷軋與特殊強度料。",
+            "relation": "direct",
+            "source_label": "三、下游需求；五、採購風險與下季展望；七、冷軋詢單"
+          },
+          {
+            "label": "搪瓷／酸洗替代",
+            "text": "追蹤DC04 ED／EK結果，以小型烘焙器具廠試單；客戶稱英國搪瓷需求降至2,000–2,500噸／年、Rangemaster約占EK需求85%，轉源困難。另評估酸洗規格改冷軋。",
+            "relation": "direct",
+            "source_label": "五、搪瓷鋼市場；七、產品商機"
+          },
+          {
+            "label": "2027年碳成本",
+            "text": "Ben預期採購更重視碳含量，若能證明臺灣產地已付碳成本，有助報價競爭力；屬客戶看法。",
+            "relation": "direct",
+            "source_label": "五、採購風險與下季展望／碳成本與報價"
+          }
+        ]
+      },
+      "card": {
+        "intro": "英國裁剪中心，服務車用及一般工業；英國兩據點自主採購約8萬噸／年，正提高非車用業務比重。",
+        "highlights": [
+          "自主採購含鍍鋅約4萬噸，冷軋、熱軋、馬口鐵各約1萬噸，分項未涵蓋全數。",
+          "中鋼DC01已供Dextra照明約3個月，DC04 ED／EK試料尚待下游結果。",
+          "積極增加非車用量，短期增量須爭取其他裁剪中心業務。"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "procurement",
+          "quote": "William King 為英國裁剪中心，年加工量約 25 萬噸，其中約 65% 由車廠指定鋼廠與價格。",
+          "source_label": "一、客戶摘要（與採購章25萬噸口徑待核對）"
+        },
+        {
+          "field": "procurement",
+          "quote": "英國年採購約 25 萬噸，約 65% 屬車廠轉售協議（resale agreement）。Jaguar LandRover(JLR)、Nissan、BMW 等車廠與鋼廠議價並指定料源，車廠為進口申報人。",
+          "source_label": "二、營運規模與採購決策／汽車轉售協議(代工)"
+        },
+        {
+          "field": "procurement",
+          "quote": "英國兩據點合計約 8 萬噸／年。鍍鋅約 4 萬噸，冷軋、熱軋、馬口鐵各約 1 萬噸。客戶按當時需求概估，分項未涵蓋全數。近 18 個月增加約 3 萬噸，以鍍鋅為主、冷軋次之，擬再增 1.5–2 萬噸。",
+          "source_label": "二、營運規模與採購決策／自主採購結構"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "冷軋為中鋼、POSCO、JSW、日本製鐵；熱軋向英國或歐洲鋼廠採購。",
+          "source_label": "四、英國市場競爭與採購條件／供應商選擇"
+        },
+        {
+          "field": "import_ratio",
+          "quote": "指定英歐來源可向鋼廠直購，亞洲與土耳其進口透過貿易商，以 DDP 完稅交貨轉移物流、關稅與碳成本風險。",
+          "source_label": "四、英國市場競爭與採購條件／供應商選擇"
+        },
+        {
+          "field": "downstream",
+          "quote": "Ben 到任時，汽車與非車用量比約 80：20，現約 60：40，目標各半。",
+          "source_label": "二、營運規模與採購決策／業務組合；三、下游需求"
+        },
+        {
+          "field": "downstream",
+          "quote": "終端需求為建築居第二位，涵蓋結構、屋頂、隔間與照明。",
+          "source_label": "二、營運規模與採購決策／業務組合；三、下游需求"
+        },
+        {
+          "field": "downstream",
+          "quote": "資料中心有英國機櫃廠間接供應 Meta、HP。另接觸暖氣與核能市場，國防仍在開發。",
+          "source_label": "三、中鋼供貨實績、下游需求"
+        },
+        {
+          "field": "downstream",
+          "quote": "Dextra Lighting 的中鋼 DC01 已供貨約 3 個月，加工情形良好。",
+          "source_label": "三、中鋼供貨實績、下游需求"
+        },
+        {
+          "field": "downstream",
+          "quote": "供 JCB、Caterpillar 工程機具駕駛室底板沖壓。",
+          "source_label": "三、中鋼供貨實績、下游需求"
+        },
+        {
+          "field": "products",
+          "quote": "鍍鋅約 4 萬噸，冷軋、熱軋、馬口鐵各約 1 萬噸。",
+          "source_label": "二、自主採購結構；三、中鋼供貨實績"
+        },
+        {
+          "field": "products",
+          "quote": "Dextra Lighting 的中鋼 DC01 已供貨約 3 個月，加工情形良好。",
+          "source_label": "二、自主採購結構；三、中鋼供貨實績"
+        },
+        {
+          "field": "products",
+          "quote": "客戶說明本年開發的厚冷軋",
+          "source_label": "二、自主採購結構；三、中鋼供貨實績"
+        },
+        {
+          "field": "products",
+          "quote": "中鋼 DC04 ED／EK 試料已於前一週加工並送下游，尚待結果。試料交較小型製造商，應用以烘焙器具為主。",
+          "source_label": "二、三地加工／捷克Mi-King；三、搪瓷；六、加工能力"
+        },
+        {
+          "field": "products",
+          "quote": "分條、沖壓與定尺裁切是主要製程",
+          "source_label": "二、三地加工／捷克Mi-King；三、搪瓷；六、加工能力"
+        },
+        {
+          "field": "products",
+          "quote": "捷克有電磁鋼加工實績，英國本廠尚無。",
+          "source_label": "二、三地加工／捷克Mi-King；三、搪瓷；六、加工能力"
+        },
+        {
+          "field": "outlook",
+          "quote": "客戶認為短期市場成長有限，因下游需求停滯，增量須搶其他裁剪中心業務。",
+          "source_label": "三、下游需求；五、採購風險與下季展望；七、冷軋詢單"
+        },
+        {
+          "field": "outlook",
+          "quote": "Ben 表示手上有現貨及少量在訂，將進入 2027 年第二季採購時點。",
+          "source_label": "三、下游需求；五、採購風險與下季展望；七、冷軋詢單"
+        },
+        {
+          "field": "outlook",
+          "quote": "爭取第二季冷軋及特殊強度料續供。",
+          "source_label": "三、下游需求；五、採購風險與下季展望；七、冷軋詢單"
+        },
+        {
+          "field": "outlook",
+          "quote": "英國對搪瓷鋼需求由約十年前 2.5 萬噸／年降至 2,000–2,500 噸／年。廠商Rangemaster 約占英國 EK材質(搪瓷鋼) 需求 85%",
+          "source_label": "五、搪瓷鋼市場；七、產品商機"
+        },
+        {
+          "field": "outlook",
+          "quote": "先以小型烘焙器具廠評估後續試單，數量依試驗與終端接受度。",
+          "source_label": "五、搪瓷鋼市場；七、產品商機"
+        },
+        {
+          "field": "outlook",
+          "quote": "因酸洗料配額取得困難，評估特定酸洗規格改用冷軋。",
+          "source_label": "五、搪瓷鋼市場；七、產品商機"
+        },
+        {
+          "field": "outlook",
+          "quote": "Ben 預期 2027 年採購將更重視鋼材碳含量，認為台灣若能證明已在產地支付碳成本，有助報價競爭力。",
+          "source_label": "五、採購風險與下季展望／碳成本與報價"
+        }
+      ],
+      "audit_note": [
+        "僅以本客戶最新Word全文（含表格、附件說明）為依據；未加入外部或其他客戶資料。",
+        "原文摘要將25萬噸稱為年加工量，採購章稱英國年採購量；兩者不能自行擇一確定，且均不得當作West Bromwich單廠量。自主採購8萬噸明確為英國兩據點。"
+      ]
+    }
+  ]
+}
