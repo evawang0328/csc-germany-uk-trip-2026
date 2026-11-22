@@ -10,6 +10,7 @@ from unittest.mock import patch
 import extract_meeting_followups as extraction
 from extract_meeting_followups import rows_from_docx, source_row_published, DISPLAY
 from build_meeting_index import parse_name
+from customer_knowledge import generic_knowledge
 
 def write_docx(path, header, data, heading="八、中鋼合作方向與後續辦理事項"):
     def paragraph(value):
@@ -92,6 +93,16 @@ class FollowupSyncTests(unittest.TestCase):
             path = Path(directory) / "meeting.docx"
             write_docx(path, ["項目", "參訪紀要"], [["製管範圍", "兩條製管線分大小管徑，供工廠參觀。"]])
             self.assertEqual(rows_from_docx(path), [])
+
+    def test_customer_topic_headers_are_not_facts(self):
+        for label in ["進度／項目", "項目／進度", "產品／進度", "品項／狀態", "案件／進度"]:
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / "meeting.docx"
+                write_docx(path, [label, "下一步與判定條件", "承辦窗口"], [["冷軋合作", "評估冷軋尺寸及供貨條件，待確認試料需求。", "中貿"]])
+                knowledge = generic_knowledge(path)
+                self.assertEqual(len(knowledge["topics"]), 1)
+                self.assertEqual(knowledge["topics"][0]["title"], "冷軋合作")
+                self.assertIn("試料需求", knowledge["topics"][0]["text"])
 
     def test_approval_does_not_remove_current_source_row(self):
         with tempfile.TemporaryDirectory() as directory:

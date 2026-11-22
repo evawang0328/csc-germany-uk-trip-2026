@@ -33,7 +33,10 @@ def read_entries(path):
                 if not value:continue
                 if not label and last is not None:
                     last['text']+=' '+value;continue
-                if label in {'項目','議題','面向','產品／年度','階段','產品','鋼廠'}:continue
+                # Table headings vary across customer Word templates. They are
+                # column labels, never a meeting fact or a historical topic.
+                column_label=re.sub(r'\s+', '', label)
+                if re.fullmatch(r'(?:項目|議題|面向|階段|產品|品項|案件|進度|狀態|鋼廠)(?:[／/](?:項目|進度|狀態|年度|用途|規格))*',column_label):continue
                 if re.search('聯絡|Email|電話|出席人員|與會人員',label,re.I):continue
                 last={'label':label,'text':value,'section':section};entries.append(last)
     return entries
