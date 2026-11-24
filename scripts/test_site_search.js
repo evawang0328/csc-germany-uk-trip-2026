@@ -1,0 +1,16 @@
+const assert=require('node:assert/strict'),fs=require('node:fs');
+const e=require('../assets/site-search-engine.js');
+const rows=[{title:'Upton',type:'meeting',customer_key:'UPTON',country:'英國',date:'2026-11-16',text:'資料中心 冷軋 DC01 2.5 mm'},{title:'AMDS',type:'meeting',country:'英國',date:'2026-11-17',text:'資料中心 低碳鋼'}];
+assert.equal(e.search(rows,'資料中心 冷軋').length,1);
+assert.equal(e.search(rows,'ＤＣ０１').length,1);
+assert.equal(e.search(rows,'資料中心',{country:'德國'}).length,0);
+assert.equal(e.search(rows,'資料中心',{from:'2026-11-17'}).length,1);
+assert.equal(e.search(rows,'資料中心',{customer:'UPTON'}).length,1);
+assert.equal(e.search(rows,'資料中心',{type:'followup'}).length,0);
+assert.equal(e.search(rows,'').length,0);
+assert.equal(e.search(rows,'missing').length,0);
+assert.equal(e.search(rows,'資料中心',{sort:'date'})[0].title,'AMDS');
+const html=fs.readFileSync('index.html','utf8');
+for(const file of ['assets/site-search.js','assets/site-search-engine.js'])new Function(fs.readFileSync(file,'utf8'));
+for(const id of ['ssQuery','ssForm','ssResults','ssClose','ssTypes','ssCountry','ssCustomer','ssFrom','ssTo','ssSort','ssMore','ssStatus','ssCoverage','ssWarnings'])assert.ok(html.includes('id="'+id+'"'),id);
+console.log('PASS: full-text keyword search, normalization, filters, ordering and UI integration');

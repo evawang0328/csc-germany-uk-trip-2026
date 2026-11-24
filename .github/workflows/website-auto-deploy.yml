@@ -38,6 +38,12 @@ jobs:
           node scripts/test_profile_topics.js
           node scripts/test_customer_map.js
           node scripts/test_overview_display.js
+      - name: Build and verify full-text search
+        run: |
+          python3 -m pip install --disable-pip-version-check pypdf==6.4.0
+          python3 scripts/build_search_index.py
+          python3 scripts/test_site_search.py
+          node scripts/test_site_search.js
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload website files
