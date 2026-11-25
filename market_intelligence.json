@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23 11:35",
+  "generated_at": "2026-11-25 13:17",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -60,6 +60,18 @@
     }
   ],
   "items": [
+    {
+      "title": "October 2026 crude steel production - worldsteel.org",
+      "date": "2026-11-24",
+      "source": "worldsteel",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZTR3NkFjLThuS3ZielJyaEIzQ1hHaHpKX05FdUVIZjNSTXRmX3Y3ZGFLYkYxZ0lUaHpMMnNNbElBbUV4YmhjY05nV3BZVGdKS1dYVktQemZvNk0yMHVfUlkwYzlfWWxjWWNuSW1WZUJUZmY3QWNFOG1naWYtV3oxbllqNmxxMkJmOHVKZDBR?oc=5",
+      "regions": [
+        "EU"
+      ],
+      "category": "產能鋼廠",
+      "summary": "來源新聞標題：October 2026 crude steel production - worldsteel.org",
+      "implication": "關注復產、產能利用率、交期及產量變化。"
+    },
     {
       "title": "UK imposes anti-dumping duty on steel plate from South Korea",
       "date": "2026-11-21",
@@ -416,19 +428,6 @@
       "category": "價格／供需",
       "summary": "來源新聞標題：Meta, Stegra sign multiyear green steel certificate deal",
       "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Nations collaborate in OECD Framework to tackle worsening global steel overcapacity",
-      "date": "2026-11-14",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/nations-collaborate-in-oecd-framework-to-tackle-worsening-global-steel-overcapacity/?utm_source=rss&utm_medium=rss&utm_campaign=nations-collaborate-in-oecd-framework-to-tackle-worsening-global-steel-overcapacity",
-      "regions": [
-        "UK",
-        "EU"
-      ],
-      "category": "產能鋼廠",
-      "summary": "來源新聞標題：Nations collaborate in OECD Framework to tackle worsening global steel overcapacity",
-      "implication": "關注復產、產能利用率、交期及產量變化。"
     }
   ]
 }
