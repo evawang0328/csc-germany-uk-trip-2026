@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-26 12:45",
+  "generated_at": "2026-11-27 12:52",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -60,6 +60,31 @@
     }
   ],
   "items": [
+    {
+      "title": "German steel distributors’ October sales fall faster than stocks",
+      "date": "2026-11-27",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/german-steel-distributors-october-sales-fall-faster-than-stocks/?utm_source=rss&utm_medium=rss&utm_campaign=german-steel-distributors-october-sales-fall-faster-than-stocks",
+      "regions": [
+        "DE",
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：German steel distributors’ October sales fall faster than stocks",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "EUROMETAL Steel Trade Day 2026: Polish steel market struggles with structural changes in demand",
+      "date": "2026-11-26",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/eurometal-steel-trade-day-2026-polish-steel-market-struggles-with-structural-changes-in-demand/?utm_source=rss&utm_medium=rss&utm_campaign=eurometal-steel-trade-day-2026-polish-steel-market-struggles-with-structural-changes-in-demand",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：EUROMETAL Steel Trade Day 2026: Polish steel market struggles with structural changes in demand",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
     {
       "title": "ArcelorMittal increases coil prices across Europe",
       "date": "2026-11-26",
@@ -404,31 +429,6 @@
       "category": "價格／供需",
       "summary": "來源新聞標題：Reporting the country of melt and pour for certain steel imports - GOV.UK",
       "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Steel production halted at some EU facilities due to high energy costs.",
-      "date": "2026-11-17",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/steel-production-halted-at-some-eu-facilities-due-to-high-energy-costs/?utm_source=rss&utm_medium=rss&utm_campaign=steel-production-halted-at-some-eu-facilities-due-to-high-energy-costs",
-      "regions": [
-        "EU"
-      ],
-      "category": "產能鋼廠",
-      "summary": "來源新聞標題：Steel production halted at some EU facilities due to high energy costs.",
-      "implication": "關注復產、產能利用率、交期及產量變化。"
-    },
-    {
-      "title": "Salzgitter AG CEO: steel industry needs competitive electricity prices and lead markets",
-      "date": "2026-11-17",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/salzgitter-ag-ceo-steel-industry-needs-competitive-electricity-prices-and-lead-markets/?utm_source=rss&utm_medium=rss&utm_campaign=salzgitter-ag-ceo-steel-industry-needs-competitive-electricity-prices-and-lead-markets",
-      "regions": [
-        "DE",
-        "EU"
-      ],
-      "category": "下游需求",
-      "summary": "來源新聞標題：Salzgitter AG CEO: steel industry needs competitive electricity prices and lead markets",
-      "implication": "留意下游客戶實際拉貨及中鋼產品規格需求。"
     }
   ]
 }
