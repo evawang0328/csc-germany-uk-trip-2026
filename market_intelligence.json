@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-27 12:52",
+  "generated_at": "2026-11-28 12:36",
   "mode": "每日自動蒐集公開標題＋來源連結（不使用付費 AI）",
   "warning": "",
   "highlights": [
@@ -60,6 +60,43 @@
     }
   ],
   "items": [
+    {
+      "title": "EU Steel Distribution: Price expectations strengthen as distributors remain cautious about demand recovery",
+      "date": "2026-11-28",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/eu-steel-distribution-price-expectations-strengthen-as-distributors-remain-cautious-about-demand-recovery/?utm_source=rss&utm_medium=rss&utm_campaign=eu-steel-distribution-price-expectations-strengthen-as-distributors-remain-cautious-about-demand-recovery",
+      "regions": [
+        "UK",
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：EU Steel Distribution: Price expectations strengthen as distributors remain cautious about demand recovery",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "European rebar prices rise amid production cuts, high energy costs",
+      "date": "2026-11-27",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/european-rebar-prices-rise-amid-production-cuts-high-energy-costs/?utm_source=rss&utm_medium=rss&utm_campaign=european-rebar-prices-rise-amid-production-cuts-high-energy-costs",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：European rebar prices rise amid production cuts, high energy costs",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
+    {
+      "title": "Whole steel value chain should join appeals",
+      "date": "2026-11-27",
+      "source": "EUROMETAL",
+      "url": "https://eurometal.net/whole-steel-value-chain-should-join-appeals/?utm_source=rss&utm_medium=rss&utm_campaign=whole-steel-value-chain-should-join-appeals",
+      "regions": [
+        "EU"
+      ],
+      "category": "價格／供需",
+      "summary": "來源新聞標題：Whole steel value chain should join appeals",
+      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
+    },
     {
       "title": "German steel distributors’ October sales fall faster than stocks",
       "date": "2026-11-27",
@@ -392,43 +429,6 @@
       "category": "政經政策",
       "summary": "來源新聞標題：EU industrial emissions fall as Commission outlines proposed CBAM extension to 180 downstream steel and aluminium products",
       "implication": "核對最新政策適用範圍與進口成本；以主管機關公告為準。"
-    },
-    {
-      "title": "Two more Italian mills announce production stoppages due to high energy costs",
-      "date": "2026-11-18",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/two-more-italian-mills-announce-production-stoppages-due-to-high-energy-costs/?utm_source=rss&utm_medium=rss&utm_campaign=two-more-italian-mills-announce-production-stoppages-due-to-high-energy-costs",
-      "regions": [
-        "EU"
-      ],
-      "category": "產能鋼廠",
-      "summary": "來源新聞標題：Two more Italian mills announce production stoppages due to high energy costs",
-      "implication": "關注復產、產能利用率、交期及產量變化。"
-    },
-    {
-      "title": "German steel alliance calls for stronger EU steel trade protection and competitive energy prices",
-      "date": "2026-11-18",
-      "source": "EUROMETAL",
-      "url": "https://eurometal.net/german-steel-alliance-calls-for-stronger-eu-steel-trade-protection-and-competitive-energy-prices/?utm_source=rss&utm_medium=rss&utm_campaign=german-steel-alliance-calls-for-stronger-eu-steel-trade-protection-and-competitive-energy-prices",
-      "regions": [
-        "DE",
-        "EU"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：German steel alliance calls for stronger EU steel trade protection and competitive energy prices",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
-    },
-    {
-      "title": "Reporting the country of melt and pour for certain steel imports - GOV.UK",
-      "date": "2026-11-17",
-      "source": "GOV.UK",
-      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNRGxhRXlwb1h5dWZzNWFwcVY0Z3hRTWFRcEtxNjE4T2t3ZVphY3I4VFRmTXVaNnR5TVBjdjgteWRqMElDZmpyNUVtUlROemNDVjNhZGVxbVZlQ090TU15UE5SbU5hakhocmNScGFsd3lXR1BpYjdtUDVBbzVKWkYtSjltRnViTEo1YVYxcjBTVWJvalpLNVhfOXBabm8xR0k4MnFGWFpmc0FXaHF1SHJQRjJ0eWpUZ3RHV1VydFM5RElCamwxejQ5aHp5UzBhRlNfbWZ3WkNIa1luakJXQlc4WkJValAzYTZqcWFOcTRzS3BNRTRiTkY0bEtiVFVhd2JERXc?oc=5",
-      "regions": [
-        "UK"
-      ],
-      "category": "價格／供需",
-      "summary": "來源新聞標題：Reporting the country of melt and pour for certain steel imports - GOV.UK",
-      "implication": "關注報價、實際成交、服務中心庫存及客戶補庫時間。"
     }
   ]
 }
